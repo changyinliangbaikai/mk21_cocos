@@ -1,0 +1,32 @@
+.DS_Store
+node_modules/
+game/library/
+game/temp/
+game/local/
+game/build/
+game/profiles/
+*.log
+playwright-report/
+test-results/
+artifacts/recovery/
+
+.playwright-cli/
+
+# Local production sources and generated verification evidence
+/assets/
+/output/
+/artifacts/
+/docs/implementation/
+/docs/reviews/
+/docs/references/
+
+# Keep only reusable game development tools
+/tools/*
+!/tools/cocos-build.mjs
+!/tools/persistence-child.ts
+!/tools/serve.mjs
+!/tools/simulate.ts
+!/tools/simulate-v006.ts
+!/tools/simulate-v007.ts
+!/tools/sync-config.mjs
+!/tools/typecheck-cocos.mjs

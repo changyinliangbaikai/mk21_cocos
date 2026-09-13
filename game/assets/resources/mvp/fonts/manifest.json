@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "packId": "typography-v003",
+  "group": "fonts",
+  "expectedIds": [
+    "FONT_DISPLAY",
+    "FONT_BODY"
+  ],
+  "sourceManifest": "assets/art/production/mvp-v1/typography-v003/manifest.json",
+  "sourceManifestSha256": "ea038aa77f6d081fde0300cb237845ca727a64dd9943bdb20212fd805de4c912",
+  "sourceUrl": "https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990",
+  "charsetSha256": "7d847884a5517d03f1685f072ae3c015ec5e39e49c5dfbaa3c75b6d8d845d9b1",
+  "assets": [
+    {
+      "id": "FONT_DISPLAY",
+      "kind": "font",
+      "file": "FONT_DISPLAY/FONT_DISPLAY.ttf",
+      "resource": "mvp/fonts/FONT_DISPLAY/FONT_DISPLAY",
+      "family": "MoXing Display",
+      "postScriptName": "MoXingDisplay-Regular",
+      "weight": 900,
+      "sha256": "9d9c0066c5cff1cf64431bf8a74662cbb8b57d067753fc09024a2432b945a518",
+      "bytes": 868600,
+      "license": "LICENSE-ResourceHanRounded.txt",
+      "licenseId": "OFL-1.1",
+      "licenseSha256": "586a072c53a12f6e4389f0eb6034f9780afcb9f0a49558e9ed299664ab1107d8",
+      "charset": "charset.txt",
+      "charsetSha256": "7d847884a5517d03f1685f072ae3c015ec5e39e49c5dfbaa3c75b6d8d845d9b1",
+      "source": "sources/ResourceHanRoundedSC-Heavy.ttf",
+      "sourceSha256": "3763f19b68697d0c31b0327df4569c0f91af537df74fc40f1d36eee3515abdbe",
+      "glyphCount": 2675,
+      "codepointCount": 1315,
+      "requestedCodepoints": 1314,
+      "missingCodepoints": [],
+      "status": "in_review",
+      "integration_ready": true
+    },
+    {
+      "id": "FONT_BODY",
+      "kind": "font",
+      "file": "FONT_BODY/FONT_BODY.ttf",
+      "resource": "mvp/fonts/FONT_BODY/FONT_BODY",
+      "family": "MoXing Body",
+      "postScriptName": "MoXingBody-Regular",
+      "weight": 500,
+      "sha256": "6c2a2dbc13e79497cb4ad713be3522ce4ec8d4439f563d808c264789d220a86a",
+      "bytes": 904404,
+      "license": "LICENSE-ResourceHanRounded.txt",
+      "licenseId": "OFL-1.1",
+      "licenseSha256": "586a072c53a12f6e4389f0eb6034f9780afcb9f0a49558e9ed299664ab1107d8",
+      "charset": "charset.txt",
+      "charsetSha256": "7d847884a5517d03f1685f072ae3c015ec5e39e49c5dfbaa3c75b6d8d845d9b1",
+      "source": "sources/ResourceHanRoundedSC-Medium.ttf",
+      "sourceSha256": "64376d56c4aeb39f345417860b9fee3cac52accf2d64dd7cab63c4528fcdc2f7",
+      "glyphCount": 2675,
+      "codepointCount": 1315,
+      "requestedCodepoints": 1314,
+      "missingCodepoints": [],
+      "status": "in_review",
+      "integration_ready": true
+    }
+  ]
+}

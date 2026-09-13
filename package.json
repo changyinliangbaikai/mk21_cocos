@@ -1,0 +1,23 @@
+{
+  "name": "cocos-hero-defense-prototype",
+  "private": true,
+  "version": "0.5.0",
+  "scripts": {
+    "test": "tsx --test game/tests/*.test.ts",
+    "typecheck": "tsc -p tsconfig.logic.json --noEmit",
+    "config:sync": "node tools/sync-config.mjs",
+    "serve": "node tools/serve.mjs",
+    "verify": "npm run config:sync && npm run typecheck && npm test",
+    "typecheck:cocos": "node tools/typecheck-cocos.mjs",
+    "simulate": "tsx tools/simulate.ts",
+    "build:web": "node tools/cocos-build.mjs web-mobile",
+    "build:web-desktop": "node tools/cocos-build.mjs web-desktop",
+    "build:wechat": "node tools/cocos-build.mjs wechatgame",
+    "build:douyin": "node tools/cocos-build.mjs bytedance-mini-game"
+  },
+  "devDependencies": {
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  }
+}

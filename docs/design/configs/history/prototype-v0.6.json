@@ -1,0 +1,1488 @@
+{
+  "design_version": "0.6",
+  "status": "player_feedback_economy_revision_pending_playtest",
+  "normative_document": "../战斗空间与判定参数.md",
+  "sample_seed": 20260912,
+  "clock": {
+    "tick_hz": 60,
+    "supported_speeds": [
+      1,
+      2
+    ],
+    "seconds_to_ticks": "ceil",
+    "damage_decimal_places": 4,
+    "damage_rounding": "half_up",
+    "same_step_order": [
+      "expire_statuses_and_begin_post_control_immunity",
+      "commands",
+      "spawn",
+      "attack_and_skill_events",
+      "damage_death_and_children",
+      "monster_behavior_and_movement",
+      "leaks",
+      "failure_before_wave_complete"
+    ],
+    "status_active_interval": "start_tick_inclusive_end_tick_exclusive"
+  },
+  "world": {
+    "reference_canvas": [
+      720,
+      1280
+    ],
+    "field_origin_on_reference_canvas": [
+      0,
+      120
+    ],
+    "field_size": [
+      720,
+      680
+    ],
+    "coordinates": "top_left_x_right_y_down",
+    "lane_centers_x": [
+      140,
+      360,
+      580
+    ],
+    "road_width": 56,
+    "spawn_y": 32,
+    "base_y": 648,
+    "lane_length": 616,
+    "pad_radius": 30,
+    "pads": [
+      {
+        "id": "L1-A",
+        "lane": 1,
+        "x": 70,
+        "y": 180
+      },
+      {
+        "id": "L1-B",
+        "lane": 1,
+        "x": 210,
+        "y": 350
+      },
+      {
+        "id": "L1-C",
+        "lane": 1,
+        "x": 70,
+        "y": 520
+      },
+      {
+        "id": "L2-A",
+        "lane": 2,
+        "x": 290,
+        "y": 180
+      },
+      {
+        "id": "L2-B",
+        "lane": 2,
+        "x": 430,
+        "y": 350
+      },
+      {
+        "id": "L2-C",
+        "lane": 2,
+        "x": 290,
+        "y": 520
+      },
+      {
+        "id": "L3-A",
+        "lane": 3,
+        "x": 510,
+        "y": 180
+      },
+      {
+        "id": "L3-B",
+        "lane": 3,
+        "x": 650,
+        "y": 350
+      },
+      {
+        "id": "L3-C",
+        "lane": 3,
+        "x": 510,
+        "y": 520
+      }
+    ],
+    "reserve_ids": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "reserve_has_world_position": false,
+    "range_test": "center_distance_inclusive"
+  },
+  "run": {
+    "waves": 20,
+    "base_max_hp": 20,
+    "starting_energy": 120,
+    "summon_cost": 40,
+    "min_roster_types": 1,
+    "max_roster_types": 4,
+    "max_star": 3,
+    "merge_inputs": 2,
+    "equipped_player_skill_slots": 2,
+    "carry_profile_snapshot": true,
+    "cancel_inflight_attacks_at_wave_complete": true
+  },
+  "rescue": {
+    "grandpa_uses": 1,
+    "second_revive_uses_shared": 1,
+    "restore_hp_fraction": 0.5,
+    "restore_hp_rounding": "ceil",
+    "second_revive_energy": 80,
+    "free_revive_deployment_pause": true,
+    "free_revive_protection_seconds": 3,
+    "grandpa_clear_scope": "alive_and_unspawned_unaccounted_wave_roots_or_children",
+    "grandpa_energy": "U(w)+R(w+1) if w<20 else U(w)",
+    "next_whole_wave_monster_energy": 0,
+    "ad_clear_extra_kill_energy": 0,
+    "failure_after_second_revive": "settle_loss"
+  },
+  "progression": {
+    "level_cap": 5,
+    "level_costs": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "damage_multipliers_by_level": [
+      1,
+      1.05,
+      1.1,
+      1.15,
+      1.2
+    ],
+    "training_xp_per_completed_wave": 1,
+    "xp_grant_key": [
+      "run_id",
+      "wave"
+    ],
+    "xp_shared_between_heroes": true,
+    "grandpa_preadvances_xp": false,
+    "settlement_grants_xp_again": false,
+    "upgrade_auto_equips_new_form": false,
+    "form_unlock_levels": [
+      1,
+      3,
+      5
+    ],
+    "changes_apply": "next_new_run",
+    "graduation": [
+      "one_20_wave_victory",
+      "all_four_heroes_owned",
+      "all_four_heroes_level5_and_all_forms_owned"
+    ],
+    "replay_after_graduation": true,
+    "automatic_difficulty_scaling": false
+  },
+  "control": {
+    "classes": [
+      "normal",
+      "elite",
+      "boss"
+    ],
+    "slow_and_hard_duration_multipliers": [
+      1,
+      0.6,
+      0.3
+    ],
+    "min_speed_fraction_of_base": [
+      0.5,
+      0.6,
+      0.7
+    ],
+    "hard_control_continuous_cap_seconds": [
+      3,
+      1.8,
+      0.9
+    ],
+    "hard_control_immunity_after_seconds": [
+      0.5,
+      1,
+      2
+    ],
+    "knockback_multipliers": [
+      1,
+      0.6,
+      0.2
+    ],
+    "knockback_per_event_caps": [
+      140,
+      84,
+      28
+    ],
+    "knockback_window_seconds": 3,
+    "knockback_window_distance_caps": [
+      200,
+      120,
+      40
+    ],
+    "knockback_min_interval_seconds": [
+      0.25,
+      0.5,
+      1.5
+    ],
+    "slow_stacking": "max",
+    "haste_stacking": "max",
+    "vulnerability_stacking": "max",
+    "vulnerability_cap": 0.3
+  },
+  "heroes": [
+    {
+      "id": "H001",
+      "name": "爆米花厨师",
+      "summon_energy": 40,
+      "initially_owned": true,
+      "unlock_completed_waves": 0,
+      "praise_unlock_allowed": true,
+      "damage_lv1_star1": 18,
+      "interval_seconds": 2.0,
+      "range_units": 180,
+      "windup_seconds": 0.2,
+      "damage_type": "energy",
+      "star_multipliers": [
+        1,
+        2.1,
+        4.4
+      ],
+      "player_skill_id": "K001",
+      "default_form_id": "H001-F01",
+      "attack": {
+        "type": "point_projectile",
+        "speed_units_per_second": 480,
+        "min_flight_ticks": 1,
+        "explosion_radius_by_star": [
+          48,
+          64,
+          64
+        ],
+        "mark_from_star": 2,
+        "explosive_mark_from_star": 3,
+        "mark_duration_seconds": 4,
+        "mark_explosion_damage_lv1_star3": 52.8,
+        "mark_explosion_radius": 64,
+        "mark_max_chain_depth": 8,
+        "mark_before_damage": true,
+        "mark_max_depth_lethal_policy": "suppress_all_further_mark_explosions_even_preexisting_marks",
+        "mark_chain_identity": "inherit_chain_id_and_depth_plus_one_even_when_mark_source_differs",
+        "mark_auto_damage_formula": "52.8 * level_multiplier * (1 + 0.25*C002 + 0.10*C012)",
+        "mark_snapshot_fields": [
+          "source_kind",
+          "source_id",
+          "level_multiplier",
+          "card_stacks",
+          "damage_before_target_modifiers",
+          "radius"
+        ],
+        "mark_chain_snapshot_policy": "inherit_source_snapshot_without_recomputing_current_hero",
+        "mark_no_new_marks_at_max_depth": true
+      }
+    },
+    {
+      "id": "H002",
+      "name": "弹簧拳师",
+      "summon_energy": 40,
+      "initially_owned": true,
+      "unlock_completed_waves": 0,
+      "praise_unlock_allowed": true,
+      "damage_lv1_star1": 16,
+      "interval_seconds": 1.2,
+      "range_units": 175,
+      "windup_seconds": 0.18,
+      "damage_type": "physical",
+      "star_multipliers": [
+        1,
+        2.1,
+        4.4
+      ],
+      "player_skill_id": "K002",
+      "default_form_id": "H002-F01",
+      "attack": {
+        "type": "target_lane_capsule_hitscan",
+        "half_width": 24,
+        "max_targets_by_star": [
+          1,
+          3,
+          3
+        ],
+        "knockback_by_star": [
+          18,
+          24,
+          30
+        ],
+        "heavy_from_star": 3,
+        "heavy_every_released_attacks": 4,
+        "heavy_max_targets": 5,
+        "heavy_knockback": 60,
+        "heavy_replaces_normal_hit": true
+      }
+    },
+    {
+      "id": "H003",
+      "name": "电音青蛙",
+      "summon_energy": 40,
+      "initially_owned": true,
+      "unlock_completed_waves": 0,
+      "praise_unlock_allowed": true,
+      "damage_lv1_star1": 8,
+      "interval_seconds": 1.8,
+      "range_units": 180,
+      "windup_seconds": 0.15,
+      "damage_type": "energy",
+      "star_multipliers": [
+        1,
+        2.1,
+        4.4
+      ],
+      "player_skill_id": "K003",
+      "default_form_id": "H003-F01",
+      "attack": {
+        "type": "target_center_area_hitscan",
+        "radius": 60,
+        "slow_strength": 0.25,
+        "slow_duration_seconds": 1.2,
+        "vulnerability_from_star": 2,
+        "vulnerability_strength": 0.15,
+        "vulnerability_duration_seconds": 1.5,
+        "hard_control_from_star": 3,
+        "hard_control_every_released_attacks": 4,
+        "hard_control_duration_seconds": 0.4,
+        "hit_order": [
+          "apply_slow_vulnerability_and_applicable_hard_control",
+          "damage_using_new_vulnerability"
+        ]
+      }
+    },
+    {
+      "id": "H004",
+      "name": "拖鞋阿姨",
+      "summon_energy": 40,
+      "initially_owned": false,
+      "unlock_completed_waves": 10,
+      "praise_unlock_allowed": true,
+      "damage_lv1_star1": 20,
+      "interval_seconds": 1.0,
+      "range_units": 220,
+      "windup_seconds": 0.15,
+      "damage_type": "physical",
+      "star_multipliers": [
+        1,
+        2.1,
+        4.4
+      ],
+      "player_skill_id": "K004",
+      "default_form_id": "H004-F01",
+      "attack": {
+        "type": "locked_target_scheduled_projectile",
+        "speed_units_per_second": 640,
+        "min_flight_ticks": 1,
+        "target_priority": "elite_or_boss_then_closest_to_base_then_id",
+        "return_from_star": 2,
+        "return_delay_seconds": 0.25,
+        "return_damage_fraction": 0.5,
+        "pursuit_from_star": 3,
+        "pursuit_every_same_elite_target_releases": 3,
+        "pursuit_delay_seconds": 0.5,
+        "pursuit_damage_fraction": 0.5,
+        "dead_target_retarget_only_with_card": "C007",
+        "max_retargets_per_projectile_with_card": 1,
+        "followup_delay_origin": "first_hit",
+        "damage_snapshot": "base_damage_level_star_and_card_stacks_at_release",
+        "target_bonus_evaluation": "C007_C008_actual_target_class_at_each_hit",
+        "followup_damage_basis": "fraction_of_before_vulnerability_and_armor_damage_then_target_modifiers_once"
+      }
+    }
+  ],
+  "monsters": [
+    {
+      "id": "M001",
+      "name": "蹦迪果冻",
+      "control_class": "normal",
+      "hp_base": 24,
+      "speed_units_per_second": 70,
+      "body_radius": 18,
+      "reward_energy": 10,
+      "leak_damage": 1,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": true
+    },
+    {
+      "id": "M002",
+      "name": "纸箱壮汉",
+      "control_class": "elite",
+      "hp_base": 100,
+      "speed_units_per_second": 50,
+      "body_radius": 24,
+      "reward_energy": 12,
+      "leak_damage": 2,
+      "physical_reduction": 0.2,
+      "uses_wave_hp_multiplier": true
+    },
+    {
+      "id": "M003",
+      "name": "溜冰香肠",
+      "control_class": "normal",
+      "hp_base": 28,
+      "speed_units_per_second": 112,
+      "body_radius": 16,
+      "reward_energy": 10,
+      "leak_damage": 1,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": true
+    },
+    {
+      "id": "M004",
+      "name": "分裂布丁",
+      "control_class": "normal",
+      "hp_base": 60,
+      "speed_units_per_second": 60,
+      "body_radius": 22,
+      "reward_energy": 12,
+      "leak_damage": 2,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": true,
+      "split": {
+        "child_id": "M004-S",
+        "count": 3,
+        "child_upstream_offsets": [
+          0,
+          12,
+          24
+        ],
+        "reward_budget_shared": 12,
+        "normal_parent_death_reward": 0,
+        "parent_leak_voids_children": true,
+        "spawn_before_mark_death_explosion": true
+      }
+    },
+    {
+      "id": "M004-S",
+      "name": "子布丁",
+      "control_class": "normal",
+      "hp_base": 12,
+      "speed_units_per_second": 90,
+      "body_radius": 12,
+      "reward_energy": 4,
+      "leak_damage": 1,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": true
+    },
+    {
+      "id": "M005",
+      "name": "指挥小鸡",
+      "control_class": "elite",
+      "hp_base": 70,
+      "speed_units_per_second": 65,
+      "body_radius": 18,
+      "reward_energy": 12,
+      "leak_damage": 1,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": true,
+      "aura": {
+        "radius": 140,
+        "haste": 0.25,
+        "includes_self": false,
+        "disabled_during_hard_control": true,
+        "stacking": "max"
+      }
+    },
+    {
+      "id": "B001",
+      "name": "巨鹅指挥官",
+      "control_class": "boss",
+      "hp_base": 1400,
+      "speed_units_per_second": 32,
+      "body_radius": 32,
+      "reward_energy": 200,
+      "leak_damage": 5,
+      "physical_reduction": 0,
+      "uses_wave_hp_multiplier": false,
+      "pulse": {
+        "radius": 200,
+        "haste": 0.35,
+        "includes_self": true,
+        "first_windup_seconds": 4,
+        "windup_seconds": 1,
+        "duration_seconds": 2,
+        "period_seconds": 6,
+        "hard_control_cancels_windup": true,
+        "extra_spawns": 0,
+        "stacking": "max"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "K001",
+      "hero": "H001",
+      "target": "area",
+      "radius": 100,
+      "damage_per_pulse": 70,
+      "damage_type": "energy",
+      "pulse_offsets_seconds": [
+        0.15,
+        0.45,
+        0.75
+      ],
+      "cooldown_seconds": 30,
+      "explosive_mark_seconds": 4,
+      "mark_damage_lv1": 52.8,
+      "mark_damage_formula": "52.8 * level_multiplier * (1 + 0.25*C002)",
+      "mark_inherits_C012": false,
+      "direct_pulses_inherit_C012": false,
+      "mark_radius_inherits_C001": true,
+      "mark_chain_policy": "same_as_H001_with_preserved_K001_source_kind"
+    },
+    {
+      "id": "K002",
+      "hero": "H002",
+      "target": "lane",
+      "damage_per_pulse": 100,
+      "damage_type": "physical",
+      "pulse_offsets_seconds": [
+        0.2
+      ],
+      "cooldown_seconds": 28,
+      "knockback": 140
+    },
+    {
+      "id": "K003",
+      "hero": "H003",
+      "target": "area",
+      "radius": 110,
+      "damage_per_pulse": 25,
+      "damage_type": "energy",
+      "pulse_offsets_seconds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cooldown_seconds": 32,
+      "slow_strength": 0.35,
+      "slow_duration_seconds": 1.2,
+      "hard_control_seconds": 0.2
+    },
+    {
+      "id": "K004",
+      "hero": "H004",
+      "target": "enemy",
+      "damage_per_pulse": 70,
+      "damage_type": "physical",
+      "pulse_offsets_seconds": [
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "cooldown_seconds": 35,
+      "dead_target_policy": "nearest_alive_to_last_position_then_id",
+      "retarget_range": "whole_field"
+    },
+    {
+      "id": "P001",
+      "target": "area",
+      "radius": 120,
+      "damage_per_pulse": 180,
+      "damage_type": "physical",
+      "pulse_offsets_seconds": [
+        0.25
+      ],
+      "cooldown_seconds": 35
+    },
+    {
+      "id": "P002",
+      "target": "global_confirm",
+      "damage_per_pulse": 40,
+      "damage_type": "energy",
+      "pulse_offsets_seconds": [
+        0.15
+      ],
+      "cooldown_seconds": 40,
+      "knockback": 80
+    },
+    {
+      "id": "P003",
+      "target": "area",
+      "radius": 100,
+      "damage_per_pulse": 0,
+      "damage_type": "none",
+      "pulse_offsets_seconds": [
+        0.1
+      ],
+      "cooldown_seconds": 32,
+      "hard_control_seconds": 3
+    }
+  ],
+  "cards": [
+    {
+      "id": "C001",
+      "name": "加大火候",
+      "max_picks": 2,
+      "effects": {
+        "H001_auto_and_mark_radius_add_per_pick": 0.2,
+        "H001_interval_add_per_pick": 0.05
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H001"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C002",
+      "name": "玉米也疯狂",
+      "max_picks": 2,
+      "effects": {
+        "H001_direct_auto_damage_add_per_pick": 0.08,
+        "H001_mark_damage_add_per_pick": 0.25
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H001"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C003",
+      "name": "弹簧加长",
+      "max_picks": 2,
+      "effects": {
+        "H002_search_and_ray_range_add_per_pick": 0.2
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H002"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C004",
+      "name": "力气用对地方",
+      "max_picks": 2,
+      "effects": {
+        "H002_auto_and_K002_knockback_add_per_pick": 0.2
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H002"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C005",
+      "name": "音量拉满",
+      "max_picks": 2,
+      "effects": {
+        "H003_auto_radius_add_per_pick": 0.15,
+        "H003_auto_damage_add_per_pick": 0.1
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H003"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C006",
+      "name": "慢点走别着急",
+      "max_picks": 2,
+      "effects": {
+        "H003_auto_and_K003_slow_duration_add_per_pick": 0.2
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H003"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C007",
+      "name": "拖鞋也拐弯",
+      "max_picks": 1,
+      "effects": {
+        "H004_auto_max_dead_target_retargets": 1,
+        "H004_auto_and_K004_elite_damage_add": 0.15
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H004"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C008",
+      "name": "这鞋有点重",
+      "max_picks": 2,
+      "effects": {
+        "H004_auto_and_K004_elite_damage_add_per_pick": 0.25
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H004"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C009",
+      "name": "挤挤更健康",
+      "max_picks": 2,
+      "effects": {
+        "collision_damage_by_pick": [
+          10,
+          15
+        ],
+        "max_collision_victims_per_knockback": 2,
+        "collision_radius": 32,
+        "damage_type": "physical",
+        "collision_causes_knockback": false,
+        "recursive_collision": false,
+        "inherits_hero_level_or_C012": false
+      },
+      "eligibility": {
+        "any": [
+          {
+            "roster_contains": "H002"
+          },
+          {
+            "skill_unlocked": "P002"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C010",
+      "name": "手脚麻利点",
+      "max_picks": null,
+      "effects": {
+        "all_hero_auto_interval_multiplier_per_pick": 0.97,
+        "windup_max_fraction_of_interval": 0.4
+      },
+      "eligibility": {
+        "always": true
+      }
+    },
+    {
+      "id": "C011",
+      "name": "站远点也能打",
+      "max_picks": null,
+      "effects": {
+        "all_hero_search_range_add_per_pick": 0.05
+      },
+      "eligibility": {
+        "always": true
+      }
+    },
+    {
+      "id": "C012",
+      "name": "基本功扎实",
+      "max_picks": null,
+      "effects": {
+        "all_hero_auto_damage_add_per_pick": 0.1,
+        "includes_auto_derived_damage": true,
+        "includes_player_skills": false
+      },
+      "eligibility": {
+        "always": true
+      }
+    },
+    {
+      "id": "C013",
+      "name": "天降大拖鞋",
+      "max_picks": 3,
+      "effects": {
+        "unlock_skill": "P001",
+        "damage_add_by_pick": [
+          0,
+          0.15,
+          0.3
+        ],
+        "refresh_cooldown": false
+      },
+      "eligibility": {
+        "always": true
+      }
+    },
+    {
+      "id": "C014",
+      "name": "全体起立",
+      "max_picks": 3,
+      "effects": {
+        "unlock_skill": "P002",
+        "cooldown_seconds_by_pick": [
+          40,
+          38,
+          36
+        ],
+        "cooldown_floor_seconds": 30,
+        "change_running_cooldown": false
+      },
+      "eligibility": {
+        "always": true
+      }
+    },
+    {
+      "id": "C015",
+      "name": "给我安静",
+      "max_picks": 3,
+      "effects": {
+        "unlock_skill": "P003",
+        "radius_by_pick": [
+          100,
+          110,
+          120
+        ],
+        "refresh_cooldown": false
+      },
+      "eligibility": {
+        "always": true
+      }
+    }
+  ],
+  "forms": [
+    {
+      "id": "H001-F01",
+      "hero_id": "H001",
+      "name": "见习厨师",
+      "unlock_level": 1,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H001-F02",
+      "hero_id": "H001",
+      "name": "爆米花主厨",
+      "unlock_level": 3,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H001-F03",
+      "hero_id": "H001",
+      "name": "玉米大亨",
+      "unlock_level": 5,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H002-F01",
+      "hero_id": "H002",
+      "name": "弹簧学徒",
+      "unlock_level": 1,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H002-F02",
+      "hero_id": "H002",
+      "name": "弹簧拳师",
+      "unlock_level": 3,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H002-F03",
+      "hero_id": "H002",
+      "name": "擂台拳王",
+      "unlock_level": 5,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H003-F01",
+      "hero_id": "H003",
+      "name": "节拍新手",
+      "unlock_level": 1,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H003-F02",
+      "hero_id": "H003",
+      "name": "电音主唱",
+      "unlock_level": 3,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H003-F03",
+      "hero_id": "H003",
+      "name": "派对领队",
+      "unlock_level": 5,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H004-F01",
+      "hero_id": "H004",
+      "name": "邻家阿姨",
+      "unlock_level": 1,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H004-F02",
+      "hero_id": "H004",
+      "name": "拖鞋高手",
+      "unlock_level": 3,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "H004-F03",
+      "hero_id": "H004",
+      "name": "街坊传奇",
+      "unlock_level": 5,
+      "additional_stats": false,
+      "required_preview_actions": [
+        "idle",
+        "attack",
+        "victory"
+      ],
+      "compatible_stars": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "waves": [
+    {
+      "wave": 1,
+      "counts": {
+        "M001": 8,
+        "M002": 0,
+        "M003": 0,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 8,
+      "energy_budget": 80,
+      "target_combat_seconds": 12,
+      "hp_multiplier": 1,
+      "non_boss_root_count": 8,
+      "non_boss_energy_budget": 80,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 2,
+      "counts": {
+        "M001": 10,
+        "M002": 0,
+        "M003": 0,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 10,
+      "energy_budget": 100,
+      "target_combat_seconds": 12,
+      "hp_multiplier": 1,
+      "non_boss_root_count": 10,
+      "non_boss_energy_budget": 100,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 3,
+      "counts": {
+        "M001": 10,
+        "M002": 0,
+        "M003": 2,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 12,
+      "energy_budget": 120,
+      "target_combat_seconds": 14,
+      "hp_multiplier": 1,
+      "non_boss_root_count": 12,
+      "non_boss_energy_budget": 120,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 4,
+      "counts": {
+        "M001": 12,
+        "M002": 0,
+        "M003": 2,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 14,
+      "energy_budget": 140,
+      "target_combat_seconds": 14,
+      "hp_multiplier": 1,
+      "non_boss_root_count": 14,
+      "non_boss_energy_budget": 140,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 5,
+      "counts": {
+        "M001": 13,
+        "M002": 3,
+        "M003": 0,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 16,
+      "energy_budget": 166,
+      "target_combat_seconds": 16,
+      "hp_multiplier": 1,
+      "non_boss_root_count": 16,
+      "non_boss_energy_budget": 166,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 6,
+      "counts": {
+        "M001": 13,
+        "M002": 3,
+        "M003": 2,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 18,
+      "energy_budget": 186,
+      "target_combat_seconds": 16,
+      "hp_multiplier": 1.1,
+      "non_boss_root_count": 18,
+      "non_boss_energy_budget": 186,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 7,
+      "counts": {
+        "M001": 15,
+        "M002": 0,
+        "M003": 4,
+        "M004": 0,
+        "M005": 1,
+        "B001": 0
+      },
+      "root_count": 20,
+      "energy_budget": 202,
+      "target_combat_seconds": 18,
+      "hp_multiplier": 1.1,
+      "non_boss_root_count": 20,
+      "non_boss_energy_budget": 202,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 8,
+      "counts": {
+        "M001": 16,
+        "M002": 4,
+        "M003": 2,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 22,
+      "energy_budget": 228,
+      "target_combat_seconds": 18,
+      "hp_multiplier": 1.1,
+      "non_boss_root_count": 22,
+      "non_boss_energy_budget": 228,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 9,
+      "counts": {
+        "M001": 20,
+        "M002": 0,
+        "M003": 2,
+        "M004": 2,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 24,
+      "energy_budget": 244,
+      "target_combat_seconds": 20,
+      "hp_multiplier": 1.1,
+      "non_boss_root_count": 24,
+      "non_boss_energy_budget": 244,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 10,
+      "counts": {
+        "M001": 17,
+        "M002": 4,
+        "M003": 4,
+        "M004": 0,
+        "M005": 1,
+        "B001": 0
+      },
+      "root_count": 26,
+      "energy_budget": 270,
+      "target_combat_seconds": 22,
+      "hp_multiplier": 1.1,
+      "non_boss_root_count": 26,
+      "non_boss_energy_budget": 270,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 11,
+      "counts": {
+        "M001": 25,
+        "M002": 0,
+        "M003": 0,
+        "M004": 2,
+        "M005": 1,
+        "B001": 0
+      },
+      "root_count": 28,
+      "energy_budget": 286,
+      "target_combat_seconds": 20,
+      "hp_multiplier": 1.2,
+      "non_boss_root_count": 28,
+      "non_boss_energy_budget": 286,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 12,
+      "counts": {
+        "M001": 21,
+        "M002": 5,
+        "M003": 4,
+        "M004": 0,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 30,
+      "energy_budget": 310,
+      "target_combat_seconds": 20,
+      "hp_multiplier": 1.2,
+      "non_boss_root_count": 30,
+      "non_boss_energy_budget": 310,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 13,
+      "counts": {
+        "M001": 24,
+        "M002": 0,
+        "M003": 6,
+        "M004": 2,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 32,
+      "energy_budget": 324,
+      "target_combat_seconds": 22,
+      "hp_multiplier": 1.2,
+      "non_boss_root_count": 32,
+      "non_boss_energy_budget": 324,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 14,
+      "counts": {
+        "M001": 26,
+        "M002": 6,
+        "M003": 0,
+        "M004": 0,
+        "M005": 2,
+        "B001": 0
+      },
+      "root_count": 34,
+      "energy_budget": 356,
+      "target_combat_seconds": 22,
+      "hp_multiplier": 1.2,
+      "non_boss_root_count": 34,
+      "non_boss_energy_budget": 356,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 15,
+      "counts": {
+        "M001": 24,
+        "M002": 4,
+        "M003": 6,
+        "M004": 2,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 36,
+      "energy_budget": 372,
+      "target_combat_seconds": 24,
+      "hp_multiplier": 1.2,
+      "non_boss_root_count": 36,
+      "non_boss_energy_budget": 372,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 16,
+      "counts": {
+        "M001": 32,
+        "M002": 0,
+        "M003": 0,
+        "M004": 4,
+        "M005": 2,
+        "B001": 0
+      },
+      "root_count": 38,
+      "energy_budget": 392,
+      "target_combat_seconds": 24,
+      "hp_multiplier": 1.3,
+      "non_boss_root_count": 38,
+      "non_boss_energy_budget": 392,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 17,
+      "counts": {
+        "M001": 25,
+        "M002": 6,
+        "M003": 6,
+        "M004": 3,
+        "M005": 0,
+        "B001": 0
+      },
+      "root_count": 40,
+      "energy_budget": 418,
+      "target_combat_seconds": 24,
+      "hp_multiplier": 1.3,
+      "non_boss_root_count": 40,
+      "non_boss_energy_budget": 418,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 18,
+      "counts": {
+        "M001": 26,
+        "M002": 6,
+        "M003": 8,
+        "M004": 0,
+        "M005": 2,
+        "B001": 0
+      },
+      "root_count": 42,
+      "energy_budget": 436,
+      "target_combat_seconds": 26,
+      "hp_multiplier": 1.3,
+      "non_boss_root_count": 42,
+      "non_boss_energy_budget": 436,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 19,
+      "counts": {
+        "M001": 22,
+        "M002": 8,
+        "M003": 8,
+        "M004": 4,
+        "M005": 2,
+        "B001": 0
+      },
+      "root_count": 44,
+      "energy_budget": 468,
+      "target_combat_seconds": 26,
+      "hp_multiplier": 1.3,
+      "non_boss_root_count": 44,
+      "non_boss_energy_budget": 468,
+      "boss_energy_budget": 0
+    },
+    {
+      "wave": 20,
+      "counts": {
+        "M001": 24,
+        "M002": 8,
+        "M003": 8,
+        "M004": 4,
+        "M005": 2,
+        "B001": 1
+      },
+      "root_count": 47,
+      "energy_budget": 688,
+      "target_combat_seconds": 30,
+      "hp_multiplier": 1.3,
+      "non_boss_root_count": 46,
+      "non_boss_energy_budget": 488,
+      "boss_energy_budget": 200
+    }
+  ],
+  "card_draw": {
+    "count": 3,
+    "unique_ids_on_page": true,
+    "all_candidates_effective": true,
+    "unlimited_common_ids": [
+      "C010",
+      "C011",
+      "C012"
+    ],
+    "weights": "equal",
+    "candidate_sort": "id_ascending",
+    "sampling": "fisher_yates_then_first_3",
+    "separate_rng": true,
+    "rng_seed_xor": 2779096485,
+    "persist_before_display": true
+  },
+  "spawn_generator": {
+    "algorithm": "xorshift32_fisher_yates_modulo_v1",
+    "wave_seed_multiply": 2654435769,
+    "zero_seed_fallback": 1831565813,
+    "normal_spawn_window_fraction": 0.6,
+    "boss_spawn_window_fraction": 0.65,
+    "normal_lanes": "(shuffled_index + wave_seed%3)%3 + 1",
+    "boss_lane": 2,
+    "spawn_tick_rounding": "half_up",
+    "normal_spawn_ticks": "round(i*window_ticks/(normal_count-1)); single at 0",
+    "sort": "tick_then_normal_before_boss_then_original_index"
+  },
+  "expected_totals": {
+    "root_monsters": 541,
+    "split_parents": 23,
+    "max_split_children": 69,
+    "max_spawned_entities": 610,
+    "ordinary_energy_budget": 5786,
+    "starting_plus_ordinary_energy": 5906,
+    "target_combat_seconds": 400,
+    "completed_run_training_xp": 20,
+    "non_boss_root_monsters": 540,
+    "non_boss_energy_budget": 5586,
+    "boss_energy_budget": 200
+  },
+  "validation_status": {
+    "schema_and_arithmetic": "v0.6 ledger, split, CSV and snapshot regression tests in game/tests/wave-economy.test.ts",
+    "game_runtime": "implemented; v0.6 economy integration pending current validation",
+    "balance": "v0.6 user-requested resource curve; awaiting renewed hands-on playtest",
+    "platform": "see current build artifacts; real WeChat/Douyin device validation separate",
+    "design_review": "../../reviews/编码前准备检查-v0.5.md"
+  },
+  "wave_economy": {
+    "revision": "0.6",
+    "changes_apply": "next_new_run",
+    "ordinary_scope": "all_non_boss_roots_including_elites; split_family_budget_counted_once",
+    "minimum_non_boss_wave_energy": 80,
+    "non_boss_root_count_formula": "8 + 2 * (wave - 1)",
+    "boss_body_reward_energy": 200,
+    "monster_hp_speed_and_wave_hp_multipliers_changed": false,
+    "legacy_total_field": "expected_totals.ordinary_energy_budget includes boss normal-kill rewards; use non_boss_energy_budget to exclude bosses",
+    "legacy_resource_key": "prototype-v0.5.json is a stable filename, not the active design version"
+  }
+}

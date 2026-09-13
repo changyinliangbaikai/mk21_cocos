@@ -1,0 +1,8096 @@
+{
+  "schemaVersion": 1,
+  "packId": "mvp-v1",
+  "group": "art",
+  "assets": [
+    {
+      "id": "H001-F01",
+      "kind": "hero",
+      "file": "H001-F01/main.png",
+      "resource": "mvp/art/H001-F01/main",
+      "sha256": "db3a5ec6b88921bf275cb107f9890eba6e95183d7b8c91985c5e8cfc9420e0d4",
+      "bytes": 441750,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H001-F02",
+      "kind": "hero",
+      "file": "H001-F02/main.png",
+      "resource": "mvp/art/H001-F02/main",
+      "sha256": "db19a62aa7891a5cd3ce34bd83d97f67d3b9d496b7528f0eff11ea67c71d0327",
+      "bytes": 431399,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H001-F03",
+      "kind": "hero",
+      "file": "H001-F03/main.png",
+      "resource": "mvp/art/H001-F03/main",
+      "sha256": "279db884e13b77665c91a8aaa8a426c55bc14e96ff7c7a7ea8c684686c573ef9",
+      "bytes": 478360,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H002-F01",
+      "kind": "hero",
+      "file": "H002-F01/main.png",
+      "resource": "mvp/art/H002-F01/main",
+      "sha256": "7551b482f5f0844334000c52ccfef7bbbe76051ee9d2ade4b9e9cfe57d2db90c",
+      "bytes": 514480,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H003-F01",
+      "kind": "hero",
+      "file": "H003-F01/main.png",
+      "resource": "mvp/art/H003-F01/main",
+      "sha256": "3efbdf04cdd3f178d69b3c095cd71598db7a8f7cc5165cdf45651fceed3a44c0",
+      "bytes": 532656,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H004-F01",
+      "kind": "hero",
+      "file": "H004-F01/main.png",
+      "resource": "mvp/art/H004-F01/main",
+      "sha256": "27fc5c1c6e04622bd4e4c7b537e613cd3f7fabc2f931aa082affab9369986f2d",
+      "bytes": 387374,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M001",
+      "kind": "monster",
+      "file": "M001/main.png",
+      "resource": "mvp/art/M001/main",
+      "sha256": "6e8c0ca9452c52542a7a7a92b974129478139e12a044d2d2367d6c1643594088",
+      "bytes": 157514,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H002-F02",
+      "kind": "hero",
+      "file": "H002-F02/main.png",
+      "resource": "mvp/art/H002-F02/main",
+      "sha256": "5fd73f2229c0f89670b4206299753f1397dbdfa799b379604986e11d6b599424",
+      "bytes": 541406,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H003-F02",
+      "kind": "hero",
+      "file": "H003-F02/main.png",
+      "resource": "mvp/art/H003-F02/main",
+      "sha256": "32425036f7816485dbc8d400fe9406234f65892b380f8b98540d284070baad58",
+      "bytes": 549473,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H003-F03",
+      "kind": "hero",
+      "file": "H003-F03/main.png",
+      "resource": "mvp/art/H003-F03/main",
+      "sha256": "e281757dac32bb8dc5abd6df94f62b89ce36fa953a335fbf6c6925a0121b45e9",
+      "bytes": 618209,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H004-F02",
+      "kind": "hero",
+      "file": "H004-F02/main.png",
+      "resource": "mvp/art/H004-F02/main",
+      "sha256": "f8cd38b541d2fa7baf7e1a2d6238923094f4eb8e40f09d217f581c1c3029549f",
+      "bytes": 414297,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "H004-F03",
+      "kind": "hero",
+      "file": "H004-F03/main.png",
+      "resource": "mvp/art/H004-F03/main",
+      "sha256": "91cf839e288c4a0649482939f7236914f4c756c0de1fc4985987f0d375b9c0c8",
+      "bytes": 446908,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "B001",
+      "kind": "monster",
+      "file": "B001/main.png",
+      "resource": "mvp/art/B001/main",
+      "sha256": "c0695a50c5b3faf2b7c0b86a1d3110a22d48d1dfc61535ef4c839461b6cf5362",
+      "bytes": 426607,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "tell": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "impact": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M002",
+      "kind": "monster",
+      "file": "M002/main.png",
+      "resource": "mvp/art/M002/main",
+      "sha256": "e6f90b0d57947e50b51aa76617a5e7215ba6596348dc245de8a5e41775db2089",
+      "bytes": 134711,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M003",
+      "kind": "monster",
+      "file": "M003/main.png",
+      "resource": "mvp/art/M003/main",
+      "sha256": "f185b38ee5b61e786f0ab1c63c4171b08bb780e12976e382c25833cadd923f5c",
+      "bytes": 95665,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M004",
+      "kind": "monster",
+      "file": "M004/main.png",
+      "resource": "mvp/art/M004/main",
+      "sha256": "a73b58c2769e8e03c1f776b5937c6fcb2495f85a868cc509c381e78b525531c6",
+      "bytes": 147310,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M004-S",
+      "kind": "monster",
+      "file": "M004-S/main.png",
+      "resource": "mvp/art/M004-S/main",
+      "sha256": "e334b1f50830629df60ec2bdb8bfae9f19262ca0e7adef0abbddff7da6f15e0a",
+      "bytes": 145822,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "M005",
+      "kind": "monster",
+      "file": "M005/main.png",
+      "resource": "mvp/art/M005/main",
+      "sha256": "c376250516f0c772a3c80666f2360dc7d55ffd2f85caef98d830d5d29621ebc5",
+      "bytes": 142035,
+      "width": 768,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "walk": [
+          {
+            "rect": [
+              0,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              256,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "hit": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ],
+        "death": [
+          {
+            "rect": [
+              512,
+              0,
+              256,
+              256
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "N001",
+      "kind": "npc",
+      "file": "N001/main.png",
+      "resource": "mvp/art/N001/main",
+      "sha256": "76ae840442ac109fee220d70644cc6b7c2306c2d49cc3c82983909c372e14243",
+      "bytes": 480205,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "blush": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "proud": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "cane_raise": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.25
+          }
+        ],
+        "cane_strike": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "N002",
+      "kind": "npc",
+      "file": "N002/main.png",
+      "resource": "mvp/art/N002/main",
+      "sha256": "149848052f1c2c3463b38c8cd5095b71a8b394382749506d315e26032db94fdc",
+      "bytes": 520506,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "blush": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "proud": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "BG_CAMP",
+      "kind": "background",
+      "file": "BG_CAMP/main.jpg",
+      "resource": "mvp/art/BG_CAMP/main",
+      "sha256": "faf9c4364f750b6c667f6fb8e88ae700757fff433a4c7259302e11cc9c30c145",
+      "bytes": 197556,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "BG_BATTLE",
+      "kind": "background",
+      "file": "BG_BATTLE/main.jpg",
+      "resource": "mvp/art/BG_BATTLE/main",
+      "sha256": "3bb4b2ef83fdc6dfea54ea7ebd5460f382e810644b876da5c92e323d111a0f8c",
+      "bytes": 239269,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "K001",
+      "kind": "icon",
+      "file": "K001/main.png",
+      "resource": "mvp/art/K001/main",
+      "sha256": "39ff8ac450a99bd30df7d41735ad747170a70955e958779d52e0969a90330904",
+      "bytes": 142059,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "K002",
+      "kind": "icon",
+      "file": "K002/main.png",
+      "resource": "mvp/art/K002/main",
+      "sha256": "f0c428957661722776d4d33990044d99d8ff2927cb5147cb597a599cf0faa886",
+      "bytes": 119193,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "K003",
+      "kind": "icon",
+      "file": "K003/main.png",
+      "resource": "mvp/art/K003/main",
+      "sha256": "8924f6c3c6f5ef8e628b457364f1a7c79e498142c657c5c413d38350e5ce6858",
+      "bytes": 130910,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "H002-F03",
+      "kind": "hero",
+      "file": "H002-F03/main.png",
+      "resource": "mvp/art/H002-F03/main",
+      "sha256": "f6017d8ff96b601a0a6563ecce4792443dd6b4cd2121acd0cd4347c9dbf6da87",
+      "bytes": 565873,
+      "width": 1536,
+      "height": 512,
+      "anchor": [
+        0.5,
+        0.12
+      ],
+      "frames": {
+        "idle": [
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "attack": [
+          {
+            "rect": [
+              512,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ],
+        "victory": [
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          },
+          {
+            "rect": [
+              1024,
+              0,
+              512,
+              512
+            ],
+            "duration": 0.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "K004",
+      "kind": "icon",
+      "file": "K004/main.png",
+      "resource": "mvp/art/K004/main",
+      "sha256": "52fa56af962a3dc692553f01307afebc030fa1f4494107bf703816f06b5b8591",
+      "bytes": 114947,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "P001",
+      "kind": "icon",
+      "file": "P001/main.png",
+      "resource": "mvp/art/P001/main",
+      "sha256": "cc42aea769ff0040091ac8e0569a47aa92f6157b2e4adcab5db31681843f4509",
+      "bytes": 126734,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "P002",
+      "kind": "icon",
+      "file": "P002/main.png",
+      "resource": "mvp/art/P002/main",
+      "sha256": "f1e8cf47cae7a5e4d9c5ff125a1377eee0d00266bf34b5b26c2e3c5067959597",
+      "bytes": 114955,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "P003",
+      "kind": "icon",
+      "file": "P003/main.png",
+      "resource": "mvp/art/P003/main",
+      "sha256": "94b97c68c0b211f9714bf15ff40fc44ad5392567c0b9197a5859e49fb6319953",
+      "bytes": 104031,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "BG_RESULT",
+      "kind": "background",
+      "file": "BG_RESULT/main.jpg",
+      "resource": "mvp/art/BG_RESULT/main",
+      "sha256": "09b983817654975bc50f9fbe7c4763aaa44076b899462e2e0b0dc85e697aa1d7",
+      "bytes": 178897,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "UI_PANEL",
+      "kind": "ui",
+      "file": "UI_PANEL/main.png",
+      "resource": "mvp/art/UI_PANEL/main",
+      "sha256": "35d14c35430706f9b1478154af12c9cedbddae0c54399cc9ffd6fa50156e4230",
+      "bytes": 9832,
+      "width": 512,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        43,
+        43,
+        43,
+        43
+      ]
+    },
+    {
+      "id": "UI_PANEL_INSET",
+      "kind": "ui",
+      "file": "UI_PANEL_INSET/main.png",
+      "resource": "mvp/art/UI_PANEL_INSET/main",
+      "sha256": "747b9649d92effbfe37fe3f73c8b22258bad2b9f5e059a41ca7d897a49c5cfc9",
+      "bytes": 11576,
+      "width": 512,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        43,
+        43,
+        43,
+        43
+      ]
+    },
+    {
+      "id": "UI_BUTTON_LAKE",
+      "kind": "ui",
+      "file": "UI_BUTTON_LAKE/main.png",
+      "resource": "mvp/art/UI_BUTTON_LAKE/main",
+      "sha256": "1ed7e99c3cc2e0efa65910d8581e8a216821a5692dced83118873f75148a824e",
+      "bytes": 15400,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_LAKE_PRESSED",
+      "kind": "ui",
+      "file": "UI_BUTTON_LAKE_PRESSED/main.png",
+      "resource": "mvp/art/UI_BUTTON_LAKE_PRESSED/main",
+      "sha256": "7f2e1280c3088575889285d88043356dd16f4ccf400c2a22a50ba430e6083340",
+      "bytes": 16148,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_GOLD",
+      "kind": "ui",
+      "file": "UI_BUTTON_GOLD/main.png",
+      "resource": "mvp/art/UI_BUTTON_GOLD/main",
+      "sha256": "de8a4ac8ceea90a37a488105b06cee97120e1ceca0db35186cc5e66f808f9d4b",
+      "bytes": 14671,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_GOLD_PRESSED",
+      "kind": "ui",
+      "file": "UI_BUTTON_GOLD_PRESSED/main.png",
+      "resource": "mvp/art/UI_BUTTON_GOLD_PRESSED/main",
+      "sha256": "c6e04dd4aea223abcb64cba56dd6931bc484ea27b4e0815742993e147f7ed13f",
+      "bytes": 15965,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_PURPLE",
+      "kind": "ui",
+      "file": "UI_BUTTON_PURPLE/main.png",
+      "resource": "mvp/art/UI_BUTTON_PURPLE/main",
+      "sha256": "9e7fb9b9dd15d5053de96b97eded0b1b6e99c633032df463b63e102dcdde8aad",
+      "bytes": 15456,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_PURPLE_PRESSED",
+      "kind": "ui",
+      "file": "UI_BUTTON_PURPLE_PRESSED/main.png",
+      "resource": "mvp/art/UI_BUTTON_PURPLE_PRESSED/main",
+      "sha256": "6cd6ea08faa9c2f0578aaa3cca98e29c84cb2eb50740f3711bf7be8528782ebd",
+      "bytes": 16093,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_BUTTON_DISABLED",
+      "kind": "ui",
+      "file": "UI_BUTTON_DISABLED/main.png",
+      "resource": "mvp/art/UI_BUTTON_DISABLED/main",
+      "sha256": "27568f1194623e24f9372b4f4cd99bfae917913cae24ab55f1c392643297a8d8",
+      "bytes": 13528,
+      "width": 384,
+      "height": 128,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        58,
+        56,
+        58,
+        57
+      ]
+    },
+    {
+      "id": "UI_SLOT",
+      "kind": "ui",
+      "file": "UI_SLOT/main.png",
+      "resource": "mvp/art/UI_SLOT/main",
+      "sha256": "6e9bcbb0e10a9d42fd1c0ad3763fd9fc45890586f74fefe5ddd28d2a33f4900a",
+      "bytes": 9216,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "UI_SLOT_SELECTED",
+      "kind": "ui",
+      "file": "UI_SLOT_SELECTED/main.png",
+      "resource": "mvp/art/UI_SLOT_SELECTED/main",
+      "sha256": "9923bd301b15527e40e0169ae9f8ad00fa349a187e395e79ab11dabe49745dab",
+      "bytes": 9751,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "UI_SLOT_LOCKED",
+      "kind": "ui",
+      "file": "UI_SLOT_LOCKED/main.png",
+      "resource": "mvp/art/UI_SLOT_LOCKED/main",
+      "sha256": "60add2567d204847761f17d20b7fd4027f68fc629f3cbbf6f4c5d7f893bd08d2",
+      "bytes": 9690,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "UI_CARD",
+      "kind": "ui",
+      "file": "UI_CARD/main.png",
+      "resource": "mvp/art/UI_CARD/main",
+      "sha256": "6e9bcbb0e10a9d42fd1c0ad3763fd9fc45890586f74fefe5ddd28d2a33f4900a",
+      "bytes": 9216,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "UI_CARD_SELECTED",
+      "kind": "ui",
+      "file": "UI_CARD_SELECTED/main.png",
+      "resource": "mvp/art/UI_CARD_SELECTED/main",
+      "sha256": "0fe29635f4c5ff34829193a26537374d948ab339c7b1408a4e0b23d8d80158e2",
+      "bytes": 9364,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "UI_XP",
+      "kind": "icon",
+      "file": "UI_XP/main.png",
+      "resource": "mvp/art/UI_XP/main",
+      "sha256": "5877019f163157723f40a3876a4fe25f4f02f1bc7e3f905ec63d5ed93e6a763d",
+      "bytes": 14838,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_ENERGY",
+      "kind": "icon",
+      "file": "UI_ENERGY/main.png",
+      "resource": "mvp/art/UI_ENERGY/main",
+      "sha256": "a2cc32b394e461c70728c6f272af83890ca90757b48b2438f505b01741fe57cf",
+      "bytes": 24501,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_HEART",
+      "kind": "icon",
+      "file": "UI_HEART/main.png",
+      "resource": "mvp/art/UI_HEART/main",
+      "sha256": "2e4d45f575782cd848eee9a1542ef0c291667e4bbe027684603f5f6be4ea9060",
+      "bytes": 15973,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_STAR",
+      "kind": "icon",
+      "file": "UI_STAR/main.png",
+      "resource": "mvp/art/UI_STAR/main",
+      "sha256": "1f53e0e00b61372a22f8934aa164f16b297feae68babee3b1ab83abd7b25e025",
+      "bytes": 14175,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_LOCK",
+      "kind": "icon",
+      "file": "UI_LOCK/main.png",
+      "resource": "mvp/art/UI_LOCK/main",
+      "sha256": "305a17e77d6ff0e38a3cdf68172356c2404218f3f0acddf0d9d8d8229c0bf9eb",
+      "bytes": 13533,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_BACK",
+      "kind": "icon",
+      "file": "UI_BACK/main.png",
+      "resource": "mvp/art/UI_BACK/main",
+      "sha256": "48cd4cea44310d189db9077265bc7258ed31965f1b337d12b4a5ac3b7c506ae1",
+      "bytes": 6296,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SETTINGS",
+      "kind": "icon",
+      "file": "UI_SETTINGS/main.png",
+      "resource": "mvp/art/UI_SETTINGS/main",
+      "sha256": "d1977874f41c819921f90fcb85f5f85170edfb73ba979e6bd391f939a9b0fed3",
+      "bytes": 28509,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SPEED",
+      "kind": "icon",
+      "file": "UI_SPEED/main.png",
+      "resource": "mvp/art/UI_SPEED/main",
+      "sha256": "f94f342b36045e7fffb715a2d2f9ba3457347d1410d193983304bd88d22d6598",
+      "bytes": 6623,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_PAUSE",
+      "kind": "icon",
+      "file": "UI_PAUSE/main.png",
+      "resource": "mvp/art/UI_PAUSE/main",
+      "sha256": "e6f27acf7ce738616a6242a14848bb98d48ed12be56ccaa163377bb344310986",
+      "bytes": 3152,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_PLAY",
+      "kind": "icon",
+      "file": "UI_PLAY/main.png",
+      "resource": "mvp/art/UI_PLAY/main",
+      "sha256": "c526cf91c1050e585ee586b2558bc330a32d7915f4bb831d13956f631ef31553",
+      "bytes": 4293,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SUMMON",
+      "kind": "icon",
+      "file": "UI_SUMMON/main.png",
+      "resource": "mvp/art/UI_SUMMON/main",
+      "sha256": "6925d70a9961f2c865169aa2e6c70a5381cf88d618066804f7a3e336f36775dc",
+      "bytes": 16237,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_CLOSE",
+      "kind": "icon",
+      "file": "UI_CLOSE/main.png",
+      "resource": "mvp/art/UI_CLOSE/main",
+      "sha256": "e5bce84443ed2c28a0fefed306b467230f0a10a03baaf63f2367384cc76431ba",
+      "bytes": 6547,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_CHECK",
+      "kind": "icon",
+      "file": "UI_CHECK/main.png",
+      "resource": "mvp/art/UI_CHECK/main",
+      "sha256": "f901fc12019d9574e54edebf3a330b6d489bbbbc18ab764168a8e0926a7d4116",
+      "bytes": 10135,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_MUSIC",
+      "kind": "icon",
+      "file": "UI_MUSIC/main.png",
+      "resource": "mvp/art/UI_MUSIC/main",
+      "sha256": "e69a726f794e605a854742f2f3d660d91788ddac20ecd1f9d487fef3b26670eb",
+      "bytes": 12508,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SOUND",
+      "kind": "icon",
+      "file": "UI_SOUND/main.png",
+      "resource": "mvp/art/UI_SOUND/main",
+      "sha256": "85a9387f210c46284ef45934411d25fd132a22ada3c7dd558f320511f99ee59f",
+      "bytes": 12930,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_VOICE",
+      "kind": "icon",
+      "file": "UI_VOICE/main.png",
+      "resource": "mvp/art/UI_VOICE/main",
+      "sha256": "62b6e820ea6fae85ddcd557331075ae4c3a723b4d869f3e4b09cfb7ff19f1969",
+      "bytes": 12202,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_VIBRATION",
+      "kind": "icon",
+      "file": "UI_VIBRATION/main.png",
+      "resource": "mvp/art/UI_VIBRATION/main",
+      "sha256": "b30e7967f0606a53a2ce49a8b636f4cce848e8d2aa3a4795ce6273edb9a3dcba",
+      "bytes": 12363,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SHAKE",
+      "kind": "icon",
+      "file": "UI_SHAKE/main.png",
+      "resource": "mvp/art/UI_SHAKE/main",
+      "sha256": "5cd1928413518e27d18f097a4bea28ef262f48eca3f0fd96d3f053fdef2e8418",
+      "bytes": 12848,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_INFO",
+      "kind": "icon",
+      "file": "UI_INFO/main.png",
+      "resource": "mvp/art/UI_INFO/main",
+      "sha256": "6af47e3880db7ba5b4a23741ec59b7a30f4a298b69065ec15841cdeb21e300a9",
+      "bytes": 16526,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_AD",
+      "kind": "icon",
+      "file": "UI_AD/main.png",
+      "resource": "mvp/art/UI_AD/main",
+      "sha256": "c843e3e79e4043f0762833207fb43a36bec42113b8a55ea1d9046b6ea05e0e48",
+      "bytes": 20950,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_CALM",
+      "kind": "icon",
+      "file": "UI_CALM/main.png",
+      "resource": "mvp/art/UI_CALM/main",
+      "sha256": "f96eb7ce68d243b5a00b4fc4c4461a6f32df07d08d7e1d5f06d744fc6acecdba",
+      "bytes": 19224,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_COOLDOWN",
+      "kind": "icon",
+      "file": "UI_COOLDOWN/main.png",
+      "resource": "mvp/art/UI_COOLDOWN/main",
+      "sha256": "f81f3f02396c8d24d742e47d09515df6e2774866adcbc8b2ec9af63472bc88f6",
+      "bytes": 25382,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_HEROES",
+      "kind": "icon",
+      "file": "UI_HEROES/main.png",
+      "resource": "mvp/art/UI_HEROES/main",
+      "sha256": "55bca5e785050eda01deb8f25bf410fcad32db54980906f8c75418b73793b08b",
+      "bytes": 16896,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_TEAM",
+      "kind": "icon",
+      "file": "UI_TEAM/main.png",
+      "resource": "mvp/art/UI_TEAM/main",
+      "sha256": "1a1a2e2c7dbca866af64c9d461059fed05be5865423c78d0f7a66de957d3af63",
+      "bytes": 30451,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_HOME",
+      "kind": "icon",
+      "file": "UI_HOME/main.png",
+      "resource": "mvp/art/UI_HOME/main",
+      "sha256": "a13747267c64e94638721074eaa3148b4ecf9241835fdbba51c820aa879ac6f0",
+      "bytes": 18968,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_LIBRARY",
+      "kind": "icon",
+      "file": "UI_LIBRARY/main.png",
+      "resource": "mvp/art/UI_LIBRARY/main",
+      "sha256": "d7f1ffba0471f21e004f186086cf3a38c781165537211d2b9c9d51b8d91b9cec",
+      "bytes": 12889,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_LEVEL_UP",
+      "kind": "icon",
+      "file": "UI_LEVEL_UP/main.png",
+      "resource": "mvp/art/UI_LEVEL_UP/main",
+      "sha256": "142fcb95ffc85d5372825bdc72fe60dc505d2fc3ce3d261e9470721cfee71cf0",
+      "bytes": 5881,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_MERGE",
+      "kind": "icon",
+      "file": "UI_MERGE/main.png",
+      "resource": "mvp/art/UI_MERGE/main",
+      "sha256": "694bbb534622017b79629444b7c20eee8d3d538f5a920a3fd5fd1458ed768d0c",
+      "bytes": 11756,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_TARGET",
+      "kind": "icon",
+      "file": "UI_TARGET/main.png",
+      "resource": "mvp/art/UI_TARGET/main",
+      "sha256": "30cd1dbe77d073842af0d4d3d712c3d4da65650d35d59bfd3f21390f406df0e1",
+      "bytes": 23614,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_SHIELD",
+      "kind": "icon",
+      "file": "UI_SHIELD/main.png",
+      "resource": "mvp/art/UI_SHIELD/main",
+      "sha256": "f872f13d701646ca335cf0782b0fdc797cf60ae507e3a2b4a2a4c9b679a3486a",
+      "bytes": 15845,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C001",
+      "kind": "icon",
+      "file": "C001/main.png",
+      "resource": "mvp/art/C001/main",
+      "sha256": "1d0061e5d44b2af34bdd9ded1ac9b26d32e9cc46232c8cd84123bb2260a332bc",
+      "bytes": 60943,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C002",
+      "kind": "icon",
+      "file": "C002/main.png",
+      "resource": "mvp/art/C002/main",
+      "sha256": "db3e6d84da6f088301607d7696f3baeab94567e2e49d794ec5db6d0259b9a228",
+      "bytes": 60254,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C003",
+      "kind": "icon",
+      "file": "C003/main.png",
+      "resource": "mvp/art/C003/main",
+      "sha256": "a273e058356f1db624a05ef77d250add68629aa0768f432aaf475bc90d0d766c",
+      "bytes": 68511,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C004",
+      "kind": "icon",
+      "file": "C004/main.png",
+      "resource": "mvp/art/C004/main",
+      "sha256": "72e256e683ef2c4a8c703ca39484d90b1988c5c0945a5a899c7b7d6a49e6baf3",
+      "bytes": 65636,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C005",
+      "kind": "icon",
+      "file": "C005/main.png",
+      "resource": "mvp/art/C005/main",
+      "sha256": "a5e8b7c58f2d77a12726dced45fc8436250d6b8af02622240fcdf24e6e2f82f3",
+      "bytes": 67424,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C006",
+      "kind": "icon",
+      "file": "C006/main.png",
+      "resource": "mvp/art/C006/main",
+      "sha256": "d9bdfa7bb39af7d6739774baf562bc5813aa3c18ff37197ea0f300485691ddd9",
+      "bytes": 63575,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C007",
+      "kind": "icon",
+      "file": "C007/main.png",
+      "resource": "mvp/art/C007/main",
+      "sha256": "5bc37cca80aa208e10b5de0cc6a95c4f05404fc4e13f60251a6379ccfcdf5338",
+      "bytes": 55124,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C008",
+      "kind": "icon",
+      "file": "C008/main.png",
+      "resource": "mvp/art/C008/main",
+      "sha256": "691ad9cad634f60050a7aea81f865834e3f18d364f1a75a035e08125b8b37cd0",
+      "bytes": 55551,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C009",
+      "kind": "icon",
+      "file": "C009/main.png",
+      "resource": "mvp/art/C009/main",
+      "sha256": "74b4f099e348809133f90bfbeb38a5f6af2d150a1d1d1f3f1788cac09a050d08",
+      "bytes": 42162,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C010",
+      "kind": "icon",
+      "file": "C010/main.png",
+      "resource": "mvp/art/C010/main",
+      "sha256": "4c97d522c5287c254a6186e6d34368d400c4cd34281e4bcb11666407fca58005",
+      "bytes": 32947,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C011",
+      "kind": "icon",
+      "file": "C011/main.png",
+      "resource": "mvp/art/C011/main",
+      "sha256": "77e6254f7558fd4797ebd26a9b892ffd658ccdb983e42297d1928b10aaec3538",
+      "bytes": 40156,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C012",
+      "kind": "icon",
+      "file": "C012/main.png",
+      "resource": "mvp/art/C012/main",
+      "sha256": "7da2dc6d4c3e85782c6d0484b724d0afae7fc7b1645f6775366ad85ceb746198",
+      "bytes": 48623,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_POPCORN",
+      "kind": "vfx",
+      "file": "VFX_POPCORN/main.png",
+      "resource": "mvp/art/VFX_POPCORN/main",
+      "sha256": "fdadd4142e90d04ba0d505fce7de7867c9217435a8dbd294a4045bb1956fa9ba",
+      "bytes": 23150,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_CORN",
+      "kind": "vfx",
+      "file": "VFX_CORN/main.png",
+      "resource": "mvp/art/VFX_CORN/main",
+      "sha256": "9a8a02a58a05f74199a126583c74ce12b4b7844ccab961ac925574e259d928e3",
+      "bytes": 13818,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_FIST",
+      "kind": "vfx",
+      "file": "VFX_FIST/main.png",
+      "resource": "mvp/art/VFX_FIST/main",
+      "sha256": "13344b1fbaf3738d368d719d00ff6acd396d6ea9ae55c9e51c757058c16584ba",
+      "bytes": 15227,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SPRING",
+      "kind": "vfx",
+      "file": "VFX_SPRING/main.png",
+      "resource": "mvp/art/VFX_SPRING/main",
+      "sha256": "e5761b9d3478283b9c2a30426b4e5d0433a283f0faf57336f1c681714eeb98be",
+      "bytes": 20138,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SOUND_WAVE",
+      "kind": "vfx",
+      "file": "VFX_SOUND_WAVE/main.png",
+      "resource": "mvp/art/VFX_SOUND_WAVE/main",
+      "sha256": "61b52dcd2fccc8129e461f16387563fbe5f00b191a2da01f8992f58b2296bba4",
+      "bytes": 25023,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SHOE",
+      "kind": "vfx",
+      "file": "VFX_SHOE/main.png",
+      "resource": "mvp/art/VFX_SHOE/main",
+      "sha256": "89a1d4a4ff723f6700ac674810625e5db382af7bbba197075138c05bf0319c92",
+      "bytes": 20023,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SPARK",
+      "kind": "vfx",
+      "file": "VFX_SPARK/main.png",
+      "resource": "mvp/art/VFX_SPARK/main",
+      "sha256": "a5292607d5ce4c0e1787188c2037f1b2d1536e2b10b3058349f98f00fe7af1e2",
+      "bytes": 12765,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_RING",
+      "kind": "vfx",
+      "file": "VFX_RING/main.png",
+      "resource": "mvp/art/VFX_RING/main",
+      "sha256": "7c442e37910fbd81cf847ced8edb275cffa9c6028f543f78b78badb82c81da67",
+      "bytes": 23090,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SMOKE",
+      "kind": "vfx",
+      "file": "VFX_SMOKE/main.png",
+      "resource": "mvp/art/VFX_SMOKE/main",
+      "sha256": "d680b113445a7eba5b27c9d44e581716267df03f50e5c60a5e7ecae948d494e3",
+      "bytes": 11667,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_IMPACT",
+      "kind": "vfx",
+      "file": "VFX_IMPACT/main.png",
+      "resource": "mvp/art/VFX_IMPACT/main",
+      "sha256": "130d8b646082c9f0dc953041d0b40918e1a0b4a69acff8776bd6997a1e32029b",
+      "bytes": 36901,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SHIELD",
+      "kind": "vfx",
+      "file": "VFX_SHIELD/main.png",
+      "resource": "mvp/art/VFX_SHIELD/main",
+      "sha256": "635de7d68b632a0de1cd8b17e6a83ac7d9e6dd7e5f5dac467cd6025cddb0c56c",
+      "bytes": 16972,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_CANE_WAVE",
+      "kind": "vfx",
+      "file": "VFX_CANE_WAVE/main.png",
+      "resource": "mvp/art/VFX_CANE_WAVE/main",
+      "sha256": "c6ce1451d16b21c33d8edfe375e9a78483b4805e99043badfc9bf07cfa3bc84c",
+      "bytes": 22057,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SHOE_TRAIL",
+      "kind": "vfx",
+      "file": "VFX_SHOE_TRAIL/main.png",
+      "resource": "mvp/art/VFX_SHOE_TRAIL/main",
+      "sha256": "c91a17b959a386e4277b364427c6fe885156d7e4e7934080d4a4a42ca534d5ee",
+      "bytes": 9832,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_STAR",
+      "kind": "vfx",
+      "file": "VFX_STAR/main.png",
+      "resource": "mvp/art/VFX_STAR/main",
+      "sha256": "6c0570e129425c839ba3d5a580fcdca2c5dc4dca99aad77a0dbc9ff765156d8e",
+      "bytes": 12710,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_MUTE",
+      "kind": "vfx",
+      "file": "VFX_MUTE/main.png",
+      "resource": "mvp/art/VFX_MUTE/main",
+      "sha256": "f01d4cedd8d70edc6b6c76f91fb94c2e93692bb9d22b2effb1e4396257cd55cb",
+      "bytes": 12279,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_AURA",
+      "kind": "vfx",
+      "file": "VFX_AURA/main.png",
+      "resource": "mvp/art/VFX_AURA/main",
+      "sha256": "e960e3207bd49df82a1b2a8440e02386005a909c82d64cc8f20afb0a4ff312a9",
+      "bytes": 23553,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_MARK",
+      "kind": "vfx",
+      "file": "VFX_MARK/main.png",
+      "resource": "mvp/art/VFX_MARK/main",
+      "sha256": "6bfea190fed56bee2ff3e0aa14ba6a56b7759ceb443b3c204e8b14c80175d71a",
+      "bytes": 18471,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_SHARD",
+      "kind": "vfx",
+      "file": "VFX_SHARD/main.png",
+      "resource": "mvp/art/VFX_SHARD/main",
+      "sha256": "7e77b3098a1804a86fb8034287d78125c27ee54577ee837622bf474ac86f3bb7",
+      "bytes": 11046,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "VFX_ARROW",
+      "kind": "vfx",
+      "file": "VFX_ARROW/main.png",
+      "resource": "mvp/art/VFX_ARROW/main",
+      "sha256": "8dc2ed4f79a6b129b2dd47925c5a818107d674073c16ad2c29a7429d677d0191",
+      "bytes": 5564,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "C013",
+      "kind": "icon",
+      "file": "C013/main.png",
+      "resource": "mvp/art/C013/main",
+      "sha256": "cc42aea769ff0040091ac8e0569a47aa92f6157b2e4adcab5db31681843f4509",
+      "bytes": 126734,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "C014",
+      "kind": "icon",
+      "file": "C014/main.png",
+      "resource": "mvp/art/C014/main",
+      "sha256": "f1e8cf47cae7a5e4d9c5ff125a1377eee0d00266bf34b5b26c2e3c5067959597",
+      "bytes": 114955,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "C015",
+      "kind": "icon",
+      "file": "C015/main.png",
+      "resource": "mvp/art/C015/main",
+      "sha256": "94b97c68c0b211f9714bf15ff40fc44ad5392567c0b9197a5859e49fb6319953",
+      "bytes": 104031,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "id": "ENV_BASE",
+      "kind": "prop",
+      "file": "ENV_BASE/main.png",
+      "resource": "mvp/art/ENV_BASE/main",
+      "sha256": "c9e83ab77ad56fd3e6e2390ee465d8572326ddc8ad71b50ee7b605993a5043f9",
+      "bytes": 274012,
+      "width": 1024,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "ENV_BASE_DAMAGED",
+      "kind": "prop",
+      "file": "ENV_BASE_DAMAGED/main.png",
+      "resource": "mvp/art/ENV_BASE_DAMAGED/main",
+      "sha256": "c543f33f7cdc9c5866e98edf14b72554210b1927ef73b9302923aad131776386",
+      "bytes": 274417,
+      "width": 1024,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "ENV_SPAWN",
+      "kind": "prop",
+      "file": "ENV_SPAWN/main.png",
+      "resource": "mvp/art/ENV_SPAWN/main",
+      "sha256": "75afd55e43d5dadfb9da09b77154f32143a3dbc0abc20292696ae17ab69ee7ce",
+      "bytes": 78146,
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "UI_CARD_CHEF",
+      "kind": "ui",
+      "file": "UI_CARD_CHEF/main.png",
+      "resource": "mvp/art/UI_CARD_CHEF/main",
+      "sha256": "cc8c4e6274ffa50b4f76410e1cb8d7afce14a0fba1ec5d5c50a6c8be3941ce03",
+      "bytes": 25343,
+      "width": 360,
+      "height": 440,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_CARD_BOXER",
+      "kind": "ui",
+      "file": "UI_CARD_BOXER/main.png",
+      "resource": "mvp/art/UI_CARD_BOXER/main",
+      "sha256": "4856bcbe95fa37ffd92f397d841366ea380fadd0a8409629bc362223136cb2c5",
+      "bytes": 26254,
+      "width": 360,
+      "height": 440,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_CARD_FROG",
+      "kind": "ui",
+      "file": "UI_CARD_FROG/main.png",
+      "resource": "mvp/art/UI_CARD_FROG/main",
+      "sha256": "43c363eb9bea17fcc1de9cb005150b34e56886e1562919174b37e159478b2e1f",
+      "bytes": 27824,
+      "width": 360,
+      "height": 440,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_CARD_AUNT",
+      "kind": "ui",
+      "file": "UI_CARD_AUNT/main.png",
+      "resource": "mvp/art/UI_CARD_AUNT/main",
+      "sha256": "47f6ab2c87871ed26b9d45c3e2be8de2784223c0f2a0efe0194d159cee612151",
+      "bytes": 24759,
+      "width": 360,
+      "height": 440,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_PLATFORM_GREEN",
+      "kind": "ui",
+      "file": "UI_PLATFORM_GREEN/main.png",
+      "resource": "mvp/art/UI_PLATFORM_GREEN/main",
+      "sha256": "ffe2856509dbef28fecc0ee887ba21d8213af939d9505b5adcd1c56bf3197fd7",
+      "bytes": 22677,
+      "width": 384,
+      "height": 176,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_SLOT_FIELD",
+      "kind": "ui",
+      "file": "UI_SLOT_FIELD/main.png",
+      "resource": "mvp/art/UI_SLOT_FIELD/main",
+      "sha256": "e7f9f41d6710de05186503b877dd9a32be357b3b2bbe28159650e1538d155b28",
+      "bytes": 21022,
+      "width": 384,
+      "height": 176,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "UI_NAV_BAR",
+      "kind": "ui",
+      "file": "UI_NAV_BAR/main.png",
+      "resource": "mvp/art/UI_NAV_BAR/main",
+      "sha256": "9ebeef3286cc8a5ce8382fb5ba41642876e270dba128901d0b94401224aaa9bf",
+      "bytes": 9056,
+      "width": 512,
+      "height": 144,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "border": [
+        43,
+        43,
+        43,
+        43
+      ]
+    },
+    {
+      "id": "UI_TITLE_WOOD",
+      "kind": "ui",
+      "file": "UI_TITLE_WOOD/main.png",
+      "resource": "mvp/art/UI_TITLE_WOOD/main",
+      "sha256": "d7958948cf36bd25ee56c310cff301f5eb7ddcdb483843212474c9914e8b2b1f",
+      "bytes": 316975,
+      "width": 1024,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "textSafeRect": [
+        172,
+        187,
+        674,
+        79
+      ],
+      "rendering": "aspect-preserving-image"
+    },
+    {
+      "id": "UI_CAMP_STUMP",
+      "kind": "ui",
+      "file": "UI_CAMP_STUMP/main.png",
+      "resource": "mvp/art/UI_CAMP_STUMP/main",
+      "sha256": "33532f3ab17018009fc8eb43124853a55dbe45cd4e0ca9215e44fcd066740905",
+      "bytes": 120651,
+      "width": 512,
+      "height": 288,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "hero_ground_position_normalized_top_left": [
+        0.5,
+        0.33
+      ],
+      "rendering": "aspect-preserving-image"
+    },
+    {
+      "id": "BG_GROWTH",
+      "kind": "background",
+      "file": "BG_GROWTH/main.jpg",
+      "resource": "mvp/art/BG_GROWTH/main",
+      "sha256": "3762b87ff82aebd2f3b44fc615a654adf06dc9d07813f36e77cbe87fa60e1430",
+      "bytes": 133670,
+      "width": 720,
+      "height": 1280,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "rendering": "aspect-preserving-cover"
+    },
+    {
+      "id": "V4_TITLE_CAMP",
+      "kind": "ui",
+      "file": "V4_TITLE_CAMP/main.png",
+      "resource": "mvp/art/V4_TITLE_CAMP/main",
+      "sha256": "2bcb3b5a48363c03546f770a1850683c5688420f06c9c8c4014f4e3a98c8ffe7",
+      "bytes": 241470,
+      "width": 500,
+      "height": 273,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        222,
+        0,
+        500,
+        273
+      ],
+      "semanticLabel": "英雄营地"
+    },
+    {
+      "id": "V4_TITLE_COLLECTION",
+      "kind": "ui",
+      "file": "V4_TITLE_COLLECTION/main.png",
+      "resource": "mvp/art/V4_TITLE_COLLECTION/main",
+      "sha256": "f7a460b44b2ffccff2b1da6918632308e0203ff0bf279efb7a187b0c62777d61",
+      "bytes": 279549,
+      "width": 563,
+      "height": 283,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        36,
+        18,
+        563,
+        283
+      ],
+      "semanticLabel": "我的英雄"
+    },
+    {
+      "id": "V4_TITLE_GROWTH",
+      "kind": "ui",
+      "file": "V4_TITLE_GROWTH/main.png",
+      "resource": "mvp/art/V4_TITLE_GROWTH/main",
+      "sha256": "ed83d258ed7259223a2ad2a0ad144b2d5ea7195ed7b612dad7575e2c5b67fd8e",
+      "bytes": 94589,
+      "width": 414,
+      "height": 133,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        257,
+        0,
+        414,
+        133
+      ],
+      "semanticLabel": "英雄养成"
+    },
+    {
+      "id": "V4_TITLE_ROSTER",
+      "kind": "ui",
+      "file": "V4_TITLE_ROSTER/main.png",
+      "resource": "mvp/art/V4_TITLE_ROSTER/main",
+      "sha256": "7f22da69c3737aa366e3034a78d635bcbda9eaf5a986da50835c82fad1e3484e",
+      "bytes": 215829,
+      "width": 516,
+      "height": 243,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        213,
+        29,
+        516,
+        243
+      ],
+      "semanticLabel": "出战编队"
+    },
+    {
+      "id": "V4_CTA_START",
+      "kind": "ui",
+      "file": "V4_CTA_START/main.png",
+      "resource": "mvp/art/V4_CTA_START/main",
+      "sha256": "f23a0fdb853518fd1dbfee224ba92506f3d1aacb6bb7bf5ec8f5ad9c3bb1c428",
+      "bytes": 93701,
+      "width": 474,
+      "height": 163,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        233,
+        1346,
+        474,
+        163
+      ],
+      "semanticLabel": "开始防守"
+    },
+    {
+      "id": "V4_CTA_ACCENTS",
+      "kind": "ui",
+      "file": "V4_CTA_ACCENTS/main.png",
+      "resource": "mvp/art/V4_CTA_ACCENTS/main",
+      "sha256": "5ccec0fa026b8d6e929ea81e282acf05e73a6c799dac9e4a31b06b9fd0ca5f02",
+      "bytes": 80791,
+      "width": 589,
+      "height": 99,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        177,
+        1352,
+        589,
+        99
+      ]
+    },
+    {
+      "id": "V4_CTA_SAVE",
+      "kind": "ui",
+      "file": "V4_CTA_SAVE/main.png",
+      "resource": "mvp/art/V4_CTA_SAVE/main",
+      "sha256": "b37e4111306420f7cd786f3e2e51905032d3b36d2249336c2537c85c39197ae0",
+      "bytes": 89361,
+      "width": 522,
+      "height": 148,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        211,
+        1291,
+        522,
+        148
+      ],
+      "semanticLabel": "保存阵容"
+    },
+    {
+      "id": "V4_RETURN_CAMP",
+      "kind": "ui",
+      "file": "V4_RETURN_CAMP/main.png",
+      "resource": "mvp/art/V4_RETURN_CAMP/main",
+      "sha256": "859df9ffb3d4e7ad492d5156d48291c7b6fc08dec378bb5a8aa390148df0b255",
+      "bytes": 58183,
+      "width": 461,
+      "height": 117,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        241,
+        1442,
+        461,
+        117
+      ],
+      "semanticLabel": "返回营地"
+    },
+    {
+      "id": "V4_ADJUST_ROSTER",
+      "kind": "ui",
+      "file": "V4_ADJUST_ROSTER/main.png",
+      "resource": "mvp/art/V4_ADJUST_ROSTER/main",
+      "sha256": "7c29d74541256c86bde9adf0d7731adba12988b79333fdadeecfc1cf140bf76e",
+      "bytes": 21169,
+      "width": 185,
+      "height": 65,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        701,
+        918,
+        185,
+        65
+      ],
+      "semanticLabel": "调整阵容"
+    },
+    {
+      "id": "V4_GO_GROWTH",
+      "kind": "ui",
+      "file": "V4_GO_GROWTH/main.png",
+      "resource": "mvp/art/V4_GO_GROWTH/main",
+      "sha256": "1723f38c82d476ef7a17476c4ad15203deff2fbe41da80d3516b1df3cbeb1cba",
+      "bytes": 26919,
+      "width": 219,
+      "height": 81,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        664,
+        1236,
+        219,
+        81
+      ],
+      "semanticLabel": "去养成"
+    },
+    {
+      "id": "V4_BACK",
+      "kind": "ui",
+      "file": "V4_BACK/main.png",
+      "resource": "mvp/art/V4_BACK/main",
+      "sha256": "9b29a87293fc73a252b6a212fd403dd5c53414ef97c224439c42e2bd29be4522",
+      "bytes": 24411,
+      "width": 127,
+      "height": 115,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        22,
+        15,
+        127,
+        115
+      ],
+      "semanticLabel": "返回"
+    },
+    {
+      "id": "V4_SETTINGS",
+      "kind": "ui",
+      "file": "V4_SETTINGS/main.png",
+      "resource": "mvp/art/V4_SETTINGS/main",
+      "sha256": "7058f36bee98cd9a535e16e15a86532e20022940e16594656029bedf4e188cae",
+      "bytes": 16255,
+      "width": 88,
+      "height": 87,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        836,
+        18,
+        88,
+        87
+      ],
+      "semanticLabel": "设置"
+    },
+    {
+      "id": "V4_NAV_CAMP_ACTIVE",
+      "kind": "ui",
+      "file": "V4_NAV_CAMP_ACTIVE/main.png",
+      "resource": "mvp/art/V4_NAV_CAMP_ACTIVE/main",
+      "sha256": "e643c87a4f76be76a2a332502d7fd86b8b9fd860584e2f0eb24a87fa30bef91a",
+      "bytes": 52360,
+      "width": 288,
+      "height": 124,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        22,
+        1531,
+        288,
+        124
+      ],
+      "semanticLabel": "营地"
+    },
+    {
+      "id": "V4_NAV_HERO_IDLE",
+      "kind": "ui",
+      "file": "V4_NAV_HERO_IDLE/main.png",
+      "resource": "mvp/art/V4_NAV_HERO_IDLE/main",
+      "sha256": "da054740d8bc66ec904e2fdbea78d6145fefc0b1cd6d450f99f73b81c9a5fa1f",
+      "bytes": 47197,
+      "width": 303,
+      "height": 115,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        319,
+        1537,
+        303,
+        115
+      ],
+      "semanticLabel": "英雄"
+    },
+    {
+      "id": "V4_NAV_ROSTER_IDLE",
+      "kind": "ui",
+      "file": "V4_NAV_ROSTER_IDLE/main.png",
+      "resource": "mvp/art/V4_NAV_ROSTER_IDLE/main",
+      "sha256": "70cd924161f674d6a80127151ed911d4d2bff1252d3e4dca63cc82ed07b66e56",
+      "bytes": 48469,
+      "width": 313,
+      "height": 115,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        627,
+        1537,
+        313,
+        115
+      ],
+      "semanticLabel": "出战"
+    },
+    {
+      "id": "V4_NAV_CAMP_IDLE",
+      "kind": "ui",
+      "file": "V4_NAV_CAMP_IDLE/main.png",
+      "resource": "mvp/art/V4_NAV_CAMP_IDLE/main",
+      "sha256": "06bddb767a8d50ad838b75ef3401395d93bfb560fd2f12c01b1ffa849ecb40d5",
+      "bytes": 55699,
+      "width": 287,
+      "height": 127,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        1511,
+        287,
+        127
+      ],
+      "semanticLabel": "营地"
+    },
+    {
+      "id": "V4_NAV_HERO_ACTIVE",
+      "kind": "ui",
+      "file": "V4_NAV_HERO_ACTIVE/main.png",
+      "resource": "mvp/art/V4_NAV_HERO_ACTIVE/main",
+      "sha256": "e7a679aa7086f284b8b16c92da6dda10f94ca0ab13e37fb7aa1e729add115acc",
+      "bytes": 69072,
+      "width": 315,
+      "height": 148,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        315,
+        1497,
+        315,
+        148
+      ],
+      "semanticLabel": "英雄"
+    },
+    {
+      "id": "V4_NAV_ROSTER_WOOD_IDLE",
+      "kind": "ui",
+      "file": "V4_NAV_ROSTER_WOOD_IDLE/main.png",
+      "resource": "mvp/art/V4_NAV_ROSTER_WOOD_IDLE/main",
+      "sha256": "8de3ec55983902eff1ad2bf31c96595000d63f80f3f909087c6c026bbe8d831f",
+      "bytes": 57117,
+      "width": 296,
+      "height": 124,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        634,
+        1514,
+        296,
+        124
+      ],
+      "semanticLabel": "出战"
+    },
+    {
+      "id": "V4_NAV_BASE_CAMP",
+      "kind": "ui",
+      "file": "V4_NAV_BASE_CAMP/main.png",
+      "resource": "mvp/art/V4_NAV_BASE_CAMP/main",
+      "sha256": "20e16df6dd1f443bc8a1466adb6e7c519ead4af78250d19e1f62707e83321d39",
+      "bytes": 172647,
+      "width": 941,
+      "height": 146,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        1526,
+        941,
+        146
+      ]
+    },
+    {
+      "id": "V4_NAV_BASE_WOOD",
+      "kind": "ui",
+      "file": "V4_NAV_BASE_WOOD/main.png",
+      "resource": "mvp/art/V4_NAV_BASE_WOOD/main",
+      "sha256": "894e6802804f8de2eed4273ae6deed078fd4a89917a82bab8794d91bfb13df90",
+      "bytes": 260376,
+      "width": 941,
+      "height": 189,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        1483,
+        941,
+        189
+      ]
+    },
+    {
+      "id": "V4_CAMP_CHALLENGE",
+      "kind": "ui",
+      "file": "V4_CAMP_CHALLENGE/main.png",
+      "resource": "mvp/art/V4_CAMP_CHALLENGE/main",
+      "sha256": "641b66cc7daf47dbba19f4d08de00c610cc12b3827203e6784c730e9ce5536f6",
+      "bytes": 237400,
+      "width": 893,
+      "height": 235,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        25,
+        662,
+        893,
+        235
+      ],
+      "semanticLabel": "20波防守挑战"
+    },
+    {
+      "id": "V4_LABEL_ROSTER",
+      "kind": "ui",
+      "file": "V4_LABEL_ROSTER/main.png",
+      "resource": "mvp/art/V4_LABEL_ROSTER/main",
+      "sha256": "1cfa59b09778a55be867026e7a2d41110f13436e56172d2b516d93a3b04bfbd7",
+      "bytes": 17313,
+      "width": 176,
+      "height": 52,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        66,
+        924,
+        176,
+        52
+      ],
+      "semanticLabel": "当前出战"
+    },
+    {
+      "id": "V4_CAMP_ROSTER_PANEL",
+      "kind": "ui",
+      "file": "V4_CAMP_ROSTER_PANEL/main.png",
+      "resource": "mvp/art/V4_CAMP_ROSTER_PANEL/main",
+      "sha256": "d2a3af52f8ed438ce90b827357501eef3f2cdef6e2ef8bdb52469316e7c210e3",
+      "bytes": 56602,
+      "width": 893,
+      "height": 311,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        25,
+        903,
+        893,
+        311
+      ]
+    },
+    {
+      "id": "V4_CAMP_GROWTH_PANEL",
+      "kind": "ui",
+      "file": "V4_CAMP_GROWTH_PANEL/main.png",
+      "resource": "mvp/art/V4_CAMP_GROWTH_PANEL/main",
+      "sha256": "b3806a7aed60c589f04c91d79278770ec7a36a2fe5b454884985aa5894355205",
+      "bytes": 70261,
+      "width": 893,
+      "height": 122,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        25,
+        1217,
+        893,
+        122
+      ]
+    },
+    {
+      "id": "V4_CAMP_CARD_H001",
+      "kind": "ui",
+      "file": "V4_CAMP_CARD_H001/main.png",
+      "resource": "mvp/art/V4_CAMP_CARD_H001/main",
+      "sha256": "a9cae49f97f38e985b10382bd48b362de1ee7cdd6d3e8497e48b753f42c45a50",
+      "bytes": 65160,
+      "width": 205,
+      "height": 211,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        55,
+        986,
+        205,
+        211
+      ]
+    },
+    {
+      "id": "V4_CAMP_CARD_H002",
+      "kind": "ui",
+      "file": "V4_CAMP_CARD_H002/main.png",
+      "resource": "mvp/art/V4_CAMP_CARD_H002/main",
+      "sha256": "5156340d46a294bd1964d861dd05dbb94956f981bee1f147904662624a38cab8",
+      "bytes": 64991,
+      "width": 202,
+      "height": 211,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        267,
+        986,
+        202,
+        211
+      ]
+    },
+    {
+      "id": "V4_CAMP_CARD_H003",
+      "kind": "ui",
+      "file": "V4_CAMP_CARD_H003/main.png",
+      "resource": "mvp/art/V4_CAMP_CARD_H003/main",
+      "sha256": "6bf1f4307a560deb0eff9a25e676c49625d148b4c7cef3a361a68c31789c9c41",
+      "bytes": 66069,
+      "width": 204,
+      "height": 211,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        476,
+        986,
+        204,
+        211
+      ]
+    },
+    {
+      "id": "V4_CAMP_CARD_H004",
+      "kind": "ui",
+      "file": "V4_CAMP_CARD_H004/main.png",
+      "resource": "mvp/art/V4_CAMP_CARD_H004/main",
+      "sha256": "faac182821e415e437c7884ce5a2ceeba252c0d9e743cfe73a42d7c8785fe5f7",
+      "bytes": 66055,
+      "width": 203,
+      "height": 211,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        687,
+        986,
+        203,
+        211
+      ]
+    },
+    {
+      "id": "V4_XP_PLATE",
+      "kind": "ui",
+      "file": "V4_XP_PLATE/main.png",
+      "resource": "mvp/art/V4_XP_PLATE/main",
+      "sha256": "ff73ea9d3213421a2c784ad22203976f0ad034ec882094a5383fa14efdfc63bd",
+      "bytes": 16185,
+      "width": 198,
+      "height": 68,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        729,
+        120,
+        198,
+        68
+      ]
+    },
+    {
+      "id": "V4_LABEL_XP",
+      "kind": "ui",
+      "file": "V4_LABEL_XP/main.png",
+      "resource": "mvp/art/V4_LABEL_XP/main",
+      "sha256": "01e4a098f523ed6c3de56977e59d3cb60cbb198d5e93184d88f1b142a52bb429",
+      "bytes": 5862,
+      "width": 79,
+      "height": 27,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        790,
+        140,
+        79,
+        27
+      ],
+      "semanticLabel": "训练经验"
+    },
+    {
+      "id": "V4_COLLECTION_PANEL",
+      "kind": "ui",
+      "file": "V4_COLLECTION_PANEL/main.png",
+      "resource": "mvp/art/V4_COLLECTION_PANEL/main",
+      "sha256": "1727b88c4e9497c1482df8927ea2ec61fed4997159bf6b400e439ad0e039cd8f",
+      "bytes": 105615,
+      "width": 892,
+      "height": 1125,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        25,
+        302,
+        892,
+        1125
+      ]
+    },
+    {
+      "id": "V4_CARD_H001",
+      "kind": "ui",
+      "file": "V4_CARD_H001/main.png",
+      "resource": "mvp/art/V4_CARD_H001/main",
+      "sha256": "3563f540854e23f9f77d57f863f893839adda742b40692077f1486c25ede4f70",
+      "bytes": 300736,
+      "width": 423,
+      "height": 482,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        45,
+        319,
+        423,
+        482
+      ]
+    },
+    {
+      "id": "V4_CARD_H002",
+      "kind": "ui",
+      "file": "V4_CARD_H002/main.png",
+      "resource": "mvp/art/V4_CARD_H002/main",
+      "sha256": "78b6fa79d737fe8b98ddb3bc96ce83907b93223b13639200bbdb77816ec01ba7",
+      "bytes": 298144,
+      "width": 411,
+      "height": 482,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        478,
+        319,
+        411,
+        482
+      ]
+    },
+    {
+      "id": "V4_CARD_H003",
+      "kind": "ui",
+      "file": "V4_CARD_H003/main.png",
+      "resource": "mvp/art/V4_CARD_H003/main",
+      "sha256": "cfa25c699399cf105fb1677791930d1ea750fb4172586f1dbf8311857f4d17d2",
+      "bytes": 309288,
+      "width": 423,
+      "height": 536,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        45,
+        812,
+        423,
+        536
+      ]
+    },
+    {
+      "id": "V4_CARD_H004_LOCKED",
+      "kind": "ui",
+      "file": "V4_CARD_H004_LOCKED/main.png",
+      "resource": "mvp/art/V4_CARD_H004_LOCKED/main",
+      "sha256": "6e78f1b9abb4e465e849c1edcc22a3702288b1a4df4b72f302ce8ab3ce8f5e3e",
+      "bytes": 266901,
+      "width": 411,
+      "height": 536,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        478,
+        812,
+        411,
+        536
+      ]
+    },
+    {
+      "id": "V4_CARD_H004_OWNED",
+      "kind": "ui",
+      "file": "V4_CARD_H004_OWNED/main.png",
+      "resource": "mvp/art/V4_CARD_H004_OWNED/main",
+      "sha256": "58fe27b9192670f45101681b8e660b5f199f7970fb4127cc9babedcb3268147c",
+      "bytes": 244497,
+      "width": 411,
+      "height": 536,
+      "rendering": "simple"
+    },
+    {
+      "id": "V4_COLLECTION_COUNTER",
+      "kind": "ui",
+      "file": "V4_COLLECTION_COUNTER/main.png",
+      "resource": "mvp/art/V4_COLLECTION_COUNTER/main",
+      "sha256": "fc349054138cbbfdf1b735371dbde5d1345ea74a37212d40d606bf34576e52f4",
+      "bytes": 19607,
+      "width": 260,
+      "height": 104,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        599,
+        186,
+        260,
+        104
+      ]
+    },
+    {
+      "id": "V4_LABEL_UNLOCKED",
+      "kind": "ui",
+      "file": "V4_LABEL_UNLOCKED/main.png",
+      "resource": "mvp/art/V4_LABEL_UNLOCKED/main",
+      "sha256": "0b1a76195a011d20084e56698e04a37216d5a13ff5fbef8fd62c49686a6bd093",
+      "bytes": 13679,
+      "width": 130,
+      "height": 48,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        625,
+        212,
+        130,
+        48
+      ],
+      "semanticLabel": "已解锁"
+    },
+    {
+      "id": "V4_LABEL_CARD_HELP",
+      "kind": "ui",
+      "file": "V4_LABEL_CARD_HELP/main.png",
+      "resource": "mvp/art/V4_LABEL_CARD_HELP/main",
+      "sha256": "d70f7e7f1bdaf7c475ec9913743d743802b23f72306969a371bfbb7f86a3786c",
+      "bytes": 21744,
+      "width": 251,
+      "height": 42,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        346,
+        1360,
+        251,
+        42
+      ],
+      "semanticLabel": "点选英雄查看详情"
+    },
+    {
+      "id": "V4_PROGRESS_TRACK",
+      "kind": "ui",
+      "file": "V4_PROGRESS_TRACK/main.png",
+      "resource": "mvp/art/V4_PROGRESS_TRACK/main",
+      "sha256": "988089c0b22d5bb8f58f387c391dd1a2372857727c59911f4b6ccaeff9948ebc",
+      "bytes": 4986,
+      "width": 295,
+      "height": 49,
+      "border": [
+        25,
+        23,
+        25,
+        23
+      ],
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        505,
+        1281,
+        295,
+        49
+      ]
+    },
+    {
+      "id": "V4_PROGRESS_FILL",
+      "kind": "ui",
+      "file": "V4_PROGRESS_FILL/main.png",
+      "resource": "mvp/art/V4_PROGRESS_FILL/main",
+      "sha256": "209dac08e3fb859bbc21b5864b100018e43cd615dcf03ddcd838a9d40d376684",
+      "bytes": 7565,
+      "width": 188,
+      "height": 35,
+      "border": [
+        19,
+        16,
+        19,
+        16
+      ],
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        514,
+        1288,
+        188,
+        35
+      ]
+    },
+    {
+      "id": "V4_BG_CAMP",
+      "kind": "background",
+      "file": "V4_BG_CAMP/main.png",
+      "resource": "mvp/art/V4_BG_CAMP/main",
+      "sha256": "7d65e418d15f51e9515d92e3aa47a96576e489a6bab1fa5e3e27bf42efe1e011",
+      "bytes": 2464120,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V4_BG_COLLECTION",
+      "kind": "background",
+      "file": "V4_BG_COLLECTION/main.png",
+      "resource": "mvp/art/V4_BG_COLLECTION/main",
+      "sha256": "a9ae461982ffb74b40883f1c9f99e7cbd30248d2e2d529c4b9a3dcacecb942b3",
+      "bytes": 2315983,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CYAN",
+      "kind": "ui",
+      "file": "V4_BUTTON_CYAN/main.png",
+      "resource": "mvp/art/V4_BUTTON_CYAN/main",
+      "sha256": "0d39b21f8b39e5e2a314557167de3c309559024b4913fde5c5fbb2ec08d4eb8b",
+      "bytes": 13379,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        40,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CYAN_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_CYAN_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_CYAN_PRESSED/main",
+      "sha256": "84bf42a27b3104d3e4afb9db90c6c4f3fe8a1bb1ba1c146291043b559f265b5c",
+      "bytes": 13435,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        45,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CREAM",
+      "kind": "ui",
+      "file": "V4_BUTTON_CREAM/main.png",
+      "resource": "mvp/art/V4_BUTTON_CREAM/main",
+      "sha256": "7ae0eafe3a9ecaf43ee84b9c4f88bcfbcdbb5c25f9f635c6eb85e210deb47d4f",
+      "bytes": 12802,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        40,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CREAM_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_CREAM_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_CREAM_PRESSED/main",
+      "sha256": "2a5259a0e503c5bd5bab8a3e35b151c89c215252f5f4b393aba51e6b19d3008b",
+      "bytes": 12801,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        45,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_GOLD",
+      "kind": "ui",
+      "file": "V4_BUTTON_GOLD/main.png",
+      "resource": "mvp/art/V4_BUTTON_GOLD/main",
+      "sha256": "57fa20ae38a72610111ec82f7fc048c0751252cdcb380304460ea09c440c0cc1",
+      "bytes": 13443,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        40,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_GOLD_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_GOLD_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_GOLD_PRESSED/main",
+      "sha256": "641524ded4a72d29465746868e86b49ea4b10e52ebd7b2db0c87cb14e8865787",
+      "bytes": 13528,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        45,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_PURPLE",
+      "kind": "ui",
+      "file": "V4_BUTTON_PURPLE/main.png",
+      "resource": "mvp/art/V4_BUTTON_PURPLE/main",
+      "sha256": "d84a57a780e62486db2ff3f0e383b38ca7367c70411481a599990a08216184b9",
+      "bytes": 14141,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        40,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_PURPLE_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_PURPLE_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_PURPLE_PRESSED/main",
+      "sha256": "9f475fd19d8565c5d20bedc9fbe4172f2b9aca9ddd2242da4fe1779f6208c04f",
+      "bytes": 14254,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        45,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_DISABLED",
+      "kind": "ui",
+      "file": "V4_BUTTON_DISABLED/main.png",
+      "resource": "mvp/art/V4_BUTTON_DISABLED/main",
+      "sha256": "4715088761028707144d8dc2ccde27d74118627847505820ddd9e85973233172",
+      "bytes": 14014,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        40,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_DISABLED_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_DISABLED_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_DISABLED_PRESSED/main",
+      "sha256": "89f52b96ad19399393c9977e70866ecf17f37257b241f4265c7c9278478a72fe",
+      "bytes": 14133,
+      "width": 470,
+      "height": 160,
+      "border": [
+        76,
+        31,
+        76,
+        47
+      ],
+      "textSafeRect": [
+        70,
+        45,
+        330,
+        69
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CYAN_WIDE",
+      "kind": "ui",
+      "file": "V4_BUTTON_CYAN_WIDE/main.png",
+      "resource": "mvp/art/V4_BUTTON_CYAN_WIDE/main",
+      "sha256": "f22df6d9be505f6b21f5899fe30c52bf348b6d15b494e587f34f30241ec27256",
+      "bytes": 9813,
+      "width": 720,
+      "height": 124,
+      "border": [
+        56,
+        24,
+        56,
+        28
+      ],
+      "textSafeRect": [
+        66,
+        29,
+        588,
+        58
+      ]
+    },
+    {
+      "id": "V4_BUTTON_CYAN_WIDE_PRESSED",
+      "kind": "ui",
+      "file": "V4_BUTTON_CYAN_WIDE_PRESSED/main.png",
+      "resource": "mvp/art/V4_BUTTON_CYAN_WIDE_PRESSED/main",
+      "sha256": "c2b738e2f19f872ad9bdde2a33980d1fc93c471fc0d0041d16b38b3f44f8b4c3",
+      "bytes": 9689,
+      "width": 720,
+      "height": 124,
+      "border": [
+        56,
+        24,
+        56,
+        28
+      ],
+      "textSafeRect": [
+        66,
+        32,
+        588,
+        58
+      ]
+    },
+    {
+      "id": "V5_B_HUD",
+      "kind": "ui",
+      "file": "V5_B_HUD/main.png",
+      "resource": "mvp/art/V5_B_HUD/main",
+      "sha256": "af97811a2e5932987dcfca2f70e8190067507213ac44f7ed9df25e9686bc1b92",
+      "bytes": 50143,
+      "width": 884,
+      "height": 102,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        29,
+        0,
+        884,
+        102
+      ]
+    },
+    {
+      "id": "V5_B_ENERGY",
+      "kind": "ui",
+      "file": "V5_B_ENERGY/main.png",
+      "resource": "mvp/art/V5_B_ENERGY/main",
+      "sha256": "e30adacc9a73ff09cadcf130ebb258a8f9ce7e46e9ec95465431eedcaabd969c",
+      "bytes": 13929,
+      "width": 157,
+      "height": 60,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        44,
+        76,
+        157,
+        60
+      ]
+    },
+    {
+      "id": "V5_B_PAUSE",
+      "kind": "ui",
+      "file": "V5_B_PAUSE/main.png",
+      "resource": "mvp/art/V5_B_PAUSE/main",
+      "sha256": "94d0df70ad6526e626cc22c9bf4ad87712c0168f0dc5a0e248655d2d4003fe9f",
+      "bytes": 10669,
+      "width": 89,
+      "height": 83,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        811,
+        7,
+        89,
+        83
+      ],
+      "semanticLabel": "暂停"
+    },
+    {
+      "id": "V5_B_SPEED",
+      "kind": "ui",
+      "file": "V5_B_SPEED/main.png",
+      "resource": "mvp/art/V5_B_SPEED/main",
+      "sha256": "10a80ae9f73f704c0475d9e1ec67c5c46bf5dd7d20500084870be471a07cda09",
+      "bytes": 12777,
+      "width": 129,
+      "height": 78,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        675,
+        9,
+        129,
+        78
+      ],
+      "semanticLabel": "倍速"
+    },
+    {
+      "id": "V5_B_TRAY",
+      "kind": "ui",
+      "file": "V5_B_TRAY/main.png",
+      "resource": "mvp/art/V5_B_TRAY/main",
+      "sha256": "ad4ebb1d3008c2d63565571aed3dd33d57a103cea222adf27e1e7d44fe0f7a9f",
+      "bytes": 33918,
+      "width": 941,
+      "height": 478,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        1194,
+        941,
+        478
+      ]
+    },
+    {
+      "id": "V5_B_RESERVE",
+      "kind": "ui",
+      "file": "V5_B_RESERVE/main.png",
+      "resource": "mvp/art/V5_B_RESERVE/main",
+      "sha256": "fdace15f4c8d5f732e620f70288c61773454746d2b66010c2c38bcb38242678c",
+      "bytes": 22194,
+      "width": 337,
+      "height": 167,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        19,
+        1208,
+        337,
+        167
+      ]
+    },
+    {
+      "id": "V5_B_RESERVE_SLOT",
+      "kind": "ui",
+      "file": "V5_B_RESERVE_SLOT/main.png",
+      "resource": "mvp/art/V5_B_RESERVE_SLOT/main",
+      "sha256": "81a1e1a8ade904d1380c00b59557cbe54c137ebc09ef6ddcceb3d923049005f4",
+      "bytes": 10893,
+      "width": 98,
+      "height": 102,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        32,
+        1260,
+        98,
+        102
+      ]
+    },
+    {
+      "id": "V5_B_LABEL_SUMMON",
+      "kind": "ui",
+      "file": "V5_B_LABEL_SUMMON/main.png",
+      "resource": "mvp/art/V5_B_LABEL_SUMMON/main",
+      "sha256": "58b6fc2a06f6339d651993fa0531cf0232819297c808142e8f7ab55d380e7c8b",
+      "bytes": 9215,
+      "width": 171,
+      "height": 31,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        41,
+        1387,
+        171,
+        31
+      ],
+      "semanticLabel": "召唤英雄"
+    },
+    {
+      "id": "V5_B_LIBRARY",
+      "kind": "ui",
+      "file": "V5_B_LIBRARY/main.png",
+      "resource": "mvp/art/V5_B_LIBRARY/main",
+      "sha256": "e276baaed222fb22883ea615894247fd77871be4387198a4dedd6ff7ba202c72",
+      "bytes": 28107,
+      "width": 111,
+      "height": 166,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        811,
+        1209,
+        111,
+        166
+      ],
+      "semanticLabel": "技能库"
+    },
+    {
+      "id": "V5_B_SUMMON_H001",
+      "kind": "ui",
+      "file": "V5_B_SUMMON_H001/main.png",
+      "resource": "mvp/art/V5_B_SUMMON_H001/main",
+      "sha256": "cc19e4ef958aaaae0d86d429fd9ac3b43d4690ea07018e210d2fa1b04130d911",
+      "bytes": 83221,
+      "width": 225,
+      "height": 237,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        18,
+        1420,
+        225,
+        237
+      ]
+    },
+    {
+      "id": "V5_B_SUMMON_H002",
+      "kind": "ui",
+      "file": "V5_B_SUMMON_H002/main.png",
+      "resource": "mvp/art/V5_B_SUMMON_H002/main",
+      "sha256": "6184a5b92bfeb219ddefa970ede5edb8b0b1ba068dd5d7318029d1a74ce08c7b",
+      "bytes": 79455,
+      "width": 222,
+      "height": 237,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        248,
+        1420,
+        222,
+        237
+      ]
+    },
+    {
+      "id": "V5_B_SUMMON_H003",
+      "kind": "ui",
+      "file": "V5_B_SUMMON_H003/main.png",
+      "resource": "mvp/art/V5_B_SUMMON_H003/main",
+      "sha256": "02d01712366a466d14c7c9f00eea8a7049bd975140a0ac44d033a11ca5e48a08",
+      "bytes": 81734,
+      "width": 225,
+      "height": 237,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        477,
+        1420,
+        225,
+        237
+      ]
+    },
+    {
+      "id": "V5_B_SUMMON_H004",
+      "kind": "ui",
+      "file": "V5_B_SUMMON_H004/main.png",
+      "resource": "mvp/art/V5_B_SUMMON_H004/main",
+      "sha256": "5f444327078500cdfdf9b2bbfab79eb7b95b2acb0d47c81cdbf237e47d444ac7",
+      "bytes": 78768,
+      "width": 222,
+      "height": 237,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        705,
+        1420,
+        222,
+        237
+      ]
+    },
+    {
+      "id": "V5_B_SKILL_GOLD",
+      "kind": "ui",
+      "file": "V5_B_SKILL_GOLD/main.png",
+      "resource": "mvp/art/V5_B_SKILL_GOLD/main",
+      "sha256": "0c2ede10d70d623ec8854273a4d2e96f8bf4b1f266f9e14c404ca414c0c965bb",
+      "bytes": 14361,
+      "width": 199,
+      "height": 173,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        374,
+        1207,
+        199,
+        173
+      ]
+    },
+    {
+      "id": "V5_B_SKILL_PURPLE",
+      "kind": "ui",
+      "file": "V5_B_SKILL_PURPLE/main.png",
+      "resource": "mvp/art/V5_B_SKILL_PURPLE/main",
+      "sha256": "1e5c03f496ec041f899b62fb86c680b59ed5992f8391d2668aab51830a4554a0",
+      "bytes": 14650,
+      "width": 209,
+      "height": 173,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        585,
+        1207,
+        209,
+        173
+      ]
+    },
+    {
+      "id": "V5_B_TAG_STAR",
+      "kind": "ui",
+      "file": "V5_B_TAG_STAR/main.png",
+      "resource": "mvp/art/V5_B_TAG_STAR/main",
+      "sha256": "b66f0bd15c8085990f15f707a409729a6656dab27f1e0e8ddcfbb90b2d1b271e",
+      "bytes": 6837,
+      "width": 69,
+      "height": 44,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        387,
+        1216,
+        69,
+        44
+      ],
+      "semanticLabel": "三星"
+    },
+    {
+      "id": "V5_B_TAG_CARD",
+      "kind": "ui",
+      "file": "V5_B_TAG_CARD/main.png",
+      "resource": "mvp/art/V5_B_TAG_CARD/main",
+      "sha256": "321c9581f1260e7c206d12617a94c1a8a4808c183a9545fa9b4958f2e3a00370",
+      "bytes": 6968,
+      "width": 68,
+      "height": 44,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        596,
+        1283,
+        68,
+        44
+      ],
+      "semanticLabel": "卡牌"
+    },
+    {
+      "id": "V5_B_STAR",
+      "kind": "ui",
+      "file": "V5_B_STAR/main.png",
+      "resource": "mvp/art/V5_B_STAR/main",
+      "sha256": "c34f6cd1cd70e5599d26b6357a5f7f1202ca00708dfe1112f98912798fc0bfc9",
+      "bytes": 4923,
+      "width": 42,
+      "height": 46,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        121,
+        1109,
+        42,
+        46
+      ]
+    },
+    {
+      "id": "V5_B_PAD_EMPTY",
+      "kind": "ui",
+      "file": "V5_B_PAD_EMPTY/main.png",
+      "resource": "mvp/art/V5_B_PAD_EMPTY/main",
+      "sha256": "004b2d5411c398ae691953f865607bbcffac4cd218e93facd43d724ac0755c74",
+      "bytes": 36095,
+      "width": 164,
+      "height": 124,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        71,
+        763,
+        164,
+        124
+      ]
+    },
+    {
+      "id": "V5_B_PAD_OCCUPIED",
+      "kind": "ui",
+      "file": "V5_B_PAD_OCCUPIED/main.png",
+      "resource": "mvp/art/V5_B_PAD_OCCUPIED/main",
+      "sha256": "c9f5737dbdd27ee25958ad6674ebf0e60759df91a4d81dc55787da61ff980672",
+      "bytes": 31226,
+      "width": 164,
+      "height": 124,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        71,
+        763,
+        164,
+        124
+      ]
+    },
+    {
+      "id": "V5_B_BG",
+      "kind": "background",
+      "file": "V5_B_BG/main.png",
+      "resource": "mvp/art/V5_B_BG/main",
+      "sha256": "eb6d560f84ffb212476d65a41b7e4fa689636386937d4bc1a76d4a206cc28242",
+      "bytes": 2272282,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_R_TITLE",
+      "kind": "ui",
+      "file": "V5_R_TITLE/main.png",
+      "resource": "mvp/art/V5_R_TITLE/main",
+      "sha256": "c46ab56f28b1ead5449ba4b3068305eeca7074782fd6713e784803995cefc38c",
+      "bytes": 159714,
+      "width": 493,
+      "height": 205,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        231,
+        44,
+        493,
+        205
+      ],
+      "semanticLabel": "守住了！"
+    },
+    {
+      "id": "V5_R_DEFEAT_TITLE",
+      "kind": "ui",
+      "file": "V5_R_DEFEAT_TITLE/main.png",
+      "resource": "mvp/art/V5_R_DEFEAT_TITLE/main",
+      "sha256": "1d6acef656131340f795ef9ad2f04a5ea3958e4bde4f7de2d47997fb022168fa",
+      "bytes": 32235,
+      "width": 570,
+      "height": 234,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        203,
+        20,
+        570,
+        234
+      ],
+      "semanticLabel": "再战一局！"
+    },
+    {
+      "id": "V5_R_SCORE",
+      "kind": "ui",
+      "file": "V5_R_SCORE/main.png",
+      "resource": "mvp/art/V5_R_SCORE/main",
+      "sha256": "c37bca271ea6e95b44960ce0564f9ccfb1b07b113595e6eaf025689413dc66e9",
+      "bytes": 97650,
+      "width": 501,
+      "height": 174,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        221,
+        215,
+        501,
+        174
+      ]
+    },
+    {
+      "id": "V5_R_STATS",
+      "kind": "ui",
+      "file": "V5_R_STATS/main.png",
+      "resource": "mvp/art/V5_R_STATS/main",
+      "sha256": "94a1da57c3affc4c3e23de966616eb0dec184419018f70b298d0ee43413ea93c",
+      "bytes": 161444,
+      "width": 905,
+      "height": 168,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        18,
+        724,
+        905,
+        168
+      ]
+    },
+    {
+      "id": "V5_R_PANEL",
+      "kind": "ui",
+      "file": "V5_R_PANEL/main.png",
+      "resource": "mvp/art/V5_R_PANEL/main",
+      "sha256": "5c3fc1dc8584c2b7125949d151786026dc14aeaf201c0c13fd946f6eaef5536c",
+      "bytes": 176534,
+      "width": 894,
+      "height": 618,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        24,
+        896,
+        894,
+        618
+      ]
+    },
+    {
+      "id": "V5_R_LABEL_ROSTER",
+      "kind": "ui",
+      "file": "V5_R_LABEL_ROSTER/main.png",
+      "resource": "mvp/art/V5_R_LABEL_ROSTER/main",
+      "sha256": "4bffd0a658b687d3081c87958dbcea4c3872ec46091c76acd35f2b3f208364f1",
+      "bytes": 20054,
+      "width": 226,
+      "height": 55,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        38,
+        907,
+        226,
+        55
+      ],
+      "semanticLabel": "本局阵容"
+    },
+    {
+      "id": "V5_R_LABEL_BUILD",
+      "kind": "ui",
+      "file": "V5_R_LABEL_BUILD/main.png",
+      "resource": "mvp/art/V5_R_LABEL_BUILD/main",
+      "sha256": "bdf1add33c085ed65949a99d08eb30826e4589fd39986263ff71b24c9f8cc8ac",
+      "bytes": 19566,
+      "width": 226,
+      "height": 55,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        38,
+        1214,
+        226,
+        55
+      ],
+      "semanticLabel": "本局构筑"
+    },
+    {
+      "id": "V5_R_HERO_H001",
+      "kind": "ui",
+      "file": "V5_R_HERO_H001/main.png",
+      "resource": "mvp/art/V5_R_HERO_H001/main",
+      "sha256": "940a1a23520672a82aaa292cff7b0bf6d2e2ded2f37b7861bf8a657eae342b9c",
+      "bytes": 17625,
+      "width": 212,
+      "height": 244,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        36,
+        962,
+        212,
+        244
+      ]
+    },
+    {
+      "id": "V5_R_HERO_H002",
+      "kind": "ui",
+      "file": "V5_R_HERO_H002/main.png",
+      "resource": "mvp/art/V5_R_HERO_H002/main",
+      "sha256": "81dea70962b53f8ff58ad4548b3708d336f7d029c56753445130b4015f04b643",
+      "bytes": 17083,
+      "width": 211,
+      "height": 244,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        257,
+        962,
+        211,
+        244
+      ]
+    },
+    {
+      "id": "V5_R_HERO_H003",
+      "kind": "ui",
+      "file": "V5_R_HERO_H003/main.png",
+      "resource": "mvp/art/V5_R_HERO_H003/main",
+      "sha256": "d562f4cab80f75970e1a4256c0aab545a3e52cdb02926fce96ff1b8a3324ebbd",
+      "bytes": 17351,
+      "width": 216,
+      "height": 244,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        476,
+        962,
+        216,
+        244
+      ]
+    },
+    {
+      "id": "V5_R_HERO_H004",
+      "kind": "ui",
+      "file": "V5_R_HERO_H004/main.png",
+      "resource": "mvp/art/V5_R_HERO_H004/main",
+      "sha256": "f38b5c95030cdf0323e33cd8d7ab5fe0327a8e95d6a54eeebb81722f96171ee8",
+      "bytes": 17399,
+      "width": 207,
+      "height": 244,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        701,
+        962,
+        207,
+        244
+      ]
+    },
+    {
+      "id": "V5_R_BUILD_PURPLE",
+      "kind": "ui",
+      "file": "V5_R_BUILD_PURPLE/main.png",
+      "resource": "mvp/art/V5_R_BUILD_PURPLE/main",
+      "sha256": "45e9bb6170187fe0d9a11e9d3a094b8d3ee492120a72e748fe480024918eb88a",
+      "bytes": 7694,
+      "width": 356,
+      "height": 110,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        111,
+        1273,
+        356,
+        110
+      ]
+    },
+    {
+      "id": "V5_R_BUILD_GOLD",
+      "kind": "ui",
+      "file": "V5_R_BUILD_GOLD/main.png",
+      "resource": "mvp/art/V5_R_BUILD_GOLD/main",
+      "sha256": "db84f421dcf3d9e810c991bfd07607ef7e79269ee1cee5704dc607469dcd8a9d",
+      "bytes": 8248,
+      "width": 356,
+      "height": 110,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        475,
+        1273,
+        356,
+        110
+      ]
+    },
+    {
+      "id": "V5_R_SAVED",
+      "kind": "ui",
+      "file": "V5_R_SAVED/main.png",
+      "resource": "mvp/art/V5_R_SAVED/main",
+      "sha256": "67090e098094fb53dbae314930223d4ee2734644d3ae5bb8f84b5a05043d0c4b",
+      "bytes": 30489,
+      "width": 345,
+      "height": 52,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        317,
+        1400,
+        345,
+        52
+      ],
+      "semanticLabel": "攻略进度已保存"
+    },
+    {
+      "id": "V5_R_REPLAY",
+      "kind": "ui",
+      "file": "V5_R_REPLAY/main.png",
+      "resource": "mvp/art/V5_R_REPLAY/main",
+      "sha256": "52f2e16e9e6fd21ced204dd61e288844f4565aa4ae82628f255ff5bc629f9823",
+      "bytes": 58122,
+      "width": 384,
+      "height": 125,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        97,
+        1505,
+        384,
+        125
+      ],
+      "semanticLabel": "再来一局"
+    },
+    {
+      "id": "V5_R_CAMP",
+      "kind": "ui",
+      "file": "V5_R_CAMP/main.png",
+      "resource": "mvp/art/V5_R_CAMP/main",
+      "sha256": "9cd332471703c16681faab6f30d9118338a4042c13ae495022a46a98298fa247",
+      "bytes": 48832,
+      "width": 328,
+      "height": 125,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        515,
+        1505,
+        328,
+        125
+      ],
+      "semanticLabel": "返回大厅"
+    },
+    {
+      "id": "V5_R_BG",
+      "kind": "background",
+      "file": "V5_R_BG/main.png",
+      "resource": "mvp/art/V5_R_BG/main",
+      "sha256": "54b63da816cfddb758af42e1962202293d8b85607774722f53a3b332af52f145",
+      "bytes": 2061383,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_TITLE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_TITLE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_TITLE/main",
+      "sha256": "ed83d258ed7259223a2ad2a0ad144b2d5ea7195ed7b612dad7575e2c5b67fd8e",
+      "bytes": 94589,
+      "width": 414,
+      "height": 133,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        257,
+        0,
+        414,
+        133
+      ],
+      "semanticLabel": "英雄养成"
+    },
+    {
+      "id": "V5_O_BACK",
+      "kind": "ui",
+      "file": "V5_O_BACK/main.png",
+      "resource": "mvp/art/V5_O_BACK/main",
+      "sha256": "9b29a87293fc73a252b6a212fd403dd5c53414ef97c224439c42e2bd29be4522",
+      "bytes": 24411,
+      "width": 127,
+      "height": 115,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        22,
+        15,
+        127,
+        115
+      ],
+      "semanticLabel": "返回"
+    },
+    {
+      "id": "V5_O_GROWTH_XP",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_XP/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_XP/main",
+      "sha256": "f379ef9b1ff286b87dad62310fbe7c813af85bcb83b10f0bf6f65a814a60e659",
+      "bytes": 27741,
+      "width": 239,
+      "height": 67,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        680,
+        37,
+        239,
+        67
+      ],
+      "semanticLabel": "训练经验"
+    },
+    {
+      "id": "V5_O_GROWTH_NAME_H001",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_NAME_H001/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_NAME_H001/main",
+      "sha256": "e9e142c31b8febdd310402d9379645fbd222fb3b888d98036ae02571b2e5d5ec",
+      "bytes": 59565,
+      "width": 310,
+      "height": 104,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        143,
+        310,
+        104
+      ],
+      "semanticLabel": "爆米花厨师"
+    },
+    {
+      "id": "V5_O_NAME_PLATE",
+      "kind": "ui",
+      "file": "V5_O_NAME_PLATE/main.png",
+      "resource": "mvp/art/V5_O_NAME_PLATE/main",
+      "sha256": "9fd4b9e500dec81bf603720a6b710b9e49f4eba625e8c8fc17d82b4d51fbee03",
+      "bytes": 5495,
+      "width": 310,
+      "height": 104,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        143,
+        310,
+        104
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_LEVEL",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_LEVEL/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_LEVEL/main",
+      "sha256": "d4391781cc60a925d5b862a460495cb8ec28ff23cdcb81633f10df822abbaf2d",
+      "bytes": 15846,
+      "width": 183,
+      "height": 81,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        42,
+        229,
+        183,
+        81
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_TAB_CURRENT_IDLE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_TAB_CURRENT_IDLE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_TAB_CURRENT_IDLE/main",
+      "sha256": "dc57e4ee7c9ab098afa53f30d4d9a949ba778a2ec9474eeea23f0fb1af3f8d61",
+      "bytes": 18726,
+      "width": 192,
+      "height": 64,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        350,
+        140,
+        192,
+        64
+      ],
+      "semanticLabel": "当前形态"
+    },
+    {
+      "id": "V5_O_GROWTH_TAB_PREVIEW_ACTIVE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_TAB_PREVIEW_ACTIVE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_TAB_PREVIEW_ACTIVE/main",
+      "sha256": "b1f5ef3a5bb35b820fdf1c7e492814c2885208d092ee8d463545ce52e5c65aba",
+      "bytes": 24208,
+      "width": 199,
+      "height": 66,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        542,
+        138,
+        199,
+        66
+      ],
+      "semanticLabel": "升级预览"
+    },
+    {
+      "id": "V5_O_GROWTH_TAB_CURRENT_ACTIVE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_TAB_CURRENT_ACTIVE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_TAB_CURRENT_ACTIVE/main",
+      "sha256": "d5a1e569787f2420cb5d0100069a810d8e8ebbcc519e8c3e8a975116657677e9",
+      "bytes": 13480,
+      "width": 192,
+      "height": 64,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        350,
+        140,
+        192,
+        64
+      ],
+      "semanticLabel": "当前形态"
+    },
+    {
+      "id": "V5_O_GROWTH_TAB_PREVIEW_IDLE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_TAB_PREVIEW_IDLE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_TAB_PREVIEW_IDLE/main",
+      "sha256": "481bc1f058ccb748758fd1cd61bc6de1f3f46971de5d21354159fcd8afcdd393",
+      "bytes": 19068,
+      "width": 199,
+      "height": 66,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        542,
+        138,
+        199,
+        66
+      ],
+      "semanticLabel": "升级预览"
+    },
+    {
+      "id": "V5_O_GROWTH_QUOTE_H001",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_QUOTE_H001/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_QUOTE_H001/main",
+      "sha256": "b82ce754bacf9ee8f4db230449e574cd511d61ee89ecf1d2f7fb9adbeb70136b",
+      "bytes": 44777,
+      "width": 238,
+      "height": 110,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        42,
+        320,
+        238,
+        110
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_ACTOR_BACKDROP",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_ACTOR_BACKDROP/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_ACTOR_BACKDROP/main",
+      "sha256": "5a12d74972890624f3eb6603c0f9226b6de9f935f0f293c355c5220520d108ce",
+      "bytes": 250753,
+      "width": 571,
+      "height": 435,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        195,
+        185,
+        571,
+        435
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_STAGE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_STAGE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_STAGE/main",
+      "sha256": "263d2fdc488f2f9b3c71cabe638b6ec550b6dbcf73d42762d26b9cd3750daed7",
+      "bytes": 265,
+      "width": 472,
+      "height": 101,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        236,
+        493,
+        472,
+        101
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_FORM_BADGE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_FORM_BADGE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_FORM_BADGE/main",
+      "sha256": "69eb9bd2df242d6a1b986c7f95e4056851edac6a60f2309219b07daf05d15a69",
+      "bytes": 10837,
+      "width": 264,
+      "height": 60,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        339,
+        551,
+        264,
+        60
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_STATE_BADGE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_STATE_BADGE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_STATE_BADGE/main",
+      "sha256": "4f45ce54934bec8641254f0502f31e88799f9771de5038025392af7073be3928",
+      "bytes": 1665,
+      "width": 225,
+      "height": 47,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        360,
+        512,
+        225,
+        47
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_STATS",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_STATS/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_STATS/main",
+      "sha256": "3b0f1ffe5bb7a7794e757409c254ade007f19b30b4be0355c4cdb0a5e8c32c8d",
+      "bytes": 51012,
+      "width": 906,
+      "height": 119,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        17,
+        610,
+        906,
+        119
+      ]
+    },
+    {
+      "id": "V5_O_FORM_CARD_0",
+      "kind": "ui",
+      "file": "V5_O_FORM_CARD_0/main.png",
+      "resource": "mvp/art/V5_O_FORM_CARD_0/main",
+      "sha256": "35b6c1288643485a4039cb085c9e7bd5a4f7724221a16ab61771938809ed69a1",
+      "bytes": 14553,
+      "width": 297,
+      "height": 321,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        729,
+        297,
+        321
+      ]
+    },
+    {
+      "id": "V5_O_FORM_CARD_1",
+      "kind": "ui",
+      "file": "V5_O_FORM_CARD_1/main.png",
+      "resource": "mvp/art/V5_O_FORM_CARD_1/main",
+      "sha256": "54c0374a3dbb05419ba3945927c5d9d228cbcc93e8303dac8eb8f79f7c076b71",
+      "bytes": 6106,
+      "width": 296,
+      "height": 321,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        324,
+        729,
+        296,
+        321
+      ]
+    },
+    {
+      "id": "V5_O_FORM_CARD_2",
+      "kind": "ui",
+      "file": "V5_O_FORM_CARD_2/main.png",
+      "resource": "mvp/art/V5_O_FORM_CARD_2/main",
+      "sha256": "f335d8b721af180a36db4aca8d026ea8dcd170c762143541bd727089d60a38b7",
+      "bytes": 14928,
+      "width": 297,
+      "height": 321,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        622,
+        729,
+        297,
+        321
+      ]
+    },
+    {
+      "id": "V5_O_FORM_SELECTED",
+      "kind": "ui",
+      "file": "V5_O_FORM_SELECTED/main.png",
+      "resource": "mvp/art/V5_O_FORM_SELECTED/main",
+      "sha256": "1f9b1249b24f085587850cbed5394fe405bbfe290aef3de02237d2fa005c2ac6",
+      "bytes": 4370,
+      "width": 297,
+      "height": 321,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        729,
+        297,
+        321
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_ACTION_PANEL",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_ACTION_PANEL/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_ACTION_PANEL/main",
+      "sha256": "5894f29c057e871468fef59ed83542265daf460af03987db39414ef069aa16aa",
+      "bytes": 79803,
+      "width": 902,
+      "height": 237,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        20,
+        1054,
+        902,
+        237
+      ],
+      "semanticLabel": "动作预览"
+    },
+    {
+      "id": "V5_O_ACTION_WELL_0",
+      "kind": "ui",
+      "file": "V5_O_ACTION_WELL_0/main.png",
+      "resource": "mvp/art/V5_O_ACTION_WELL_0/main",
+      "sha256": "e16648398cc4423465e9c8cf8e5690c85dfd838b5ad1293fd161bb1bad3da798",
+      "bytes": 2343,
+      "width": 277,
+      "height": 164,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        41,
+        1113,
+        277,
+        164
+      ]
+    },
+    {
+      "id": "V5_O_ACTION_WELL_1",
+      "kind": "ui",
+      "file": "V5_O_ACTION_WELL_1/main.png",
+      "resource": "mvp/art/V5_O_ACTION_WELL_1/main",
+      "sha256": "e16648398cc4423465e9c8cf8e5690c85dfd838b5ad1293fd161bb1bad3da798",
+      "bytes": 2343,
+      "width": 277,
+      "height": 164,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        336,
+        1113,
+        277,
+        164
+      ]
+    },
+    {
+      "id": "V5_O_ACTION_WELL_2",
+      "kind": "ui",
+      "file": "V5_O_ACTION_WELL_2/main.png",
+      "resource": "mvp/art/V5_O_ACTION_WELL_2/main",
+      "sha256": "e16648398cc4423465e9c8cf8e5690c85dfd838b5ad1293fd161bb1bad3da798",
+      "bytes": 2343,
+      "width": 277,
+      "height": 164,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        626,
+        1113,
+        277,
+        164
+      ]
+    },
+    {
+      "id": "V5_O_LABEL_IDLE",
+      "kind": "ui",
+      "file": "V5_O_LABEL_IDLE/main.png",
+      "resource": "mvp/art/V5_O_LABEL_IDLE/main",
+      "sha256": "457c8b32d294180ed57db3ec941aa612e52bd03f975a2bc1ae9cf94e2680e65b",
+      "bytes": 5019,
+      "width": 68,
+      "height": 34,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        236,
+        1235,
+        68,
+        34
+      ],
+      "semanticLabel": "待机"
+    },
+    {
+      "id": "V5_O_LABEL_ATTACK",
+      "kind": "ui",
+      "file": "V5_O_LABEL_ATTACK/main.png",
+      "resource": "mvp/art/V5_O_LABEL_ATTACK/main",
+      "sha256": "81c84d90c5c0688682521938a645873a8fde620b2f0ac2a2ef4919c0d71297c9",
+      "bytes": 4901,
+      "width": 68,
+      "height": 34,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        528,
+        1235,
+        68,
+        34
+      ],
+      "semanticLabel": "攻击"
+    },
+    {
+      "id": "V5_O_LABEL_VICTORY",
+      "kind": "ui",
+      "file": "V5_O_LABEL_VICTORY/main.png",
+      "resource": "mvp/art/V5_O_LABEL_VICTORY/main",
+      "sha256": "e3904892bdba33cf91e7a0e2a974174a8d8118ac9edece867d6f33b16fe0d759",
+      "bytes": 4778,
+      "width": 68,
+      "height": 34,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        827,
+        1235,
+        68,
+        34
+      ],
+      "semanticLabel": "胜利"
+    },
+    {
+      "id": "V5_O_PLAY",
+      "kind": "ui",
+      "file": "V5_O_PLAY/main.png",
+      "resource": "mvp/art/V5_O_PLAY/main",
+      "sha256": "e3a9662010a99fa2f05e854c6e828a894f8c5c66b203e281a450881c9858febf",
+      "bytes": 12726,
+      "width": 81,
+      "height": 89,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        226,
+        1148,
+        81,
+        89
+      ],
+      "semanticLabel": "播放动作"
+    },
+    {
+      "id": "V5_O_GROWTH_SKILL_H001",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_SKILL_H001/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_SKILL_H001/main",
+      "sha256": "9b85d63f1d935395311ab123b70237fb576112eda6dc8d127cc663f4946b0573",
+      "bytes": 177585,
+      "width": 894,
+      "height": 127,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        24,
+        1295,
+        894,
+        127
+      ],
+      "semanticLabel": "局内三星技能：玉米大爆炸。每局合成三星后获得。"
+    },
+    {
+      "id": "V5_O_SKILL_STRIP",
+      "kind": "ui",
+      "file": "V5_O_SKILL_STRIP/main.png",
+      "resource": "mvp/art/V5_O_SKILL_STRIP/main",
+      "sha256": "1480d13982874a566f51505195b52e5045f0d82a5962b9d8d11fff72912024b3",
+      "bytes": 37814,
+      "width": 894,
+      "height": 127,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        24,
+        1295,
+        894,
+        127
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_FOOTNOTE",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_FOOTNOTE/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_FOOTNOTE/main",
+      "sha256": "52a56c598d00811575a63c49550c1b5bafa7c7f2ff9901fe6c6f1de1acd79650",
+      "bytes": 36657,
+      "width": 479,
+      "height": 48,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        232,
+        1593,
+        479,
+        48
+      ],
+      "semanticLabel": "等级永久保留，局内星级重新合成"
+    },
+    {
+      "id": "V5_O_UPGRADE_PREFIX",
+      "kind": "ui",
+      "file": "V5_O_UPGRADE_PREFIX/main.png",
+      "resource": "mvp/art/V5_O_UPGRADE_PREFIX/main",
+      "sha256": "f7b2d15c12d4783164c68298ce947210a6381a873e90d5d99d3c9efc6f8f8bae",
+      "bytes": 18167,
+      "width": 148,
+      "height": 67,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        275,
+        1457,
+        148,
+        67
+      ],
+      "semanticLabel": "升级"
+    },
+    {
+      "id": "V5_O_UPGRADE_XP_LABEL",
+      "kind": "ui",
+      "file": "V5_O_UPGRADE_XP_LABEL/main.png",
+      "resource": "mvp/art/V5_O_UPGRADE_XP_LABEL/main",
+      "sha256": "edd6cb7461ca61f4a6f4cd4fb9bf27047e559a9768e28a53a072aaf8e2f7ddcb",
+      "bytes": 25255,
+      "width": 191,
+      "height": 67,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        489,
+        1457,
+        191,
+        67
+      ],
+      "semanticLabel": "训练经验"
+    },
+    {
+      "id": "V5_O_GROWTH_LEVEL_ARROW",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_LEVEL_ARROW/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_LEVEL_ARROW/main",
+      "sha256": "8082d50648a18de69d4949c653799483a03315cd86d1e941d797561f4f87f125",
+      "bytes": 6234,
+      "width": 66,
+      "height": 65,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        246,
+        642,
+        66,
+        65
+      ]
+    },
+    {
+      "id": "V5_O_GROWTH_DAMAGE_ARROW",
+      "kind": "ui",
+      "file": "V5_O_GROWTH_DAMAGE_ARROW/main.png",
+      "resource": "mvp/art/V5_O_GROWTH_DAMAGE_ARROW/main",
+      "sha256": "c4f227b59c224bec52b0b296595f1c1a04bf4517bd5675855571ac9b42b66046",
+      "bytes": 2482,
+      "width": 39,
+      "height": 39,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        696,
+        670,
+        39,
+        39
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_TITLE",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_TITLE/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_TITLE/main",
+      "sha256": "7f22da69c3737aa366e3034a78d635bcbda9eaf5a986da50835c82fad1e3484e",
+      "bytes": 215829,
+      "width": 516,
+      "height": 243,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        213,
+        29,
+        516,
+        243
+      ],
+      "semanticLabel": "出战编队"
+    },
+    {
+      "id": "V5_O_ROSTER_BACK",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_BACK/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_BACK/main",
+      "sha256": "f9f8380f63679fa6ca9c298ff8d1510cb3c7b06a1bc27acc5a98eb0942202631",
+      "bytes": 22972,
+      "width": 121,
+      "height": 111,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        27,
+        46,
+        121,
+        111
+      ],
+      "semanticLabel": "返回"
+    },
+    {
+      "id": "V5_O_ROSTER_PANEL",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_PANEL/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_PANEL/main",
+      "sha256": "19f4a96bd1e98c39bb9c24940c52c7f81b17458c2c5ec7628735b7ebfcc0daed",
+      "bytes": 135790,
+      "width": 894,
+      "height": 553,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        24,
+        288,
+        894,
+        553
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_LABEL",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_LABEL/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_LABEL/main",
+      "sha256": "3f32ea3149b3833d691031455a111f9f8314b8034ff3bf7b938fdc9ac2f681ed",
+      "bytes": 20442,
+      "width": 188,
+      "height": 58,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        332,
+        306,
+        188,
+        58
+      ],
+      "semanticLabel": "当前阵容"
+    },
+    {
+      "id": "V5_O_ROSTER_OPTION_LABEL",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_OPTION_LABEL/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_OPTION_LABEL/main",
+      "sha256": "7dd48e870149b11309682693bcf3aad18c70fa4fd0693f36094cc3504ae89dc2",
+      "bytes": 40254,
+      "width": 277,
+      "height": 84,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        28,
+        851,
+        277,
+        84
+      ],
+      "semanticLabel": "可选英雄"
+    },
+    {
+      "id": "V5_O_ROSTER_CANDIDATES",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_CANDIDATES/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_CANDIDATES/main",
+      "sha256": "91e1d82d434b31b085040599ffb8a0ed9e5aa5101d6bc7bab0739ecdc3f42e8e",
+      "bytes": 82968,
+      "width": 896,
+      "height": 404,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        22,
+        878,
+        896,
+        404
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_CARD_H001",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_CARD_H001/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_CARD_H001/main",
+      "sha256": "19040e3ec1dc03e69dc3321dd7151f73bbc88698182d17c63f975c9c6742c4bd",
+      "bytes": 92618,
+      "width": 213,
+      "height": 323,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        42,
+        936,
+        213,
+        323
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_CARD_H002",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_CARD_H002/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_CARD_H002/main",
+      "sha256": "6c7d9aa43028adf63dac0199785f27ca049be945dfd3d4f1f70871ac70d12172",
+      "bytes": 89451,
+      "width": 211,
+      "height": 323,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        259,
+        936,
+        211,
+        323
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_CARD_H003",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_CARD_H003/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_CARD_H003/main",
+      "sha256": "24963a3799a66d0a040ddc839815412777c9fdeddef4fb3ab716d794da8dd104",
+      "bytes": 88224,
+      "width": 211,
+      "height": 323,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        475,
+        936,
+        211,
+        323
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_CARD_H004",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_CARD_H004/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_CARD_H004/main",
+      "sha256": "31f348a5ae684b39e38f23b661d07ff90df7017b06dc64245a7b4df6ad12628d",
+      "bytes": 91734,
+      "width": 211,
+      "height": 323,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        691,
+        936,
+        211,
+        323
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_EMPTY",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_EMPTY/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_EMPTY/main",
+      "sha256": "a202526c6d5c7542f99d66769763557771c4e003b676b2850b9402ad8a2e9eba",
+      "bytes": 48103,
+      "width": 199,
+      "height": 291,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        696,
+        385,
+        199,
+        291
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_REMOVE",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_REMOVE/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_REMOVE/main",
+      "sha256": "d3381c9b748659f9716719a662ab89ea50e0887a753be8bb6c590d137fd9640d",
+      "bytes": 7069,
+      "width": 65,
+      "height": 65,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        192,
+        385,
+        65,
+        65
+      ],
+      "semanticLabel": "移出"
+    },
+    {
+      "id": "V5_O_ROSTER_ADD_ACTIVE",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ADD_ACTIVE/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ADD_ACTIVE/main",
+      "sha256": "890eae0ad5f3e8701316a456e8ad267ba24c25c58ef7faeb603abee0749d9213",
+      "bytes": 14239,
+      "width": 183,
+      "height": 51,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        702,
+        1195,
+        183,
+        51
+      ],
+      "semanticLabel": "可加入"
+    },
+    {
+      "id": "V5_O_ROSTER_ADD_SELECTED",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ADD_SELECTED/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ADD_SELECTED/main",
+      "sha256": "4394b442b2102fdeb6befc88c1382d5220bd79da2eedd0cbacdaaeab9597ede0",
+      "bytes": 13372,
+      "width": 183,
+      "height": 51,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        56,
+        1195,
+        183,
+        51
+      ],
+      "semanticLabel": "已出战"
+    },
+    {
+      "id": "V5_O_ROSTER_ROLE_H001",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ROLE_H001/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ROLE_H001/main",
+      "sha256": "7483bb771d232dbe3b45fd7ff2a7166e03338cde51afa5749b071b36f4460089",
+      "bytes": 25980,
+      "width": 257,
+      "height": 70,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        66,
+        693,
+        257,
+        70
+      ],
+      "semanticLabel": "范围爆破"
+    },
+    {
+      "id": "V5_O_ROSTER_ROLE_H002",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ROLE_H002/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ROLE_H002/main",
+      "sha256": "53a29a0ef68132a0fc87ad83577c656f2377df5ca8918a1d164b22a2038d5439",
+      "bytes": 25652,
+      "width": 257,
+      "height": 70,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        343,
+        693,
+        257,
+        70
+      ],
+      "semanticLabel": "击退控场"
+    },
+    {
+      "id": "V5_O_ROSTER_ROLE_H003",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ROLE_H003/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ROLE_H003/main",
+      "sha256": "0df5c951d4b765ac20616e64aa098b2e626d2046e1c6270218c4e9eae647a04f",
+      "bytes": 25524,
+      "width": 257,
+      "height": 70,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        618,
+        693,
+        257,
+        70
+      ],
+      "semanticLabel": "减速辅助"
+    },
+    {
+      "id": "V5_O_ROSTER_ROLE_H004",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_ROLE_H004/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_ROLE_H004/main",
+      "sha256": "2de8350cf75e239646ddea7116bd9d323ede1104a0162358785a00685f978059",
+      "bytes": 2421,
+      "width": 257,
+      "height": 70,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        618,
+        693,
+        257,
+        70
+      ]
+    },
+    {
+      "id": "V5_O_ROSTER_SAVE",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_SAVE/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_SAVE/main",
+      "sha256": "b37e4111306420f7cd786f3e2e51905032d3b36d2249336c2537c85c39197ae0",
+      "bytes": 89361,
+      "width": 522,
+      "height": 148,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        211,
+        1291,
+        522,
+        148
+      ],
+      "semanticLabel": "保存阵容"
+    },
+    {
+      "id": "V5_O_ROSTER_RETURN",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_RETURN/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_RETURN/main",
+      "sha256": "859df9ffb3d4e7ad492d5156d48291c7b6fc08dec378bb5a8aa390148df0b255",
+      "bytes": 58183,
+      "width": 461,
+      "height": 117,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        241,
+        1442,
+        461,
+        117
+      ],
+      "semanticLabel": "返回营地"
+    },
+    {
+      "id": "V5_O_ROSTER_FOOTNOTE",
+      "kind": "ui",
+      "file": "V5_O_ROSTER_FOOTNOTE/main.png",
+      "resource": "mvp/art/V5_O_ROSTER_FOOTNOTE/main",
+      "sha256": "bdc043f739f95143a678883109be4a290ccbbd5592323ea24c3e71f42c2b3cb7",
+      "bytes": 33708,
+      "width": 417,
+      "height": 45,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        265,
+        1566,
+        417,
+        45
+      ],
+      "semanticLabel": "编队只决定本局可召唤的英雄"
+    },
+    {
+      "id": "V5_O_LOCKED_BACK",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_BACK/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_BACK/main",
+      "sha256": "a8b91f67ad1dd609539af13036d217b40d1374d8d117bacaa01562bde7fb2c17",
+      "bytes": 25321,
+      "width": 130,
+      "height": 116,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        23,
+        28,
+        130,
+        116
+      ],
+      "semanticLabel": "返回"
+    },
+    {
+      "id": "V5_O_LOCKED_TITLE_H004",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_TITLE_H004/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_TITLE_H004/main",
+      "sha256": "7e871d809cc9c21590453af8fee474c70e7a10f186c5be8fbef5394065c4b5ab",
+      "bytes": 170542,
+      "width": 522,
+      "height": 196,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        211,
+        13,
+        522,
+        196
+      ],
+      "semanticLabel": "拖鞋阿姨"
+    },
+    {
+      "id": "V5_O_LOCKED_HERO_FRAME",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_HERO_FRAME/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_HERO_FRAME/main",
+      "sha256": "c86f95febc76153a1aa01f05fa8fd12cdfdb7ce4027131ae8b2211ca37677db9",
+      "bytes": 83081,
+      "width": 614,
+      "height": 725,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        164,
+        188,
+        614,
+        725
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_POSTER_H004",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_POSTER_H004/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_POSTER_H004/main",
+      "sha256": "81b4f27589f88d7ed94948aea274d9219a0ec0b7f83a94e5bb3c51f6e8ff58ec",
+      "bytes": 388652,
+      "width": 544,
+      "height": 536,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        199,
+        221,
+        544,
+        536
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_PREVIEW_WELL",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PREVIEW_WELL/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PREVIEW_WELL/main",
+      "sha256": "748ba63f190f57feca2a201960a4ebc79f456b5af1330f799c577ab92846ade0",
+      "bytes": 3715,
+      "width": 544,
+      "height": 536,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        199,
+        221,
+        544,
+        536
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_ROLE_H004",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_ROLE_H004/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_ROLE_H004/main",
+      "sha256": "4618014c7fb8e0b8c2812eaf471990b128b656f904c35e33a8331e23002bd5a9",
+      "bytes": 23573,
+      "width": 264,
+      "height": 59,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        339,
+        758,
+        264,
+        59
+      ],
+      "semanticLabel": "精英克星"
+    },
+    {
+      "id": "V5_O_LOCKED_ABILITY_H004",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_ABILITY_H004/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_ABILITY_H004/main",
+      "sha256": "12bb6c6db4ecb80970d8173f3dbdfa38c725eac7f81a6274a29e27b605f3d408",
+      "bytes": 32227,
+      "width": 401,
+      "height": 47,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        322,
+        824,
+        401,
+        47
+      ],
+      "semanticLabel": "优先攻击范围内精英"
+    },
+    {
+      "id": "V5_O_LOCKED_PROGRESS_PANEL",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PROGRESS_PANEL/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PROGRESS_PANEL/main",
+      "sha256": "86929154b2e598155efff2b94a53ef83e58790ad997d0999480d15a33e749212",
+      "bytes": 107088,
+      "width": 813,
+      "height": 407,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        64,
+        909,
+        813,
+        407
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_PROGRESS_LABEL",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PROGRESS_LABEL/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PROGRESS_LABEL/main",
+      "sha256": "b402506cf7b8f8ce73d40ff47c792b9f995cdcce60f7b58a9ca43d7c72a03144",
+      "bytes": 35904,
+      "width": 248,
+      "height": 76,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        65,
+        896,
+        248,
+        76
+      ],
+      "semanticLabel": "攻略解锁"
+    },
+    {
+      "id": "V5_O_LOCKED_PROGRESS_TRACK",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PROGRESS_TRACK/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PROGRESS_TRACK/main",
+      "sha256": "ab32ca4ca21c9ae475d67aba17780411eb0da9c796591008036aba55553f4782",
+      "bytes": 4982,
+      "width": 702,
+      "height": 43,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        120,
+        1028,
+        702,
+        43
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_PROGRESS_FILL",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PROGRESS_FILL/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PROGRESS_FILL/main",
+      "sha256": "989c470588d0392359d2d2961f00af9c187bc0244025c712d1c507fe5cf287e1",
+      "bytes": 9169,
+      "width": 427,
+      "height": 28,
+      "border": [
+        14,
+        13,
+        14,
+        13
+      ],
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        128,
+        1035,
+        427,
+        28
+      ]
+    },
+    {
+      "id": "V5_O_LOCKED_SKILL_H004",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_SKILL_H004/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_SKILL_H004/main",
+      "sha256": "6197608d1a376a66bc9c48cd4fa70959d380b3fb547285e70bad5f252a26c9ef",
+      "bytes": 232263,
+      "width": 740,
+      "height": 199,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        101,
+        1087,
+        740,
+        199
+      ],
+      "semanticLabel": "祖传连环拖鞋，局内合成三星解锁"
+    },
+    {
+      "id": "V5_O_LOCKED_CONTINUE",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_CONTINUE/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_CONTINUE/main",
+      "sha256": "0e779043176cc02f19bd488817d26fb24cbb63f19dafb07a279187c1d24740d7",
+      "bytes": 101653,
+      "width": 565,
+      "height": 149,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        187,
+        1324,
+        565,
+        149
+      ],
+      "semanticLabel": "继续攻略"
+    },
+    {
+      "id": "V5_O_LOCKED_PRAISE",
+      "kind": "ui",
+      "file": "V5_O_LOCKED_PRAISE/main.png",
+      "resource": "mvp/art/V5_O_LOCKED_PRAISE/main",
+      "sha256": "28c0964069df6e99ca91cdaddccb3020cf6f21ae49068ba1f51addda9387c3d0",
+      "bytes": 90418,
+      "width": 577,
+      "height": 122,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        182,
+        1478,
+        577,
+        122
+      ],
+      "semanticLabel": "夸夸作者提前解锁"
+    },
+    {
+      "id": "V5_O_UNLOCKED_TITLE",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_TITLE/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_TITLE/main",
+      "sha256": "9eafaecd4b19fb48a84bbb13fe2bde41727120d040c932439f5bf19507c0f8e1",
+      "bytes": 378280,
+      "width": 760,
+      "height": 317,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        91,
+        16,
+        760,
+        317
+      ],
+      "semanticLabel": "新英雄加入！"
+    },
+    {
+      "id": "V5_O_UNLOCKED_RAYS",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_RAYS/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_RAYS/main",
+      "sha256": "7f7259481a4ed4099f18f6c48ba274187876331e14d96070567b2c0e4cf20b50",
+      "bytes": 856889,
+      "width": 941,
+      "height": 630,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        230,
+        941,
+        630
+      ]
+    },
+    {
+      "id": "V5_O_UNLOCKED_INFO",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_INFO/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_INFO/main",
+      "sha256": "d6ca28afb0d3b562df7c26ea92cfc0463dea682889d0b1bbf6027fb42e2de80c",
+      "bytes": 178325,
+      "width": 857,
+      "height": 476,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        42,
+        861,
+        857,
+        476
+      ]
+    },
+    {
+      "id": "V5_O_UNLOCKED_NAME_H004",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_NAME_H004/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_NAME_H004/main",
+      "sha256": "56be671106efd7aff669431b44646d78d79f3b05b6e4fd4a7b8a363f5069b9d1",
+      "bytes": 53044,
+      "width": 352,
+      "height": 97,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        288,
+        883,
+        352,
+        97
+      ],
+      "semanticLabel": "拖鞋阿姨"
+    },
+    {
+      "id": "V5_O_UNLOCKED_LEVEL",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_LEVEL/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_LEVEL/main",
+      "sha256": "ca0bd101ebb6046e350128459a1e1ad35d8f0f8efa7e8c3406a6748dac4fb531",
+      "bytes": 6184,
+      "width": 131,
+      "height": 63,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        663,
+        909,
+        131,
+        63
+      ]
+    },
+    {
+      "id": "V5_O_UNLOCKED_ROLE_H004",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_ROLE_H004/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_ROLE_H004/main",
+      "sha256": "72bb1d4a7e8b72ee25272361124555e74afd1bfdee50441f21643a1d3bff2ea7",
+      "bytes": 20298,
+      "width": 260,
+      "height": 49,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        343,
+        981,
+        260,
+        49
+      ],
+      "semanticLabel": "精英克星"
+    },
+    {
+      "id": "V5_O_UNLOCKED_PERMANENT",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_PERMANENT/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_PERMANENT/main",
+      "sha256": "8b403047f9977813f41cfaed4bd4c3f8624b316574fb4096550e1774a4f8ec3f",
+      "bytes": 69912,
+      "width": 550,
+      "height": 98,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        195,
+        1038,
+        550,
+        98
+      ],
+      "semanticLabel": "已永久解锁"
+    },
+    {
+      "id": "V5_O_UNLOCKED_SKILL_ICON_H004",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_SKILL_ICON_H004/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_SKILL_ICON_H004/main",
+      "sha256": "c8af32fab2ec90233c75c7be0f45aa91b2e5bdbdcadc1d2d4a26ae0c1471c7bc",
+      "bytes": 53078,
+      "width": 224,
+      "height": 143,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        108,
+        1155,
+        224,
+        143
+      ]
+    },
+    {
+      "id": "V5_O_UNLOCKED_SKILL_COPY_H004",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_SKILL_COPY_H004/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_SKILL_COPY_H004/main",
+      "sha256": "99a79fe9f759e36de7dc3dcd39034a60f42726cd9e7615080e6a2d8e3b3254fe",
+      "bytes": 66140,
+      "width": 373,
+      "height": 103,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        359,
+        1175,
+        373,
+        103
+      ],
+      "semanticLabel": "优先攻击精英，局内三星解锁连环拖鞋"
+    },
+    {
+      "id": "V5_O_UNLOCKED_TEAM",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_TEAM/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_TEAM/main",
+      "sha256": "0020548f971b3bbccdb30d045d2a946ece84943301f784b6a534747868dc3d0a",
+      "bytes": 92587,
+      "width": 500,
+      "height": 147,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        221,
+        1344,
+        500,
+        147
+      ],
+      "semanticLabel": "去搭配阵容"
+    },
+    {
+      "id": "V5_O_UNLOCKED_VIEW",
+      "kind": "ui",
+      "file": "V5_O_UNLOCKED_VIEW/main.png",
+      "resource": "mvp/art/V5_O_UNLOCKED_VIEW/main",
+      "sha256": "010c44ac07ad1bf76284c573230b1eb37f5beffe890af74b47a5cd0cef90b220",
+      "bytes": 69528,
+      "width": 478,
+      "height": 116,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        232,
+        1496,
+        478,
+        116
+      ],
+      "semanticLabel": "查看英雄"
+    },
+    {
+      "id": "V5_O_BG_GROWTH",
+      "kind": "background",
+      "file": "V5_O_BG_GROWTH/main.png",
+      "resource": "mvp/art/V5_O_BG_GROWTH/main",
+      "sha256": "cb686c68aa27ccb306454c8c5e8693055c0532cbe1ed35ddd2e749eb17e2e0d4",
+      "bytes": 2210565,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_O_BG_ROSTER",
+      "kind": "background",
+      "file": "V5_O_BG_ROSTER/main.png",
+      "resource": "mvp/art/V5_O_BG_ROSTER/main",
+      "sha256": "e545e42e1702029eea4d40271b1bd4dc9ca121ab9298f909b9573aca59fae99a",
+      "bytes": 2201849,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_O_BG_LOCKED",
+      "kind": "background",
+      "file": "V5_O_BG_LOCKED/main.png",
+      "resource": "mvp/art/V5_O_BG_LOCKED/main",
+      "sha256": "f7f2bb3886dd53196d7a9b745fa267409d208aa821dd9f211427a29b54d2d381",
+      "bytes": 2215281,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_O_BG_UNLOCKED",
+      "kind": "background",
+      "file": "V5_O_BG_UNLOCKED/main.png",
+      "resource": "mvp/art/V5_O_BG_UNLOCKED/main",
+      "sha256": "5c9d29c33d08ef62a1af58ac36cee560038b1fc17612ae8ed7f212fc8370a784",
+      "bytes": 2282953,
+      "width": 941,
+      "height": 1672,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        0,
+        0,
+        941,
+        1672
+      ]
+    },
+    {
+      "id": "V5_D_CARDS_PANEL",
+      "kind": "ui",
+      "file": "V5_D_CARDS_PANEL/main.png",
+      "resource": "mvp/art/V5_D_CARDS_PANEL/main",
+      "sha256": "b3d560173c376249c7b5504ea4166fd82ab44d2f196a0e73994ec9003a941767",
+      "bytes": 258266,
+      "width": 891,
+      "height": 984,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        25,
+        409,
+        891,
+        984
+      ]
+    },
+    {
+      "id": "V5_D_CARDS_RIBBON",
+      "kind": "ui",
+      "file": "V5_D_CARDS_RIBBON/main.png",
+      "resource": "mvp/art/V5_D_CARDS_RIBBON/main",
+      "sha256": "3abb5df9d99912f5077ba89e6cd79736c4d1ff1b23d2756c28d4d9b5b83bcb95",
+      "bytes": 174133,
+      "width": 668,
+      "height": 178,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        137,
+        307,
+        668,
+        178
+      ]
+    },
+    {
+      "id": "V5_D_CARDS_TITLE_PREFIX",
+      "kind": "ui",
+      "file": "V5_D_CARDS_TITLE_PREFIX/main.png",
+      "resource": "mvp/art/V5_D_CARDS_TITLE_PREFIX/main",
+      "sha256": "0d85e2375429091c3cff11e4d182c2adb1e3e744728babd8eab7f68c1fee9d92",
+      "bytes": 16084,
+      "width": 81,
+      "height": 100,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        236,
+        342,
+        81,
+        100
+      ],
+      "semanticLabel": "第"
+    },
+    {
+      "id": "V5_D_CARDS_TITLE_SUFFIX",
+      "kind": "ui",
+      "file": "V5_D_CARDS_TITLE_SUFFIX/main.png",
+      "resource": "mvp/art/V5_D_CARDS_TITLE_SUFFIX/main",
+      "sha256": "a1290b02bf62295e26bd0be476ce83abac88c1669d4476c9e6528bd435f56914",
+      "bytes": 66810,
+      "width": 357,
+      "height": 112,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        366,
+        334,
+        357,
+        112
+      ],
+      "semanticLabel": "波守住了！"
+    },
+    {
+      "id": "V5_D_CARD_ORANGE",
+      "kind": "ui",
+      "file": "V5_D_CARD_ORANGE/main.png",
+      "resource": "mvp/art/V5_D_CARD_ORANGE/main",
+      "sha256": "fc2a254ac4afd917e49c79d5e0d341374a63c93f8670cb0d51c7ce1a2e5f66b9",
+      "bytes": 28790,
+      "width": 281,
+      "height": 474,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        44,
+        536,
+        281,
+        474
+      ]
+    },
+    {
+      "id": "V5_D_CARD_CYAN",
+      "kind": "ui",
+      "file": "V5_D_CARD_CYAN/main.png",
+      "resource": "mvp/art/V5_D_CARD_CYAN/main",
+      "sha256": "cc45f4f40b4b002f71e65c23fdb1ad65dc3c8d3797afd5452682d0b0b0051351",
+      "bytes": 31746,
+      "width": 274,
+      "height": 474,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        333,
+        536,
+        274,
+        474
+      ]
+    },
+    {
+      "id": "V5_D_CARD_PURPLE",
+      "kind": "ui",
+      "file": "V5_D_CARD_PURPLE/main.png",
+      "resource": "mvp/art/V5_D_CARD_PURPLE/main",
+      "sha256": "876da8d88cc6a67ef265ef4bdb6f3384b5805243f6c2a0082655b0e15a211229",
+      "bytes": 29655,
+      "width": 281,
+      "height": 474,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        615,
+        536,
+        281,
+        474
+      ]
+    },
+    {
+      "id": "V5_D_CARD_ART_C003",
+      "kind": "ui",
+      "file": "V5_D_CARD_ART_C003/main.png",
+      "resource": "mvp/art/V5_D_CARD_ART_C003/main",
+      "sha256": "dd8faacad282c9886d60ec83f03054ebbff1162802a4befeaf0322fa8bb371ec",
+      "bytes": 112379,
+      "width": 253,
+      "height": 266,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        57,
+        627,
+        253,
+        266
+      ]
+    },
+    {
+      "id": "V5_D_CARD_ART_C006",
+      "kind": "ui",
+      "file": "V5_D_CARD_ART_C006/main.png",
+      "resource": "mvp/art/V5_D_CARD_ART_C006/main",
+      "sha256": "d9ad48c0f359e628f4bf044362953bf2831ad4159fc78c043843e4564a8ea4bf",
+      "bytes": 113388,
+      "width": 252,
+      "height": 264,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        344,
+        629,
+        252,
+        264
+      ]
+    },
+    {
+      "id": "V5_D_CARD_ART_C013",
+      "kind": "ui",
+      "file": "V5_D_CARD_ART_C013/main.png",
+      "resource": "mvp/art/V5_D_CARD_ART_C013/main",
+      "sha256": "f902a9cc0d78d2483aa9f27ba9f5f726e920be9f095273a48f4f4415fa0aa92c",
+      "bytes": 102548,
+      "width": 256,
+      "height": 263,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        628,
+        630,
+        256,
+        263
+      ]
+    },
+    {
+      "id": "V5_D_FORECAST_WELL",
+      "kind": "ui",
+      "file": "V5_D_FORECAST_WELL/main.png",
+      "resource": "mvp/art/V5_D_FORECAST_WELL/main",
+      "sha256": "0f1111491b048dfdd2978631ce20f3fc0fa1ae2d3e7bb83237c8978cdb220caf",
+      "bytes": 19401,
+      "width": 837,
+      "height": 270,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        51,
+        1029,
+        837,
+        270
+      ]
+    },
+    {
+      "id": "V5_D_SKILLS_PANEL",
+      "kind": "ui",
+      "file": "V5_D_SKILLS_PANEL/main.png",
+      "resource": "mvp/art/V5_D_SKILLS_PANEL/main",
+      "sha256": "8137b25be80975075ad44dd94ffa66330923674751d5661a1e7e2bf8fabd0014",
+      "bytes": 324412,
+      "width": 828,
+      "height": 1308,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        56,
+        187,
+        828,
+        1308
+      ]
+    },
+    {
+      "id": "V5_D_SKILLS_DONE",
+      "kind": "ui",
+      "file": "V5_D_SKILLS_DONE/main.png",
+      "resource": "mvp/art/V5_D_SKILLS_DONE/main",
+      "sha256": "08a7a24cee56a25abc72dffafb7083b9710cb3b0bc83301933c31a6e6a5af655",
+      "bytes": 56206,
+      "width": 511,
+      "height": 115,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        214,
+        1361,
+        511,
+        115
+      ],
+      "semanticLabel": "完成"
+    },
+    {
+      "id": "V5_D_SKILLS_CLOSE",
+      "kind": "ui",
+      "file": "V5_D_SKILLS_CLOSE/main.png",
+      "resource": "mvp/art/V5_D_SKILLS_CLOSE/main",
+      "sha256": "675938b008ca8263bae302774dbd3942c8b140c13b85372111fe8bd201a11fc5",
+      "bytes": 15102,
+      "width": 87,
+      "height": 89,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        784,
+        217,
+        87,
+        89
+      ],
+      "semanticLabel": "关闭技能库"
+    },
+    {
+      "id": "V5_D_SKILL_SLOT_GOLD",
+      "kind": "ui",
+      "file": "V5_D_SKILL_SLOT_GOLD/main.png",
+      "resource": "mvp/art/V5_D_SKILL_SLOT_GOLD/main",
+      "sha256": "35358c232864ee710b80b33c9a38a3f5a1640b418114a498d18437f509022d6a",
+      "bytes": 22195,
+      "width": 305,
+      "height": 271,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        153,
+        370,
+        305,
+        271
+      ]
+    },
+    {
+      "id": "V5_D_SKILL_SLOT_PURPLE",
+      "kind": "ui",
+      "file": "V5_D_SKILL_SLOT_PURPLE/main.png",
+      "resource": "mvp/art/V5_D_SKILL_SLOT_PURPLE/main",
+      "sha256": "eb3257c833420fe2d788477a05a3260d4a1e420acc5a4354fb7e5c9aa6e99282",
+      "bytes": 21626,
+      "width": 308,
+      "height": 271,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        485,
+        370,
+        308,
+        271
+      ]
+    },
+    {
+      "id": "V5_D_SKILL_ROW",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ROW/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ROW/main",
+      "sha256": "833e258f0ee62ff8b66aeb5fd5c952ac8a65629f20be1a6a147fc3f0f9cd8809",
+      "bytes": 14526,
+      "width": 784,
+      "height": 124,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        80,
+        787,
+        784,
+        124
+      ]
+    },
+    {
+      "id": "V5_D_EQUIP_BUTTON",
+      "kind": "ui",
+      "file": "V5_D_EQUIP_BUTTON/main.png",
+      "resource": "mvp/art/V5_D_EQUIP_BUTTON/main",
+      "sha256": "09c9692d526aad04fdbf2ee128486d15131181aa58ac0f622d10a552e8c317c6",
+      "bytes": 22025,
+      "width": 198,
+      "height": 79,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        638,
+        1066,
+        198,
+        79
+      ],
+      "semanticLabel": "装备"
+    },
+    {
+      "id": "V5_D_GRANDPA_PANEL",
+      "kind": "ui",
+      "file": "V5_D_GRANDPA_PANEL/main.png",
+      "resource": "mvp/art/V5_D_GRANDPA_PANEL/main",
+      "sha256": "a381214ee4172bfdacbec6fe6b76f7d12da3e82536803790e4e9f7479fe5ce39",
+      "bytes": 1022579,
+      "width": 742,
+      "height": 1381,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        100,
+        191,
+        742,
+        1381
+      ]
+    },
+    {
+      "id": "V5_D_GRANDPA_SUMMON",
+      "kind": "ui",
+      "file": "V5_D_GRANDPA_SUMMON/main.png",
+      "resource": "mvp/art/V5_D_GRANDPA_SUMMON/main",
+      "sha256": "b5601a4fc35430558d96ebb22413dce28a0cde34988a11c14992098a4390a441",
+      "bytes": 91381,
+      "width": 516,
+      "height": 135,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        213,
+        1303,
+        516,
+        135
+      ],
+      "semanticLabel": "召唤老爷爷"
+    },
+    {
+      "id": "V5_D_GRANDPA_END",
+      "kind": "ui",
+      "file": "V5_D_GRANDPA_END/main.png",
+      "resource": "mvp/art/V5_D_GRANDPA_END/main",
+      "sha256": "07ddeb89119dda2cc1dce58e820899035f3b15c317c3c1e045eba0dc463fd912",
+      "bytes": 38941,
+      "width": 344,
+      "height": 94,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        298,
+        1453,
+        344,
+        94
+      ],
+      "semanticLabel": "结束本局"
+    },
+    {
+      "id": "V5_D_REVIVE_TITLE",
+      "kind": "ui",
+      "file": "V5_D_REVIVE_TITLE/main.png",
+      "resource": "mvp/art/V5_D_REVIVE_TITLE/main",
+      "sha256": "49e1d0c813a2e73d6d03ed8f593bc8131b279c76d14755d0bbbcd4eb6af42dd7",
+      "bytes": 305202,
+      "width": 662,
+      "height": 319,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        145,
+        225,
+        662,
+        319
+      ],
+      "semanticLabel": "我命由我不由天 · 本局最后一次复活"
+    },
+    {
+      "id": "V5_D_REVIVE_PANEL",
+      "kind": "ui",
+      "file": "V5_D_REVIVE_PANEL/main.png",
+      "resource": "mvp/art/V5_D_REVIVE_PANEL/main",
+      "sha256": "4f21aac168a112d02475bb5cb85c31db4afbda3b2e222a11e6607710551a66b1",
+      "bytes": 1192951,
+      "width": 821,
+      "height": 1162,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        60,
+        336,
+        821,
+        1162
+      ]
+    },
+    {
+      "id": "V5_D_REVIVE_FREE",
+      "kind": "ui",
+      "file": "V5_D_REVIVE_FREE/main.png",
+      "resource": "mvp/art/V5_D_REVIVE_FREE/main",
+      "sha256": "0ad6b7f960d065ad7131d4774d7e307fa92fb4f0d3fcf2ad19a7e3504ada7908",
+      "bytes": 143426,
+      "width": 380,
+      "height": 343,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        87,
+        963,
+        380,
+        343
+      ],
+      "semanticLabel": "直接复活，保留本波怪物"
+    },
+    {
+      "id": "V5_D_REVIVE_AD",
+      "kind": "ui",
+      "file": "V5_D_REVIVE_AD/main.png",
+      "resource": "mvp/art/V5_D_REVIVE_AD/main",
+      "sha256": "3f7a07ef2ac028276001634d3c06d5a752117d4554b573997aa34a5b9e93ad14",
+      "bytes": 146961,
+      "width": 380,
+      "height": 343,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        477,
+        963,
+        380,
+        343
+      ],
+      "semanticLabel": "看广告复活，额外清除本波怪物"
+    },
+    {
+      "id": "V5_D_REVIVE_END",
+      "kind": "ui",
+      "file": "V5_D_REVIVE_END/main.png",
+      "resource": "mvp/art/V5_D_REVIVE_END/main",
+      "sha256": "0d6b49b92403b4c86a64823c26c6594158065e8a4dd0c31b04712ee0723bd707",
+      "bytes": 38299,
+      "width": 351,
+      "height": 94,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        295,
+        1383,
+        351,
+        94
+      ],
+      "semanticLabel": "结束本局"
+    },
+    {
+      "id": "V5_D_PRAISE_PANEL",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_PANEL/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_PANEL/main",
+      "sha256": "d7b1e736b6d028ffd6a83942e6784ee769ae8d65c3861d6175fed1b11c6f9b18",
+      "bytes": 743106,
+      "width": 757,
+      "height": 962,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        93,
+        397,
+        757,
+        962
+      ]
+    },
+    {
+      "id": "V5_D_PRAISE_TITLE",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_TITLE/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_TITLE/main",
+      "sha256": "7e749936c0b91597c425532000916bbb36ab86ee87a8c49871c23dbb571e236f",
+      "bytes": 118863,
+      "width": 466,
+      "height": 149,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        236,
+        363,
+        466,
+        149
+      ],
+      "semanticLabel": "夸夸作者"
+    },
+    {
+      "id": "V5_D_PRAISE_CLOSE",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_CLOSE/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_CLOSE/main",
+      "sha256": "4251f3ef50fe836b79b7e5dd9862cf66ed06e8dc6b1bbf5abfbe34254277a708",
+      "bytes": 22181,
+      "width": 108,
+      "height": 111,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        783,
+        399,
+        108,
+        111
+      ],
+      "semanticLabel": "关闭夸赞，暂不解锁"
+    },
+    {
+      "id": "V5_D_PRAISE_1",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_1/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_1/main",
+      "sha256": "e2742461c5fc274f08043fd0f38c5f2b4588aaf7dbfc99617632a845df7935a0",
+      "bytes": 111110,
+      "width": 673,
+      "height": 126,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        134,
+        868,
+        673,
+        126
+      ],
+      "semanticLabel": "这游戏，有点东西！"
+    },
+    {
+      "id": "V5_D_PRAISE_2",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_2/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_2/main",
+      "sha256": "f0b4cb373f442c21c0c4e1b11ca6d777f396fba7aa25170cacca175319a053d0",
+      "bytes": 106817,
+      "width": 673,
+      "height": 126,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        134,
+        1005,
+        673,
+        126
+      ],
+      "semanticLabel": "你的创意我服了！"
+    },
+    {
+      "id": "V5_D_PRAISE_3",
+      "kind": "ui",
+      "file": "V5_D_PRAISE_3/main.png",
+      "resource": "mvp/art/V5_D_PRAISE_3/main",
+      "sha256": "7a9fc1b0770d69d3995f19240d24bfdbadb1c2ea4726c6a23214764bdfcd5de4",
+      "bytes": 107069,
+      "width": 673,
+      "height": 126,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        134,
+        1141,
+        673,
+        126
+      ],
+      "semanticLabel": "作者今天也很有才！"
+    },
+    {
+      "id": "V5_D_SETTINGS_PANEL",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_PANEL/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_PANEL/main",
+      "sha256": "95d85f75cae948c94460def74d45b10f5ccdea2b80239f34ec10717d861146ce",
+      "bytes": 554173,
+      "width": 730,
+      "height": 1242,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        106,
+        218,
+        730,
+        1242
+      ]
+    },
+    {
+      "id": "V5_D_SETTINGS_CLOSE",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_CLOSE/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_CLOSE/main",
+      "sha256": "81f880e639513220beedb79266856ab954b9a9558dcae29049ad34c7e85fc386",
+      "bytes": 15367,
+      "width": 97,
+      "height": 94,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        714,
+        240,
+        97,
+        94
+      ],
+      "semanticLabel": "关闭设置并返回来源"
+    },
+    {
+      "id": "V5_D_SETTINGS_PRIMARY",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_PRIMARY/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_PRIMARY/main",
+      "sha256": "c4698d2e561d68a3f4f5b5764e9e202e85d28b0b67f2dfe83c6083f3c0821f35",
+      "bytes": 71434,
+      "width": 571,
+      "height": 125,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        185,
+        1193,
+        571,
+        125
+      ],
+      "semanticLabel": "继续防守"
+    },
+    {
+      "id": "V5_D_SETTINGS_SECONDARY",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_SECONDARY/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_SECONDARY/main",
+      "sha256": "640104c02b7eb6612acba0a5b6ce0d0751349105e8590b27df9a54ff181f0888",
+      "bytes": 66616,
+      "width": 570,
+      "height": 108,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        187,
+        1328,
+        570,
+        108
+      ],
+      "semanticLabel": "保存并返回大厅"
+    },
+    {
+      "id": "V5_D_SETTINGS_PRIMARY_BLANK",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_PRIMARY_BLANK/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_PRIMARY_BLANK/main",
+      "sha256": "5613450f06dacd9013d17624d195ce3776ff599dab73fe489afc01552b458719",
+      "bytes": 37229,
+      "width": 571,
+      "height": 125,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        185,
+        1193,
+        571,
+        125
+      ]
+    },
+    {
+      "id": "V5_D_SETTINGS_SECONDARY_BLANK",
+      "kind": "ui",
+      "file": "V5_D_SETTINGS_SECONDARY_BLANK/main.png",
+      "resource": "mvp/art/V5_D_SETTINGS_SECONDARY_BLANK/main",
+      "sha256": "3a8659a38d12382c5c5aba7320d60e6819b7279411d98c698427b4d3fbcefe8e",
+      "bytes": 30058,
+      "width": 570,
+      "height": 108,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        187,
+        1328,
+        570,
+        108
+      ]
+    },
+    {
+      "id": "V5_D_MODAL_PANEL",
+      "kind": "ui",
+      "file": "V5_D_MODAL_PANEL/main.png",
+      "resource": "mvp/art/V5_D_MODAL_PANEL/main",
+      "sha256": "9ba78d86c8e8019df55c9fe459de26ce9be5a282d2c826ce844a0c2d5a952b64",
+      "bytes": 81934,
+      "width": 730,
+      "height": 1242,
+      "border": [
+        84,
+        84,
+        84,
+        84
+      ],
+      "rendering": "sliced",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        106,
+        218,
+        730,
+        1242
+      ]
+    },
+    {
+      "id": "V5_D_SECTION_INSET",
+      "kind": "ui",
+      "file": "V5_D_SECTION_INSET/main.png",
+      "resource": "mvp/art/V5_D_SECTION_INSET/main",
+      "sha256": "b5c09237360fea5f62fe6f8147baf30fa5888c9362d092b450ed04b6d1773d69",
+      "bytes": 10946,
+      "width": 668,
+      "height": 104,
+      "border": [
+        31,
+        28,
+        31,
+        28
+      ],
+      "rendering": "sliced",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        137,
+        374,
+        668,
+        104
+      ]
+    },
+    {
+      "id": "V5_D_TOGGLE_ON",
+      "kind": "ui",
+      "file": "V5_D_TOGGLE_ON/main.png",
+      "resource": "mvp/art/V5_D_TOGGLE_ON/main",
+      "sha256": "770bd2b6078a557c65889ecf8b06ec933930afe44c6a3271d96b1349291855a1",
+      "bytes": 17272,
+      "width": 155,
+      "height": 72,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        626,
+        738,
+        155,
+        72
+      ],
+      "semanticLabel": "开"
+    },
+    {
+      "id": "V5_D_TOGGLE_OFF",
+      "kind": "ui",
+      "file": "V5_D_TOGGLE_OFF/main.png",
+      "resource": "mvp/art/V5_D_TOGGLE_OFF/main",
+      "sha256": "6acd484f4720eddab748099cbc2b8ae7986b19ccc82108afdb72ef70775b08a7",
+      "bytes": 16775,
+      "width": 155,
+      "height": 72,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        626,
+        852,
+        155,
+        72
+      ],
+      "semanticLabel": "关"
+    },
+    {
+      "id": "V5_D_SLIDER_GOLD_KNOB",
+      "kind": "ui",
+      "file": "V5_D_SLIDER_GOLD_KNOB/main.png",
+      "resource": "mvp/art/V5_D_SLIDER_GOLD_KNOB/main",
+      "sha256": "02cf632b90919773c9b942e2b4466764c6f56bc3079d3e6df3e81ddf156cbe8f",
+      "bytes": 5656,
+      "width": 49,
+      "height": 54,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        602,
+        398,
+        49,
+        54
+      ]
+    },
+    {
+      "id": "V5_D_SLIDER_CYAN_KNOB",
+      "kind": "ui",
+      "file": "V5_D_SLIDER_CYAN_KNOB/main.png",
+      "resource": "mvp/art/V5_D_SLIDER_CYAN_KNOB/main",
+      "sha256": "84ad2e982313a5d8d08169308a934d5ff6586649c2120badd54420af1402e2c2",
+      "bytes": 5643,
+      "width": 49,
+      "height": 54,
+      "rendering": "simple",
+      "referenceCanvas": [
+        941,
+        1672
+      ],
+      "designRect": [
+        562,
+        631,
+        49,
+        54
+      ]
+    },
+    {
+      "id": "V5_D_SKILL_ART_K001",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_K001/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_K001/main",
+      "sha256": "1274631054834207329e5d6deb578027a4009e6bc3d76559424c4df9a9258a78",
+      "bytes": 75854,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "玉米大爆炸图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_K002",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_K002/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_K002/main",
+      "sha256": "aa19ad74754111d0f7f5410678c3f322285cad3475570abac89d272bbf33eb51",
+      "bytes": 85529,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "弹簧拳套图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_K003",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_K003/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_K003/main",
+      "sha256": "917ca4f8f78181742e33ab04d87e16a5f40bae989b3b36b0c28fb2608c14ed7f",
+      "bytes": 120739,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "蹦迪青蛙图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_K004",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_K004/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_K004/main",
+      "sha256": "d213b85d677d4a17097a5cfe6175edc68b0f8fd47b4317bedcaeda1e4bf165e2",
+      "bytes": 53067,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "三连拖鞋图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_P001",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_P001/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_P001/main",
+      "sha256": "dba0ffa60ffb261c9a99868fa87db12845c7c27b0e01a8e6150bb6e8bb4abf03",
+      "bytes": 77211,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "紫色拖鞋图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_P002",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_P002/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_P002/main",
+      "sha256": "d9e83e90efb43d434808ec4471c4e42a30e5eeeed0fcc5118130ed2660b05e32",
+      "bytes": 64313,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "全体起立箭头图形"
+    },
+    {
+      "id": "V5_D_SKILL_ART_P003",
+      "kind": "ui",
+      "file": "V5_D_SKILL_ART_P003/main.png",
+      "resource": "mvp/art/V5_D_SKILL_ART_P003/main",
+      "sha256": "3c8123b4e8ba30635805646cd71063d234cb4425cda42e86a4cda2c343234a14",
+      "bytes": 69909,
+      "width": 320,
+      "height": 320,
+      "rendering": "simple",
+      "semanticLabel": "禁音气泡图形"
+    }
+  ],
+  "expectedIds": [
+    "H001-F01",
+    "H001-F02",
+    "H001-F03",
+    "H002-F01",
+    "H002-F02",
+    "H002-F03",
+    "H003-F01",
+    "H003-F02",
+    "H003-F03",
+    "H004-F01",
+    "H004-F02",
+    "H004-F03",
+    "M001",
+    "M002",
+    "M003",
+    "M004",
+    "M004-S",
+    "M005",
+    "B001",
+    "N001",
+    "N002"
+  ],
+  "recipesResource": "mvp/art/vfx-recipes"
+}

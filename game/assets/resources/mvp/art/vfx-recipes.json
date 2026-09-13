@@ -1,0 +1,1174 @@
+{
+  "schemaVersion": 1,
+  "packId": "mvp-v1",
+  "kind": "engine-effect-recipes",
+  "status": "in_review",
+  "integrationStatus": "adapter_required",
+  "coordinateSystem": {
+    "designResolution": [
+      720,
+      1280
+    ],
+    "authoringPointOrigin": "top-left",
+    "worldConversion": "consumer maps authoritative world coordinates to the combat layer once"
+  },
+  "clockPolicy": {
+    "battle": "tick/tick_hz; paused means frozen; x2 advances tick twice as fast",
+    "ui": "real presentation time; no damage/cooldown/accounting side effects",
+    "audio": "audio director normal playback rate; no pitch/rate multiplication at x2"
+  },
+  "eventPolicy": {
+    "dedupKey": "runId + monotonic effect event id; pulse events add pulseIndex",
+    "source": "committed game state/events only",
+    "replayAfterLoad": false,
+    "animationDoesNotApplyDamage": true,
+    "gameplayAreaNeverReadFromTexture": true
+  },
+  "particleBudget": {
+    "maxActiveTexturedQuads": 96,
+    "maxPerRecipe": 16,
+    "maxStatusMarkersPerTarget": 2,
+    "offscreenCull": true,
+    "poolReuse": true,
+    "lowLoadScale": 0.5,
+    "preserveAtLowLoad": [
+      "aim outline",
+      "danger direction",
+      "boss tell",
+      "base shield",
+      "current status icon"
+    ]
+  },
+  "revivalBranchPolicy": "The committed rescue transaction selects composition. Common REVIVE never includes CLEAR. Detailed ad/cancel/technical-fallback rules remain in docs/design/系统规则与边界.md section 6.",
+  "recipes": [
+    {
+      "id": "BASIC_H001",
+      "kind": "engine-effect",
+      "scope": "hero.basic",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H001-BASIC-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_CORN",
+          "emitter": "projectile",
+          "lifetimeSeconds": 0.18,
+          "path": "muzzleToAuthoritativeImpact",
+          "logicalSize": [
+            28,
+            40
+          ],
+          "rotation": "travelDirection"
+        },
+        {
+          "texture": "VFX_POPCORN",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.22,
+          "count": 3,
+          "spreadRadius": 18,
+          "scale": [
+            0.15,
+            0.28
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_RING",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.22,
+          "sizeBinding": "attackAreaDiameter",
+          "scale": [
+            0.3,
+            1
+          ],
+          "opacity": [
+            0.65,
+            0
+          ]
+        }
+      ],
+      "heroId": "H001",
+      "event": "attack",
+      "anchor": "muzzle",
+      "notes": "Impact location and area come from gameplay; popcorn does not generate secondary damage."
+    },
+    {
+      "id": "BASIC_H002",
+      "kind": "engine-effect",
+      "scope": "hero.basic",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H002-BASIC-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SPRING",
+          "emitter": "tether",
+          "lifetimeSeconds": 0.16,
+          "fromAnchor": "muzzle",
+          "toBinding": "impact",
+          "width": 13,
+          "stretch": "lengthOnly"
+        },
+        {
+          "texture": "VFX_FIST",
+          "emitter": "projectile",
+          "lifetimeSeconds": 0.16,
+          "path": "muzzleToAuthoritativeImpact",
+          "logicalSize": [
+            44,
+            44
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.15,
+          "logicalSize": [
+            52,
+            52
+          ],
+          "scale": [
+            0.5,
+            1
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "heroId": "H002",
+      "event": "attack"
+    },
+    {
+      "id": "BASIC_H003",
+      "kind": "engine-effect",
+      "scope": "hero.basic",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H003-BASIC-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SOUND_WAVE",
+          "emitter": "areaPulse",
+          "lifetimeSeconds": 0.28,
+          "origin": "muzzle",
+          "sizeBinding": "attackAreaDiameter",
+          "scale": [
+            0.15,
+            1
+          ],
+          "opacity": [
+            0.65,
+            0
+          ]
+        }
+      ],
+      "heroId": "H003",
+      "event": "attack",
+      "notes": "The range outline follows gameplay; this blue wave is different from P003 mute status."
+    },
+    {
+      "id": "BASIC_H004",
+      "kind": "engine-effect",
+      "scope": "hero.basic",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H004-BASIC-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SHOE",
+          "emitter": "projectile",
+          "lifetimeSeconds": 0.2,
+          "path": "muzzleToAuthoritativeImpact",
+          "logicalSize": [
+            35,
+            35
+          ],
+          "rotation": "travelDirection"
+        },
+        {
+          "texture": "VFX_SHOE_TRAIL",
+          "emitter": "projectileTail",
+          "lifetimeSeconds": 0.14,
+          "logicalSize": [
+            45,
+            26
+          ],
+          "opacity": [
+            0.55,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.16,
+          "logicalSize": [
+            40,
+            40
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "heroId": "H004",
+      "event": "attack",
+      "notes": "Retarget only when a gameplay projectile event supplies a new target."
+    },
+    {
+      "id": "K001",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H001-ULTIMATE-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_RING",
+          "emitter": "eachAuthoritativePulse",
+          "lifetimeSeconds": 0.3,
+          "sizeBinding": "skillAreaDiameter",
+          "scale": [
+            0.35,
+            1
+          ],
+          "opacity": [
+            0.85,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_POPCORN",
+          "emitter": "eachAuthoritativePulse",
+          "lifetimeSeconds": 0.36,
+          "count": 7,
+          "spreadBinding": "skillRadius",
+          "scale": [
+            0.14,
+            0.3
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_MARK",
+          "emitter": "survivingMarkedTargets",
+          "lifetimeSeconds": 0.32,
+          "logicalSize": [
+            30,
+            30
+          ],
+          "opacity": [
+            0.85,
+            0.45
+          ]
+        }
+      ],
+      "skillId": "K001",
+      "target": "area",
+      "aggregation": "oneVisualPerAuthoritativePulse",
+      "expectedPulseCount": 3,
+      "notes": "Three gameplay explosions produce three visuals. This recipe never schedules damage or creates marks."
+    },
+    {
+      "id": "K002",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H002-ULTIMATE-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_FIST",
+          "emitter": "laneSweep",
+          "lifetimeSeconds": 0.42,
+          "path": "selectedLaneTowardSpawn",
+          "logicalSize": [
+            96,
+            96
+          ]
+        },
+        {
+          "texture": "VFX_SPRING",
+          "emitter": "laneTether",
+          "lifetimeSeconds": 0.42,
+          "width": 28,
+          "stretch": "lengthOnly",
+          "opacity": [
+            0.85,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "eachAuthoritativeHit",
+          "lifetimeSeconds": 0.17,
+          "logicalSize": [
+            60,
+            60
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "skillId": "K002",
+      "target": "lane",
+      "notes": "Only the selected lane; no implied three-lane/global effect."
+    },
+    {
+      "id": "K003",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H003-ULTIMATE-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_AURA",
+          "emitter": "persistentArea",
+          "lifetimeSeconds": null,
+          "endTickBinding": "skillEndTick",
+          "sizeBinding": "skillAreaDiameter",
+          "opacity": 0.28
+        },
+        {
+          "texture": "VFX_SOUND_WAVE",
+          "emitter": "eachAuthoritativePulse",
+          "lifetimeSeconds": 0.3,
+          "sizeBinding": "skillAreaDiameter",
+          "scale": [
+            0.2,
+            1
+          ],
+          "opacity": [
+            0.7,
+            0
+          ]
+        }
+      ],
+      "skillId": "K003",
+      "target": "area",
+      "durationBinding": "skillEndTick",
+      "notes": "Persistent sound field ends with the authoritative effect; no animation-defined extra ticks."
+    },
+    {
+      "id": "K004",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-H004-ULTIMATE-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SHOE",
+          "emitter": "eachAuthoritativeChase",
+          "lifetimeSeconds": 0.18,
+          "path": "providedChaseArc",
+          "logicalSize": [
+            50,
+            50
+          ],
+          "rotation": "travelDirection"
+        },
+        {
+          "texture": "VFX_SHOE_TRAIL",
+          "emitter": "eachAuthoritativeChase",
+          "lifetimeSeconds": 0.16,
+          "logicalSize": [
+            70,
+            40
+          ],
+          "opacity": [
+            0.65,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "eachAuthoritativeHit",
+          "lifetimeSeconds": 0.14,
+          "logicalSize": [
+            60,
+            60
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "skillId": "K004",
+      "target": "enemy",
+      "expectedHitCount": 5,
+      "notes": "Five chase hits use provided targets. No giant vertical fall, which belongs to P001."
+    },
+    {
+      "id": "P001",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-P001-SKILL-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SHOE",
+          "emitter": "fallToSelectedArea",
+          "lifetimeSeconds": 0.3,
+          "logicalSize": [
+            150,
+            150
+          ],
+          "fromOffset": [
+            0,
+            -210
+          ],
+          "rotationDegrees": -25
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.25,
+          "sizeBinding": "skillAreaDiameter",
+          "scale": [
+            0.6,
+            1
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_RING",
+          "emitter": "onAuthoritativeImpact",
+          "lifetimeSeconds": 0.32,
+          "sizeBinding": "skillAreaDiameter",
+          "scale": [
+            0.4,
+            1.08
+          ],
+          "opacity": [
+            0.9,
+            0
+          ]
+        }
+      ],
+      "skillId": "P001",
+      "target": "area",
+      "notes": "One large downward shoe; does not use the K004 multi-target chase treatment."
+    },
+    {
+      "id": "P002",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-P002-SKILL-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_ARROW",
+          "emitter": "allThreeLaneSweep",
+          "lifetimeSeconds": 0.4,
+          "count": 3,
+          "laneCentersBinding": "worldLaneCenters",
+          "path": "baseTowardSpawn",
+          "logicalSize": [
+            72,
+            110
+          ],
+          "opacity": [
+            0.85,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_CANE_WAVE",
+          "emitter": "allThreeLaneSweep",
+          "lifetimeSeconds": 0.4,
+          "count": 3,
+          "laneCentersBinding": "worldLaneCenters",
+          "widthBinding": "laneWidth",
+          "opacity": [
+            0.65,
+            0
+          ]
+        }
+      ],
+      "skillId": "P002",
+      "target": "global_confirm",
+      "notes": "Visual starts after global confirmation and authoritative release; no extra confirmation inside renderer."
+    },
+    {
+      "id": "P003",
+      "kind": "engine-effect",
+      "scope": "skill",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-P003-SKILL-VFX"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_AURA",
+          "emitter": "persistentArea",
+          "lifetimeSeconds": null,
+          "endTickBinding": "skillEndTick",
+          "sizeBinding": "skillAreaDiameter",
+          "tint": "#A7DDEB",
+          "opacity": 0.25
+        },
+        {
+          "texture": "VFX_MUTE",
+          "emitter": "statusMarker",
+          "lifetimeSeconds": null,
+          "endTickBinding": "targetStunEndTick",
+          "logicalSize": [
+            33,
+            33
+          ],
+          "offset": [
+            0,
+            -35
+          ],
+          "maxPerTarget": 1
+        }
+      ],
+      "skillId": "P003",
+      "target": "area",
+      "notes": "A mute/stun dome, not a damaging music field. Boss marker uses actual shortened control end tick."
+    },
+    {
+      "id": "HIT",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-HIT"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SPARK",
+          "emitter": "impactPoint",
+          "lifetimeSeconds": 0.12,
+          "logicalSize": [
+            25,
+            25
+          ],
+          "count": 2,
+          "opacity": [
+            0.9,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "impactPoint",
+          "lifetimeSeconds": 0.14,
+          "logicalSize": [
+            40,
+            40
+          ],
+          "scale": [
+            0.5,
+            1
+          ],
+          "opacity": [
+            0.6,
+            0
+          ]
+        }
+      ],
+      "event": "damage",
+      "targetBodyAction": "hit",
+      "notes": "Short hit action may be shared by all entities; does not interrupt authoritative movement or apply damage."
+    },
+    {
+      "id": "MERGE",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-MERGE"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_RING",
+          "emitter": "mergeResultPosition",
+          "lifetimeSeconds": 0.3,
+          "logicalSize": [
+            105,
+            105
+          ],
+          "scale": [
+            0.2,
+            1.1
+          ],
+          "opacity": [
+            0.85,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_STAR",
+          "emitter": "mergeResultPosition",
+          "lifetimeSeconds": 0.35,
+          "count": 5,
+          "spreadRadius": 44,
+          "scale": [
+            0.1,
+            0.24
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "event": "mergeCommitted",
+      "notes": "Old sprites converge to committed result; star badge comes from the current battle star, not permanent level."
+    },
+    {
+      "id": "SKILL_UNLOCK",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "ui",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-SKILL-UNLOCK"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_STAR",
+          "emitter": "skillIconDestination",
+          "lifetimeSeconds": 0.35,
+          "count": 4,
+          "spreadRadius": 24,
+          "scale": [
+            0.08,
+            0.17
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_RING",
+          "emitter": "skillIconDestination",
+          "lifetimeSeconds": 0.35,
+          "logicalSize": [
+            88,
+            88
+          ],
+          "scale": [
+            0.3,
+            1
+          ],
+          "opacity": [
+            0.8,
+            0
+          ]
+        }
+      ],
+      "event": "firstThreeStarSkillCommitted",
+      "externalVisual": "providedSkillIcon",
+      "externalMotion": "heroToSkillSlot",
+      "notes": "Plays once for each hero skill first unlocked in this run. Does not equip over an occupied slot or reset cooldown."
+    },
+    {
+      "id": "ENERGY",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "ui",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-ENERGY"
+      ],
+      "layers": [
+        {
+          "texture": "UI_ENERGY",
+          "emitter": "rewardSourceToEnergyHud",
+          "lifetimeSeconds": 0.35,
+          "count": 3,
+          "logicalSize": [
+            22,
+            22
+          ],
+          "staggerSeconds": 0.04
+        },
+        {
+          "texture": "VFX_SPARK",
+          "emitter": "energyHud",
+          "lifetimeSeconds": 0.18,
+          "logicalSize": [
+            30,
+            30
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "event": "energyLedgerCommitted",
+      "numericSource": "committedLedgerDelta",
+      "notes": "Only committed income. During calm, ordinary monster kills emit no coin. Grandpa current-wave and advance amounts retain distinct ledger labels; fixed revival supply is still allowed."
+    },
+    {
+      "id": "CLEAR",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "ui",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-CLEAR"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_CANE_WAVE",
+          "emitter": "screenSweep",
+          "lifetimeSeconds": 0.46,
+          "path": "baseTowardSpawn",
+          "sizeBinding": "battlefieldSize",
+          "opacity": [
+            0.4,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_SMOKE",
+          "emitter": "clearedEnemyPositions",
+          "lifetimeSeconds": 0.28,
+          "count": 1,
+          "logicalSize": [
+            52,
+            52
+          ],
+          "scale": [
+            0.4,
+            1
+          ],
+          "opacity": [
+            0.65,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_SPARK",
+          "emitter": "spawnQueueMarkers",
+          "lifetimeSeconds": 0.24,
+          "count": 3,
+          "logicalSize": [
+            28,
+            28
+          ],
+          "opacity": [
+            0.8,
+            0
+          ]
+        }
+      ],
+      "event": "clearCommitted",
+      "notes": "Includes abstract spawn-queue clear markers for not-yet-spawned enemies. No fake spawned enemies or delayed accounting."
+    },
+    {
+      "id": "GRANDPA",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "ui",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-GRANDPA"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_CANE_WAVE",
+          "emitter": "caneImpactAnchor",
+          "lifetimeSeconds": 0.4,
+          "sizeBinding": "battlefieldWidth",
+          "scale": [
+            0.1,
+            1
+          ],
+          "opacity": [
+            0.8,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_IMPACT",
+          "emitter": "caneImpactAnchor",
+          "lifetimeSeconds": 0.18,
+          "logicalSize": [
+            105,
+            105
+          ],
+          "opacity": [
+            1,
+            0
+          ]
+        }
+      ],
+      "event": "grandpaRescueCommitted",
+      "externalActor": "N001",
+      "actorSequence": [
+        "idle",
+        "cane_raise",
+        "cane_strike"
+      ],
+      "compose": [
+        "CLEAR",
+        "ENERGY"
+      ],
+      "skipPolicy": "finishPresentationWithoutRepeatingTransaction",
+      "notes": "One-shot rescue ceremony. Walk-in/out is a node translation using the real sprite; not an invented skeletal clip."
+    },
+    {
+      "id": "REVIVE",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-REVIVE"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_SHIELD",
+          "emitter": "base",
+          "lifetimeSeconds": null,
+          "endTickBinding": "baseProtectionEndTick",
+          "logicalSize": [
+            118,
+            132
+          ],
+          "opacity": 0.6
+        },
+        {
+          "texture": "VFX_RING",
+          "emitter": "base",
+          "lifetimeSeconds": 0.38,
+          "logicalSize": [
+            146,
+            146
+          ],
+          "scale": [
+            0.4,
+            1.1
+          ],
+          "opacity": [
+            0.85,
+            0
+          ]
+        }
+      ],
+      "event": "reviveCommitted",
+      "compose": [
+        "ENERGY"
+      ],
+      "notes": "The common revive recipe has no CLEAR. Presentation freeze/deploy phase does not consume the three battle-second protection; selected clear branch separately composes CLEAR only from committed branch state."
+    },
+    {
+      "id": "DANGER",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-DANGER"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_RING",
+          "emitter": "dangerArea",
+          "lifetimeSeconds": null,
+          "endTickBinding": "warningEndTick",
+          "sizeBinding": "warningDiameter",
+          "tint": "#F284A3",
+          "opacity": 0.42
+        },
+        {
+          "texture": "VFX_ARROW",
+          "emitter": "dangerDirection",
+          "lifetimeSeconds": 0.5,
+          "logicalSize": [
+            34,
+            50
+          ],
+          "rotation": "directionToDanger",
+          "opacity": [
+            0.6,
+            0.9
+          ]
+        }
+      ],
+      "event": "warningActive",
+      "notes": "No mandatory full-screen red flashing; direction, shape and native label remain readable with screen-shake off."
+    },
+    {
+      "id": "STATE",
+      "kind": "engine-effect",
+      "scope": "common",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-VFX-STATE"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_AURA",
+          "emitter": "affectedTarget",
+          "lifetimeSeconds": null,
+          "endTickBinding": "statusEndTick",
+          "logicalSize": [
+            70,
+            70
+          ],
+          "opacity": 0.2
+        },
+        {
+          "texture": "VFX_MUTE",
+          "emitter": "stunnedTarget",
+          "lifetimeSeconds": null,
+          "endTickBinding": "statusEndTick",
+          "logicalSize": [
+            28,
+            28
+          ],
+          "offset": [
+            0,
+            -32
+          ],
+          "maxPerTarget": 1
+        },
+        {
+          "texture": "VFX_ARROW",
+          "emitter": "slowedTarget",
+          "lifetimeSeconds": null,
+          "endTickBinding": "statusEndTick",
+          "logicalSize": [
+            18,
+            24
+          ],
+          "rotationDegrees": 180,
+          "offset": [
+            -16,
+            -31
+          ],
+          "maxPerTarget": 1
+        },
+        {
+          "texture": "VFX_MARK",
+          "emitter": "markedTarget",
+          "lifetimeSeconds": null,
+          "endTickBinding": "statusEndTick",
+          "logicalSize": [
+            26,
+            26
+          ],
+          "offset": [
+            16,
+            -31
+          ],
+          "maxPerTarget": 1
+        }
+      ],
+      "event": "statusActive",
+      "notes": "Use actual status start/end; merge duplicate per-target indicators. Slow, mark and stun retain separate glyph/outline treatments."
+    },
+    {
+      "id": "MONSTER_DEATH",
+      "kind": "engine-effect",
+      "scope": "entity.shared",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [],
+      "layers": [
+        {
+          "texture": "VFX_SMOKE",
+          "emitter": "deadEnemyPosition",
+          "lifetimeSeconds": 0.24,
+          "logicalSize": [
+            44,
+            44
+          ],
+          "scale": [
+            0.5,
+            1
+          ],
+          "opacity": [
+            0.5,
+            0
+          ]
+        }
+      ],
+      "event": "enemyDeathCommitted",
+      "actorTransform": {
+        "durationSeconds": 0.18,
+        "scale": [
+          1,
+          0.78
+        ],
+        "opacity": [
+          1,
+          0
+        ]
+      },
+      "notes": "Real sprite scale/fade reused across seven monsters. Terminal state from gameplay; not a new hand-drawn death frame."
+    },
+    {
+      "id": "PUDDING_SPLIT",
+      "kind": "engine-effect",
+      "scope": "entity.special",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-M004-ANIM",
+        "ART-M004-S-ANIM"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_POPCORN",
+          "emitter": "splitOrigin",
+          "lifetimeSeconds": 0.23,
+          "count": 3,
+          "tint": "#FFE69A",
+          "scale": [
+            0.08,
+            0.16
+          ],
+          "opacity": [
+            0.7,
+            0
+          ]
+        }
+      ],
+      "event": "puddingSplitCommitted",
+      "externalActors": "authoritativeM004-SInstances",
+      "notes": "Children appear only from authoritative spawn records; use distinct M004-S art and its smaller logical scale."
+    },
+    {
+      "id": "CHICK_BUFF",
+      "kind": "engine-effect",
+      "scope": "entity.special",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-M005-ANIM"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_AURA",
+          "emitter": "buffSource",
+          "lifetimeSeconds": 0.4,
+          "sizeBinding": "buffAreaDiameter",
+          "opacity": [
+            0.25,
+            0
+          ]
+        },
+        {
+          "texture": "VFX_ARROW",
+          "emitter": "buffedTargets",
+          "lifetimeSeconds": 0.28,
+          "logicalSize": [
+            18,
+            28
+          ],
+          "offset": [
+            0,
+            -22
+          ],
+          "opacity": [
+            0.7,
+            0
+          ]
+        }
+      ],
+      "event": "buffCommitted",
+      "notes": "Buff radius and recipients come from game state; baton frame may be reused for the gesture."
+    },
+    {
+      "id": "GOOSE_TELL",
+      "kind": "engine-effect",
+      "scope": "entity.special",
+      "clock": "battle",
+      "status": "in_review",
+      "integrationStatus": "adapter_required",
+      "coveredAssetIds": [
+        "ART-B001-ANIM"
+      ],
+      "layers": [
+        {
+          "texture": "VFX_RING",
+          "emitter": "bossPosition",
+          "lifetimeSeconds": null,
+          "endTickBinding": "bossWindupEndTick",
+          "sizeBinding": "warningDiameter",
+          "tint": "#F284A3",
+          "opacity": 0.5
+        }
+      ],
+      "event": "bossWindupActive",
+      "externalActor": "B001",
+      "actorAction": "tell",
+      "actorPlayback": "hold",
+      "notes": "Tell is reserved for the real windup; do not include source frame 2 in the ordinary walk cycle. Impact is selected only at the committed boss release."
+    }
+  ]
+}

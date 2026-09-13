@@ -1,0 +1,4036 @@
+{
+  "kind": "automated_legal_commands_not_human_playtest",
+  "configVersion": "0.5",
+  "summaries": [
+    {
+      "seed": 20260912,
+      "speed": 1,
+      "strategy": 0,
+      "result": "victory",
+      "completed": 20,
+      "ticks": 16938,
+      "battleSeconds": 282.3,
+      "simulatedWallSeconds": 282.3000000000719,
+      "computationMs": 188,
+      "baseHp": 20,
+      "energy": 294,
+      "spawned": 499,
+      "killed": 499,
+      "leaked": 0,
+      "damage": 53622.74000000009,
+      "peakEnemies": 10,
+      "peakEvents": 8,
+      "trainingXp": 20,
+      "cardHistory": [
+        "C012",
+        "C008",
+        "C012",
+        "C007",
+        "C013",
+        "C011",
+        "C012",
+        "C011",
+        "C010",
+        "C012",
+        "C010",
+        "C012",
+        "C008",
+        "C011",
+        "C014",
+        "C011",
+        "C011",
+        "C001",
+        "C010"
+      ],
+      "snapshots": {
+        "H001": {
+          "level": 1,
+          "form": "H001-F01"
+        },
+        "H002": {
+          "level": 1,
+          "form": "H002-F01"
+        },
+        "H003": {
+          "level": 1,
+          "form": "H003-F01"
+        },
+        "H004": {
+          "level": 1,
+          "form": "H004-F01"
+        }
+      },
+      "firstThree": {
+        "tick": 5152,
+        "wave": 8,
+        "energy": 2
+      },
+      "commands": [
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "setSpeed",
+          "payload": 1
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 610,
+          "wave": 1,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 610,
+          "wave": 2,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1220,
+          "wave": 2,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 1220,
+          "wave": 3,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1454,
+          "wave": 3,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 1454,
+          "wave": 3,
+          "type": "move",
+          "payload": {
+            "id": 130,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 1846,
+          "wave": 3,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 1846,
+          "wave": 4,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 2382,
+          "wave": 4,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 2382,
+          "wave": 4,
+          "type": "move",
+          "payload": {
+            "id": 218,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 2474,
+          "wave": 4,
+          "type": "chooseCard",
+          "payload": "C007"
+        },
+        {
+          "tick": 2474,
+          "wave": 5,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3217,
+          "wave": 5,
+          "type": "chooseCard",
+          "payload": "C013"
+        },
+        {
+          "tick": 3217,
+          "wave": 6,
+          "type": "equipSkill",
+          "payload": {
+            "id": "P001",
+            "slot": 0
+          }
+        },
+        {
+          "tick": 3217,
+          "wave": 6,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3218,
+          "wave": 6,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 32.833333333333336
+            }
+          }
+        },
+        {
+          "tick": 3464,
+          "wave": 6,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 3464,
+          "wave": 6,
+          "type": "move",
+          "payload": {
+            "id": 301,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 3979,
+          "wave": 6,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 3979,
+          "wave": 7,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 4233,
+          "wave": 7,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 4756,
+          "wave": 7,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 4756,
+          "wave": 8,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 379,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 461,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 5318,
+          "wave": 8,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 198.83333333333294
+            }
+          }
+        },
+        {
+          "tick": 5569,
+          "wave": 8,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 5569,
+          "wave": 9,
+          "type": "equipSkill",
+          "payload": {
+            "id": "K004",
+            "slot": 1
+          }
+        },
+        {
+          "tick": 5569,
+          "wave": 9,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5570,
+          "wave": 9,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 511
+            }
+          }
+        },
+        {
+          "tick": 5868,
+          "wave": 9,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 6442,
+          "wave": 9,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 6442,
+          "wave": 10,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 541,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 623,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 7188,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 7313,
+          "wave": 10,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 7313,
+          "wave": 11,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 7418,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 154.49999999999997
+            }
+          }
+        },
+        {
+          "tick": 7670,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 728
+            }
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 685,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 761,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 8145,
+          "wave": 11,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 8145,
+          "wave": 12,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 8608,
+          "wave": 12,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 8972,
+          "wave": 12,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 8972,
+          "wave": 13,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 9154,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 9518,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 187.16666666666637
+            }
+          }
+        },
+        {
+          "tick": 9630,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 9770,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1009
+            }
+          }
+        },
+        {
+          "tick": 9795,
+          "wave": 13,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 9795,
+          "wave": 14,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 10206,
+          "wave": 14,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 10723,
+          "wave": 14,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 10723,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 10723,
+          "wave": 15,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11246,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 11618,
+          "wave": 15,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 149.59999999999988
+            }
+          }
+        },
+        {
+          "tick": 11662,
+          "wave": 15,
+          "type": "chooseCard",
+          "payload": "C014"
+        },
+        {
+          "tick": 11662,
+          "wave": 16,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11726,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 844,
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 11727,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 11870,
+          "wave": 16,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1343
+            }
+          }
+        },
+        {
+          "tick": 12266,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 999,
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 12267,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 12672,
+          "wave": 16,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 12672,
+          "wave": 17,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 12869,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1150,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 12870,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13307,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1334,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13308,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 13663,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1335,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13664,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 13682,
+          "wave": 17,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 13682,
+          "wave": 18,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 13718,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 42.49999999999998
+            }
+          }
+        },
+        {
+          "tick": 13970,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1808
+            }
+          }
+        },
+        {
+          "tick": 14093,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1675,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14094,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 14565,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1759,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14566,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 14717,
+          "wave": 18,
+          "type": "chooseCard",
+          "payload": "C001"
+        },
+        {
+          "tick": 14717,
+          "wave": 19,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 14946,
+          "wave": 19,
+          "type": "move",
+          "payload": {
+            "id": 1843,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 14947,
+          "wave": 19,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 15752,
+          "wave": 19,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 15752,
+          "wave": 20,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 15818,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 580,
+              "y": 78.66666666666666
+            }
+          }
+        },
+        {
+          "tick": 16070,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 2301
+            }
+          }
+        }
+      ],
+      "waveReports": [
+        {
+          "wave": 1,
+          "tick": 610,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 2,
+          "tick": 1220,
+          "reason": "normal",
+          "energy": 36,
+          "baseHp": 20
+        },
+        {
+          "wave": 3,
+          "tick": 1846,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 4,
+          "tick": 2474,
+          "reason": "normal",
+          "energy": 4,
+          "baseHp": 20
+        },
+        {
+          "wave": 5,
+          "tick": 3217,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 6,
+          "tick": 3979,
+          "reason": "normal",
+          "energy": 30,
+          "baseHp": 20
+        },
+        {
+          "wave": 7,
+          "tick": 4756,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 8,
+          "tick": 5569,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 9,
+          "tick": 6442,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 10,
+          "tick": 7313,
+          "reason": "normal",
+          "energy": 10,
+          "baseHp": 20
+        },
+        {
+          "wave": 11,
+          "tick": 8145,
+          "reason": "normal",
+          "energy": 14,
+          "baseHp": 20
+        },
+        {
+          "wave": 12,
+          "tick": 8972,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 13,
+          "tick": 9795,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 14,
+          "tick": 10723,
+          "reason": "normal",
+          "energy": 40,
+          "baseHp": 20
+        },
+        {
+          "wave": 15,
+          "tick": 11662,
+          "reason": "normal",
+          "energy": 38,
+          "baseHp": 20
+        },
+        {
+          "wave": 16,
+          "tick": 12672,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 17,
+          "tick": 13682,
+          "reason": "normal",
+          "energy": 2,
+          "baseHp": 20
+        },
+        {
+          "wave": 18,
+          "tick": 14717,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 19,
+          "tick": 15752,
+          "reason": "normal",
+          "energy": 106,
+          "baseHp": 20
+        },
+        {
+          "wave": 20,
+          "tick": 16938,
+          "reason": "normal",
+          "energy": 294,
+          "baseHp": 20
+        }
+      ]
+    },
+    {
+      "seed": 20260912,
+      "speed": 1,
+      "strategy": 1,
+      "result": "victory",
+      "completed": 20,
+      "ticks": 17583,
+      "battleSeconds": 293.05,
+      "simulatedWallSeconds": 293.05000000006214,
+      "computationMs": 188,
+      "baseHp": 19,
+      "energy": 292,
+      "spawned": 499,
+      "killed": 498,
+      "leaked": 1,
+      "damage": 51467.94000000011,
+      "peakEnemies": 9,
+      "peakEvents": 7,
+      "trainingXp": 20,
+      "cardHistory": [
+        "C012",
+        "C008",
+        "C012",
+        "C007",
+        "C013",
+        "C011",
+        "C012",
+        "C011",
+        "C010",
+        "C012",
+        "C010",
+        "C012",
+        "C008",
+        "C011",
+        "C014",
+        "C011",
+        "C011",
+        "C001",
+        "C010"
+      ],
+      "snapshots": {
+        "H001": {
+          "level": 1,
+          "form": "H001-F01"
+        },
+        "H002": {
+          "level": 1,
+          "form": "H002-F01"
+        },
+        "H003": {
+          "level": 1,
+          "form": "H003-F01"
+        },
+        "H004": {
+          "level": 1,
+          "form": "H004-F01"
+        }
+      },
+      "firstThree": {
+        "tick": 5601,
+        "wave": 8,
+        "energy": 1
+      },
+      "commands": [
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "setSpeed",
+          "payload": 1
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 638,
+          "wave": 1,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 638,
+          "wave": 2,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1503,
+          "wave": 2,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 1503,
+          "wave": 3,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1802,
+          "wave": 3,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 1802,
+          "wave": 3,
+          "type": "move",
+          "payload": {
+            "id": 112,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 2160,
+          "wave": 3,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 2160,
+          "wave": 4,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 2751,
+          "wave": 4,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 2751,
+          "wave": 4,
+          "type": "move",
+          "payload": {
+            "id": 182,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 2829,
+          "wave": 4,
+          "type": "chooseCard",
+          "payload": "C007"
+        },
+        {
+          "tick": 2829,
+          "wave": 5,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3587,
+          "wave": 5,
+          "type": "chooseCard",
+          "payload": "C013"
+        },
+        {
+          "tick": 3587,
+          "wave": 6,
+          "type": "equipSkill",
+          "payload": {
+            "id": "P001",
+            "slot": 0
+          }
+        },
+        {
+          "tick": 3587,
+          "wave": 6,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3588,
+          "wave": 6,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 32.833333333333336
+            }
+          }
+        },
+        {
+          "tick": 3875,
+          "wave": 6,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 3875,
+          "wave": 6,
+          "type": "move",
+          "payload": {
+            "id": 261,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 4390,
+          "wave": 6,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 4390,
+          "wave": 7,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 4708,
+          "wave": 7,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 5167,
+          "wave": 7,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 5167,
+          "wave": 8,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5601,
+          "wave": 8,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5601,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 327,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5601,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 410,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 5688,
+          "wave": 8,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 239.66666666666595
+            }
+          }
+        },
+        {
+          "tick": 6036,
+          "wave": 8,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 6036,
+          "wave": 9,
+          "type": "equipSkill",
+          "payload": {
+            "id": "K001",
+            "slot": 1
+          }
+        },
+        {
+          "tick": 6036,
+          "wave": 9,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 6037,
+          "wave": 9,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 360,
+              "y": 33.166666666666664
+            }
+          }
+        },
+        {
+          "tick": 6379,
+          "wave": 9,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 6869,
+          "wave": 9,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 6869,
+          "wave": 10,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 7127,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7127,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 484,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7127,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 561,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 7660,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 7788,
+          "wave": 10,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 580,
+              "y": 269.066666666667
+            }
+          }
+        },
+        {
+          "tick": 7797,
+          "wave": 10,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 7797,
+          "wave": 11,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 7837,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 360,
+              "y": 78.66666666666666
+            }
+          }
+        },
+        {
+          "tick": 8509,
+          "wave": 11,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 8509,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 618,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 8509,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 710,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 8665,
+          "wave": 11,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 8665,
+          "wave": 12,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 9128,
+          "wave": 12,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 9524,
+          "wave": 12,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 9524,
+          "wave": 13,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 9637,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 580,
+              "y": 124.16666666666684
+            }
+          }
+        },
+        {
+          "tick": 9706,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 9888,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 580,
+              "y": 175.4999999999998
+            }
+          }
+        },
+        {
+          "tick": 10234,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 10424,
+          "wave": 13,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 10424,
+          "wave": 14,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 10855,
+          "wave": 14,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 11367,
+          "wave": 14,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 11367,
+          "wave": 15,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11437,
+          "wave": 15,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 580,
+              "y": 113.6666666666668
+            }
+          }
+        },
+        {
+          "tick": 11447,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 11937,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 11988,
+          "wave": 15,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 212.5
+            }
+          }
+        },
+        {
+          "tick": 12297,
+          "wave": 15,
+          "type": "chooseCard",
+          "payload": "C014"
+        },
+        {
+          "tick": 12297,
+          "wave": 16,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 12449,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 778,
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 12450,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 12981,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 935,
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 12982,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 13237,
+          "wave": 16,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 580,
+              "y": 146
+            }
+          }
+        },
+        {
+          "tick": 13254,
+          "wave": 16,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 13254,
+          "wave": 17,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 13539,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1097,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13540,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13939,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1260,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13940,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 14088,
+          "wave": 17,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 185.99999999999972
+            }
+          }
+        },
+        {
+          "tick": 14281,
+          "wave": 17,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 14281,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1261,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 14281,
+          "wave": 18,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 14282,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14731,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1580,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14732,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 15037,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 360,
+              "y": 103.16666666666676
+            }
+          }
+        },
+        {
+          "tick": 15219,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1653,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 15220,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 15332,
+          "wave": 18,
+          "type": "chooseCard",
+          "payload": "C001"
+        },
+        {
+          "tick": 15332,
+          "wave": 19,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 15565,
+          "wave": 19,
+          "type": "move",
+          "payload": {
+            "id": 1741,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 15566,
+          "wave": 19,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 16188,
+          "wave": 19,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 118.6666666666665
+            }
+          }
+        },
+        {
+          "tick": 16399,
+          "wave": 19,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 16399,
+          "wave": 20,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 16837,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "K001",
+            "target": {
+              "x": 580,
+              "y": 144.00000000000006
+            }
+          }
+        }
+      ],
+      "waveReports": [
+        {
+          "wave": 1,
+          "tick": 638,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 2,
+          "tick": 1503,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 19
+        },
+        {
+          "wave": 3,
+          "tick": 2160,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 19
+        },
+        {
+          "wave": 4,
+          "tick": 2829,
+          "reason": "normal",
+          "energy": 2,
+          "baseHp": 19
+        },
+        {
+          "wave": 5,
+          "tick": 3587,
+          "reason": "normal",
+          "energy": 30,
+          "baseHp": 19
+        },
+        {
+          "wave": 6,
+          "tick": 4390,
+          "reason": "normal",
+          "energy": 28,
+          "baseHp": 19
+        },
+        {
+          "wave": 7,
+          "tick": 5167,
+          "reason": "normal",
+          "energy": 24,
+          "baseHp": 19
+        },
+        {
+          "wave": 8,
+          "tick": 6036,
+          "reason": "normal",
+          "energy": 30,
+          "baseHp": 19
+        },
+        {
+          "wave": 9,
+          "tick": 6869,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 19
+        },
+        {
+          "wave": 10,
+          "tick": 7797,
+          "reason": "normal",
+          "energy": 8,
+          "baseHp": 19
+        },
+        {
+          "wave": 11,
+          "tick": 8665,
+          "reason": "normal",
+          "energy": 12,
+          "baseHp": 19
+        },
+        {
+          "wave": 12,
+          "tick": 9524,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 19
+        },
+        {
+          "wave": 13,
+          "tick": 10424,
+          "reason": "normal",
+          "energy": 14,
+          "baseHp": 19
+        },
+        {
+          "wave": 14,
+          "tick": 11367,
+          "reason": "normal",
+          "energy": 38,
+          "baseHp": 19
+        },
+        {
+          "wave": 15,
+          "tick": 12297,
+          "reason": "normal",
+          "energy": 36,
+          "baseHp": 19
+        },
+        {
+          "wave": 16,
+          "tick": 13254,
+          "reason": "normal",
+          "energy": 24,
+          "baseHp": 19
+        },
+        {
+          "wave": 17,
+          "tick": 14281,
+          "reason": "normal",
+          "energy": 40,
+          "baseHp": 19
+        },
+        {
+          "wave": 18,
+          "tick": 15332,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 19
+        },
+        {
+          "wave": 19,
+          "tick": 16399,
+          "reason": "normal",
+          "energy": 104,
+          "baseHp": 19
+        },
+        {
+          "wave": 20,
+          "tick": 17583,
+          "reason": "normal",
+          "energy": 292,
+          "baseHp": 19
+        }
+      ]
+    },
+    {
+      "seed": 20260912,
+      "speed": 1,
+      "strategy": 2,
+      "result": "victory",
+      "completed": 20,
+      "ticks": 17209,
+      "battleSeconds": 286.81666666666666,
+      "simulatedWallSeconds": 286.8166666667345,
+      "computationMs": 165,
+      "baseHp": 20,
+      "energy": 294,
+      "spawned": 499,
+      "killed": 499,
+      "leaked": 0,
+      "damage": 52956.72000000012,
+      "peakEnemies": 9,
+      "peakEvents": 7,
+      "trainingXp": 20,
+      "cardHistory": [
+        "C012",
+        "C008",
+        "C012",
+        "C007",
+        "C013",
+        "C011",
+        "C012",
+        "C011",
+        "C010",
+        "C012",
+        "C010",
+        "C012",
+        "C008",
+        "C011",
+        "C014",
+        "C011",
+        "C011",
+        "C001",
+        "C010"
+      ],
+      "snapshots": {
+        "H001": {
+          "level": 1,
+          "form": "H001-F01"
+        },
+        "H002": {
+          "level": 1,
+          "form": "H002-F01"
+        },
+        "H003": {
+          "level": 1,
+          "form": "H003-F01"
+        },
+        "H004": {
+          "level": 1,
+          "form": "H004-F01"
+        }
+      },
+      "firstThree": {
+        "tick": 5294,
+        "wave": 8,
+        "energy": 2
+      },
+      "commands": [
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "setSpeed",
+          "payload": 1
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 610,
+          "wave": 1,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 610,
+          "wave": 2,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1257,
+          "wave": 2,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 1257,
+          "wave": 3,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1500,
+          "wave": 3,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 1500,
+          "wave": 3,
+          "type": "move",
+          "payload": {
+            "id": 110,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 1883,
+          "wave": 3,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 1883,
+          "wave": 4,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 2428,
+          "wave": 4,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 2428,
+          "wave": 4,
+          "type": "move",
+          "payload": {
+            "id": 193,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 2511,
+          "wave": 4,
+          "type": "chooseCard",
+          "payload": "C007"
+        },
+        {
+          "tick": 2511,
+          "wave": 5,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3327,
+          "wave": 5,
+          "type": "chooseCard",
+          "payload": "C013"
+        },
+        {
+          "tick": 3327,
+          "wave": 6,
+          "type": "equipSkill",
+          "payload": {
+            "id": "P001",
+            "slot": 0
+          }
+        },
+        {
+          "tick": 3327,
+          "wave": 6,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3328,
+          "wave": 6,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 32.833333333333336
+            }
+          }
+        },
+        {
+          "tick": 3587,
+          "wave": 6,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 3587,
+          "wave": 6,
+          "type": "move",
+          "payload": {
+            "id": 277,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 4097,
+          "wave": 6,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 4097,
+          "wave": 7,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 4351,
+          "wave": 7,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 4898,
+          "wave": 7,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 4898,
+          "wave": 8,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5294,
+          "wave": 8,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5294,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 349,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5294,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 439,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 5428,
+          "wave": 8,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 161.49999999999991
+            }
+          }
+        },
+        {
+          "tick": 5719,
+          "wave": 8,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 5719,
+          "wave": 9,
+          "type": "equipSkill",
+          "payload": {
+            "id": "K004",
+            "slot": 1
+          }
+        },
+        {
+          "tick": 5719,
+          "wave": 9,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5720,
+          "wave": 9,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 486
+            }
+          }
+        },
+        {
+          "tick": 6018,
+          "wave": 9,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 6592,
+          "wave": 9,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 6592,
+          "wave": 10,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 6778,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6778,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 512,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6778,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 590,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 7381,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 7498,
+          "wave": 10,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 7498,
+          "wave": 11,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 7528,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 66.99999999999994
+            }
+          }
+        },
+        {
+          "tick": 7820,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 699
+            }
+          }
+        },
+        {
+          "tick": 8104,
+          "wave": 11,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 8104,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 661,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 8104,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 732,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 8325,
+          "wave": 11,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 8325,
+          "wave": 12,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 8792,
+          "wave": 12,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 9187,
+          "wave": 12,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 9187,
+          "wave": 13,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 9416,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 9628,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 163
+            }
+          }
+        },
+        {
+          "tick": 9846,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 9920,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 950
+            }
+          }
+        },
+        {
+          "tick": 10014,
+          "wave": 13,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 10014,
+          "wave": 14,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 10431,
+          "wave": 14,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 10998,
+          "wave": 14,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 10998,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 10998,
+          "wave": 15,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11531,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 11728,
+          "wave": 15,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 62.33333333333327
+            }
+          }
+        },
+        {
+          "tick": 11937,
+          "wave": 15,
+          "type": "chooseCard",
+          "payload": "C014"
+        },
+        {
+          "tick": 11937,
+          "wave": 16,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 12001,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 809,
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 12002,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 12020,
+          "wave": 16,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1284
+            }
+          }
+        },
+        {
+          "tick": 12544,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 960,
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 12545,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 12974,
+          "wave": 16,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 12974,
+          "wave": 17,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 13204,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1117,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13205,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13609,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1286,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13610,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 13828,
+          "wave": 17,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 580,
+              "y": 114.13333333333317
+            }
+          }
+        },
+        {
+          "tick": 13930,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1287,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13931,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 13995,
+          "wave": 17,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 13995,
+          "wave": 18,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 14120,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1713
+            }
+          }
+        },
+        {
+          "tick": 14411,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1619,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14412,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 14878,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1694,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14879,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 15020,
+          "wave": 18,
+          "type": "chooseCard",
+          "payload": "C001"
+        },
+        {
+          "tick": 15020,
+          "wave": 19,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 15249,
+          "wave": 19,
+          "type": "move",
+          "payload": {
+            "id": 1779,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 15250,
+          "wave": 19,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 15928,
+          "wave": 19,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 112.50000000000023
+            }
+          }
+        },
+        {
+          "tick": 16040,
+          "wave": 19,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 16040,
+          "wave": 20,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 16220,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 2150
+            }
+          }
+        }
+      ],
+      "waveReports": [
+        {
+          "wave": 1,
+          "tick": 610,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 2,
+          "tick": 1257,
+          "reason": "normal",
+          "energy": 36,
+          "baseHp": 20
+        },
+        {
+          "wave": 3,
+          "tick": 1883,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 4,
+          "tick": 2511,
+          "reason": "normal",
+          "energy": 4,
+          "baseHp": 20
+        },
+        {
+          "wave": 5,
+          "tick": 3327,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 6,
+          "tick": 4097,
+          "reason": "normal",
+          "energy": 30,
+          "baseHp": 20
+        },
+        {
+          "wave": 7,
+          "tick": 4898,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 8,
+          "tick": 5719,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 9,
+          "tick": 6592,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 10,
+          "tick": 7498,
+          "reason": "normal",
+          "energy": 10,
+          "baseHp": 20
+        },
+        {
+          "wave": 11,
+          "tick": 8325,
+          "reason": "normal",
+          "energy": 14,
+          "baseHp": 20
+        },
+        {
+          "wave": 12,
+          "tick": 9187,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 13,
+          "tick": 10014,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 14,
+          "tick": 10998,
+          "reason": "normal",
+          "energy": 40,
+          "baseHp": 20
+        },
+        {
+          "wave": 15,
+          "tick": 11937,
+          "reason": "normal",
+          "energy": 38,
+          "baseHp": 20
+        },
+        {
+          "wave": 16,
+          "tick": 12974,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 17,
+          "tick": 13995,
+          "reason": "normal",
+          "energy": 2,
+          "baseHp": 20
+        },
+        {
+          "wave": 18,
+          "tick": 15020,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 19,
+          "tick": 16040,
+          "reason": "normal",
+          "energy": 106,
+          "baseHp": 20
+        },
+        {
+          "wave": 20,
+          "tick": 17209,
+          "reason": "normal",
+          "energy": 294,
+          "baseHp": 20
+        }
+      ]
+    },
+    {
+      "seed": 20260912,
+      "speed": 2,
+      "strategy": 0,
+      "result": "victory",
+      "completed": 20,
+      "ticks": 16938,
+      "battleSeconds": 282.3,
+      "simulatedWallSeconds": 141.15000000003596,
+      "computationMs": 157,
+      "baseHp": 20,
+      "energy": 294,
+      "spawned": 499,
+      "killed": 499,
+      "leaked": 0,
+      "damage": 53622.74000000009,
+      "peakEnemies": 10,
+      "peakEvents": 8,
+      "trainingXp": 20,
+      "cardHistory": [
+        "C012",
+        "C008",
+        "C012",
+        "C007",
+        "C013",
+        "C011",
+        "C012",
+        "C011",
+        "C010",
+        "C012",
+        "C010",
+        "C012",
+        "C008",
+        "C011",
+        "C014",
+        "C011",
+        "C011",
+        "C001",
+        "C010"
+      ],
+      "snapshots": {
+        "H001": {
+          "level": 1,
+          "form": "H001-F01"
+        },
+        "H002": {
+          "level": 1,
+          "form": "H002-F01"
+        },
+        "H003": {
+          "level": 1,
+          "form": "H003-F01"
+        },
+        "H004": {
+          "level": 1,
+          "form": "H004-F01"
+        }
+      },
+      "firstThree": {
+        "tick": 5152,
+        "wave": 8,
+        "energy": 2
+      },
+      "commands": [
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "setSpeed",
+          "payload": 2
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 0,
+          "wave": 1,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 610,
+          "wave": 1,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 610,
+          "wave": 2,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1220,
+          "wave": 2,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 1220,
+          "wave": 3,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 1454,
+          "wave": 3,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 1454,
+          "wave": 3,
+          "type": "move",
+          "payload": {
+            "id": 130,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 1846,
+          "wave": 3,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 1846,
+          "wave": 4,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 2382,
+          "wave": 4,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 2382,
+          "wave": 4,
+          "type": "move",
+          "payload": {
+            "id": 218,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 2474,
+          "wave": 4,
+          "type": "chooseCard",
+          "payload": "C007"
+        },
+        {
+          "tick": 2474,
+          "wave": 5,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3217,
+          "wave": 5,
+          "type": "chooseCard",
+          "payload": "C013"
+        },
+        {
+          "tick": 3217,
+          "wave": 6,
+          "type": "equipSkill",
+          "payload": {
+            "id": "P001",
+            "slot": 0
+          }
+        },
+        {
+          "tick": 3217,
+          "wave": 6,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 3218,
+          "wave": 6,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 32.833333333333336
+            }
+          }
+        },
+        {
+          "tick": 3464,
+          "wave": 6,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 3464,
+          "wave": 6,
+          "type": "move",
+          "payload": {
+            "id": 301,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 3979,
+          "wave": 6,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 3979,
+          "wave": 7,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 4233,
+          "wave": 7,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 4756,
+          "wave": 7,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 4756,
+          "wave": 8,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 379,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 5152,
+          "wave": 8,
+          "type": "move",
+          "payload": {
+            "id": 461,
+            "slot": "L1-B"
+          }
+        },
+        {
+          "tick": 5318,
+          "wave": 8,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 198.83333333333294
+            }
+          }
+        },
+        {
+          "tick": 5569,
+          "wave": 8,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 5569,
+          "wave": 9,
+          "type": "equipSkill",
+          "payload": {
+            "id": "K004",
+            "slot": 1
+          }
+        },
+        {
+          "tick": 5569,
+          "wave": 9,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 5570,
+          "wave": 9,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 511
+            }
+          }
+        },
+        {
+          "tick": 5868,
+          "wave": 9,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 6442,
+          "wave": 9,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 6442,
+          "wave": 10,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 541,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 6628,
+          "wave": 10,
+          "type": "move",
+          "payload": {
+            "id": 623,
+            "slot": "L2-B"
+          }
+        },
+        {
+          "tick": 7188,
+          "wave": 10,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R1"
+          }
+        },
+        {
+          "tick": 7313,
+          "wave": 10,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 7313,
+          "wave": 11,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 7418,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 154.49999999999997
+            }
+          }
+        },
+        {
+          "tick": 7670,
+          "wave": 11,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 728
+            }
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 685,
+            "slot": "R2"
+          }
+        },
+        {
+          "tick": 7915,
+          "wave": 11,
+          "type": "move",
+          "payload": {
+            "id": 761,
+            "slot": "L3-B"
+          }
+        },
+        {
+          "tick": 8145,
+          "wave": 11,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 8145,
+          "wave": 12,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 8608,
+          "wave": 12,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 8972,
+          "wave": 12,
+          "type": "chooseCard",
+          "payload": "C012"
+        },
+        {
+          "tick": 8972,
+          "wave": 13,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 9154,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 9518,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 187.16666666666637
+            }
+          }
+        },
+        {
+          "tick": 9630,
+          "wave": 13,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 9770,
+          "wave": 13,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1009
+            }
+          }
+        },
+        {
+          "tick": 9795,
+          "wave": 13,
+          "type": "chooseCard",
+          "payload": "C008"
+        },
+        {
+          "tick": 9795,
+          "wave": 14,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 10206,
+          "wave": 14,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 10723,
+          "wave": 14,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 10723,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 10723,
+          "wave": 15,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11246,
+          "wave": 15,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 11618,
+          "wave": 15,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 360,
+              "y": 149.59999999999988
+            }
+          }
+        },
+        {
+          "tick": 11662,
+          "wave": 15,
+          "type": "chooseCard",
+          "payload": "C014"
+        },
+        {
+          "tick": 11662,
+          "wave": 16,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 11726,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 844,
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 11727,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 11870,
+          "wave": 16,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1343
+            }
+          }
+        },
+        {
+          "tick": 12266,
+          "wave": 16,
+          "type": "move",
+          "payload": {
+            "id": 999,
+            "slot": "L2-C"
+          }
+        },
+        {
+          "tick": 12267,
+          "wave": 16,
+          "type": "summon",
+          "payload": {
+            "heroId": "H001",
+            "slot": "L2-A"
+          }
+        },
+        {
+          "tick": 12672,
+          "wave": 16,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 12672,
+          "wave": 17,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 12869,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1150,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 12870,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13307,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1334,
+            "slot": "L3-C"
+          }
+        },
+        {
+          "tick": 13308,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 13663,
+          "wave": 17,
+          "type": "move",
+          "payload": {
+            "id": 1335,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 13664,
+          "wave": 17,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 13682,
+          "wave": 17,
+          "type": "chooseCard",
+          "payload": "C011"
+        },
+        {
+          "tick": 13682,
+          "wave": 18,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 13718,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 140,
+              "y": 42.49999999999998
+            }
+          }
+        },
+        {
+          "tick": 13970,
+          "wave": 18,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 1808
+            }
+          }
+        },
+        {
+          "tick": 14093,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1675,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14094,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 14565,
+          "wave": 18,
+          "type": "move",
+          "payload": {
+            "id": 1759,
+            "slot": "L1-A"
+          }
+        },
+        {
+          "tick": 14566,
+          "wave": 18,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 14717,
+          "wave": 18,
+          "type": "chooseCard",
+          "payload": "C001"
+        },
+        {
+          "tick": 14717,
+          "wave": 19,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 14946,
+          "wave": 19,
+          "type": "move",
+          "payload": {
+            "id": 1843,
+            "slot": "L3-A"
+          }
+        },
+        {
+          "tick": 14947,
+          "wave": 19,
+          "type": "summon",
+          "payload": {
+            "heroId": "H004",
+            "slot": "L1-C"
+          }
+        },
+        {
+          "tick": 15752,
+          "wave": 19,
+          "type": "chooseCard",
+          "payload": "C010"
+        },
+        {
+          "tick": 15752,
+          "wave": 20,
+          "type": "startWave",
+          "payload": {}
+        },
+        {
+          "tick": 15818,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "P001",
+            "target": {
+              "x": 580,
+              "y": 78.66666666666666
+            }
+          }
+        },
+        {
+          "tick": 16070,
+          "wave": 20,
+          "type": "cast",
+          "payload": {
+            "id": "K004",
+            "target": {
+              "enemyId": 2301
+            }
+          }
+        }
+      ],
+      "waveReports": [
+        {
+          "wave": 1,
+          "tick": 610,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 2,
+          "tick": 1220,
+          "reason": "normal",
+          "energy": 36,
+          "baseHp": 20
+        },
+        {
+          "wave": 3,
+          "tick": 1846,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 4,
+          "tick": 2474,
+          "reason": "normal",
+          "energy": 4,
+          "baseHp": 20
+        },
+        {
+          "wave": 5,
+          "tick": 3217,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 6,
+          "tick": 3979,
+          "reason": "normal",
+          "energy": 30,
+          "baseHp": 20
+        },
+        {
+          "wave": 7,
+          "tick": 4756,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 8,
+          "tick": 5569,
+          "reason": "normal",
+          "energy": 32,
+          "baseHp": 20
+        },
+        {
+          "wave": 9,
+          "tick": 6442,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 10,
+          "tick": 7313,
+          "reason": "normal",
+          "energy": 10,
+          "baseHp": 20
+        },
+        {
+          "wave": 11,
+          "tick": 8145,
+          "reason": "normal",
+          "energy": 14,
+          "baseHp": 20
+        },
+        {
+          "wave": 12,
+          "tick": 8972,
+          "reason": "normal",
+          "energy": 34,
+          "baseHp": 20
+        },
+        {
+          "wave": 13,
+          "tick": 9795,
+          "reason": "normal",
+          "energy": 16,
+          "baseHp": 20
+        },
+        {
+          "wave": 14,
+          "tick": 10723,
+          "reason": "normal",
+          "energy": 40,
+          "baseHp": 20
+        },
+        {
+          "wave": 15,
+          "tick": 11662,
+          "reason": "normal",
+          "energy": 38,
+          "baseHp": 20
+        },
+        {
+          "wave": 16,
+          "tick": 12672,
+          "reason": "normal",
+          "energy": 26,
+          "baseHp": 20
+        },
+        {
+          "wave": 17,
+          "tick": 13682,
+          "reason": "normal",
+          "energy": 2,
+          "baseHp": 20
+        },
+        {
+          "wave": 18,
+          "tick": 14717,
+          "reason": "normal",
+          "energy": 18,
+          "baseHp": 20
+        },
+        {
+          "wave": 19,
+          "tick": 15752,
+          "reason": "normal",
+          "energy": 106,
+          "baseHp": 20
+        },
+        {
+          "wave": 20,
+          "tick": 16938,
+          "reason": "normal",
+          "energy": 294,
+          "baseHp": 20
+        }
+      ]
+    }
+  ]
+}
