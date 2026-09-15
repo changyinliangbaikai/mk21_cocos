@@ -1,4 +1,4 @@
-import { _decorator, BlockInputEvents, Button, Canvas, Component, EventTouch, game, Game, Graphics, Input, JsonAsset, Label, Layers, Mask, Node, profiler, resources, Sprite, SpriteFrame, sys, UITransform, Vec3, view } from 'cc';
+import { _decorator, BlockInputEvents, Button, Canvas, Component, EventTouch, game, Game, Graphics, Input, JsonAsset, Label, Layers, Mask, Node, profiler, resources, screen, Sprite, SpriteFrame, sys, UITransform, Vec3, view } from 'cc';
 import { GameSession } from '../domain/session';
 import { color, Palette as P, round, shape } from './ToyVisuals';
 import { SpriteActor, SpriteVisuals, VisualAction } from './SpriteVisuals';
@@ -8,6 +8,8 @@ import { AudioDirector } from './AudioDirector';
 import { captureAudioState } from './AudioEvents';
 import { TextureEffects, captureVfxState } from './TextureEffects';
 import { battleCircleScreen, battleRangeDashes, battleProjectionContract, battleReserveScreen, battleScreenToWorld, worldToBattleScreen } from './BattleProjection';
+import { fitMiniGameStage, menuLowerEdgeInView } from './MiniGameLayout';
+import { douyinSidebar, HEALTHY_PLAY_NOTICE } from './PlatformRelease';
 
 const { ccclass } = _decorator;
 const HERO_SHORT: Record<string, string> = { H001: '厨师', H002: '拳师', H003: '青蛙', H004: '阿姨' };
@@ -40,6 +42,7 @@ export class GameApp extends Component {
   private audio?: AudioDirector;
   private textureEffects?: TextureEffects;
   private ready = false;
+  private layoutKey = '';
   private pendingResume = false;
   private visualRunId = '';
   private visualWave = 0;
@@ -64,6 +67,7 @@ export class GameApp extends Component {
   private cardRevealUntil = 0;
   private bulletBadge: Node | null = null;
   private localModal = '';
+  private healthyPlayPending = !sys.isBrowser;
   private modalHero = '';
   private previewForm = '';
   private previewHero = '';
@@ -115,7 +119,7 @@ export class GameApp extends Component {
         this.textureEffects = new TextureEffects(); this.textureEffects.initialize(this.catalog);
         this.textureEffects.setNumberStyle((label,size)=>this.typography.apply(label,'number',size,'#FFF4AE'));
         this.textureEffects.observe(this.session.data);
-        if (typeof window !== 'undefined' && /(?:\?|&)qa(?:=1|&|$)/.test(window.location.search)) {
+        if (sys.isBrowser && typeof window !== 'undefined' && /(?:\?|&)qa(?:=1|&|$)/.test(window.location?.search || '')) {
           (window as any).__gameApp = this.session;
           (window as any).__gameUI = { refresh: () => this.render(), describe: () => this.describeUI() };
         }
@@ -134,16 +138,38 @@ export class GameApp extends Component {
   }
   private onForeground(): void {
     profiler.hideStats(); this.visualFloorTick = this.session?.data.run?.battle.tick || 0; this.effects = [];
-    this.audio?.foreground(); this.textureEffects?.foreground(); this.resize(); this.signature = '';
+    this.audio?.foreground(); this.textureEffects?.foreground(); this.layoutKey = ''; this.resize(); this.signature = '';
   }
   private resumeSavedPhase(): void {
     if(!this.pendingResume)return;
     if(this.sendCommand('resumeBackground')){this.pendingResume=false;this.render();}
   }
-  private resize(): void { const size = view.getVisibleSize(); const scale = Math.min(size.width / 720, size.height / 1280); this.stage?.setScale(scale, scale, 1); }
+  private resize(): void {
+    const size = view.getVisibleSize(), origin = view.getVisibleOrigin(), viewport = view.getViewportRect();
+    const key = [size.width, size.height, origin.x, origin.y, viewport.y, screen.windowSize.height].join(',');
+    if (key === this.layoutKey) return;
+    this.layoutKey = key;
+    const visible = { x: origin.x, y: origin.y, width: size.width, height: size.height };
+    let safe = visible, menuEdge: number | undefined;
+    if (!sys.isBrowser) {
+      const host = (globalThis as any).tt || (globalThis as any).wx;
+      if (host) {
+        try { safe = sys.getSafeAreaRect(false); } catch { /* Older hosts keep the visible bounds. */ }
+        try {
+          const menu = host.getMenuButtonLayout?.() || host.getMenuButtonBoundingClientRect?.();
+          const info = host.getSystemInfoSync?.();
+          menuEdge = menuLowerEdgeInView(menu?.bottom, info?.windowHeight, screen.windowSize.height, viewport.y, view.getScaleY());
+        } catch { /* Unsupported menu APIs do not prevent starting the game. */ }
+      }
+    }
+    const layout = fitMiniGameStage(visible, safe, menuEdge);
+    this.stage?.setScale(layout.scale, layout.scale, 1);
+    this.stage?.setPosition(layout.x, layout.y, 0);
+  }
 
   update(dt: number): void {
     if (!this.session || !this.ready) return;
+    if (this.healthyPlayPending) { this.resize(); return; }
     const previousPhase = this.session.data.run?.phase;
     this.elapsed += dt; this.session.advance(dt); this.resize();
     if(previousPhase==='battle'&&this.session.data.run?.phase==='cards')this.cardRevealUntil=this.elapsed+.35;
@@ -160,7 +186,8 @@ export class GameApp extends Component {
     const d: any = this.session.data, r = d.run;
     return JSON.stringify([d.screen, d.overlay, d.selectedHero, d.rosterDraft, [d.profile.heroes,d.profile.roster,d.profile.trainingXp,d.profile.completedWaves,d.profile.settings], d.notice, d.tutorial, r?.phase, r?.battle.wave,
       r?.battle.heroes.map((h: any) => [h.id, h.type, h.star, h.slot]), r?.equipped, Object.keys(r?.skills || {}), r?.candidates, r?.cards,
-      r?.ad, r?.pendingUnlocks, this.localModal, this.previewForm, this.previewAction, this.tutorialKey, this.forecastExpanded,this.pendingResume,this.selectedRangeHeroId,this.elapsed<this.cardRevealUntil]);
+      r?.ad, r?.pendingUnlocks, this.localModal, this.previewForm, this.previewAction, this.tutorialKey, this.forecastExpanded,this.pendingResume,this.selectedRangeHeroId,this.elapsed<this.cardRevealUntil,
+      this.healthyPlayPending, douyinSidebar()?.available, douyinSidebar()?.fromSidebar, douyinSidebar()?.busy, douyinSidebar()?.error]);
   }
 
   private run(command: string, payload?: any): boolean {
@@ -187,6 +214,15 @@ export class GameApp extends Component {
     this.labels = {}; this.avatars = []; this.enemyViews.clear(); this.worldLayer = null; this.textureLayer = null; this.effectLayer = null; this.rangeLayer = null; this.bulletBadge = null; this.baseNormal = null; this.baseDamaged = null;
     this.cooldownViews = {}; this.cooldownIcons = {};
     this.box(360, 640, 720, 1280, '#EAF1E6', 0);
+    if (this.healthyPlayPending) {
+      this.referenceImage('V4_BG_CAMP');
+      this.modal('超力英雄', '', 700);
+      this.displayText('健康游戏忠告', 360, 480, 580, 80, 34);
+      this.text(HEALTHY_PLAY_NOTICE, 360, 645, 600, 240, 28);
+      this.button('开始游戏', 360, 880, 540, 88, () => { this.healthyPlayPending = false; this.render(); }, P.lake, 30);
+      this.signature = this.getSignature();
+      return;
+    }
     const backgroundId = this.session.data.screen === 'battle' ? 'BG_BATTLE' : this.session.data.screen === 'result' ? 'BG_RESULT' : this.session.data.screen === 'hero' && this.catalog.image('BG_GROWTH') ? 'BG_GROWTH' : 'BG_CAMP';
     const referenceBackground = this.session.data.screen === 'camp' ? 'V4_BG_CAMP' : this.session.data.screen === 'collection' ? 'V4_BG_COLLECTION' : '';
     if (referenceBackground && this.catalog.image(referenceBackground)) this.referenceImage(referenceBackground);
@@ -414,6 +450,7 @@ export class GameApp extends Component {
     this.referenceImage('V4_XP_PLATE');
     this.referenceImage('V4_LABEL_XP');
     this.referenceText(`${p.trainingXp}`, [874, 135, 44, 42], 30, P.ink, 'number', 'campXp');
+    if (douyinSidebar()?.available) this.button('侧边栏再来玩', 120, 230, 198, 60, () => this.openLocal('sidebar'), P.cream, 24);
     this.referenceImage('V4_CAMP_CHALLENGE');
     this.referenceText(this.session.data.notice || (this.persistentRun() ? `当前防守 ${r.battle.wave}/20 波` : `累计完成 ${p.completedWaves} 波`), [202, 843, 539, 42], this.session.data.notice ? 23 : 35, '#785234', 'number', 'campProgress');
     this.referenceImage('V4_CAMP_ROSTER_PANEL');
@@ -843,7 +880,7 @@ export class GameApp extends Component {
     if (['deploy', 'freeDeploy'].includes(r.phase)) return '自由布阵 · 点英雄卡后选择空位';
     return `${this.phaseName(r.phase)} · 在场 ${r.battle.enemies.filter((e: any) => e.hp > 0 && !e.terminal).length} 只`;
   }
-  private phaseName(phase: string): string { return ({ deploy: '布阵中', battle: '防守中', cards: '波末三选一', firstFailure: '等待老爷爷救场', secondFailure: '等待最后复活选择', adPending: '模拟广告待决', freeDeploy: '免费复活布阵', victory: '已通关', defeat: '本局结束' } as any)[phase] || phase; }
+  private phaseName(phase: string): string { return ({ deploy: '布阵中', battle: '防守中', cards: '波末三选一', firstFailure: '等待老爷爷救场', secondFailure: '等待最后复活选择', adPending: sys.isBrowser ? '模拟广告待决' : '等待复活选择', freeDeploy: '免费复活布阵', victory: '已通关', defeat: '本局结束' } as any)[phase] || phase; }
   private forecastText(multiline = false): string {
     const f: any = this.session.forecast(); if (!f) return '第20波结束后直接结算，无第21波';
     const names: Record<string, string> = { M001: '果冻', M002: '纸箱', M003: '香肠', M004: '布丁', M005: '小鸡', B001: '巨鹅' };
@@ -1003,18 +1040,26 @@ export class GameApp extends Component {
   private reviveDialog(): void {
     const r:any=this.session.data.run,hp=Math.ceil(this.config.run.base_max_hp*this.config.rescue.restore_hp_fraction),energy=this.config.rescue.second_revive_energy;
     this.d5Shade();this.referenceImage('V5_D_REVIVE_PANEL');this.referenceImage('V5_D_REVIVE_TITLE');
-    this.referenceText('两种方式均可获得',[174,824,596,41],34,P.ink,'section');
+    this.referenceText(sys.isBrowser?'两种方式均可获得':'免费复活即可获得',[174,824,596,41],34,P.ink,'section');
     this.referenceText(`恢复${hp}耐久`,[229,875,212,61],39,P.ink,'number');
     this.referenceText(`获得${energy}能量`,[603,875,225,61],39,P.ink,'number');
     this.referenceButton('V5_D_REVIVE_FREE','免费复活 · 保留怪物 · 先布阵再继续',()=>this.run('freeRevive'));
-    this.referenceButton('V5_D_REVIVE_AD','自愿模拟广告复活 · 额外清屏',()=>this.run('adRequest'));
+    // The Web simulator cannot award pretend ad completions on a mini-game host.
+    // Enable this route only after a real platform ad adapter has been validated.
+    this.referenceButton('V5_D_REVIVE_AD',sys.isBrowser?'自愿模拟广告复活 · 额外清屏':'广告暂不可用',()=>this.run('adRequest'),undefined,!sys.isBrowser);
     this.referenceText('保留本波怪物\n先布阵，再继续',[111,1228,333,66],28,P.ink,'number');
-    this.referenceText('额外清除本波怪物\n自愿模拟广告',[501,1228,333,66],28,P.ink,'number');
+    this.referenceText(sys.isBrowser?'额外清除本波怪物\n自愿模拟广告':'广告暂不可用\n请选择免费复活',[501,1228,333,66],28,P.ink,'number');
     if(r.calmWave===r.battle.wave)this.referenceText('冷静波仍获得固定补给；两路共用最后一次复活',[123,1510,696,53],28,'#FFFFFF','number');
     this.referenceButton('V5_D_REVIVE_END','结束本局',()=>this.run('endRun'));
   }
   private adDialog(): void {
     const r: any = this.session.data.run, status = r.ad?.status;
+    if (!sys.isBrowser) {
+      this.modal('复活选择', '广告暂不可用，战斗保持暂停', 650);
+      this.text('可以直接免费复活。\n本波怪物会保留，布阵完成后继续防守。', 360, 575, 600, 160, 27);
+      this.button('免费复活 · 保留怪物', 360, 790, 592, 92, () => this.run('freeRevive'), P.lake, 27);
+      return;
+    }
     this.modal('广告结果模拟器', 'Web原型专用 · 不连接广告平台 · 战斗保持暂停', 980);
     this.text(status === 'unknown' ? '结果未知：暂不兑现奖励\n可继续等待明确结果，或改用免费复活。' : '选择一个模拟返回状态，验证对应行为。\n真实微信 / 抖音广告留待 P7 接入。', 360, 403, 600, 126, 27);
     const resolve = (result: string) => this.run('adResult', { id: r.ad.id, result });
@@ -1121,9 +1166,20 @@ export class GameApp extends Component {
   private localDialog(): void {
     const d: any = this.session.data;
     if (d.overlay === 'unlock' && !this.localModal) { this.modalHero = d.unlockHero; this.unlockDialog(false); return; }
-    if (this.localModal === 'help') {
+    if (this.localModal === 'sidebar') {
+      const sidebar = douyinSidebar();
+      this.modal('从侧边栏再来玩', '把营地留在首页，下次更方便找到', 800);
+      this.text('① 点击下方「去首页侧边栏」\n\n② 在侧边栏找到「超力英雄」\n\n③ 点击游戏图标，返回营地继续玩', 360, 570, 584, 250, 27);
+      this.text(sidebar?.error || (sidebar?.fromSidebar ? '已从侧边栏返回，欢迎回到营地！' : '下次可直接从当前应用的首页侧边栏进入'), 360, 760, 584, 90, 24, sidebar?.error ? P.red : P.muted);
+      this.button(sidebar?.busy ? '正在打开…' : '去首页侧边栏', 360, 880, 566, 84, () => {
+        if (!sidebar?.available || sidebar.busy) return;
+        this.closeLocal();
+        sidebar.navigate(() => { if (this.isValid) this.openLocal('sidebar'); });
+      }, P.lake, 29, !sidebar?.available || sidebar.busy);
+      this.button('返回营地', 360, 978, 566, 70, () => this.closeLocal(), P.cream, 27);
+    } else if (this.localModal === 'help') {
       this.modal('怎么守住这座营地', '点选、拖动与手动技能，守住你的三路营地', 1020);
-      this.text(`① 编队：选择1～4位已拥有英雄，保存用于新局。\n\n② 召唤：点英雄，再点空位，成功才扣${this.config.run.summon_cost}能量。\n\n③ 合成：同名同星拖到一起，也可逐次点选。\n    不同英雄或不同星级会交换；最高三星。\n\n④ 待部署：三个位置不自动战斗，可备战合成。\n\n⑤ 技能：本局首次三星 / 技能卡解锁，两槽装备。\n    点技能暂停瞄准，再确认；取消不耗冷却。\n\n⑥ 救场：先老爷爷，再免费 / 自愿模拟广告。\n    第三次失败结算。每完成一波经验永久到账。\n\n⑦ 暂停→保存回营地；可升级和换形态，再开新局。`, 360, 658, 614, 658, 24);
+      this.text(`① 编队：选择1～4位已拥有英雄，保存用于新局。\n\n② 召唤：点英雄，再点空位，成功才扣${this.config.run.summon_cost}能量。\n\n③ 合成：同名同星拖到一起，也可逐次点选。\n    不同英雄或不同星级会交换；最高三星。\n\n④ 待部署：三个位置不自动战斗，可备战合成。\n\n⑤ 技能：本局首次三星 / 技能卡解锁，两槽装备。\n    点技能暂停瞄准，再确认；取消不耗冷却。\n\n⑥ 救场：先老爷爷，再${sys.isBrowser?'免费 / 自愿模拟广告':'免费复活'}。\n    第三次失败结算。每完成一波经验永久到账。\n\n⑦ 暂停→保存回营地；可升级和换形态，再开新局。`, 360, 658, 614, 658, 24);
       this.button('返回', 360, 1090, 586, 87, () => this.closeLocal(), P.lake, 30);
     } else if (this.localModal === 'praise') {
       this.praiseDialog();

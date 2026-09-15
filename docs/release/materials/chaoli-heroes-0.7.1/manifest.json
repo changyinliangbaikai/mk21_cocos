@@ -1,0 +1,36 @@
+{
+  "gameName": "超力英雄",
+  "platformReleaseVersion": "0.7.1",
+  "appId": "wx130a8544c32afd2c",
+  "sourceHash": "1c63222b26551dac51e3627518a08fd451fa6425a25843b1d0d77fc018da379f",
+  "captureType": "actual Cocos web-mobile gameplay; not phone screenshots",
+  "captureMethod": "Read rendered WebGL canvas during animation frame; clip only the centered 720:1280 game display area; no image generation or scene fixtures",
+  "build": "artifacts/minigames/2026-09-15T00-46-29-761Z/game/build/web-mobile",
+  "captureFlow": "Normal UI: camp, hero growth, new run, three summons, first two waves and card choices, third-wave placement slow motion",
+  "files": [
+    {
+      "name": "01-camp.png",
+      "scene": "营地主界面",
+      "width": 810,
+      "height": 1440,
+      "bytes": 2157017,
+      "sha256": "0b9a5bf8febfeffc3e1104ff3236c51c55c18c51ac9a254efda807cdea1d4908"
+    },
+    {
+      "name": "02-battle.png",
+      "scene": "第三波战斗与布阵慢动作",
+      "width": 810,
+      "height": 1440,
+      "bytes": 1941289,
+      "sha256": "92ac1668cbcb30ba7d250a687781889cbd47293436b215f868957d05f04c3abf"
+    },
+    {
+      "name": "03-hero-growth.png",
+      "scene": "英雄养成",
+      "width": 810,
+      "height": 1440,
+      "bytes": 1811838,
+      "sha256": "c6ab95e7430ef93f3860e9384cafd8441d3ed9b2d6d9ff99220a83aa7e7f326a"
+    }
+  ]
+}

@@ -30,3 +30,10 @@ artifacts/recovery/
 !/tools/simulate-v007.ts
 !/tools/sync-config.mjs
 !/tools/typecheck-cocos.mjs
+!/tools/minigame-release.mjs
+!/tools/templates/
+/tools/templates/*
+!/tools/templates/douyin-sidebar.js
+
+# Per-account release identifiers (no secrets are needed for local packaging)
+/release.local.json

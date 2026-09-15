@@ -12,12 +12,14 @@
     "simulate": "tsx tools/simulate.ts",
     "build:web": "node tools/cocos-build.mjs web-mobile",
     "build:web-desktop": "node tools/cocos-build.mjs web-desktop",
-    "build:wechat": "node tools/cocos-build.mjs wechatgame",
-    "build:douyin": "node tools/cocos-build.mjs bytedance-mini-game"
+    "build:wechat": "node tools/minigame-release.mjs wechatgame",
+    "build:douyin": "node tools/minigame-release.mjs bytedance-mini-game",
+    "build:minigames": "node tools/minigame-release.mjs all"
   },
   "devDependencies": {
+    "@types/node": "24.10.1",
+    "sharp": "0.35.4",
     "tsx": "4.20.6",
-    "typescript": "5.9.3",
-    "@types/node": "24.10.1"
+    "typescript": "5.9.3"
   }
 }
