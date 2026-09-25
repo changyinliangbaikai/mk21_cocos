@@ -1,0 +1,2873 @@
+[
+  {
+    "id": "HERO-RH01",
+    "family": "HERO-RH01",
+    "kind": "hero",
+    "hero": "RH01",
+    "quality": "blue",
+    "title": "弹簧拳师",
+    "typeLabel": "英雄卡",
+    "badge": "蓝色 · 近战",
+    "lines": [
+      "高生命与防御",
+      "拳击守线"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH01"
+    },
+    "action": "招募",
+    "details": [
+      "高生命与防御，拳击守线",
+      "永久等级1基础：生命240 / 攻击18 / 防御6",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH01-ATTR-all",
+    "family": "RH01-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH01",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "弹簧拳师",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH01"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "HERO-RH02",
+    "family": "HERO-RH02",
+    "kind": "hero",
+    "hero": "RH02",
+    "quality": "blue",
+    "title": "爆米花厨师",
+    "typeLabel": "英雄卡",
+    "badge": "蓝色 · 远程",
+    "lines": [
+      "全屏射程",
+      "爆破与炮台"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH02"
+    },
+    "action": "招募",
+    "details": [
+      "全屏射程，爆破与炮台",
+      "永久等级1基础：生命160 / 攻击25 / 防御2",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH02-ATTR-all",
+    "family": "RH02-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH02",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "爆米花厨师",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH02"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "HERO-RH03",
+    "family": "HERO-RH03",
+    "kind": "hero",
+    "hero": "RH03",
+    "quality": "blue",
+    "title": "电音青蛙",
+    "typeLabel": "英雄卡",
+    "badge": "蓝色 · 辅助",
+    "lines": [
+      "治疗队友",
+      "提供节奏增益"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH03"
+    },
+    "action": "招募",
+    "details": [
+      "治疗队友，提供节奏增益",
+      "永久等级1基础：生命190 / 攻击17 / 防御4",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH03-ATTR-all",
+    "family": "RH03-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH03",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "电音青蛙",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH03"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "HERO-RH04",
+    "family": "HERO-RH04",
+    "kind": "hero",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "拖鞋阿姨",
+    "typeLabel": "英雄卡",
+    "badge": "紫色 · 远程",
+    "lines": [
+      "弹射拖鞋",
+      "召唤祖传鞋柜"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH04"
+    },
+    "action": "招募",
+    "details": [
+      "弹射拖鞋，召唤祖传鞋柜",
+      "永久等级1基础：生命176 / 攻击27.5 / 防御2.2",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH04-ATTR-all",
+    "family": "RH04-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH04",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "拖鞋阿姨",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH04"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "HERO-RH05",
+    "family": "HERO-RH05",
+    "kind": "hero",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "木桩师傅",
+    "typeLabel": "英雄卡",
+    "badge": "紫色 · 近战",
+    "lines": [
+      "木桩嘲讽",
+      "木印聚怪定身"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH05"
+    },
+    "action": "招募",
+    "details": [
+      "木桩嘲讽，木印聚怪定身",
+      "永久等级1基础：生命264 / 攻击19.8 / 防御6.6",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH05-ATTR-all",
+    "family": "RH05-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH05",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "木桩师傅",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH05"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "HERO-RH06",
+    "family": "HERO-RH06",
+    "kind": "hero",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包队长",
+    "typeLabel": "英雄卡",
+    "badge": "金色 · 近战",
+    "lines": [
+      "召唤沙包",
+      "护盾守护队伍"
+    ],
+    "art": {
+      "kind": "portrait",
+      "hero": "RH06"
+    },
+    "action": "招募",
+    "details": [
+      "召唤沙包，护盾守护队伍",
+      "永久等级1基础：生命290.4 / 攻击21.78 / 防御7.26",
+      "选择后点击真正空槽上阵；阵亡英雄仍占槽。",
+      "初始普攻技能Lv1，其余技能通过卡牌解锁。"
+    ]
+  },
+  {
+    "id": "RH06-ATTR-all",
+    "family": "RH06-ATTR-all",
+    "kind": "attribute",
+    "hero": "RH06",
+    "quality": "blue",
+    "title": "全面强化",
+    "typeLabel": "英雄强化",
+    "badge": "沙包队长",
+    "lines": [
+      "攻击基础值+20%",
+      "生命与防御基础值+15%",
+      "同时补充新增生命"
+    ],
+    "art": {
+      "kind": "attribute",
+      "hero": "RH06"
+    },
+    "action": "选择",
+    "details": [
+      "本局同时强化该英雄的攻击、生命上限、防御。",
+      "加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。"
+    ]
+  },
+  {
+    "id": "RH01-S1-L2",
+    "family": "RH01-S1",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "连环直拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 0,
+      "hero": "RH01",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 连环直拳 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH01-S1-L3",
+    "family": "RH01-S1",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "连环直拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 0,
+      "hero": "RH01",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 连环直拳 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH01-S1-L4",
+    "family": "RH01-S1",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "连环直拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 0,
+      "hero": "RH01",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 连环直拳 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH01-S1-L5",
+    "family": "RH01-S1",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "连环直拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 0,
+      "hero": "RH01",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 连环直拳 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH02-S1-L2",
+    "family": "RH02-S1",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "连珠玉米",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 0,
+      "hero": "RH02",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 连珠玉米 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH02-S1-L3",
+    "family": "RH02-S1",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "连珠玉米",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 0,
+      "hero": "RH02",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 连珠玉米 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH02-S1-L4",
+    "family": "RH02-S1",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "连珠玉米",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 0,
+      "hero": "RH02",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 连珠玉米 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH02-S1-L5",
+    "family": "RH02-S1",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "连珠玉米",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 0,
+      "hero": "RH02",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 连珠玉米 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH03-S1-L2",
+    "family": "RH03-S1",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "和弦音符",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 0,
+      "hero": "RH03",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 和弦音符 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH03-S1-L3",
+    "family": "RH03-S1",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "和弦音符",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 0,
+      "hero": "RH03",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 和弦音符 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH03-S1-L4",
+    "family": "RH03-S1",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "和弦音符",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 0,
+      "hero": "RH03",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 和弦音符 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH03-S1-L5",
+    "family": "RH03-S1",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "和弦音符",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 0,
+      "hero": "RH03",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 和弦音符 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH04-S1-L2",
+    "family": "RH04-S1",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "连环飞鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 连环飞鞋 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH04-S1-L3",
+    "family": "RH04-S1",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "连环飞鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 连环飞鞋 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH04-S1-L4",
+    "family": "RH04-S1",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "连环飞鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 连环飞鞋 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH04-S1-L5",
+    "family": "RH04-S1",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "连环飞鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 连环飞鞋 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH05-S1-L2",
+    "family": "RH05-S1",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "排排敲",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 0,
+      "hero": "RH05",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 排排敲 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH05-S1-L3",
+    "family": "RH05-S1",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "排排敲",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 0,
+      "hero": "RH05",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 排排敲 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH05-S1-L4",
+    "family": "RH05-S1",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "排排敲",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 0,
+      "hero": "RH05",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 排排敲 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH05-S1-L5",
+    "family": "RH05-S1",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "排排敲",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 0,
+      "hero": "RH05",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 排排敲 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH06-S1-L2",
+    "family": "RH06-S1",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "铁拳列阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "攻击目标 1 → 2",
+      "伤害倍率 1 → 1.2"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH06",
+      "frame": 0,
+      "hero": "RH06",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 铁拳列阵 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "普攻打击2个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH06-S1-L3",
+    "family": "RH06-S1",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "铁拳列阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "攻击目标 2 → 3",
+      "伤害倍率 1.2 → 1.4"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH06",
+      "frame": 0,
+      "hero": "RH06",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 铁拳列阵 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "普攻打击3个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH06-S1-L4",
+    "family": "RH06-S1",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "铁拳列阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "攻击目标 3 → 4",
+      "伤害倍率 1.4 → 1.6"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH06",
+      "frame": 0,
+      "hero": "RH06",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 铁拳列阵 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "普攻打击4个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH06-S1-L5",
+    "family": "RH06-S1",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "铁拳列阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "攻击目标 4 → 5",
+      "伤害倍率 1.6 → 1.8"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH06",
+      "frame": 0,
+      "hero": "RH06",
+      "slot": 1
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 铁拳列阵 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "普攻打击5个不同目标；目标不足不对单个Boss额外连击。"
+    ]
+  },
+  {
+    "id": "RH01-S2-L1",
+    "family": "RH01-S2",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "回旋勾拳",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "范围伤害×1.3",
+      "范围半径13%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 3,
+      "hero": "RH01",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "弹簧拳师 · 回旋勾拳 · 解锁 Lv1",
+      "伤害为英雄攻击力×1.3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的13%。",
+      "解锁后按10秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深7%。"
+    ]
+  },
+  {
+    "id": "RH01-S2-L2",
+    "family": "RH01-S2",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "回旋勾拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "范围伤害×1.6",
+      "范围半径15%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 3,
+      "hero": "RH01",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 回旋勾拳 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "作用半径为有效战场宽度的15%。",
+      "解锁后按10秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深7%。"
+    ]
+  },
+  {
+    "id": "RH01-S2-L3",
+    "family": "RH01-S2",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "回旋勾拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "范围伤害×1.9",
+      "聚怪并减速25%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 3,
+      "hero": "RH01",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 回旋勾拳 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.9；防御及状态另行结算。",
+      "作用半径为有效战场宽度的17%。",
+      "解锁后按10秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深7%。",
+      "减速25%。",
+      "减速持续2秒。"
+    ]
+  },
+  {
+    "id": "RH01-S2-L4",
+    "family": "RH01-S2",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "回旋勾拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "范围伤害×2.2",
+      "聚怪并减速25%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 3,
+      "hero": "RH01",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 回旋勾拳 · Lv3 → Lv4",
+      "伤害为英雄攻击力×2.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的19%。",
+      "解锁后按10秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深7%。",
+      "减速25%。",
+      "减速持续2秒。"
+    ]
+  },
+  {
+    "id": "RH01-S2-L5",
+    "family": "RH01-S2",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "回旋勾拳",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "范围伤害×2.5",
+      "聚怪并减速25%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 3,
+      "hero": "RH01",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 回旋勾拳 · Lv4 → Lv5",
+      "伤害为英雄攻击力×2.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的21%。",
+      "解锁后按10秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深7%。",
+      "减速25%。",
+      "减速持续2秒。"
+    ]
+  },
+  {
+    "id": "RH01-S3-L1",
+    "family": "RH01-S3",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "弹簧重锤",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "范围伤害×2",
+      "击退距离8%纵深"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 6,
+      "hero": "RH01",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "弹簧拳师 · 弹簧重锤 · 解锁 Lv1",
+      "伤害为英雄攻击力×2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的16%。",
+      "解锁后按18秒冷却自动释放；解锁先走完整冷却。",
+      "击退战场纵深8%。"
+    ]
+  },
+  {
+    "id": "RH01-S3-L2",
+    "family": "RH01-S3",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "弹簧重锤",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "范围伤害×2.5",
+      "击退距离10%纵深"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 6,
+      "hero": "RH01",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 弹簧重锤 · Lv1 → Lv2",
+      "伤害为英雄攻击力×2.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的18%。",
+      "解锁后按18秒冷却自动释放；解锁先走完整冷却。",
+      "击退战场纵深10%。"
+    ]
+  },
+  {
+    "id": "RH01-S3-L3",
+    "family": "RH01-S3",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "弹簧重锤",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "范围伤害×3",
+      "击退距离12%纵深"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 6,
+      "hero": "RH01",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 弹簧重锤 · Lv2 → Lv3",
+      "伤害为英雄攻击力×3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的20%。",
+      "解锁后按18秒冷却自动释放；解锁先走完整冷却。",
+      "击退战场纵深12%。"
+    ]
+  },
+  {
+    "id": "RH01-S3-L4",
+    "family": "RH01-S3",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "弹簧重锤",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "范围伤害×3.5",
+      "击退距离14%纵深"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 6,
+      "hero": "RH01",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 弹簧重锤 · Lv3 → Lv4",
+      "伤害为英雄攻击力×3.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的22%。",
+      "解锁后按18秒冷却自动释放；解锁先走完整冷却。",
+      "击退战场纵深14%。"
+    ]
+  },
+  {
+    "id": "RH01-S3-L5",
+    "family": "RH01-S3",
+    "kind": "skill",
+    "hero": "RH01",
+    "quality": "purple",
+    "title": "弹簧重锤",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "范围伤害×4",
+      "击退距离16%纵深"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH01",
+      "frame": 6,
+      "hero": "RH01",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "弹簧拳师 · 弹簧重锤 · Lv4 → Lv5",
+      "伤害为英雄攻击力×4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的24%。",
+      "解锁后按18秒冷却自动释放；解锁先走完整冷却。",
+      "击退战场纵深16%。"
+    ]
+  },
+  {
+    "id": "RH02-S2-L1",
+    "family": "RH02-S2",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "爆米花锅",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "范围伤害×1.5",
+      "范围半径12%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 3,
+      "hero": "RH02",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "爆米花厨师 · 爆米花锅 · 解锁 Lv1",
+      "伤害为英雄攻击力×1.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的12%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "标记持续3秒。",
+      "标记追加伤害不能连锁触发。"
+    ]
+  },
+  {
+    "id": "RH02-S2-L2",
+    "family": "RH02-S2",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "爆米花锅",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "范围伤害×1.85",
+      "范围半径14%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 3,
+      "hero": "RH02",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 爆米花锅 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.85；防御及状态另行结算。",
+      "作用半径为有效战场宽度的14%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "标记持续3秒。",
+      "标记追加伤害不能连锁触发。"
+    ]
+  },
+  {
+    "id": "RH02-S2-L3",
+    "family": "RH02-S2",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "爆米花锅",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "范围伤害×2.2",
+      "范围半径16%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 3,
+      "hero": "RH02",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 爆米花锅 · Lv2 → Lv3",
+      "伤害为英雄攻击力×2.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的16%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "标记追加伤害为攻击力×0.5。",
+      "标记持续3秒。",
+      "标记追加伤害不能连锁触发。"
+    ]
+  },
+  {
+    "id": "RH02-S2-L4",
+    "family": "RH02-S2",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "爆米花锅",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "范围伤害×2.55",
+      "范围半径18%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 3,
+      "hero": "RH02",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 爆米花锅 · Lv3 → Lv4",
+      "伤害为英雄攻击力×2.55；防御及状态另行结算。",
+      "作用半径为有效战场宽度的18%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "标记追加伤害为攻击力×0.5。",
+      "标记持续3秒。",
+      "标记追加伤害不能连锁触发。"
+    ]
+  },
+  {
+    "id": "RH02-S2-L5",
+    "family": "RH02-S2",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "爆米花锅",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "范围伤害×2.9",
+      "范围半径20%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH02",
+      "frame": 3,
+      "hero": "RH02",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 爆米花锅 · Lv4 → Lv5",
+      "伤害为英雄攻击力×2.9；防御及状态另行结算。",
+      "作用半径为有效战场宽度的20%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "标记追加伤害为攻击力×0.5。",
+      "标记持续3秒。",
+      "标记追加伤害不能连锁触发。"
+    ]
+  },
+  {
+    "id": "RH02-S3-L1",
+    "family": "RH02-S3",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "高压玉米炮",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "范围重击 · 伤害×2.5",
+      "炮台额外攻击2次"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BURST",
+      "frame": 2,
+      "hero": "RH02",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "爆米花厨师 · 高压玉米炮 · 解锁 Lv1",
+      "伤害为英雄攻击力×2.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的15%。",
+      "解锁后按20秒冷却自动释放；解锁先走完整冷却。",
+      "额外发射2次。",
+      "额外每击伤害为攻击力×1.2。",
+      "每0.65秒射击一次。"
+    ]
+  },
+  {
+    "id": "RH02-S3-L2",
+    "family": "RH02-S3",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "高压玉米炮",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "范围重击 · 伤害×3",
+      "炮台额外攻击3次"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BURST",
+      "frame": 2,
+      "hero": "RH02",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 高压玉米炮 · Lv1 → Lv2",
+      "伤害为英雄攻击力×3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的17%。",
+      "解锁后按20秒冷却自动释放；解锁先走完整冷却。",
+      "额外发射3次。",
+      "额外每击伤害为攻击力×1.2。",
+      "每0.65秒射击一次。"
+    ]
+  },
+  {
+    "id": "RH02-S3-L3",
+    "family": "RH02-S3",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "高压玉米炮",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "范围重击 · 伤害×3.5",
+      "炮台额外攻击4次"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BURST",
+      "frame": 2,
+      "hero": "RH02",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 高压玉米炮 · Lv2 → Lv3",
+      "伤害为英雄攻击力×3.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的19%。",
+      "解锁后按20秒冷却自动释放；解锁先走完整冷却。",
+      "额外发射4次。",
+      "额外每击伤害为攻击力×1.2。",
+      "每0.65秒射击一次。"
+    ]
+  },
+  {
+    "id": "RH02-S3-L4",
+    "family": "RH02-S3",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "高压玉米炮",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "范围重击 · 伤害×4",
+      "炮台额外攻击5次"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BURST",
+      "frame": 2,
+      "hero": "RH02",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 高压玉米炮 · Lv3 → Lv4",
+      "伤害为英雄攻击力×4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的21%。",
+      "解锁后按20秒冷却自动释放；解锁先走完整冷却。",
+      "额外发射5次。",
+      "额外每击伤害为攻击力×1.2。",
+      "每0.65秒射击一次。"
+    ]
+  },
+  {
+    "id": "RH02-S3-L5",
+    "family": "RH02-S3",
+    "kind": "skill",
+    "hero": "RH02",
+    "quality": "purple",
+    "title": "高压玉米炮",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "范围重击 · 伤害×4.5",
+      "炮台额外攻击6次"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BURST",
+      "frame": 2,
+      "hero": "RH02",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "爆米花厨师 · 高压玉米炮 · Lv4 → Lv5",
+      "伤害为英雄攻击力×4.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的23%。",
+      "解锁后按20秒冷却自动释放；解锁先走完整冷却。",
+      "额外发射6次。",
+      "额外每击伤害为攻击力×1.2。",
+      "每0.65秒射击一次。"
+    ]
+  },
+  {
+    "id": "RH03-S2-L1",
+    "family": "RH03-S2",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "回春节拍",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "治疗最大生命12%",
+      "范围治疗 · 自动释放"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "IC-CARD-ART",
+      "frame": 1,
+      "hero": "RH03",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "电音青蛙 · 回春节拍 · 解锁 Lv1",
+      "作用半径为有效战场宽度的25%。",
+      "解锁后按9秒冷却自动释放；解锁先走完整冷却。",
+      "治疗目标最大生命的12%。",
+      "最多治疗4人。"
+    ]
+  },
+  {
+    "id": "RH03-S2-L2",
+    "family": "RH03-S2",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "回春节拍",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "治疗最大生命15%",
+      "范围治疗 · 自动释放"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "IC-CARD-ART",
+      "frame": 1,
+      "hero": "RH03",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 回春节拍 · Lv1 → Lv2",
+      "作用半径为有效战场宽度的30%。",
+      "解锁后按9秒冷却自动释放；解锁先走完整冷却。",
+      "治疗目标最大生命的15%。",
+      "最多治疗4人。"
+    ]
+  },
+  {
+    "id": "RH03-S2-L3",
+    "family": "RH03-S2",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "回春节拍",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "治疗最大生命18%",
+      "净化虚弱 · 自动释放"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "IC-CARD-ART",
+      "frame": 1,
+      "hero": "RH03",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 回春节拍 · Lv2 → Lv3",
+      "作用半径为有效战场宽度的35%。",
+      "解锁后按9秒冷却自动释放；解锁先走完整冷却。",
+      "治疗目标最大生命的18%。",
+      "最多治疗4人。",
+      "治疗时清除目标的虚弱状态。"
+    ]
+  },
+  {
+    "id": "RH03-S2-L4",
+    "family": "RH03-S2",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "回春节拍",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "治疗最大生命21%",
+      "净化虚弱 · 自动释放"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "IC-CARD-ART",
+      "frame": 1,
+      "hero": "RH03",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 回春节拍 · Lv3 → Lv4",
+      "作用半径为有效战场宽度的40%。",
+      "解锁后按9秒冷却自动释放；解锁先走完整冷却。",
+      "治疗目标最大生命的21%。",
+      "最多治疗4人。",
+      "治疗时清除目标的虚弱状态。"
+    ]
+  },
+  {
+    "id": "RH03-S2-L5",
+    "family": "RH03-S2",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "回春节拍",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "治疗最大生命24%",
+      "净化虚弱 · 自动释放"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "IC-CARD-ART",
+      "frame": 1,
+      "hero": "RH03",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 回春节拍 · Lv4 → Lv5",
+      "作用半径为有效战场宽度的45%。",
+      "解锁后按9秒冷却自动释放；解锁先走完整冷却。",
+      "治疗目标最大生命的24%。",
+      "最多治疗4人。",
+      "治疗时清除目标的虚弱状态。"
+    ]
+  },
+  {
+    "id": "RH03-S3-L1",
+    "family": "RH03-S3",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "节奏加速",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "全队攻击+10%",
+      "冷却加快 · 持续4秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 7,
+      "hero": "RH03",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "电音青蛙 · 节奏加速 · 解锁 Lv1",
+      "作用半径为有效战场宽度的100%。",
+      "解锁后按22秒冷却自动释放；解锁先走完整冷却。",
+      "队伍攻击提升10%。",
+      "增益期间等效冷却耗时为原来的90%。",
+      "持续4秒。"
+    ]
+  },
+  {
+    "id": "RH03-S3-L2",
+    "family": "RH03-S3",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "节奏加速",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "全队攻击+15%",
+      "冷却加快 · 持续4.5秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 7,
+      "hero": "RH03",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 节奏加速 · Lv1 → Lv2",
+      "作用半径为有效战场宽度的100%。",
+      "解锁后按22秒冷却自动释放；解锁先走完整冷却。",
+      "队伍攻击提升15%。",
+      "增益期间等效冷却耗时为原来的88%。",
+      "持续4.5秒。"
+    ]
+  },
+  {
+    "id": "RH03-S3-L3",
+    "family": "RH03-S3",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "节奏加速",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "全队攻击+20%",
+      "冷却加快 · 持续5秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 7,
+      "hero": "RH03",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 节奏加速 · Lv2 → Lv3",
+      "作用半径为有效战场宽度的100%。",
+      "解锁后按22秒冷却自动释放；解锁先走完整冷却。",
+      "队伍攻击提升20%。",
+      "增益期间等效冷却耗时为原来的86%。",
+      "持续5秒。"
+    ]
+  },
+  {
+    "id": "RH03-S3-L4",
+    "family": "RH03-S3",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "节奏加速",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "全队攻击+25%",
+      "冷却加快 · 持续5.5秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 7,
+      "hero": "RH03",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 节奏加速 · Lv3 → Lv4",
+      "作用半径为有效战场宽度的100%。",
+      "解锁后按22秒冷却自动释放；解锁先走完整冷却。",
+      "队伍攻击提升25%。",
+      "增益期间等效冷却耗时为原来的84%。",
+      "持续5.5秒。"
+    ]
+  },
+  {
+    "id": "RH03-S3-L5",
+    "family": "RH03-S3",
+    "kind": "skill",
+    "hero": "RH03",
+    "quality": "purple",
+    "title": "节奏加速",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "全队攻击+30%",
+      "冷却加快 · 持续6秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH03",
+      "frame": 7,
+      "hero": "RH03",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "电音青蛙 · 节奏加速 · Lv4 → Lv5",
+      "作用半径为有效战场宽度的100%。",
+      "解锁后按22秒冷却自动释放；解锁先走完整冷却。",
+      "队伍攻击提升30%。",
+      "增益期间等效冷却耗时为原来的82%。",
+      "持续6秒。"
+    ]
+  },
+  {
+    "id": "RH04-S2-L1",
+    "family": "RH04-S2",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "弹射拖鞋",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "伤害×1.2 · 3个目标",
+      "弹射范围20%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "拖鞋阿姨 · 弹射拖鞋 · 解锁 Lv1",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的20%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "总共命中3个不同目标。"
+    ]
+  },
+  {
+    "id": "RH04-S2-L2",
+    "family": "RH04-S2",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "弹射拖鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "伤害×1.5 · 4个目标",
+      "弹射范围23%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 弹射拖鞋 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的23%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "总共命中4个不同目标。"
+    ]
+  },
+  {
+    "id": "RH04-S2-L3",
+    "family": "RH04-S2",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "弹射拖鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "伤害×1.8 · 5个目标",
+      "弹射范围26%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 弹射拖鞋 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.8；防御及状态另行结算。",
+      "作用半径为有效战场宽度的26%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "总共命中5个不同目标。",
+      "对Boss伤害额外增加20%。"
+    ]
+  },
+  {
+    "id": "RH04-S2-L4",
+    "family": "RH04-S2",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "弹射拖鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "伤害×2.1 · 6个目标",
+      "弹射范围29%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 弹射拖鞋 · Lv3 → Lv4",
+      "伤害为英雄攻击力×2.1；防御及状态另行结算。",
+      "作用半径为有效战场宽度的29%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "总共命中6个不同目标。",
+      "对Boss伤害额外增加20%。"
+    ]
+  },
+  {
+    "id": "RH04-S2-L5",
+    "family": "RH04-S2",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "purple",
+    "title": "弹射拖鞋",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "伤害×2.4 · 7个目标",
+      "弹射范围32%战场宽"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH04",
+      "frame": 0,
+      "hero": "RH04",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 弹射拖鞋 · Lv4 → Lv5",
+      "伤害为英雄攻击力×2.4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的32%。",
+      "解锁后按11秒冷却自动释放；解锁先走完整冷却。",
+      "总共命中7个不同目标。",
+      "对Boss伤害额外增加20%。"
+    ]
+  },
+  {
+    "id": "RH04-S3-L1",
+    "family": "RH04-S3",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "gold",
+    "title": "祖传鞋柜",
+    "typeLabel": "终极强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "落地伤害×3",
+      "鞋柜持续攻击10秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-DURABLE",
+      "frame": 2,
+      "hero": "RH04",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "拖鞋阿姨 · 终极·祖传鞋柜 · 解锁 Lv1",
+      "伤害为英雄攻击力×3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的16%。",
+      "解锁后按25秒冷却自动释放；解锁先走完整冷却。",
+      "每0.9秒射击一次。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的100%。",
+      "每次射击伤害为攻击力×1.1。"
+    ]
+  },
+  {
+    "id": "RH04-S3-L2",
+    "family": "RH04-S3",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "gold",
+    "title": "祖传鞋柜",
+    "typeLabel": "终极强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "落地伤害×3.6",
+      "鞋柜持续攻击11秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-DURABLE",
+      "frame": 2,
+      "hero": "RH04",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 终极·祖传鞋柜 · Lv1 → Lv2",
+      "伤害为英雄攻击力×3.6；防御及状态另行结算。",
+      "作用半径为有效战场宽度的18%。",
+      "解锁后按25秒冷却自动释放；解锁先走完整冷却。",
+      "每0.9秒射击一次。",
+      "持续11秒。",
+      "召唤物生命为英雄最大生命的120%。",
+      "每次射击伤害为攻击力×1.1。"
+    ]
+  },
+  {
+    "id": "RH04-S3-L3",
+    "family": "RH04-S3",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "gold",
+    "title": "祖传鞋柜",
+    "typeLabel": "终极强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "落地伤害×4.2",
+      "鞋柜持续攻击12秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-DURABLE",
+      "frame": 2,
+      "hero": "RH04",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 终极·祖传鞋柜 · Lv2 → Lv3",
+      "伤害为英雄攻击力×4.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的20%。",
+      "解锁后按25秒冷却自动释放；解锁先走完整冷却。",
+      "每0.9秒射击一次。",
+      "持续12秒。",
+      "召唤物生命为英雄最大生命的140%。",
+      "每次射击伤害为攻击力×1.1。"
+    ]
+  },
+  {
+    "id": "RH04-S3-L4",
+    "family": "RH04-S3",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "gold",
+    "title": "祖传鞋柜",
+    "typeLabel": "终极强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "落地伤害×4.8",
+      "鞋柜持续攻击13秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-DURABLE",
+      "frame": 2,
+      "hero": "RH04",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 终极·祖传鞋柜 · Lv3 → Lv4",
+      "伤害为英雄攻击力×4.8；防御及状态另行结算。",
+      "作用半径为有效战场宽度的22%。",
+      "解锁后按25秒冷却自动释放；解锁先走完整冷却。",
+      "每0.9秒射击一次。",
+      "持续13秒。",
+      "召唤物生命为英雄最大生命的160%。",
+      "每次射击伤害为攻击力×1.1。"
+    ]
+  },
+  {
+    "id": "RH04-S3-L5",
+    "family": "RH04-S3",
+    "kind": "skill",
+    "hero": "RH04",
+    "quality": "gold",
+    "title": "祖传鞋柜",
+    "typeLabel": "终极强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "落地伤害×5.4",
+      "鞋柜持续攻击14秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-DURABLE",
+      "frame": 2,
+      "hero": "RH04",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "拖鞋阿姨 · 终极·祖传鞋柜 · Lv4 → Lv5",
+      "伤害为英雄攻击力×5.4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的24%。",
+      "解锁后按25秒冷却自动释放；解锁先走完整冷却。",
+      "每0.9秒射击一次。",
+      "持续14秒。",
+      "召唤物生命为英雄最大生命的180%。",
+      "每次射击伤害为攻击力×1.1。"
+    ]
+  },
+  {
+    "id": "RH05-S2-L1",
+    "family": "RH05-S2",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "牵引木桩",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "落地伤害×0.8",
+      "召唤木桩 · 持续8秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-WOOD",
+      "frame": 2,
+      "hero": "RH05",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "木桩师傅 · 牵引木桩 · 解锁 Lv1",
+      "伤害为英雄攻击力×0.8；防御及状态另行结算。",
+      "作用半径为有效战场宽度的17%。",
+      "解锁后按14秒冷却自动释放；解锁先走完整冷却。",
+      "持续8秒。",
+      "召唤物生命为英雄最大生命的70%。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH05-S2-L2",
+    "family": "RH05-S2",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "牵引木桩",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "落地伤害×1",
+      "召唤木桩 · 持续8秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-WOOD",
+      "frame": 2,
+      "hero": "RH05",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 牵引木桩 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1；防御及状态另行结算。",
+      "作用半径为有效战场宽度的19%。",
+      "解锁后按14秒冷却自动释放；解锁先走完整冷却。",
+      "持续8秒。",
+      "召唤物生命为英雄最大生命的85%。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH05-S2-L3",
+    "family": "RH05-S2",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "牵引木桩",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "落地伤害×1.2",
+      "嘲讽并减速20%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-WOOD",
+      "frame": 2,
+      "hero": "RH05",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 牵引木桩 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的21%。",
+      "解锁后按14秒冷却自动释放；解锁先走完整冷却。",
+      "减速20%。",
+      "持续8秒。",
+      "召唤物生命为英雄最大生命的100%。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH05-S2-L4",
+    "family": "RH05-S2",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "牵引木桩",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "落地伤害×1.4",
+      "嘲讽并减速20%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-WOOD",
+      "frame": 2,
+      "hero": "RH05",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 牵引木桩 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的23%。",
+      "解锁后按14秒冷却自动释放；解锁先走完整冷却。",
+      "减速20%。",
+      "持续8秒。",
+      "召唤物生命为英雄最大生命的115%。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH05-S2-L5",
+    "family": "RH05-S2",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "purple",
+    "title": "牵引木桩",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "落地伤害×1.6",
+      "嘲讽并减速20%"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-WOOD",
+      "frame": 2,
+      "hero": "RH05",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 牵引木桩 · Lv4 → Lv5",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "作用半径为有效战场宽度的25%。",
+      "解锁后按14秒冷却自动释放；解锁先走完整冷却。",
+      "减速20%。",
+      "持续8秒。",
+      "召唤物生命为英雄最大生命的130%。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH05-S3-L1",
+    "family": "RH05-S3",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "gold",
+    "title": "镇场木印",
+    "typeLabel": "终极强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "范围伤害×3",
+      "聚怪并定身1秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 6,
+      "hero": "RH05",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "木桩师傅 · 终极·镇场木印 · 解锁 Lv1",
+      "伤害为英雄攻击力×3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的22%。",
+      "解锁后按26秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深13%。",
+      "定身1秒。"
+    ]
+  },
+  {
+    "id": "RH05-S3-L2",
+    "family": "RH05-S3",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "gold",
+    "title": "镇场木印",
+    "typeLabel": "终极强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "范围伤害×3.7",
+      "聚怪并定身1.25秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 6,
+      "hero": "RH05",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 终极·镇场木印 · Lv1 → Lv2",
+      "伤害为英雄攻击力×3.7；防御及状态另行结算。",
+      "作用半径为有效战场宽度的25%。",
+      "解锁后按26秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深13%。",
+      "定身1.25秒。"
+    ]
+  },
+  {
+    "id": "RH05-S3-L3",
+    "family": "RH05-S3",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "gold",
+    "title": "镇场木印",
+    "typeLabel": "终极强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "范围伤害×4.4",
+      "聚怪并定身1.5秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 6,
+      "hero": "RH05",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 终极·镇场木印 · Lv2 → Lv3",
+      "伤害为英雄攻击力×4.4；防御及状态另行结算。",
+      "作用半径为有效战场宽度的28%。",
+      "解锁后按26秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深13%。",
+      "定身1.5秒。"
+    ]
+  },
+  {
+    "id": "RH05-S3-L4",
+    "family": "RH05-S3",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "gold",
+    "title": "镇场木印",
+    "typeLabel": "终极强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "范围伤害×5.1",
+      "聚怪并定身1.75秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 6,
+      "hero": "RH05",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 终极·镇场木印 · Lv3 → Lv4",
+      "伤害为英雄攻击力×5.1；防御及状态另行结算。",
+      "作用半径为有效战场宽度的31%。",
+      "解锁后按26秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深13%。",
+      "定身1.75秒。"
+    ]
+  },
+  {
+    "id": "RH05-S3-L5",
+    "family": "RH05-S3",
+    "kind": "skill",
+    "hero": "RH05",
+    "quality": "gold",
+    "title": "镇场木印",
+    "typeLabel": "终极强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "范围伤害×5.8",
+      "聚怪并定身2秒"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "RH05",
+      "frame": 6,
+      "hero": "RH05",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "木桩师傅 · 终极·镇场木印 · Lv4 → Lv5",
+      "伤害为英雄攻击力×5.8；防御及状态另行结算。",
+      "作用半径为有效战场宽度的34%。",
+      "解锁后按26秒冷却自动释放；解锁先走完整冷却。",
+      "向中心牵引战场纵深13%。",
+      "定身2秒。"
+    ]
+  },
+  {
+    "id": "RH06-S2-L1",
+    "family": "RH06-S2",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "沙包护阵",
+    "typeLabel": "技能强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "护阵伤害×1",
+      "召唤沙包 · 嘲讽怪物"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 2,
+      "hero": "RH06",
+      "slot": 2
+    },
+    "action": "解锁",
+    "details": [
+      "沙包队长 · 沙包护阵 · 解锁 Lv1",
+      "伤害为英雄攻击力×1；防御及状态另行结算。",
+      "作用半径为有效战场宽度的17%。",
+      "解锁后按15秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的90%。",
+      "召唤物普攻为英雄攻击力×0.6。",
+      "普攻间隔1秒。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH06-S2-L2",
+    "family": "RH06-S2",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "沙包护阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "护阵伤害×1.3",
+      "召唤沙包 · 嘲讽怪物"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 2,
+      "hero": "RH06",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 沙包护阵 · Lv1 → Lv2",
+      "伤害为英雄攻击力×1.3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的19%。",
+      "解锁后按15秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的110%。",
+      "召唤物普攻为英雄攻击力×0.6。",
+      "普攻间隔1秒。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH06-S2-L3",
+    "family": "RH06-S2",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "沙包护阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "护阵伤害×1.6",
+      "嘲讽并守护英雄"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 2,
+      "hero": "RH06",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 沙包护阵 · Lv2 → Lv3",
+      "伤害为英雄攻击力×1.6；防御及状态另行结算。",
+      "作用半径为有效战场宽度的21%。",
+      "解锁后按15秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的130%。",
+      "召唤物普攻为英雄攻击力×0.6。",
+      "普攻间隔1秒。",
+      "赋予英雄最大生命10%的护盾。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH06-S2-L4",
+    "family": "RH06-S2",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "沙包护阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "护阵伤害×1.9",
+      "嘲讽并守护英雄"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 2,
+      "hero": "RH06",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 沙包护阵 · Lv3 → Lv4",
+      "伤害为英雄攻击力×1.9；防御及状态另行结算。",
+      "作用半径为有效战场宽度的23%。",
+      "解锁后按15秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的150%。",
+      "召唤物普攻为英雄攻击力×0.6。",
+      "普攻间隔1秒。",
+      "赋予英雄最大生命10%的护盾。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH06-S2-L5",
+    "family": "RH06-S2",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "purple",
+    "title": "沙包护阵",
+    "typeLabel": "技能强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "护阵伤害×2.2",
+      "嘲讽并守护英雄"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 2,
+      "hero": "RH06",
+      "slot": 2
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 沙包护阵 · Lv4 → Lv5",
+      "伤害为英雄攻击力×2.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的25%。",
+      "解锁后按15秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "召唤物生命为英雄最大生命的170%。",
+      "召唤物普攻为英雄攻击力×0.6。",
+      "普攻间隔1秒。",
+      "赋予英雄最大生命10%的护盾。",
+      "嘲讽范围内怪物，优先攻击召唤物。"
+    ]
+  },
+  {
+    "id": "RH06-S3-L1",
+    "family": "RH06-S3",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包要塞",
+    "typeLabel": "终极强化",
+    "badge": "解锁 Lv1",
+    "lines": [
+      "护阵伤害×2.5",
+      "强化沙包 · 提供护盾"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 10,
+      "hero": "RH06",
+      "slot": 3
+    },
+    "action": "解锁",
+    "details": [
+      "沙包队长 · 终极·沙包要塞 · 解锁 Lv1",
+      "伤害为英雄攻击力×2.5；防御及状态另行结算。",
+      "作用半径为有效战场宽度的23%。",
+      "解锁后按30秒冷却自动释放；解锁先走完整冷却。",
+      "持续6秒。",
+      "强化召唤物生命×1.3。",
+      "强化召唤物攻击×1.2。",
+      "附近英雄获得最大生命12%的护盾。",
+      "场上没有沙包时直接创建；已有沙包获得单层强化。"
+    ]
+  },
+  {
+    "id": "RH06-S3-L2",
+    "family": "RH06-S3",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包要塞",
+    "typeLabel": "终极强化",
+    "badge": "Lv1 → Lv2",
+    "lines": [
+      "护阵伤害×3.2",
+      "强化沙包 · 提供护盾"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 10,
+      "hero": "RH06",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 终极·沙包要塞 · Lv1 → Lv2",
+      "伤害为英雄攻击力×3.2；防御及状态另行结算。",
+      "作用半径为有效战场宽度的26%。",
+      "解锁后按30秒冷却自动释放；解锁先走完整冷却。",
+      "持续7秒。",
+      "强化召唤物生命×1.5。",
+      "强化召唤物攻击×1.3。",
+      "附近英雄获得最大生命12%的护盾。",
+      "场上没有沙包时直接创建；已有沙包获得单层强化。"
+    ]
+  },
+  {
+    "id": "RH06-S3-L3",
+    "family": "RH06-S3",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包要塞",
+    "typeLabel": "终极强化",
+    "badge": "Lv2 → Lv3",
+    "lines": [
+      "护阵伤害×3.9",
+      "强化沙包 · 提供护盾"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 10,
+      "hero": "RH06",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 终极·沙包要塞 · Lv2 → Lv3",
+      "伤害为英雄攻击力×3.9；防御及状态另行结算。",
+      "作用半径为有效战场宽度的29%。",
+      "解锁后按30秒冷却自动释放；解锁先走完整冷却。",
+      "持续8秒。",
+      "强化召唤物生命×1.7。",
+      "强化召唤物攻击×1.4。",
+      "附近英雄获得最大生命12%的护盾。",
+      "场上没有沙包时直接创建；已有沙包获得单层强化。"
+    ]
+  },
+  {
+    "id": "RH06-S3-L4",
+    "family": "RH06-S3",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包要塞",
+    "typeLabel": "终极强化",
+    "badge": "Lv3 → Lv4",
+    "lines": [
+      "护阵伤害×4.6",
+      "强化沙包 · 提供护盾"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 10,
+      "hero": "RH06",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 终极·沙包要塞 · Lv3 → Lv4",
+      "伤害为英雄攻击力×4.6；防御及状态另行结算。",
+      "作用半径为有效战场宽度的32%。",
+      "解锁后按30秒冷却自动释放；解锁先走完整冷却。",
+      "持续9秒。",
+      "强化召唤物生命×1.9。",
+      "强化召唤物攻击×1.5。",
+      "附近英雄获得最大生命12%的护盾。",
+      "场上没有沙包时直接创建；已有沙包获得单层强化。"
+    ]
+  },
+  {
+    "id": "RH06-S3-L5",
+    "family": "RH06-S3",
+    "kind": "skill",
+    "hero": "RH06",
+    "quality": "gold",
+    "title": "沙包要塞",
+    "typeLabel": "终极强化",
+    "badge": "Lv4 → Lv5",
+    "lines": [
+      "护阵伤害×5.3",
+      "强化沙包 · 提供护盾"
+    ],
+    "art": {
+      "kind": "skill",
+      "pack": "SUM-BAG",
+      "frame": 10,
+      "hero": "RH06",
+      "slot": 3
+    },
+    "action": "升级",
+    "details": [
+      "沙包队长 · 终极·沙包要塞 · Lv4 → Lv5",
+      "伤害为英雄攻击力×5.3；防御及状态另行结算。",
+      "作用半径为有效战场宽度的35%。",
+      "解锁后按30秒冷却自动释放；解锁先走完整冷却。",
+      "持续10秒。",
+      "强化召唤物生命×2.1。",
+      "强化召唤物攻击×1.6。",
+      "附近英雄获得最大生命12%的护盾。",
+      "场上没有沙包时直接创建；已有沙包获得单层强化。"
+    ]
+  },
+  {
+    "id": "GLOBAL-blue",
+    "family": "GLOBAL-blue",
+    "kind": "global",
+    "hero": null,
+    "quality": "blue",
+    "title": "能量轰击",
+    "typeLabel": "全局技能",
+    "badge": "覆盖战场20%",
+    "lines": [
+      "圆形落点 · 主动释放",
+      "释放一次后消耗"
+    ],
+    "art": {
+      "kind": "global",
+      "pack": "GLOBAL-blue",
+      "frame": 0
+    },
+    "action": "装载",
+    "details": [
+      "圆形落点，覆盖有效战场面积20%。",
+      "基础伤害70，按关卡、难度及波次缩放；对Boss伤害乘0.35。",
+      "点击中央技能槽进入瞄准，确认释放才消耗；取消后保留。",
+      "英雄槽全部占用且技能槽为空时才可能出现，单轮最多一张。"
+    ]
+  },
+  {
+    "id": "GLOBAL-purple",
+    "family": "GLOBAL-purple",
+    "kind": "global",
+    "hero": null,
+    "quality": "purple",
+    "title": "范围轰击",
+    "typeLabel": "全局技能",
+    "badge": "覆盖战场50%",
+    "lines": [
+      "扇形冲击 · 主动释放",
+      "释放一次后消耗"
+    ],
+    "art": {
+      "kind": "global",
+      "pack": "GLOBAL-purple",
+      "frame": 0
+    },
+    "action": "装载",
+    "details": [
+      "扇形冲击，覆盖有效战场面积50%。",
+      "基础伤害115，按关卡、难度及波次缩放；对Boss伤害乘0.35。",
+      "点击中央技能槽进入瞄准，确认释放才消耗；取消后保留。",
+      "英雄槽全部占用且技能槽为空时才可能出现，单轮最多一张。"
+    ]
+  },
+  {
+    "id": "GLOBAL-gold",
+    "family": "GLOBAL-gold",
+    "kind": "global",
+    "hero": null,
+    "quality": "gold",
+    "title": "全屏轰击",
+    "typeLabel": "全局技能",
+    "badge": "覆盖战场100%",
+    "lines": [
+      "全场震荡 · 主动释放",
+      "释放一次后消耗"
+    ],
+    "art": {
+      "kind": "global",
+      "pack": "GLOBAL-gold",
+      "frame": 0
+    },
+    "action": "装载",
+    "details": [
+      "全场震荡，覆盖有效战场面积100%。",
+      "基础伤害180，按关卡、难度及波次缩放；对Boss伤害乘0.35。",
+      "点击中央技能槽进入瞄准，确认释放才消耗；取消后保留。",
+      "英雄槽全部占用且技能槽为空时才可能出现，单轮最多一张。"
+    ]
+  }
+]

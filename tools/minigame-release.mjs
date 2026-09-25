@@ -9,7 +9,7 @@ import sharp from 'sharp';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'game');
-const target = process.argv[2] || 'all';
+const target = process.argv[2] || 'wechatgame';
 const platforms = target === 'all' ? ['wechatgame', 'bytedance-mini-game'] : [target];
 if (platforms.some(p => !['wechatgame', 'bytedance-mini-game'].includes(p))) throw Error('Use all, wechatgame or bytedance-mini-game');
 const testAppId = process.argv.includes('--test-appid');
@@ -57,16 +57,27 @@ for (const name of ['assets', 'settings', 'package.json', 'tsconfig.json']) {
   if (fs.existsSync(from)) fs.cpSync(from, path.join(project, name), { recursive: true });
 }
 const resources = path.join(project, 'assets/resources');
+const r1Build = fs.existsSync(path.join(resources, 'r1/manifest.json'));
 const record = { createdAt: new Date().toISOString(), source, sourceHash, project, stage: 'preparing',
   creatorVersion: json(path.join(source, 'package.json')).creator.version,
-  designVersion: json(path.join(resources, 'prototype-v0.5.json')).design_version,
+  designVersion: r1Build ? json(path.join(source, 'assets/scripts/domain/r1/runtime-config.json')).version : json(path.join(resources, 'prototype-v0.5.json')).design_version,
   textureEncoding: { format: 'png', palette: true, quality: 90, resize: false, sharpVersion: sharp.versions.sharp },
   audioEncoding: { format: 'mp3', effectsVbrQuality: 4, musicBitrate: '112k' }, images: [], audio: [], bundles: [], builds: [],
   limitations: ['AppID ownership and permissions require the platform backend', 'No real-device acceptance yet',
-    'Rewarded ads remain disabled on mini-game hosts', 'Douyin sidebar navigation needs device acceptance for each new candidate',
+    'Rewarded ads remain disabled on mini-game hosts',
+    ...(platforms.includes('bytedance-mini-game') ? ['Douyin sidebar navigation needs device acceptance for each new candidate'] : []),
     'Platform-specific qualification and filing requirements must be verified in the account backend before final submission'],
 };
 const recordPath = path.join(output, 'release-report.json');
+if (r1Build) {
+  // The R1 entry uses its own art/fonts. Remove unused legacy payload only from
+  // this disposable build copy; legacy source, audio and save migration remain.
+  record.excludedLegacyResources = ['mvp/art', 'mvp/fonts'];
+  for (const relative of record.excludedLegacyResources) {
+    fs.rmSync(path.join(resources, relative), { recursive: true, force: true });
+    fs.rmSync(path.join(resources, `${relative}.meta`), { force: true });
+  }
+}
 writeJson(recordPath, record);
 console.log(`Preparing isolated mini-game project: ${project}`);
 
@@ -163,6 +174,10 @@ try {
     }).finally(() => fs.closeSync(log));
     build.exitCode = code; build.finishedAt = new Date().toISOString();
     if (code !== 36) throw Error(`Creator build failed (${code}); see ${build.logPath}`);
+    if (json(path.join(project, 'assets/scenes/Boot.scene.meta')).importer !== 'scene') {
+      build.status = 'failed-invalid-scene-importer';
+      throw Error('Creator changed the Boot scene importer; this output is not a valid game build');
+    }
     build.directory = path.join(project, 'build', platform);
     if (platform === 'bytedance-mini-game') {
       const entry = path.join(build.directory, 'game.js');

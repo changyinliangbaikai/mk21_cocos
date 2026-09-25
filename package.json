@@ -4,17 +4,20 @@
   "version": "0.5.0",
   "scripts": {
     "test": "tsx --test game/tests/*.test.ts",
+    "test:r1": "tsx --test game/tests/r1*.test.ts",
     "typecheck": "tsc -p tsconfig.logic.json --noEmit",
     "config:sync": "node tools/sync-config.mjs",
     "serve": "node tools/serve.mjs",
     "verify": "npm run config:sync && npm run typecheck && npm test",
     "typecheck:cocos": "node tools/typecheck-cocos.mjs",
     "simulate": "tsx tools/simulate.ts",
+    "simulate:r1": "tsx tools/simulate-r1.ts",
+    "balance:r1": "tsx tools/balance-r1.ts",
     "build:web": "node tools/cocos-build.mjs web-mobile",
     "build:web-desktop": "node tools/cocos-build.mjs web-desktop",
     "build:wechat": "node tools/minigame-release.mjs wechatgame",
     "build:douyin": "node tools/minigame-release.mjs bytedance-mini-game",
-    "build:minigames": "node tools/minigame-release.mjs all"
+    "build:minigames": "node tools/minigame-release.mjs wechatgame"
   },
   "devDependencies": {
     "@types/node": "24.10.1",

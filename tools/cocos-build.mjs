@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** Run the installed Creator, preserving its real exit code and a local build log. */
 import { spawn, execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, createWriteStream, statSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, createWriteStream, statSync, readdirSync, cpSync, renameSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,17 +12,24 @@ if (!['web-desktop', 'web-mobile', 'wechatgame', 'bytedance-mini-game'].includes
   throw new Error('Expected web-desktop, web-mobile, wechatgame or bytedance-mini-game.');
 }
 const editor = process.env.COCOS_CREATOR || '/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator';
-const project = resolve(root, 'game');
+const sourceProject = resolve(root, 'game');
 const stamp = new Date().toISOString().replaceAll(':', '-').replaceAll('.', '-');
 const logDirectory = resolve(root, 'artifacts', 'cocos');
 mkdirSync(logDirectory, { recursive: true });
+// Creator 3.8.8 has intermittently misclassified importers in CLI builds. Use a fresh
+// snapshot, as the mini-game release pipeline does. Never let it write source metadata.
+const project = resolve(logDirectory, `${stamp}-${platform}-project`);
+mkdirSync(project, { recursive: true });
+for (const name of ['assets', 'settings', 'package.json', 'tsconfig.json']) {
+  if (existsSync(resolve(sourceProject, name))) cpSync(resolve(sourceProject, name), resolve(project, name), { recursive: true });
+}
 const logPath = resolve(logDirectory, `${stamp}-${platform}.log`);
 const summaryPath = logPath.replace(/\.log$/, '.json');
 const configPath = logPath.replace(/\.log$/, '-config.json');
 const options = `configPath=${configPath}`;
 const args = ['--project', project, '--build', options];
-const summary = { startedAt: new Date().toISOString(), editor, project, platform, args, logPath };
-function sourceHash() {
+const summary = { startedAt: new Date().toISOString(), editor, project, sourceProject, isolated: true, platform, args, logPath };
+function sourceHash(base = project) {
   const hash = createHash('sha256');
   const visit = (directory) => {
     if (!existsSync(directory)) return;
@@ -30,10 +37,10 @@ function sourceHash() {
       if (name === '.DS_Store') continue;
       const path = resolve(directory, name);
       if (statSync(path).isDirectory()) visit(path);
-      else { hash.update(path.slice(project.length)); hash.update(readFileSync(path)); }
+      else { hash.update(path.slice(base.length)); hash.update(readFileSync(path)); }
     }
   };
-  visit(resolve(project, 'assets'));
+  visit(resolve(base, 'assets'));
   return hash.digest('hex');
 }
 function blocked(message) {
@@ -68,7 +75,8 @@ writeFileSync(configPath, JSON.stringify(buildConfig, null, 2));
 summary.configPath = configPath;
 summary.bootScene = { path: scene, uuid: sceneMetadata.uuid, importerBeforeBuild: sceneMetadata.importer };
 summary.creatorVersion = metadata.creator.version;
-summary.sourceHashAtStart = sourceHash();
+summary.sourceHashAtStart = sourceHash(sourceProject);
+summary.snapshotHashAtStart = sourceHash();
 const log = createWriteStream(logPath);
 log.write(`${JSON.stringify(summary, null, 2)}\n`);
 console.log(`Building ${platform} with Cocos Creator ${summary.creatorVersion}. Log: ${logPath}`);
@@ -86,16 +94,26 @@ child.on('close', (code, signal) => {
   const entryExists = existsSync(entry);
   // Creator's documented success exit code is 36, not the shell's usual 0.
   const sceneImporterAfterBuild = JSON.parse(readFileSync(`${scene}.meta`, 'utf8')).importer;
-  const success = code === 36 && entryExists && sceneImporterAfterBuild === 'scene';
+  const sourceHashAtEnd = sourceHash(sourceProject);
+  const success = code === 36 && entryExists && sceneImporterAfterBuild === 'scene' && sourceHashAtEnd === summary.sourceHashAtStart;
   const result = {
     ...summary, finishedAt: new Date().toISOString(), exitCode: code, signal,
     status: success ? 'built' : 'failed', entry, entryExists,
     entryBytes: entryExists ? statSync(entry).size : null,
     sceneImporterAfterBuild,
-    sourceHashAtEnd: sourceHash(),
+    sourceHashAtEnd,
+    snapshotHashAtEnd: sourceHash(),
     entrySha256: entryExists ? createHash('sha256').update(readFileSync(entry)).digest('hex') : null,
   };
   result.sourceChangedDuringBuild = result.sourceHashAtEnd !== result.sourceHashAtStart;
+  result.snapshotChangedDuringBuild = result.snapshotHashAtEnd !== result.snapshotHashAtStart;
+  if (success) {
+    const destination = resolve(sourceProject, 'build', platform);
+    if (existsSync(destination)) renameSync(destination, resolve(logDirectory, `${stamp}-${platform}-previous-build`));
+    mkdirSync(dirname(destination), { recursive: true });
+    cpSync(resolve(project, 'build', platform), destination, { recursive: true });
+    result.publishedLocalBuild = destination;
+  }
   log.end(`\n${JSON.stringify(result, null, 2)}\n`);
   writeFileSync(summaryPath, JSON.stringify(result, null, 2));
   console.log(`\nCreator exit ${code}; ${result.status}. Evidence: ${summaryPath}`);

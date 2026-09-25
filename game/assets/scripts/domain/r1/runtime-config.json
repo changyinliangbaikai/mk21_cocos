@@ -1,0 +1,3217 @@
+{
+  "version": "R1.0.4",
+  "schemaVersion": 1,
+  "rngVersion": "xorshift32-v1",
+  "approvedDecision": "C-030",
+  "roles": {
+    "melee": {
+      "hp": 240,
+      "attack": 18,
+      "defense": 6,
+      "attackInterval": 0.9,
+      "verticalRange": 0.5
+    },
+    "ranged": {
+      "hp": 160,
+      "attack": 25,
+      "defense": 2,
+      "attackInterval": 1.1,
+      "verticalRange": 1
+    },
+    "support": {
+      "hp": 190,
+      "attack": 17,
+      "defense": 4,
+      "attackInterval": 1.2,
+      "verticalRange": 1
+    }
+  },
+  "heroes": [
+    {
+      "id": "RH01",
+      "name": "弹簧拳师",
+      "quality": "blue",
+      "role": "melee",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H002",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 240,
+        "attack": 18,
+        "defense": 6
+      },
+      "perPermanentLevel": {
+        "hp": 24,
+        "attack": 1.8,
+        "defense": 0.6
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH02",
+      "name": "爆米花厨师",
+      "quality": "blue",
+      "role": "ranged",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H001",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 160,
+        "attack": 25,
+        "defense": 2
+      },
+      "perPermanentLevel": {
+        "hp": 16,
+        "attack": 2.5,
+        "defense": 0.2
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH03",
+      "name": "电音青蛙",
+      "quality": "blue",
+      "role": "support",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H003",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 190,
+        "attack": 17,
+        "defense": 4
+      },
+      "perPermanentLevel": {
+        "hp": 19,
+        "attack": 1.7,
+        "defense": 0.4
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH04",
+      "name": "拖鞋阿姨",
+      "quality": "purple",
+      "role": "ranged",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H004",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 176,
+        "attack": 27.5,
+        "defense": 2.2
+      },
+      "perPermanentLevel": {
+        "hp": 17.6,
+        "attack": 2.75,
+        "defense": 0.22
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH05",
+      "name": "木桩师傅",
+      "quality": "purple",
+      "role": "melee",
+      "unlockAfterStage": 5,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 264,
+        "attack": 19.8,
+        "defense": 6.6
+      },
+      "perPermanentLevel": {
+        "hp": 26.4,
+        "attack": 1.98,
+        "defense": 0.66
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH06",
+      "name": "沙包队长",
+      "quality": "gold",
+      "role": "melee",
+      "unlockAfterStage": 10,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 290.4,
+        "attack": 21.78,
+        "defense": 7.26
+      },
+      "perPermanentLevel": {
+        "hp": 29.04,
+        "attack": 2.178,
+        "defense": 0.726
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        0,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    }
+  ],
+  "skills": [
+    {
+      "id": "RH01-S1",
+      "hero": "RH01",
+      "slot": 1,
+      "name": "连环直拳",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH02-S1",
+      "hero": "RH02",
+      "slot": 1,
+      "name": "连珠玉米",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH03-S1",
+      "hero": "RH03",
+      "slot": 1,
+      "name": "和弦音符",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH04-S1",
+      "hero": "RH04",
+      "slot": 1,
+      "name": "连环飞鞋",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH05-S1",
+      "hero": "RH05",
+      "slot": 1,
+      "name": "排排敲",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH06-S1",
+      "hero": "RH06",
+      "slot": 1,
+      "name": "铁拳列阵",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "distinctTargets": 1,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 2,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 3,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 4,
+          "singleTargetOverflow": "discard"
+        },
+        {
+          "distinctTargets": 5,
+          "singleTargetOverflow": "discard"
+        }
+      ],
+      "autoCast": false,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH01-S2",
+      "hero": "RH01",
+      "slot": 2,
+      "name": "回旋勾拳",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "damageAttackMultiplier": [
+        1.3,
+        1.6,
+        1.9,
+        2.2,
+        2.5
+      ],
+      "radiusBattleWidthFraction": [
+        0.13,
+        0.15,
+        0.17,
+        0.19,
+        0.21
+      ],
+      "levelEffect": [
+        {
+          "pullDistanceDepth": 0.07,
+          "slowFraction": 0,
+          "slowSeconds": 0
+        },
+        {
+          "pullDistanceDepth": 0.07,
+          "slowFraction": 0,
+          "slowSeconds": 0
+        },
+        {
+          "pullDistanceDepth": 0.07,
+          "slowFraction": 0.25,
+          "slowSeconds": 2
+        },
+        {
+          "pullDistanceDepth": 0.07,
+          "slowFraction": 0.25,
+          "slowSeconds": 2
+        },
+        {
+          "pullDistanceDepth": 0.07,
+          "slowFraction": 0.25,
+          "slowSeconds": 2
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH01-S3",
+      "hero": "RH01",
+      "slot": 3,
+      "name": "弹簧重锤",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "damageAttackMultiplier": [
+        2,
+        2.5,
+        3,
+        3.5,
+        4
+      ],
+      "radiusBattleWidthFraction": [
+        0.16,
+        0.18,
+        0.2,
+        0.22,
+        0.24
+      ],
+      "levelEffect": [
+        {
+          "knockbackDepth": 0.08
+        },
+        {
+          "knockbackDepth": 0.1
+        },
+        {
+          "knockbackDepth": 0.12
+        },
+        {
+          "knockbackDepth": 0.14
+        },
+        {
+          "knockbackDepth": 0.16
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH02-S2",
+      "hero": "RH02",
+      "slot": 2,
+      "name": "爆米花锅",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "damageAttackMultiplier": [
+        1.5,
+        1.85,
+        2.2,
+        2.55,
+        2.9
+      ],
+      "radiusBattleWidthFraction": [
+        0.12,
+        0.14,
+        0.16,
+        0.18,
+        0.2
+      ],
+      "levelEffect": [
+        {
+          "markOneExtraHitMultiplier": 0,
+          "markSeconds": 3,
+          "markCannotChain": true
+        },
+        {
+          "markOneExtraHitMultiplier": 0,
+          "markSeconds": 3,
+          "markCannotChain": true
+        },
+        {
+          "markOneExtraHitMultiplier": 0.5,
+          "markSeconds": 3,
+          "markCannotChain": true
+        },
+        {
+          "markOneExtraHitMultiplier": 0.5,
+          "markSeconds": 3,
+          "markCannotChain": true
+        },
+        {
+          "markOneExtraHitMultiplier": 0.5,
+          "markSeconds": 3,
+          "markCannotChain": true
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH02-S3",
+      "hero": "RH02",
+      "slot": 3,
+      "name": "高压玉米炮",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "damageAttackMultiplier": [
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ],
+      "radiusBattleWidthFraction": [
+        0.15,
+        0.17,
+        0.19,
+        0.21,
+        0.23
+      ],
+      "levelEffect": [
+        {
+          "summon": "SUM-BURST",
+          "extraShots": 2,
+          "extraShotMultiplier": 1.2,
+          "shotIntervalSeconds": 0.65
+        },
+        {
+          "summon": "SUM-BURST",
+          "extraShots": 3,
+          "extraShotMultiplier": 1.2,
+          "shotIntervalSeconds": 0.65
+        },
+        {
+          "summon": "SUM-BURST",
+          "extraShots": 4,
+          "extraShotMultiplier": 1.2,
+          "shotIntervalSeconds": 0.65
+        },
+        {
+          "summon": "SUM-BURST",
+          "extraShots": 5,
+          "extraShotMultiplier": 1.2,
+          "shotIntervalSeconds": 0.65
+        },
+        {
+          "summon": "SUM-BURST",
+          "extraShots": 6,
+          "extraShotMultiplier": 1.2,
+          "shotIntervalSeconds": 0.65
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH03-S2",
+      "hero": "RH03",
+      "slot": 2,
+      "name": "回春节拍",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "damageAttackMultiplier": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "radiusBattleWidthFraction": [
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45
+      ],
+      "levelEffect": [
+        {
+          "healMaxHpFraction": 0.12,
+          "targetCap": 4,
+          "cleanseWeakness": false
+        },
+        {
+          "healMaxHpFraction": 0.15,
+          "targetCap": 4,
+          "cleanseWeakness": false
+        },
+        {
+          "healMaxHpFraction": 0.18,
+          "targetCap": 4,
+          "cleanseWeakness": true
+        },
+        {
+          "healMaxHpFraction": 0.21,
+          "targetCap": 4,
+          "cleanseWeakness": true
+        },
+        {
+          "healMaxHpFraction": 0.24,
+          "targetCap": 4,
+          "cleanseWeakness": true
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH03-S3",
+      "hero": "RH03",
+      "slot": 3,
+      "name": "节奏加速",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "damageAttackMultiplier": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "radiusBattleWidthFraction": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "levelEffect": [
+        {
+          "attackBonus": 0.1,
+          "skillCooldownFactor": 0.9,
+          "durationSeconds": 4,
+          "stacking": "refresh_duration_strongest_value"
+        },
+        {
+          "attackBonus": 0.15,
+          "skillCooldownFactor": 0.88,
+          "durationSeconds": 4.5,
+          "stacking": "refresh_duration_strongest_value"
+        },
+        {
+          "attackBonus": 0.2,
+          "skillCooldownFactor": 0.86,
+          "durationSeconds": 5,
+          "stacking": "refresh_duration_strongest_value"
+        },
+        {
+          "attackBonus": 0.25,
+          "skillCooldownFactor": 0.84,
+          "durationSeconds": 5.5,
+          "stacking": "refresh_duration_strongest_value"
+        },
+        {
+          "attackBonus": 0.3,
+          "skillCooldownFactor": 0.82,
+          "durationSeconds": 6,
+          "stacking": "refresh_duration_strongest_value"
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH04-S2",
+      "hero": "RH04",
+      "slot": 2,
+      "name": "弹射拖鞋",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "damageAttackMultiplier": [
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4
+      ],
+      "radiusBattleWidthFraction": [
+        0.2,
+        0.23,
+        0.26,
+        0.29,
+        0.32
+      ],
+      "levelEffect": [
+        {
+          "totalHits": 3,
+          "repeatSameTarget": false,
+          "bossBonus": 0
+        },
+        {
+          "totalHits": 4,
+          "repeatSameTarget": false,
+          "bossBonus": 0
+        },
+        {
+          "totalHits": 5,
+          "repeatSameTarget": false,
+          "bossBonus": 0.2
+        },
+        {
+          "totalHits": 6,
+          "repeatSameTarget": false,
+          "bossBonus": 0.2
+        },
+        {
+          "totalHits": 7,
+          "repeatSameTarget": false,
+          "bossBonus": 0.2
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH04-S3",
+      "hero": "RH04",
+      "slot": 3,
+      "name": "终极·祖传鞋柜",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "damageAttackMultiplier": [
+        3,
+        3.6,
+        4.2,
+        4.8,
+        5.4
+      ],
+      "radiusBattleWidthFraction": [
+        0.16,
+        0.18,
+        0.2,
+        0.22,
+        0.24
+      ],
+      "levelEffect": [
+        {
+          "summon": "SUM-DURABLE",
+          "hpOwnerFraction": 1,
+          "durationSeconds": 10,
+          "shotMultiplier": 1.1,
+          "shotIntervalSeconds": 0.9
+        },
+        {
+          "summon": "SUM-DURABLE",
+          "hpOwnerFraction": 1.2,
+          "durationSeconds": 11,
+          "shotMultiplier": 1.1,
+          "shotIntervalSeconds": 0.9
+        },
+        {
+          "summon": "SUM-DURABLE",
+          "hpOwnerFraction": 1.4,
+          "durationSeconds": 12,
+          "shotMultiplier": 1.1,
+          "shotIntervalSeconds": 0.9
+        },
+        {
+          "summon": "SUM-DURABLE",
+          "hpOwnerFraction": 1.6,
+          "durationSeconds": 13,
+          "shotMultiplier": 1.1,
+          "shotIntervalSeconds": 0.9
+        },
+        {
+          "summon": "SUM-DURABLE",
+          "hpOwnerFraction": 1.8,
+          "durationSeconds": 14,
+          "shotMultiplier": 1.1,
+          "shotIntervalSeconds": 0.9
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH05-S2",
+      "hero": "RH05",
+      "slot": 2,
+      "name": "牵引木桩",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "damageAttackMultiplier": [
+        0.8,
+        1,
+        1.2,
+        1.4,
+        1.6
+      ],
+      "radiusBattleWidthFraction": [
+        0.17,
+        0.19,
+        0.21,
+        0.23,
+        0.25
+      ],
+      "levelEffect": [
+        {
+          "summon": "SUM-WOOD",
+          "hpOwnerFraction": 0.7,
+          "durationSeconds": 8,
+          "taunt": true,
+          "slowFraction": 0
+        },
+        {
+          "summon": "SUM-WOOD",
+          "hpOwnerFraction": 0.85,
+          "durationSeconds": 8,
+          "taunt": true,
+          "slowFraction": 0
+        },
+        {
+          "summon": "SUM-WOOD",
+          "hpOwnerFraction": 1,
+          "durationSeconds": 8,
+          "taunt": true,
+          "slowFraction": 0.2
+        },
+        {
+          "summon": "SUM-WOOD",
+          "hpOwnerFraction": 1.15,
+          "durationSeconds": 8,
+          "taunt": true,
+          "slowFraction": 0.2
+        },
+        {
+          "summon": "SUM-WOOD",
+          "hpOwnerFraction": 1.3,
+          "durationSeconds": 8,
+          "taunt": true,
+          "slowFraction": 0.2
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH05-S3",
+      "hero": "RH05",
+      "slot": 3,
+      "name": "终极·镇场木印",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "damageAttackMultiplier": [
+        3,
+        3.7,
+        4.4,
+        5.1,
+        5.8
+      ],
+      "radiusBattleWidthFraction": [
+        0.22,
+        0.25,
+        0.28,
+        0.31,
+        0.34
+      ],
+      "levelEffect": [
+        {
+          "pullDistanceDepth": 0.13,
+          "rootSeconds": 1
+        },
+        {
+          "pullDistanceDepth": 0.13,
+          "rootSeconds": 1.25
+        },
+        {
+          "pullDistanceDepth": 0.13,
+          "rootSeconds": 1.5
+        },
+        {
+          "pullDistanceDepth": 0.13,
+          "rootSeconds": 1.75
+        },
+        {
+          "pullDistanceDepth": 0.13,
+          "rootSeconds": 2
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH06-S2",
+      "hero": "RH06",
+      "slot": 2,
+      "name": "沙包护阵",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.3,
+        1.6,
+        1.9,
+        2.2
+      ],
+      "radiusBattleWidthFraction": [
+        0.17,
+        0.19,
+        0.21,
+        0.23,
+        0.25
+      ],
+      "levelEffect": [
+        {
+          "summon": "SUM-BAG",
+          "hpOwnerFraction": 0.9,
+          "durationSeconds": 10,
+          "taunt": true,
+          "attackOwnerMultiplier": 0.6,
+          "attackIntervalSeconds": 1,
+          "shieldOwnerMaxHpFraction": 0
+        },
+        {
+          "summon": "SUM-BAG",
+          "hpOwnerFraction": 1.1,
+          "durationSeconds": 10,
+          "taunt": true,
+          "attackOwnerMultiplier": 0.6,
+          "attackIntervalSeconds": 1,
+          "shieldOwnerMaxHpFraction": 0
+        },
+        {
+          "summon": "SUM-BAG",
+          "hpOwnerFraction": 1.3,
+          "durationSeconds": 10,
+          "taunt": true,
+          "attackOwnerMultiplier": 0.6,
+          "attackIntervalSeconds": 1,
+          "shieldOwnerMaxHpFraction": 0.1
+        },
+        {
+          "summon": "SUM-BAG",
+          "hpOwnerFraction": 1.5,
+          "durationSeconds": 10,
+          "taunt": true,
+          "attackOwnerMultiplier": 0.6,
+          "attackIntervalSeconds": 1,
+          "shieldOwnerMaxHpFraction": 0.1
+        },
+        {
+          "summon": "SUM-BAG",
+          "hpOwnerFraction": 1.7,
+          "durationSeconds": 10,
+          "taunt": true,
+          "attackOwnerMultiplier": 0.6,
+          "attackIntervalSeconds": 1,
+          "shieldOwnerMaxHpFraction": 0.1
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    },
+    {
+      "id": "RH06-S3",
+      "hero": "RH06",
+      "slot": 3,
+      "name": "终极·沙包要塞",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "damageAttackMultiplier": [
+        2.5,
+        3.2,
+        3.9,
+        4.6,
+        5.3
+      ],
+      "radiusBattleWidthFraction": [
+        0.23,
+        0.26,
+        0.29,
+        0.32,
+        0.35
+      ],
+      "levelEffect": [
+        {
+          "summon": "SUM-BAG",
+          "createIfAbsent": true,
+          "durationSeconds": 6,
+          "summonHpMultiplier": 1.3,
+          "summonAttackMultiplier": 1.2,
+          "summonBodyScale": 1.2,
+          "shieldNearbyHeroMaxHpFraction": 0.12
+        },
+        {
+          "summon": "SUM-BAG",
+          "createIfAbsent": true,
+          "durationSeconds": 7,
+          "summonHpMultiplier": 1.5,
+          "summonAttackMultiplier": 1.3,
+          "summonBodyScale": 1.2,
+          "shieldNearbyHeroMaxHpFraction": 0.12
+        },
+        {
+          "summon": "SUM-BAG",
+          "createIfAbsent": true,
+          "durationSeconds": 8,
+          "summonHpMultiplier": 1.7,
+          "summonAttackMultiplier": 1.4,
+          "summonBodyScale": 1.2,
+          "shieldNearbyHeroMaxHpFraction": 0.12
+        },
+        {
+          "summon": "SUM-BAG",
+          "createIfAbsent": true,
+          "durationSeconds": 9,
+          "summonHpMultiplier": 1.9,
+          "summonAttackMultiplier": 1.5,
+          "summonBodyScale": 1.2,
+          "shieldNearbyHeroMaxHpFraction": 0.12
+        },
+        {
+          "summon": "SUM-BAG",
+          "createIfAbsent": true,
+          "durationSeconds": 10,
+          "summonHpMultiplier": 2.1,
+          "summonAttackMultiplier": 1.6,
+          "summonBodyScale": 1.2,
+          "shieldNearbyHeroMaxHpFraction": 0.12
+        }
+      ],
+      "autoCast": true,
+      "waitForValidTarget": true
+    }
+  ],
+  "skillCommon": {
+    "unlockStartsCooldown": true,
+    "invalidTargetDoesNotSpendCooldown": true,
+    "minimumSkillCooldownSeconds": 1,
+    "maximumCooldownReduction": 0.3,
+    "basicAttackRangeUsesVerticalDepth": true,
+    "rangeCenter": "nearest_valid_target_inside_caster_range",
+    "s2s3RetainCasterAcquisitionRange": true,
+    "deadHeroSkillsDoNotTick": true,
+    "deadHeroExistingSummonsPersist": true,
+    "oneSummonPerHeroAcrossSkills": true
+  },
+  "enemies": [
+    {
+      "id": "RM01",
+      "name": "蹦迪果冻",
+      "tier": "minion",
+      "attackType": "melee",
+      "baseHp": 32,
+      "baseAttack": 12,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 50,
+      "attackIntervalSeconds": 1.1,
+      "rangedStopDepth": null,
+      "meleeStopDepth": 0.95,
+      "projectileSpeedDesignPixelsPerSecond": 0,
+      "telegraphSeconds": 0.35,
+      "energyOnFinalDeath": 9,
+      "cardOnFinalDeath": 0,
+      "allowedBirthTraits": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T08",
+        "T09"
+      ],
+      "bossControlDurationFactor": 1,
+      "bossDisplacementFactor": 1
+    },
+    {
+      "id": "RM02",
+      "name": "纸箱壮汉",
+      "tier": "minion",
+      "attackType": "melee",
+      "baseHp": 60,
+      "baseAttack": 16,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 35,
+      "attackIntervalSeconds": 1.4,
+      "rangedStopDepth": null,
+      "meleeStopDepth": 0.95,
+      "projectileSpeedDesignPixelsPerSecond": 0,
+      "telegraphSeconds": 0.35,
+      "energyOnFinalDeath": 9,
+      "cardOnFinalDeath": 0,
+      "allowedBirthTraits": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T08",
+        "T09"
+      ],
+      "bossControlDurationFactor": 1,
+      "bossDisplacementFactor": 1
+    },
+    {
+      "id": "RM04",
+      "name": "喷豆小鸡",
+      "tier": "minion",
+      "attackType": "ranged",
+      "baseHp": 28,
+      "baseAttack": 10,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 45,
+      "attackIntervalSeconds": 1.6,
+      "rangedStopDepth": 0.5,
+      "meleeStopDepth": null,
+      "projectileSpeedDesignPixelsPerSecond": 380,
+      "telegraphSeconds": 0.35,
+      "energyOnFinalDeath": 9,
+      "cardOnFinalDeath": 0,
+      "allowedBirthTraits": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T09"
+      ],
+      "bossControlDurationFactor": 1,
+      "bossDisplacementFactor": 1
+    },
+    {
+      "id": "RM05",
+      "name": "墨水水母",
+      "tier": "minion",
+      "attackType": "ranged",
+      "baseHp": 38,
+      "baseAttack": 14,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 38,
+      "attackIntervalSeconds": 2.1,
+      "rangedStopDepth": 0.5,
+      "meleeStopDepth": null,
+      "projectileSpeedDesignPixelsPerSecond": 380,
+      "telegraphSeconds": 0.35,
+      "energyOnFinalDeath": 9,
+      "cardOnFinalDeath": 0,
+      "allowedBirthTraits": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T09"
+      ],
+      "bossControlDurationFactor": 1,
+      "bossDisplacementFactor": 1
+    },
+    {
+      "id": "RS01",
+      "name": "铁桶野猪",
+      "tier": "miniboss",
+      "attackType": "melee",
+      "baseHp": 550,
+      "baseAttack": 24,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 28,
+      "attackIntervalSeconds": 1.8,
+      "rangedStopDepth": null,
+      "meleeStopDepth": 0.95,
+      "projectileSpeedDesignPixelsPerSecond": 0,
+      "telegraphSeconds": 0.8,
+      "energyOnFinalDeath": 0,
+      "cardOnFinalDeath": 1,
+      "allowedBirthTraits": [],
+      "bossControlDurationFactor": 0.6,
+      "bossDisplacementFactor": 0.4
+    },
+    {
+      "id": "RS02",
+      "name": "弹弓乌鸦",
+      "tier": "miniboss",
+      "attackType": "ranged",
+      "baseHp": 440,
+      "baseAttack": 20,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 32,
+      "attackIntervalSeconds": 2,
+      "rangedStopDepth": 0.5,
+      "meleeStopDepth": null,
+      "projectileSpeedDesignPixelsPerSecond": 380,
+      "telegraphSeconds": 0.8,
+      "energyOnFinalDeath": 0,
+      "cardOnFinalDeath": 1,
+      "allowedBirthTraits": [],
+      "bossControlDurationFactor": 0.6,
+      "bossDisplacementFactor": 0.4
+    },
+    {
+      "id": "RL01",
+      "name": "巨鹅统领",
+      "tier": "boss",
+      "attackType": "melee",
+      "baseHp": 1800,
+      "baseAttack": 34,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 24,
+      "attackIntervalSeconds": 2.2,
+      "rangedStopDepth": null,
+      "meleeStopDepth": 0.95,
+      "projectileSpeedDesignPixelsPerSecond": 0,
+      "telegraphSeconds": 0.8,
+      "energyOnFinalDeath": 0,
+      "cardOnFinalDeath": 1,
+      "allowedBirthTraits": [],
+      "bossControlDurationFactor": 0.6,
+      "bossDisplacementFactor": 0.4
+    },
+    {
+      "id": "RL02",
+      "name": "扩音章鱼",
+      "tier": "boss",
+      "attackType": "ranged",
+      "baseHp": 1450,
+      "baseAttack": 28,
+      "baseDefense": 0,
+      "baseMoveDesignPixelsPerSecond": 26,
+      "attackIntervalSeconds": 2.4,
+      "rangedStopDepth": 0.5,
+      "meleeStopDepth": null,
+      "projectileSpeedDesignPixelsPerSecond": 380,
+      "telegraphSeconds": 0.8,
+      "energyOnFinalDeath": 0,
+      "cardOnFinalDeath": 1,
+      "allowedBirthTraits": [],
+      "bossControlDurationFactor": 0.6,
+      "bossDisplacementFactor": 0.4
+    }
+  ],
+  "traits": [
+    {
+      "id": "T01",
+      "name": "速度提升",
+      "moveMultiplier": 1.2,
+      "bossBuffMoveMultiplier": 1.35
+    },
+    {
+      "id": "T02",
+      "name": "远程抗性",
+      "rangedHeroDamageFactor": 0.8,
+      "bossBuffRangedHeroDamageFactor": 0.7,
+      "globalSkillExcluded": true
+    },
+    {
+      "id": "T03",
+      "name": "控制抗性",
+      "controlDurationFactor": 0.8,
+      "bossBuffControlDurationFactor": 0.65,
+      "knockbackDistanceUnaffected": true
+    },
+    {
+      "id": "T04",
+      "name": "护盾",
+      "maxHpShieldFraction": 0.2,
+      "bossBuffUntriggeredFraction": 0.3,
+      "triggerCount": 1,
+      "firstHitBeforeDamage": true,
+      "existingShieldNotRefilled": true
+    },
+    {
+      "id": "T05",
+      "name": "濒死狂暴",
+      "strictHpThreshold": 0.2,
+      "moveMultiplier": 1.5,
+      "bossBuffMoveMultiplier": 1.65,
+      "attackUnaffected": true
+    },
+    {
+      "id": "T06",
+      "name": "死而不僵",
+      "residualHpFraction": 0.2,
+      "canMove": false,
+      "canAttack": false,
+      "maxResidualLives": 1,
+      "finalKillOnlyRewards": true,
+      "bossBuffResidualHpFraction": 0.3,
+      "deadlockProposal": "heroes_ignore_range_only_for_residual_targets_after_all_mobile_enemies_and_spawn_plans_finished"
+    },
+    {
+      "id": "T07",
+      "name": "虚弱",
+      "only": "ranged_minion",
+      "heroDamageFactor": 0.8,
+      "durationSeconds": 4,
+      "bossBuffDurationSeconds": 6,
+      "stacking": "refresh_duration_not_strength",
+      "healingUnaffected": true,
+      "ownerExistingSummonsAffected": true
+    },
+    {
+      "id": "T08",
+      "name": "膨胀",
+      "only": "melee_minion",
+      "explosionAttackMultiplier": 1.5,
+      "radiusBattleWidthFraction": 0.13,
+      "telegraphSeconds": 0.6,
+      "bossBuffRadiusBattleWidthFraction": 0.17,
+      "bossBuffAttackMultiplier": 1.8,
+      "damagesAlliedMonsters": false,
+      "benefitOnceAtFinalDeath": true
+    },
+    {
+      "id": "T09",
+      "name": "目中无人",
+      "ignoreSummons": true,
+      "tauntOverrides": true,
+      "bossBuffMoveMultiplier": 1.15,
+      "tauntRemainsValid": true
+    }
+  ],
+  "firstReleaseEnabledTraits": [
+    "T01",
+    "T02",
+    "T03",
+    "T04"
+  ],
+  "bossAbilities": {
+    "RS01": {
+      "name": "铁桶冲撞",
+      "cooldownSeconds": 10,
+      "telegraphSeconds": 0.8,
+      "damageMultiplier": 1.4,
+      "radiusBattleWidthFraction": 0.12
+    },
+    "RS02": {
+      "name": "三连弹射",
+      "cooldownSeconds": 12,
+      "telegraphSeconds": 0.9,
+      "projectiles": 3,
+      "damagePerProjectileMultiplier": 0.7,
+      "sameTargetMaximumHits": 1
+    },
+    "RL01": {
+      "name": "重踏号令",
+      "cooldownSeconds": 14,
+      "telegraphSeconds": 1,
+      "damageMultiplier": 1.6,
+      "radiusBattleWidthFraction": 0.2
+    },
+    "RL02": {
+      "name": "扩音冲击",
+      "cooldownSeconds": 14,
+      "telegraphSeconds": 1,
+      "damageMultiplier": 1.4,
+      "radiusBattleWidthFraction": 0.22
+    },
+    "command": {
+      "cooldownSeconds": 12,
+      "telegraphSeconds": 1,
+      "durationSeconds": 5,
+      "targets": "living_minions",
+      "noStack": true,
+      "noExtraSpawns": true,
+      "noBirthTraitMoveMultiplier": 1.15,
+      "firstCastAfterSpawnSeconds": 8,
+      "noOverlapAttackCast": true
+    }
+  },
+  "stages": [
+    {
+      "id": 1,
+      "difficulty": "normal",
+      "unlockAfterStage": 0,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 22,
+        "RM02": 8,
+        "RM04": 0,
+        "RM05": 0
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 2,
+      "difficulty": "normal",
+      "unlockAfterStage": 1,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.025,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 22,
+        "RM02": 8,
+        "RM04": 0,
+        "RM05": 0
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 3,
+      "difficulty": "normal",
+      "unlockAfterStage": 2,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.05,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 22,
+        "RM02": 8,
+        "RM04": 0,
+        "RM05": 0
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 4,
+      "difficulty": "normal",
+      "unlockAfterStage": 3,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.075,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 22,
+        "RM02": 8,
+        "RM04": 0,
+        "RM05": 0
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 5,
+      "difficulty": "hard",
+      "unlockAfterStage": 4,
+      "hpAttackDifficultyMultiplier": 1.2,
+      "stageScale": 1.1,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 22,
+        "RM02": 8,
+        "RM04": 0,
+        "RM05": 0
+      },
+      "spawnIntervalSeconds": 0.75,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01",
+        "T04"
+      ],
+      "traitMinionsPerWave": 6,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "hard",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.9,
+        0.85,
+        0.8,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "id": 6,
+      "difficulty": "normal",
+      "unlockAfterStage": 5,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.125,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 14,
+        "RM02": 8,
+        "RM04": 5,
+        "RM05": 3
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 7,
+      "difficulty": "normal",
+      "unlockAfterStage": 6,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.15,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 14,
+        "RM02": 8,
+        "RM04": 5,
+        "RM05": 3
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 8,
+      "difficulty": "normal",
+      "unlockAfterStage": 7,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.175,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 14,
+        "RM02": 8,
+        "RM04": 5,
+        "RM05": 3
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 9,
+      "difficulty": "normal",
+      "unlockAfterStage": 8,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.2,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 14,
+        "RM02": 8,
+        "RM04": 5,
+        "RM05": 3
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [],
+      "traitMinionsPerWave": 0,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 10,
+      "difficulty": "superhard",
+      "unlockAfterStage": 9,
+      "hpAttackDifficultyMultiplier": 1.5,
+      "stageScale": 1.225,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 14,
+        "RM02": 8,
+        "RM04": 5,
+        "RM05": 3
+      },
+      "spawnIntervalSeconds": 0.9,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01",
+        "T02",
+        "T04"
+      ],
+      "traitMinionsPerWave": 9,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01",
+          "RS02"
+        ],
+        "10": [
+          "RS01",
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 10,
+      "rewardModel": "hard_final_result_times_two",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        1.05,
+        1,
+        0.95,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    {
+      "id": 11,
+      "difficulty": "normal",
+      "unlockAfterStage": 10,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.25,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 12,
+      "difficulty": "normal",
+      "unlockAfterStage": 11,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.275,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T02"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 13,
+      "difficulty": "normal",
+      "unlockAfterStage": 12,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.3,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T03"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 14,
+      "difficulty": "normal",
+      "unlockAfterStage": 13,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.325,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T04"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 15,
+      "difficulty": "hard",
+      "unlockAfterStage": 14,
+      "hpAttackDifficultyMultiplier": 1.2,
+      "stageScale": 1.35,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.75,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01",
+        "T04"
+      ],
+      "traitMinionsPerWave": 6,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "hard",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.9,
+        0.85,
+        0.8,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "id": 16,
+      "difficulty": "normal",
+      "unlockAfterStage": 15,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.375,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T02"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 17,
+      "difficulty": "normal",
+      "unlockAfterStage": 16,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.4,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T03"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 18,
+      "difficulty": "normal",
+      "unlockAfterStage": 17,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.425,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T04"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 19,
+      "difficulty": "normal",
+      "unlockAfterStage": 18,
+      "hpAttackDifficultyMultiplier": 1,
+      "stageScale": 1.45,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.7,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01"
+      ],
+      "traitMinionsPerWave": 3,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01"
+        ],
+        "10": [
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL01",
+      "rewardCount": 5,
+      "rewardModel": "normal",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        0.85,
+        0.8,
+        0.75,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "id": 20,
+      "difficulty": "superhard",
+      "unlockAfterStage": 19,
+      "hpAttackDifficultyMultiplier": 1.5,
+      "stageScale": 1.475,
+      "waveScaleFormula": "waveStatScales[wave-1]",
+      "waves": 15,
+      "minionsPerWave": 30,
+      "minionCompositionEachWave": {
+        "RM01": 12,
+        "RM02": 8,
+        "RM04": 6,
+        "RM05": 4
+      },
+      "spawnIntervalSeconds": 0.9,
+      "nextWaveMaxDelaySeconds": 5,
+      "traitPool": [
+        "T01",
+        "T02",
+        "T04"
+      ],
+      "traitMinionsPerWave": 9,
+      "eachTraitQuota": 3,
+      "miniBosses": {
+        "5": [
+          "RS01",
+          "RS02"
+        ],
+        "10": [
+          "RS01",
+          "RS02"
+        ]
+      },
+      "finalBoss": "RL02",
+      "rewardCount": 10,
+      "rewardModel": "hard_final_result_times_two",
+      "waveStatScales": [
+        0.72,
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.065,
+        1.09,
+        1.115,
+        1.14,
+        1.165,
+        1.19,
+        1.215,
+        1.24,
+        1.265,
+        1.29
+      ],
+      "spawnIntervalsByWave": [
+        1.05,
+        1,
+        0.95,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9
+      ]
+    }
+  ],
+  "rewards": {
+    "normal": {
+      "baseBlue": 5,
+      "purpleReplacementProbability": 0.2,
+      "goldReplacementProbability": 0.02,
+      "independent": true,
+      "distinctSlots": true,
+      "unlockedOnly": true,
+      "emptyHighQualityPool": "keep_blue"
+    },
+    "hard": {
+      "basePurple": 5,
+      "eachBaseSlotUniversalPurpleProbability": 0.3,
+      "specificPurpleProbability": 0.7,
+      "goldEvents": [
+        {
+          "probability": 0.24,
+          "quantity": 0,
+          "type": "none"
+        },
+        {
+          "probability": 0.5,
+          "quantity": 1,
+          "type": "specific_gold"
+        },
+        {
+          "probability": 0.2,
+          "quantity": 2,
+          "type": "specific_gold"
+        },
+        {
+          "probability": 0.05,
+          "quantity": 5,
+          "type": "specific_gold"
+        },
+        {
+          "probability": 0.01,
+          "quantity": 1,
+          "type": "universal_gold"
+        }
+      ],
+      "goldEventsMutuallyExclusive": true,
+      "replacementSlots": "seeded_sample_without_replacement",
+      "allowLockedHeroFragments": true
+    },
+    "superhard": {
+      "drawHardOnce": true,
+      "multiplyFinalQuantitiesBy": 2
+    },
+    "specificAssignment": "independent_uniform_per_fragment_within_allowed_quality_pool",
+    "unlockBeforeRewardRoll": true,
+    "victoryOnly": true,
+    "failureRewards": 0,
+    "firstClearExtraFragments": 0,
+    "repeatClearRewards": true
+  },
+  "screen": {
+    "referenceWidth": 720,
+    "referenceHeight": 1280,
+    "heroCentersX": [
+      0.13,
+      0.33,
+      0.67,
+      0.85
+    ],
+    "battleBoundsDesignPixels": {
+      "x": 32,
+      "y": 160,
+      "width": 656,
+      "height": 800
+    },
+    "heroTargetDepth": 1,
+    "heroDisplayHeightReference": "UI-R1-01-v04",
+    "cardHeightReferencePixels941x1672": 560,
+    "cardAutoHeight": false,
+    "cardVerticalAlignment": "screen_center",
+    "cardBackdrop": false,
+    "showSlowMotionLabel": false
+  },
+  "battle": {
+    "fixedStepSeconds": 0.016666666666666666,
+    "baseRates": [
+      1,
+      1.5,
+      2
+    ],
+    "cardTimeFactor": 0.1,
+    "rescuePause": true,
+    "minimumDamage": 1,
+    "roundDamage": "ceil_after_modifiers",
+    "reviveHpFraction": 1,
+    "reviveProtectionSeconds": 2,
+    "grandpaPromptsPerRun": 1,
+    "declineConsumesGrandpaChance": true,
+    "freeFullRevivesPerRun": 1,
+    "independentRevives": true,
+    "grandpaAdvanceDraws": 3,
+    "debtConsumesOnlyFutureEnergy": true,
+    "deadSlotsOccupied": true,
+    "simultaneousFourDeathsReviveOrder": "death_timestamp_then_slot_index",
+    "allDeployedDeadCountsAsWipe": true,
+    "victoryRequiresAll15WavesReleasedAllEnemiesFinalDeadOneLivingHero": true,
+    "targeting": {
+      "priority": [
+        "immediate_melee_threat",
+        "boss",
+        "nearest_to_attacker"
+      ],
+      "emergencyMeleeDistancePixels": 120,
+      "reserveWindupsAndProjectiles": true,
+      "retargetOrphanedHeroProjectileOnce": true
+    }
+  },
+  "cards": {
+    "openingDraws": 3,
+    "candidates": 3,
+    "heroCandidateCount": "min(true_empty_slots,3)",
+    "allowOpeningTwoHeroes": true,
+    "heroQualityWeights": {
+      "blue": 70,
+      "purple": 25,
+      "gold": 5
+    },
+    "duplicateHero": false,
+    "unavailableQuality": "renormalize_remaining_weights",
+    "enhancementWeights": {
+      "blue": 50,
+      "purple": 35,
+      "gold": 15
+    },
+    "globalRoundProbability": 0.1,
+    "globalQualityWeights": {
+      "blue": 50,
+      "purple": 40,
+      "gold": 10
+    },
+    "globalRequiresNoEmptyHeroSlotAndEmptySkillSlot": true,
+    "globalPerRoundMaximum": 1,
+    "energyPerDraw": 100,
+    "overflowEnergyRetained": true,
+    "blueEffects": {
+      "attack": {
+        "additiveBaseFraction": 0.2
+      },
+      "maxHp": {
+        "additiveBaseFraction": 0.15,
+        "grantHpDelta": true
+      },
+      "defense": {
+        "additiveBaseFraction": 0.15
+      }
+    },
+    "blueStacking": "additive_to_permanent_level_base",
+    "upgradeTargets": "alive_deployed_with_effect_available",
+    "invalidShownTarget": "suspend_until_rescue_resolved_then_deterministic_same_quality_replacement_once",
+    "preserveUnchangedShownCandidates": true,
+    "missingQuality": "renormalize_remaining_weights",
+    "pageDuplicateEffect": false,
+    "blueEnhancement": "all_stats_together",
+    "exhaustedDistinctPool": "repeat_attribute_only_to_fill_three_choices"
+  },
+  "globalSkills": {
+    "theme": "能量轰击",
+    "blue": {
+      "displayName": "能量轰击",
+      "coverageAreaFraction": 0.2,
+      "shape": "circle",
+      "baseDamage": 70
+    },
+    "purple": {
+      "displayName": "范围轰击",
+      "coverageAreaFraction": 0.5,
+      "shape": "fan_90deg",
+      "aimDegrees": [
+        -25,
+        25
+      ],
+      "baseDamage": 115
+    },
+    "gold": {
+      "displayName": "全屏轰击",
+      "coverageAreaFraction": 1,
+      "shape": "radial_wave_full_battle",
+      "baseDamage": 180
+    },
+    "damageScale": "stageScale*difficultyMultiplier*currentWaveScale",
+    "bossDamageFactor": 0.35,
+    "targetArea": "shape_intersection_with_effective_battle_bounds",
+    "aiming": "tap_slot_aim_shape_confirm_or_cancel",
+    "coverageMeasure": "area_not_bounding_box_or_height",
+    "aimingTimeFactor": 0.1,
+    "consumeOnlyOnConfirmedCast": true,
+    "oneUse": true,
+    "goldNeedsConfirm": true,
+    "goldKillsEveryBoss": false,
+    "goldEffectFlashMaximumSeconds": 0.18
+  },
+  "save": {
+    "namespace": "chaoli-heroes-r1",
+    "schemaVersion": 1,
+    "legacyNamespaceReadOnlyBackup": true,
+    "legacyPermanentLevelsMigration": "min(old_level,20)_for_four_identity_matched_heroes",
+    "legacyXpConvertedToFragments": false,
+    "legacyProgressConverted": false,
+    "legacyActiveBattleConverted": false,
+    "newRunStagesStartAt1": true,
+    "oneActiveRun": true,
+    "returnCampSavesRun": true,
+    "onBackgroundFreezeAndSave": true,
+    "snapshotIncludes": [
+      "seed",
+      "rngStates",
+      "stage",
+      "wavePlans",
+      "releaseCounters",
+      "nextWaveTimer",
+      "allUnits",
+      "projectiles",
+      "summons",
+      "statuses",
+      "cooldowns",
+      "heroes",
+      "energy",
+      "drawQueue",
+      "shownCandidates",
+      "globalSkill",
+      "grandpaUsed",
+      "freeReviveUsed",
+      "drawDebt",
+      "simulationTick",
+      "baseRate",
+      "pendingSettlement"
+    ],
+    "autoSnapshotSeconds": 5,
+    "criticalTransitionsSyncSave": true,
+    "rewardLedgerId": "runId:settlementVersion",
+    "newBattleWhileActive": "confirm_abandon_previous_run",
+    "resumeSnapshotRestore": "exact_no_reroll",
+    "storageFailure": "keep_current_scene_show_retry_do_not_advance_transaction"
+  }
+}

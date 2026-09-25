@@ -1,6 +1,10 @@
 ---
 document_type: ai_deployment_runbook
 schema_version: 1
+release_channel: wechatgame
+scope_updated_at: "2026-09-25"
+runtime_version: "R1.0.4"
+runtime_verified_at: "2026-09-25"
 verified_at: "2026-09-15"
 verified_source_commit: "2d1ba6a54a6d6d6296119e705e6e1e8eda9ea456"
 repository: "https://github.com/changyinliangbaikai/mk21_cocos"
@@ -11,24 +15,28 @@ creator_version: "3.8.8"
 
 # 超力英雄：AI 部署执行文档
 
-本文面向接手本仓库的 AI 编程助手。目标是从 Git 源码生成可验证的 Web 或小游戏构建，并按用户指定范围推进到预览、上传体验版或正式发布。所有相对路径和命令均以仓库根目录为起点；代码与脚本若发生变化，先核对实现，再更新本文件中的命令和判断条件。
+本文面向接手本仓库的 AI 编程助手。当前唯一发布渠道为微信小游戏，Web 用于本地调试和截图；按用户指定范围推进预览、上传体验版、备案、提审或正式发布。所有相对路径和命令均以仓库根目录为起点；代码与脚本若发生变化，先核对实现，再更新本文件中的命令和判断条件。
+
+当前分支入口为 R1.0.4。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。R1最新版本通过222项测试和32文件Cocos声明检查；当前构建和未完成的平台验收见 [R1 实现与验收](docs/development/R1实现与验收.md)。0.7.2 的历史上传记录不能用来证明 R1 已上传或已通过真机测试。
 
 ## 1. 执行约定与输入
 
 先读取本文件、[README](README.md) 和 [发布进度](docs/release/小游戏发布推进.md)。仓库如新增 `AGENTS.md`，同时遵循其适用范围。历史上传结果仅作参考，不能代替本次构建与平台状态验证。
 
+2026-09-17 用户明确要求后续不再考虑抖音，只关注微信。抖音资料及兼容代码仅作历史保留，不执行抖音或双平台构建，不安排抖音测试、补材料、提审或发布；恢复该渠道须有用户新的明确要求。
+
 开始前确定以下输入；能从用户当前指令、已有配置和发布记录确定的内容直接沿用。只有缺失信息阻塞下一步时才向用户说明具体需要什么，并继续独立的准备工作。
 
 | 输入 | 取值与规则 |
 | --- | --- |
-| `target` | `wechatgame`、`bytedance-mini-game`、`all`、`web-mobile` 或 `web-desktop`。未指定平台时先按当前主线准备微信本地构建。 |
+| `target` | 发布使用 `wechatgame`；本地调试或截图按需使用 `web-mobile`、`web-desktop`。未指定平台时使用微信。 |
 | `requested_stage` | `build`、`preview`、`upload`、`review` 或 `publish`；按用户实际要求确定完成范围。体验版上传成功和正式发布分别取证。 |
 | AppID | 小游戏构建必需；环境变量优先于根目录 `release.local.json`。最新用户指定值优先于文档中的历史值。 |
 | 平台版本与备注 | 上传前确定；平台版本单独维护，不能从根 `package.json.version` 自动推导，也不能假定历史版本可再次使用。 |
 | 执行环境 | Creator 路径、Node、FFmpeg，以及目标平台开发者工具的登录和项目权限。 |
 | 公网 Web 目标 | 仅公网 Web 部署需要明确托管目标和发布方式。本仓库没有预配置云站点，`npm run serve` 只提供本机预览。 |
 
-当前记录的微信 AppID 为 `wx130a8544c32afd2c`，抖音为 `tt54fb2246ca80563d02`。这些是项目标识，不是登录凭据；构建脚本不使用 AppSecret。不要请求用户发送密码、AppSecret 或验证码。
+当前微信 AppID 为 `wx130a8544c32afd2c`。这是项目标识，不是登录凭据；构建脚本不使用 AppSecret。不要请求用户发送密码、AppSecret 或验证码。
 
 执行时保留用户已有修改，记录本次提交 SHA、开始前差异和本次输出目录。构建与压缩使用现有脚本；不要重新生成 `.meta`/UUID、替换字体许可或在原始素材上批量压缩。需要扫码登录、身份核验或本人填写材料时，给出当前界面和具体操作步骤；已获授权的同一上传动作不重复征求许可。
 
@@ -39,15 +47,14 @@ creator_version: "3.8.8"
 | npm 命令和锁定依赖 | [package.json](package.json)、[package-lock.json](package-lock.json) |
 | Creator 版本 | [game/package.json](game/package.json)：`3.8.8` |
 | 游戏工程 / 入口 | `game/` / `game/assets/scenes/Boot.scene`，配套 `.meta` 的 importer 应为 `scene` |
-| 玩法配置源 | `docs/design/configs/prototype-v0.5.json`；实际版本读 `design_version`，当前为 `0.7` |
-| 运行配置 | `game/assets/resources/prototype-v0.5.json`；由 `npm run config:sync` 从设计配置复制 |
+| R1 规则 / 卡牌 | `game/assets/scripts/domain/r1/runtime-config.json` / `ui-cards.json`，无需读取被 Git 排除的设计库 |
+| 历史运行配置 | `game/assets/resources/prototype-v0.5.json`；`config:sync` 仅同步旧规则，供回归测试 |
 | 小游戏发布构建 | [tools/minigame-release.mjs](tools/minigame-release.mjs)；独立副本、资源压缩、分包与包体检查 |
-| 抖音启动模板 | [tools/templates/douyin-sidebar.js](tools/templates/douyin-sidebar.js)；在 Cocos 加载前监听侧边栏进入事件 |
-| Web CLI 构建 | [tools/cocos-build.mjs](tools/cocos-build.mjs)；使用主 `game/` 工程，当前生成 debug 构建 |
+| Web CLI 构建 | [tools/cocos-build.mjs](tools/cocos-build.mjs)；使用独立副本，成功后复制到主 `game/build/`，当前生成 debug 构建 |
 | 本地 Web 服务 | [tools/serve.mjs](tools/serve.mjs)；绑定 `127.0.0.1`，默认端口 `7457` |
-| 平台文案 / 已知问题 | [微信文案](docs/release/超力英雄-微信文案.md)、[抖音草稿](docs/release/抖音提审材料草稿.md)、[待优化事项](docs/release/待优化事项.md) |
+| 平台文案 / 已知问题 | [微信文案](docs/release/超力英雄-微信文案.md)、[待优化事项](docs/release/待优化事项.md) |
 
-运行所需图片、音频、字体及 `.meta` 已包含在 `game/assets/`。当前小游戏方案使用本地 `resources` 分包，无需额外部署资源 CDN；自定义游戏代码没有业务服务器或数据库部署步骤。正式广告 SDK 尚未接入，小游戏端使用免费复活，Web 广告入口用于模拟验证。
+运行所需图片、音频、字体及 `.meta` 已包含在 `game/assets/`。当前小游戏方案使用本地 `resources` 分包，无需额外部署资源 CDN；自定义游戏代码没有业务服务器或数据库部署步骤。R1 的老爷爷与全灭复活均免费，不提供旧版 Web 模拟广告入口。小游戏构建副本会移除未使用的旧 `mvp/art`、`mvp/fonts`，保留旧音频供 R1 复用；主工程资源不删除。
 
 ## 3. 环境准备与源码检查
 
@@ -116,38 +123,34 @@ fi
 
 ```bash
 export WECHAT_APP_ID='wx130a8544c32afd2c'
-export DOUYIN_APP_ID='tt54fb2246ca80563d02'
 ```
 
-优先级是环境变量 → `release.local.json` → 显式启用的测试值。切换 AppID 时检查已有环境变量，避免它覆盖刚修改的文件。单平台构建只要求该平台 AppID，`all` 要求两个。`release.local.json` 已被 Git 忽略。
+优先级是环境变量 → `release.local.json` → 显式启用的测试值。切换 AppID 时检查已有环境变量，避免它覆盖刚修改的文件。当前只需配置 `wechatAppId` 或 `WECHAT_APP_ID`，无需抖音配置。`release.local.json` 已被 Git 忽略。
 
 ## 5. 小游戏构建
 
-按目标选择一条命令：
+构建微信：
 
 ```bash
 npm run build:wechat
-# 或：npm run build:douyin
-# 或：npm run build:minigames
 ```
 
-每次输出到新的 `artifacts/minigames/<时间戳>/`。以本次终端打印的 `Report:` 路径定位报告，不按目录名称猜测最新包，也不复用文档中的历史目录。两平台一起构建时共用本次准备副本，脚本依次构建。
+`npm run build:minigames` 是微信构建的兼容入口，直接运行发布脚本而不指定平台时也默认微信。每次输出到新的 `artifacts/minigames/<时间戳>/`。以本次终端打印的 `Report:` 路径定位报告，不按目录名称猜测最新包，也不复用文档中的历史目录。
 
 ```text
 artifacts/minigames/<本次时间戳>/
   release-report.json
-  wechatgame.json / bytedance-mini-game.json
-  wechatgame.log / bytedance-mini-game.log
+  wechatgame.json
+  wechatgame.log
   game/
     assets/                   # 压缩后的副本
     build/
       wechatgame/              # 导入微信开发者工具的目录
-      bytedance-mini-game/     # 导入抖音开发者工具的目录
 ```
 
-脚本将 PNG 调色板压缩、WAV/OGG 转 MP3、原生资源分包和引擎模块裁剪限制在副本内，保留资源 UUID、图片尺寸与帧裁剪信息。抖音构建额外将侧边栏模板复制到包内，并插入 `game.js` 首行。
+脚本将 PNG 调色板压缩、WAV/OGG 转 MP3、原生资源分包和引擎模块裁剪限制在副本内，保留资源 UUID、图片尺寸与帧裁剪信息。
 
-没有正式 AppID 的本地调查可以显式运行 `npm run build:wechat -- --test-appid` 或对应抖音命令。这个选项仅在 AppID 缺失时补入脚本内测试值，不会覆盖已配置 AppID。测试值能否被平台使用仍需开发者工具确认，不能据此上传正式版本。
+没有正式 AppID 的本地调查可以显式运行 `npm run build:wechat -- --test-appid`。这个选项仅在 AppID 缺失时补入脚本内测试值，不会覆盖已配置 AppID。测试值能否被平台使用仍需开发者工具确认，不能据此上传正式版本。
 
 `npm run build:wechat -- --prepare-only` 只准备副本，报告为 `prepared`，不会生成可上传构建；它仍需要 Creator 可执行文件、FFmpeg 和 AppID。准备模式没有后续“继续此副本”的命令，正式构建应重新运行完整命令。
 
@@ -160,13 +163,13 @@ Creator 子进程成功码为 `36`，npm 包装脚本成功码为 `0`。仅见�
 - 目标 `builds[]` 的 `exitCode === 36`、`status === "built-awaiting-ide-and-device-tests"`、`withinConservativeBudget === true`。
 - 正式上传目标 `usesTestAppId === false`，报告、项目配置和当前目标 AppID 一致。
 - `game.js`、`game.json`、`project.config.json` 存在，方向为 `portrait`，副本 Boot importer 仍为 `scene`。
-- 所需平台全部通过。`all` 中一个成功、另一个失败时，不得报告“两平台构建成功”。
+- `builds[]` 仅包含微信目标，不把历史抖音候选列入本次验收。
 
-当前脚本本地预算：主包 4 MiB，微信总包 30 MiB，抖音总包 20 MiB，单个分包 20 MiB。它们是仓库中的检查值，平台当前规则与最终上传计算以实际后台为准。历史微信包约主包 2.03 MiB / 总包 19.03 MiB；新包大小必须重新测量。
+当前微信构建的本地预算：主包 4 MiB，总包 30 MiB，单个分包 20 MiB。它们是仓库中的检查值，平台当前规则与最终上传计算以实际后台为准。0.7.2 微信包约主包 2.03 MiB / 总包 19.02 MiB；新包大小必须重新测量。
 
 ### 5.2 可执行的正式候选检查
 
-保持第 4 节 AppID 配置生效。先将 `RELEASE_REPORT` 替换为本次真实路径，`RELEASE_TARGET` 选择一个平台；`all` 构建需要分别执行两次。此片段只读报告与文件，不上传。
+保持第 4 节 AppID 配置生效。先将 `RELEASE_REPORT` 替换为本次真实路径，`RELEASE_TARGET` 固定为微信。此片段只读报告与文件，不上传。
 
 ```bash
 export RELEASE_REPORT='artifacts/minigames/<本次时间戳>/release-report.json'
@@ -178,14 +181,13 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const target = process.env.RELEASE_TARGET;
-assert.ok(['wechatgame', 'bytedance-mini-game'].includes(target), 'Invalid RELEASE_TARGET');
+assert.equal(target, 'wechatgame', 'Only WeChat is an active release channel');
 const local = fs.existsSync('release.local.json') ? read('release.local.json') : {};
-const expected = target === 'wechatgame'
-  ? process.env.WECHAT_APP_ID || local.wechatAppId
-  : process.env.DOUYIN_APP_ID || local.douyinAppId;
+const expected = process.env.WECHAT_APP_ID || local.wechatAppId;
 assert.ok(expected, 'Configure the expected AppID first');
 const reportPath = path.resolve(process.env.RELEASE_REPORT || '');
 const report = read(reportPath);
+assert.equal(report.builds.length, 1, 'Expected a WeChat-only candidate');
 const build = report.builds.find(item => item.platform === target);
 assert.ok(build, 'Target is absent from this report');
 assert.equal(report.stage, 'built');
@@ -220,10 +222,6 @@ const config = read(path.join(directory, 'game.json'));
 assert.equal(config.deviceOrientation, 'portrait');
 assert.equal((config.subpackages || config.subPackages || []).length, report.bundles.length);
 const entry = fs.readFileSync(path.join(directory, 'game.js'), 'utf8');
-if (target === 'bytedance-mini-game') {
-  assert.ok(entry.startsWith("require('./douyin-sidebar.js');"));
-  assert.ok(fs.existsSync(path.join(directory, 'douyin-sidebar.js')));
-}
 console.log(JSON.stringify({ status: 'build_verified', target, appid: expected,
   directory, sourceHash: report.sourceHash, treeSha256: build.treeSha256,
   mainBytes: build.mainBytes, totalBytes: build.totalBytes }, null, 2));
@@ -245,15 +243,9 @@ NODE
 5. 到账号后台核对新版本是否已被选为体验版；尚未选中时，在已授权范围内设置该版本。需要本人扫码或后台无法访问时，告诉用户具体版本、AppID 和剩余动作，并将体验版状态记为 `pending`。
 6. 核对后台账号名称。修改代码和 Cocos 工程名不会自动修改账号基本资料；如名称仍旧，按改名任务范围同步处理。审核和公开发布只在用户要求的阶段推进，并分别保存平台结果。
 
-### 抖音
+当前记录的微信 `0.7.2` 已于 2026-09-16 上传，修正了营地主界面顶部图片中的游戏名称。微信模拟器已确认显示“超力英雄”，工具提示覆盖已有体验版并已确认，最终显示“代码上传成功”；后台最终标记及该版手机验收未独立确认。候选目录为 `artifacts/minigames/2026-09-16T01-11-25-040Z/`。继续操作前读取实际平台状态。
 
-1. 将报告中的 `bytedance-mini-game` 构建目录导入抖音开发者工具，核对正式 AppID、开场名称、资源加载和安全区域。
-2. 除通用玩法检查外，验证“营地侧边栏入口 → 引导 → 平台侧边栏 → 返回游戏 → 显示返回状态”。入口只在宿主能力检测通过时显示；不为测试强行绕过检测或伪造进入事件。
-3. 生成当前包的预览码并实机检查。未上线游戏的侧边栏可见性按工具和平台当时的测试方式核对，不能直接推断代码失败。
-4. 上传指定测试版本，记录平台成功提示及预检结果。已有材料见 [抖音提审草稿](docs/release/抖音提审材料草稿.md)，它包含尚未完成的资料，不能照抄为审核通过声明。
-5. 进入提审/公开发布阶段前，按当前账号后台逐项完成必需资料与流程。软著、隐私、适龄及本人声明的状态按实际材料记录，不生成虚假的登记号或勾选未经核实的声明。
-
-当前记录的微信 `0.7.1` 已上传，工具提示覆盖已有体验版，后台最终标记及该版手机验收未独立确认；抖音 `0.7.0` 已上传，改名未同步至抖音后台。以上是 2026-09-15 的记录，继续操作前读取实际平台状态。
+抖音历史材料见 [归档草稿](docs/release/抖音提审材料草稿.md)，不作为当前部署步骤。微信备案与提审资料以微信账号实际表单为准，不把抖音历史待办沿用为微信要求。
 
 ## 7. Web 构建与本机预览
 
@@ -264,7 +256,7 @@ npm run build:web
 # 桌面目标：npm run build:web-desktop
 ```
 
-检查本次终端 `Evidence:` 指向的 `artifacts/cocos/<时间戳>-<平台>.json`：`status` 为 `built`、`exitCode` 为 `36`、`entryExists` 为 `true`、`sceneImporterAfterBuild` 为 `scene`、`sourceChangedDuringBuild` 为 `false`。Web 脚本即使检测到源哈希改变，也可能返回成功；出现源变化必须检查差异，不能自动忽略。
+检查本次终端 `Evidence:` 指向的 `artifacts/cocos/<时间戳>-<平台>.json`：`status` 为 `built`、`exitCode` 为 `36`、`entryExists` 为 `true`、`sceneImporterAfterBuild` 为 `scene`、`sourceChangedDuringBuild` 为 `false`。当前脚本比较主工程 `assets/` 的开始/结束哈希，变化即失败；`snapshotChangedDuringBuild` 单独记录副本导入产生的元数据变化，不等同于主源码改变。2026-09-24 早期报告中的旧 `sourceHash` 字段实际指副本，不能与新版字段含义混用。
 
 构建成功后选择与产物对应的服务命令：
 
@@ -285,7 +277,7 @@ npm run serve
 | 资源与界面 | 名称、中文字体、图片、动画和音频正常；无阻塞启动的资源错误；平台菜单不遮挡关键按钮 |
 | 基本玩法 | 营地进入新局，召唤、部署、移动/合成、首波战斗、强化选卡及后续波次正常 |
 | 局外与生命周期 | 英雄养成和编队可打开；暂停、保存回营地、重新打开及切后台恢复符合预期 |
-| 平台差异 | 微信/抖音开场忠告正常；抖音侧边栏按支持情况检查；小游戏端不兑现 Web 模拟广告奖励 |
+| 微信适配 | 开场忠告、平台胶囊与安全区域正常；小游戏端不兑现 Web 模拟广告奖励 |
 | 手机验证 | 记录平台、版本、机型、系统、步骤、结果；没有测完整 20 波时明确覆盖范围 |
 | 上传 / 体验版 | 上传成功提示与账号后台选中体验版分别记录，不能合并成一个未经核实的状态 |
 

@@ -10,6 +10,7 @@ import { TextureEffects, captureVfxState } from './TextureEffects';
 import { battleCircleScreen, battleRangeDashes, battleProjectionContract, battleReserveScreen, battleScreenToWorld, worldToBattleScreen } from './BattleProjection';
 import { fitMiniGameStage, menuLowerEdgeInView } from './MiniGameLayout';
 import { douyinSidebar, HEALTHY_PLAY_NOTICE } from './PlatformRelease';
+import { R1GameApp } from './R1GameApp';
 
 const { ccclass } = _decorator;
 const HERO_SHORT: Record<string, string> = { H001: '厨师', H002: '拳师', H003: '青蛙', H004: '阿姨' };
@@ -94,6 +95,12 @@ export class GameApp extends Component {
   private referenceInfo = new WeakMap<Node, { id: string; semanticLabel: string; fixedLettering: boolean }>();
 
   onLoad(): void {
+    // Keep the Boot scene UUID stable while routing new sessions to the approved R1 implementation.
+    this.enabled = false;
+    this.node.addComponent(R1GameApp);
+  }
+
+  private loadLegacyPresentation(): void {
     // Creator debug builds may enable the profiler before the first scene.
     // Keep the play surface clear; QA reads state without a permanent HUD.
     profiler.hideStats();
@@ -103,7 +110,7 @@ export class GameApp extends Component {
     this.stage.on(Node.EventType.TOUCH_END, this.onUserGesture, this, true);
     this.resize();
     this.page = new Node('Loading'); this.page.setParent(this.stage);
-    this.text('正在准备英雄营地…', 360, 600, 600, 80, 32);
+    this.text('正在准备超力英雄…', 360, 600, 600, 80, 32);
     resources.load('prototype-v0.5', JsonAsset, async (error, asset) => {
       if (!this.isValid || !this.node.isValid) return;
       if (error) { this.text(`配置加载失败\n${error.message}`, 360, 720, 660, 220, 24, P.red); return; }
@@ -445,7 +452,7 @@ export class GameApp extends Component {
 
   private camp(): void {
     const p: any = this.session.data.profile, r: any = this.session.data.run;
-    const title = this.referenceImage('V4_TITLE_CAMP'); if (title) this.titleInfo.set(title, '英雄营地');
+    const title = this.referenceImage('V4_TITLE_CAMP'); if (title) this.titleInfo.set(title, '超力英雄');
     this.referenceButton('V4_SETTINGS', '设置', () => this.run('settings'));
     this.referenceImage('V4_XP_PLATE');
     this.referenceImage('V4_LABEL_XP');

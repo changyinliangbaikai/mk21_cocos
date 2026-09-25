@@ -3194,8 +3194,8 @@
       "kind": "ui",
       "file": "V4_TITLE_CAMP/main.png",
       "resource": "mvp/art/V4_TITLE_CAMP/main",
-      "sha256": "2bcb3b5a48363c03546f770a1850683c5688420f06c9c8c4014f4e3a98c8ffe7",
-      "bytes": 241470,
+      "sha256": "8ccbbb9bbdc37fda7cf4d5d4544a070e2a52e5bb56d4f02ab128b56765a555fc",
+      "bytes": 321625,
       "width": 500,
       "height": 273,
       "rendering": "simple",
@@ -3209,7 +3209,7 @@
         500,
         273
       ],
-      "semanticLabel": "英雄营地"
+      "semanticLabel": "超力英雄"
     },
     {
       "id": "V4_TITLE_COLLECTION",
@@ -4079,8 +4079,8 @@
       "kind": "background",
       "file": "V4_BG_CAMP/main.png",
       "resource": "mvp/art/V4_BG_CAMP/main",
-      "sha256": "7d65e418d15f51e9515d92e3aa47a96576e489a6bab1fa5e3e27bf42efe1e011",
-      "bytes": 2464120,
+      "sha256": "2462ee291ad4a156f6578fdfa7e66f8885e6817278e8c1e3c103babf6ce44429",
+      "bytes": 3644201,
       "width": 941,
       "height": 1672,
       "rendering": "simple",

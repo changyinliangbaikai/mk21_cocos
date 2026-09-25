@@ -24,6 +24,7 @@ const STYLES: Record<TextRole, TextStyle> = {
 
 /** Real bundled TTFs, loaded before the first game screen. No system-font substitution is reported as success. */
 export class Typography {
+  constructor(private resourceRoot = 'mvp/fonts') {}
   private fonts = new Map<FontId, Font>();
   private entries = new Map<FontId, FontEntry>();
   private errors: string[] = [];
@@ -33,13 +34,13 @@ export class Typography {
 
   async load(): Promise<void> {
     try {
-      const manifest = await this.asset('mvp/fonts/manifest', JsonAsset) as JsonAsset;
+      const manifest = await this.asset(`${this.resourceRoot}/manifest`, JsonAsset) as JsonAsset;
       const data = manifest.json as any;
       if (data?.schemaVersion !== 1 || !Array.isArray(data.assets)) throw new Error('invalid runtime font manifest');
       await Promise.all((['FONT_DISPLAY', 'FONT_BODY'] as FontId[]).map(async id => {
         try {
           const entry = data.assets.find((value: FontEntry) => value.id === id) as FontEntry | undefined;
-          if (!entry || typeof entry.resource !== 'string' || !entry.resource.startsWith('mvp/fonts/') || entry.resource.includes('..')) throw new Error(`invalid font entry ${id}`);
+          if (!entry || typeof entry.resource !== 'string' || !entry.resource.startsWith(`${this.resourceRoot}/`) || entry.resource.includes('..')) throw new Error(`invalid font entry ${id}`);
           this.entries.set(id, entry);
           const font = await this.asset(entry.resource, TTFFont) as Font;
           await this.waitForWebFont(id, font);
@@ -65,14 +66,14 @@ export class Typography {
     let timer: ReturnType<typeof setTimeout> | undefined;
     try {
       const resolved = await Promise.race([
-        document.fonts.load(`40px "${family}"`, '英雄营地0123456789Lv+%'),
+        document.fonts.load(`40px "${family}"`, '超力英雄0123456789Lv+%'),
         new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error(`${id}: browser FontFace readiness timed out`)), 6000); }),
       ]);
       if (!resolved.length || resolved.some(face => face.family.replace(/^['"]|['"]$/g, '') !== family || face.status !== 'loaded')) throw new Error(`${id}: expected actual loaded FontFace results`);
     } finally { if (timer) clearTimeout(timer); }
     const loadedFaces = matching.filter(face => face.status === 'loaded').length;
     this.webReadiness.set(id, { family, status: loadedFaces ? 'loaded' : 'not-loaded', loadedFaces });
-    if (!loadedFaces || !document.fonts.check(`40px "${family}"`, '英雄营地0123456789Lv+%')) throw new Error(`${id}: real browser font not ready`);
+    if (!loadedFaces || !document.fonts.check(`40px "${family}"`, '超力英雄0123456789Lv+%')) throw new Error(`${id}: real browser font not ready`);
   }
   private asset(url: string, type: any): Promise<Font | JsonAsset> {
     return new Promise((resolve, reject) => {
