@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, createWriteStream, 
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { verifyStartupBranding } from './verify-startup-branding.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const platform = process.argv[2] || 'web-mobile';
@@ -23,12 +24,25 @@ mkdirSync(project, { recursive: true });
 for (const name of ['assets', 'settings', 'package.json', 'tsconfig.json']) {
   if (existsSync(resolve(sourceProject, name))) cpSync(resolve(sourceProject, name), resolve(project, name), { recursive: true });
 }
+// Optional recovery for Creator's intermittent cold-import '*' classification. Seed only
+// imported assets/database from a known-good isolated project, never compiled scripts/builds.
+const importCacheSource = process.env.COCOS_IMPORT_CACHE ? resolve(process.env.COCOS_IMPORT_CACHE) : null;
+if (importCacheSource) {
+  const meta = resolve(importCacheSource, 'assets/scenes/Boot.scene.meta');
+  if (!existsSync(meta) || JSON.parse(readFileSync(meta, 'utf8')).importer !== 'scene'
+    || !existsSync(resolve(importCacheSource, 'library')) || !existsSync(resolve(importCacheSource, 'temp/asset-db')))
+    throw new Error('COCOS_IMPORT_CACHE must point to an isolated project with valid scene imports.');
+  for (const relative of ['library', 'temp/asset-db']) {
+    mkdirSync(dirname(resolve(project, relative)), { recursive: true });
+    cpSync(resolve(importCacheSource, relative), resolve(project, relative), { recursive: true });
+  }
+}
 const logPath = resolve(logDirectory, `${stamp}-${platform}.log`);
 const summaryPath = logPath.replace(/\.log$/, '.json');
 const configPath = logPath.replace(/\.log$/, '-config.json');
 const options = `configPath=${configPath}`;
 const args = ['--project', project, '--build', options];
-const summary = { startedAt: new Date().toISOString(), editor, project, sourceProject, isolated: true, platform, args, logPath };
+const summary = { startedAt: new Date().toISOString(), editor, project, sourceProject, isolated: true, importCacheSource, platform, args, logPath };
 function sourceHash(base = project) {
   const hash = createHash('sha256');
   const visit = (directory) => {
@@ -95,12 +109,15 @@ child.on('close', (code, signal) => {
   // Creator's documented success exit code is 36, not the shell's usual 0.
   const sceneImporterAfterBuild = JSON.parse(readFileSync(`${scene}.meta`, 'utf8')).importer;
   const sourceHashAtEnd = sourceHash(sourceProject);
-  const success = code === 36 && entryExists && sceneImporterAfterBuild === 'scene' && sourceHashAtEnd === summary.sourceHashAtStart;
+  let startupBranding, brandingError;
+  if (code === 36 && entryExists) try { startupBranding = verifyStartupBranding(project, dirname(entry), platform); } catch (error) { brandingError = String(error); }
+  const success = code === 36 && entryExists && sceneImporterAfterBuild === 'scene' && sourceHashAtEnd === summary.sourceHashAtStart && !brandingError;
   const result = {
     ...summary, finishedAt: new Date().toISOString(), exitCode: code, signal,
     status: success ? 'built' : 'failed', entry, entryExists,
     entryBytes: entryExists ? statSync(entry).size : null,
     sceneImporterAfterBuild,
+    startupBranding, brandingError,
     sourceHashAtEnd,
     snapshotHashAtEnd: sourceHash(),
     entrySha256: entryExists ? createHash('sha256').update(readFileSync(entry)).digest('hex') : null,
@@ -117,5 +134,6 @@ child.on('close', (code, signal) => {
   log.end(`\n${JSON.stringify(result, null, 2)}\n`);
   writeFileSync(summaryPath, JSON.stringify(result, null, 2));
   console.log(`\nCreator exit ${code}; ${result.status}. Evidence: ${summaryPath}`);
+  if (brandingError) console.error(brandingError);
   process.exitCode = success ? 0 : 1;
 });

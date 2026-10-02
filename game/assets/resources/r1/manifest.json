@@ -8721,6 +8721,1862 @@
       "displayHeight": 137.72582359192347,
       "sourceSha256": "b04f659495d3a096213a77a3d2844491078b8922ce32315b8e9be89a7d76ea3c",
       "bytes": 235951
+    },
+    {
+      "id": "RH07",
+      "resource": "r1/art/RH07",
+      "group": "battle",
+      "kind": "hero",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            173,
+            184
+          ],
+          "ratio": 0.9414634146341463,
+          "widthRatio": 0.9414634146341463,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            184,
+            181
+          ],
+          "ratio": 1.0146341463414634,
+          "widthRatio": 1.0146341463414634,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            148,
+            184
+          ],
+          "ratio": 0.8051470588235294,
+          "widthRatio": 1.0682926829268293,
+          "heightRatio": 1.326829268292683,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            4,
+            132,
+            184
+          ],
+          "ratio": 0.7192982456140351,
+          "widthRatio": 1,
+          "heightRatio": 1.3902439024390243,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            181,
+            184
+          ],
+          "ratio": 0.984251968503937,
+          "widthRatio": 1.2195121951219512,
+          "heightRatio": 1.2390243902439024,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            158,
+            184
+          ],
+          "ratio": 0.856140350877193,
+          "widthRatio": 1.1902439024390243,
+          "heightRatio": 1.3902439024390243,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            174
+          ],
+          "ratio": 1.0555555555555556,
+          "widthRatio": 1.1121951219512196,
+          "heightRatio": 1.053658536585366,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            196,
+            184,
+            159
+          ],
+          "ratio": 1.1584699453551912,
+          "widthRatio": 1.0341463414634147,
+          "heightRatio": 0.8926829268292683,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            146
+          ],
+          "ratio": 1.2621951219512195,
+          "widthRatio": 1.0097560975609756,
+          "heightRatio": 0.8,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            150
+          ],
+          "ratio": 1.227027027027027,
+          "widthRatio": 1.1073170731707318,
+          "heightRatio": 0.9024390243902439,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            137
+          ],
+          "ratio": 1.345679012345679,
+          "widthRatio": 1.0634146341463415,
+          "heightRatio": 0.7902439024390244,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            388,
+            171,
+            184
+          ],
+          "ratio": 0.9273504273504274,
+          "widthRatio": 1.0585365853658537,
+          "heightRatio": 1.1414634146341462,
+          "anchor": [
+            0.5,
+            0
+          ]
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.4,
+          "loop": true
+        },
+        "attack": {
+          "frames": [
+            2,
+            3
+          ],
+          "secondsPerFrame": 0.12
+        },
+        "cast": {
+          "frames": [
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.2
+        },
+        "hit": {
+          "frames": [
+            6,
+            7
+          ],
+          "secondsPerFrame": 0.1
+        },
+        "defeated": {
+          "frames": [
+            8,
+            9
+          ],
+          "secondsPerFrame": 0.25,
+          "holdLast": true
+        },
+        "revive": {
+          "frames": [
+            10,
+            11
+          ],
+          "secondsPerFrame": 0.3
+        }
+      },
+      "displayHeight": 105.59,
+      "sourceSha256": "c0146d89aa7dc0c298576bb61d05d74724dd430a4b5b713d4c3346bdef27a4e7"
+    },
+    {
+      "id": "PORTRAIT-RH07",
+      "resource": "r1/art/PORTRAIT-RH07",
+      "group": "ui",
+      "kind": "single",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            283,
+            270
+          ],
+          "ratio": 1.048148148148148,
+          "widthRatio": 283,
+          "heightRatio": 270,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "c0146d89aa7dc0c298576bb61d05d74724dd430a4b5b713d4c3346bdef27a4e7"
+    },
+    {
+      "id": "IC-RH07",
+      "resource": "r1/art/IC-RH07",
+      "group": "ui",
+      "kind": "icon",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            152,
+            134
+          ],
+          "ratio": 1.1330049261083743,
+          "widthRatio": 230,
+          "heightRatio": 203,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            164,
+            4,
+            152,
+            146
+          ],
+          "ratio": 1.0389610389610389,
+          "widthRatio": 240,
+          "heightRatio": 231,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            324,
+            4,
+            152,
+            146
+          ],
+          "ratio": 1.0436507936507937,
+          "widthRatio": 263,
+          "heightRatio": 252,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "c0146d89aa7dc0c298576bb61d05d74724dd430a4b5b713d4c3346bdef27a4e7"
+    },
+    {
+      "id": "FX-RH07",
+      "resource": "r1/art/FX-RH07",
+      "group": "battle",
+      "kind": "vfx",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            67,
+            184
+          ],
+          "ratio": 0.36363636363636365,
+          "widthRatio": 100,
+          "heightRatio": 275,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            58,
+            184
+          ],
+          "ratio": 0.3170731707317073,
+          "widthRatio": 117,
+          "heightRatio": 369,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            174,
+            184
+          ],
+          "ratio": 0.9446366782006921,
+          "widthRatio": 273,
+          "heightRatio": 289,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            177,
+            184
+          ],
+          "ratio": 0.9644970414201184,
+          "widthRatio": 326,
+          "heightRatio": 338,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            51,
+            184
+          ],
+          "ratio": 0.27808988764044945,
+          "widthRatio": 99,
+          "heightRatio": 356,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            138
+          ],
+          "ratio": 1.3379310344827586,
+          "widthRatio": 388,
+          "heightRatio": 290,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            183
+          ],
+          "ratio": 1.0054054054054054,
+          "widthRatio": 372,
+          "heightRatio": 370,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            171
+          ],
+          "ratio": 1.0777385159010602,
+          "widthRatio": 305,
+          "heightRatio": 283,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            179
+          ],
+          "ratio": 1.0289855072463767,
+          "widthRatio": 355,
+          "heightRatio": 345,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "a54b3403a2d79dd8f18bf1a1f18f27e7ddfb989d32135254f2f9facbb51ad044"
+    },
+    {
+      "id": "RH08",
+      "resource": "r1/art/RH08",
+      "group": "battle",
+      "kind": "hero",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            184,
+            181
+          ],
+          "ratio": 1.0179372197309418,
+          "widthRatio": 1.0179372197309418,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            171,
+            184
+          ],
+          "ratio": 0.9282511210762332,
+          "widthRatio": 0.9282511210762332,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            172,
+            184
+          ],
+          "ratio": 0.9338842975206612,
+          "widthRatio": 1.0134529147982063,
+          "heightRatio": 1.0852017937219731,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            4,
+            165,
+            184
+          ],
+          "ratio": 0.8945454545454545,
+          "widthRatio": 1.1031390134529149,
+          "heightRatio": 1.2331838565022422,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            183,
+            184
+          ],
+          "ratio": 0.9961538461538462,
+          "widthRatio": 1.1614349775784754,
+          "heightRatio": 1.1659192825112108,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            152,
+            184
+          ],
+          "ratio": 0.8287671232876712,
+          "widthRatio": 1.0852017937219731,
+          "heightRatio": 1.3094170403587444,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            160,
+            184
+          ],
+          "ratio": 0.8699186991869918,
+          "widthRatio": 0.9596412556053812,
+          "heightRatio": 1.1031390134529149,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            196,
+            184,
+            163
+          ],
+          "ratio": 1.1317073170731706,
+          "widthRatio": 1.0403587443946187,
+          "heightRatio": 0.9192825112107623,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            162
+          ],
+          "ratio": 1.1391304347826088,
+          "widthRatio": 1.1748878923766817,
+          "heightRatio": 1.031390134529148,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            115
+          ],
+          "ratio": 1.6045197740112995,
+          "widthRatio": 1.2735426008968609,
+          "heightRatio": 0.7937219730941704,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            159
+          ],
+          "ratio": 1.1554404145077721,
+          "widthRatio": 1,
+          "heightRatio": 0.8654708520179372,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            388,
+            184,
+            175
+          ],
+          "ratio": 1.0502092050209204,
+          "widthRatio": 1.1255605381165918,
+          "heightRatio": 1.0717488789237668,
+          "anchor": [
+            0.5,
+            0
+          ]
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.4,
+          "loop": true
+        },
+        "attack": {
+          "frames": [
+            2,
+            3
+          ],
+          "secondsPerFrame": 0.12
+        },
+        "cast": {
+          "frames": [
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.2
+        },
+        "hit": {
+          "frames": [
+            6,
+            7
+          ],
+          "secondsPerFrame": 0.1
+        },
+        "defeated": {
+          "frames": [
+            8,
+            9
+          ],
+          "secondsPerFrame": 0.25,
+          "holdLast": true
+        },
+        "revive": {
+          "frames": [
+            10,
+            11
+          ],
+          "secondsPerFrame": 0.3
+        }
+      },
+      "displayHeight": 105.59,
+      "sourceSha256": "e6a1bb51262aa51009bec7995dd0e7e84b2fffdf51f7243e39008a5c06034e06"
+    },
+    {
+      "id": "PORTRAIT-RH08",
+      "resource": "r1/art/PORTRAIT-RH08",
+      "group": "ui",
+      "kind": "single",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            273,
+            252
+          ],
+          "ratio": 1.0833333333333333,
+          "widthRatio": 273,
+          "heightRatio": 252,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "e6a1bb51262aa51009bec7995dd0e7e84b2fffdf51f7243e39008a5c06034e06"
+    },
+    {
+      "id": "IC-RH08",
+      "resource": "r1/art/IC-RH08",
+      "group": "ui",
+      "kind": "icon",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            152,
+            126
+          ],
+          "ratio": 1.2102564102564102,
+          "widthRatio": 236,
+          "heightRatio": 195,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            164,
+            4,
+            146,
+            152
+          ],
+          "ratio": 0.96,
+          "widthRatio": 240,
+          "heightRatio": 250,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            324,
+            4,
+            151,
+            152
+          ],
+          "ratio": 0.9919678714859438,
+          "widthRatio": 247,
+          "heightRatio": 249,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "e6a1bb51262aa51009bec7995dd0e7e84b2fffdf51f7243e39008a5c06034e06"
+    },
+    {
+      "id": "FX-RH08",
+      "resource": "r1/art/FX-RH08",
+      "group": "battle",
+      "kind": "vfx",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            184,
+            157
+          ],
+          "ratio": 1.1730769230769231,
+          "widthRatio": 305,
+          "heightRatio": 260,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            100,
+            184
+          ],
+          "ratio": 0.5422740524781341,
+          "widthRatio": 186,
+          "heightRatio": 343,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            174,
+            184
+          ],
+          "ratio": 0.9467455621301775,
+          "widthRatio": 320,
+          "heightRatio": 338,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            184,
+            182
+          ],
+          "ratio": 1.009493670886076,
+          "widthRatio": 319,
+          "heightRatio": 316,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            184,
+            159
+          ],
+          "ratio": 1.158640226628895,
+          "widthRatio": 409,
+          "heightRatio": 353,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            182
+          ],
+          "ratio": 1.013157894736842,
+          "widthRatio": 308,
+          "heightRatio": 304,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            183
+          ],
+          "ratio": 1.0060240963855422,
+          "widthRatio": 334,
+          "heightRatio": 332,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            176,
+            184
+          ],
+          "ratio": 0.9586206896551724,
+          "widthRatio": 278,
+          "heightRatio": 290,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            179,
+            184
+          ],
+          "ratio": 0.9751552795031055,
+          "widthRatio": 314,
+          "heightRatio": 322,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "9f04dac01c3ee257e0c7acd09bedcca6a36790f999b8fb0d2cafdb31173e1737"
+    },
+    {
+      "id": "RH09",
+      "resource": "r1/art/RH09",
+      "group": "battle",
+      "kind": "hero",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            170,
+            184
+          ],
+          "ratio": 0.9213973799126638,
+          "widthRatio": 0.9213973799126638,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            174,
+            184
+          ],
+          "ratio": 0.9478260869565217,
+          "widthRatio": 0.9519650655021834,
+          "heightRatio": 1.0043668122270741,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            184,
+            175
+          ],
+          "ratio": 1.0526315789473684,
+          "widthRatio": 1.0480349344978166,
+          "heightRatio": 0.9956331877729258,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            4,
+            121,
+            184
+          ],
+          "ratio": 0.6589403973509934,
+          "widthRatio": 0.868995633187773,
+          "heightRatio": 1.3187772925764192,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            170,
+            184
+          ],
+          "ratio": 0.9245283018867925,
+          "widthRatio": 1.0698689956331877,
+          "heightRatio": 1.1572052401746724,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            146,
+            184
+          ],
+          "ratio": 0.7920489296636085,
+          "widthRatio": 1.1310043668122272,
+          "heightRatio": 1.4279475982532752,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            173,
+            184
+          ],
+          "ratio": 0.9397590361445783,
+          "widthRatio": 1.0218340611353711,
+          "heightRatio": 1.0873362445414847,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            196,
+            165,
+            184
+          ],
+          "ratio": 0.8961038961038961,
+          "widthRatio": 0.9039301310043668,
+          "heightRatio": 1.0087336244541485,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            172
+          ],
+          "ratio": 1.0679611650485437,
+          "widthRatio": 0.9606986899563319,
+          "heightRatio": 0.8995633187772926,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            163
+          ],
+          "ratio": 1.130232558139535,
+          "widthRatio": 1.0611353711790392,
+          "heightRatio": 0.9388646288209607,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            155
+          ],
+          "ratio": 1.1861702127659575,
+          "widthRatio": 0.9737991266375546,
+          "heightRatio": 0.8209606986899564,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            388,
+            161,
+            184
+          ],
+          "ratio": 0.8733624454148472,
+          "widthRatio": 0.8733624454148472,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.4,
+          "loop": true
+        },
+        "attack": {
+          "frames": [
+            2,
+            3
+          ],
+          "secondsPerFrame": 0.12
+        },
+        "cast": {
+          "frames": [
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.2
+        },
+        "hit": {
+          "frames": [
+            6,
+            7
+          ],
+          "secondsPerFrame": 0.1
+        },
+        "defeated": {
+          "frames": [
+            8,
+            9
+          ],
+          "secondsPerFrame": 0.25,
+          "holdLast": true
+        },
+        "revive": {
+          "frames": [
+            10,
+            11
+          ],
+          "secondsPerFrame": 0.3
+        }
+      },
+      "displayHeight": 105.59,
+      "sourceSha256": "50efc9191f427b7efcb766306452abf753366f79bc0fe998623cbaa0d69e28b4"
+    },
+    {
+      "id": "PORTRAIT-RH09",
+      "resource": "r1/art/PORTRAIT-RH09",
+      "group": "ui",
+      "kind": "single",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            312,
+            284
+          ],
+          "ratio": 1.0972222222222223,
+          "widthRatio": 316,
+          "heightRatio": 288,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "50efc9191f427b7efcb766306452abf753366f79bc0fe998623cbaa0d69e28b4"
+    },
+    {
+      "id": "IC-RH09",
+      "resource": "r1/art/IC-RH09",
+      "group": "ui",
+      "kind": "icon",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            147,
+            152
+          ],
+          "ratio": 0.9675925925925926,
+          "widthRatio": 209,
+          "heightRatio": 216,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            164,
+            4,
+            147,
+            152
+          ],
+          "ratio": 0.9682539682539683,
+          "widthRatio": 244,
+          "heightRatio": 252,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            324,
+            4,
+            152,
+            144
+          ],
+          "ratio": 1.052,
+          "widthRatio": 263,
+          "heightRatio": 250,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "50efc9191f427b7efcb766306452abf753366f79bc0fe998623cbaa0d69e28b4"
+    },
+    {
+      "id": "FX-RH09",
+      "resource": "r1/art/FX-RH09",
+      "group": "battle",
+      "kind": "vfx",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            75,
+            184
+          ],
+          "ratio": 0.40860215053763443,
+          "widthRatio": 114,
+          "heightRatio": 279,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            69,
+            184
+          ],
+          "ratio": 0.375366568914956,
+          "widthRatio": 128,
+          "heightRatio": 341,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            181,
+            184
+          ],
+          "ratio": 0.9814241486068112,
+          "widthRatio": 317,
+          "heightRatio": 323,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            161,
+            184
+          ],
+          "ratio": 0.8734939759036144,
+          "widthRatio": 290,
+          "heightRatio": 332,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            82,
+            184
+          ],
+          "ratio": 0.4473684210526316,
+          "widthRatio": 170,
+          "heightRatio": 380,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            179
+          ],
+          "ratio": 1.0285714285714285,
+          "widthRatio": 360,
+          "heightRatio": 350,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            184,
+            181
+          ],
+          "ratio": 1.0163934426229508,
+          "widthRatio": 372,
+          "heightRatio": 366,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            180
+          ],
+          "ratio": 1.0236686390532543,
+          "widthRatio": 346,
+          "heightRatio": 338,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            178
+          ],
+          "ratio": 1.0314465408805031,
+          "widthRatio": 328,
+          "heightRatio": 318,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "fc664232d299291f8dda32597a28966a5fead7e14142d6e0363cc59e8313e50d"
+    },
+    {
+      "id": "RH10",
+      "resource": "r1/art/RH10",
+      "group": "battle",
+      "kind": "hero",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            180,
+            178
+          ],
+          "ratio": 1.0112359550561798,
+          "widthRatio": 1.0112359550561798,
+          "heightRatio": 1,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            184,
+            175
+          ],
+          "ratio": 1.048913043478261,
+          "widthRatio": 1.0842696629213484,
+          "heightRatio": 1.0337078651685394,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            164,
+            184
+          ],
+          "ratio": 0.8898678414096917,
+          "widthRatio": 1.1348314606741574,
+          "heightRatio": 1.2752808988764044,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            4,
+            156,
+            184
+          ],
+          "ratio": 0.8461538461538461,
+          "widthRatio": 1.1741573033707866,
+          "heightRatio": 1.3876404494382022,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            177,
+            184
+          ],
+          "ratio": 0.9629629629629629,
+          "widthRatio": 1.1685393258426966,
+          "heightRatio": 1.2134831460674158,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            162,
+            184
+          ],
+          "ratio": 0.8823529411764706,
+          "widthRatio": 1.2640449438202248,
+          "heightRatio": 1.4325842696629214,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            180
+          ],
+          "ratio": 1.021978021978022,
+          "widthRatio": 1.0449438202247192,
+          "heightRatio": 1.0224719101123596,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            196,
+            184,
+            175
+          ],
+          "ratio": 1.0508474576271187,
+          "widthRatio": 1.0449438202247192,
+          "heightRatio": 0.9943820224719101,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            176,
+            184
+          ],
+          "ratio": 0.9556650246305419,
+          "widthRatio": 1.0898876404494382,
+          "heightRatio": 1.1404494382022472,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            184,
+            170
+          ],
+          "ratio": 1.0795454545454546,
+          "widthRatio": 1.0674157303370786,
+          "heightRatio": 0.9887640449438202,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            163
+          ],
+          "ratio": 1.127906976744186,
+          "widthRatio": 1.0898876404494382,
+          "heightRatio": 0.9662921348314607,
+          "anchor": [
+            0.5,
+            0
+          ]
+        },
+        {
+          "rect": [
+            580,
+            388,
+            184,
+            177
+          ],
+          "ratio": 1.0382513661202186,
+          "widthRatio": 1.0674157303370786,
+          "heightRatio": 1.0280898876404494,
+          "anchor": [
+            0.5,
+            0
+          ]
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.4,
+          "loop": true
+        },
+        "attack": {
+          "frames": [
+            2,
+            3
+          ],
+          "secondsPerFrame": 0.12
+        },
+        "cast": {
+          "frames": [
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.2
+        },
+        "hit": {
+          "frames": [
+            6,
+            7
+          ],
+          "secondsPerFrame": 0.1
+        },
+        "defeated": {
+          "frames": [
+            8,
+            9
+          ],
+          "secondsPerFrame": 0.25,
+          "holdLast": true
+        },
+        "revive": {
+          "frames": [
+            10,
+            11
+          ],
+          "secondsPerFrame": 0.3
+        }
+      },
+      "displayHeight": 105.59,
+      "sourceSha256": "778ebd2004cb9e17d55c5a3c5d2fb72f36443091611fa863db9fd1bfa860d13d"
+    },
+    {
+      "id": "PORTRAIT-RH10",
+      "resource": "r1/art/PORTRAIT-RH10",
+      "group": "ui",
+      "kind": "single",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            247,
+            241
+          ],
+          "ratio": 1.0248962655601659,
+          "widthRatio": 247,
+          "heightRatio": 241,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "778ebd2004cb9e17d55c5a3c5d2fb72f36443091611fa863db9fd1bfa860d13d"
+    },
+    {
+      "id": "IC-RH10",
+      "resource": "r1/art/IC-RH10",
+      "group": "ui",
+      "kind": "icon",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            152,
+            118
+          ],
+          "ratio": 1.2864864864864864,
+          "widthRatio": 238,
+          "heightRatio": 185,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            164,
+            4,
+            152,
+            148
+          ],
+          "ratio": 1.028436018957346,
+          "widthRatio": 217,
+          "heightRatio": 211,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            324,
+            4,
+            152,
+            146
+          ],
+          "ratio": 1.041860465116279,
+          "widthRatio": 224,
+          "heightRatio": 215,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "778ebd2004cb9e17d55c5a3c5d2fb72f36443091611fa863db9fd1bfa860d13d"
+    },
+    {
+      "id": "FX-RH10",
+      "resource": "r1/art/FX-RH10",
+      "group": "battle",
+      "kind": "vfx",
+      "frames": [
+        {
+          "rect": [
+            4,
+            4,
+            94,
+            184
+          ],
+          "ratio": 0.5087719298245614,
+          "widthRatio": 145,
+          "heightRatio": 285,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            4,
+            74,
+            184
+          ],
+          "ratio": 0.40226628895184136,
+          "widthRatio": 142,
+          "heightRatio": 353,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            4,
+            171,
+            184
+          ],
+          "ratio": 0.9279279279279279,
+          "widthRatio": 309,
+          "heightRatio": 333,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            196,
+            184,
+            183
+          ],
+          "ratio": 1.0059701492537314,
+          "widthRatio": 337,
+          "heightRatio": 335,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            196,
+            184,
+            184
+          ],
+          "ratio": 1,
+          "widthRatio": 348,
+          "heightRatio": 348,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            196,
+            184,
+            162
+          ],
+          "ratio": 1.1344262295081968,
+          "widthRatio": 346,
+          "heightRatio": 305,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            182,
+            184
+          ],
+          "ratio": 0.9915730337078652,
+          "widthRatio": 353,
+          "heightRatio": 356,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            151,
+            184
+          ],
+          "ratio": 0.8198757763975155,
+          "widthRatio": 264,
+          "heightRatio": 322,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            184,
+            169
+          ],
+          "ratio": 1.0888157894736843,
+          "widthRatio": 331,
+          "heightRatio": 304,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {},
+      "displayHeight": 105.59,
+      "sourceSha256": "b75dcb0205d83047b8893d80dde98d73d69dc829e7bd68f28d389d8385a05247"
     }
   ],
   "audioEvents": [
@@ -9338,5 +11194,6 @@
         "04-素材资产/audio/files/AUD_SFX_025_card_push_all_v001.wav"
       ]
     }
-  ]
+  ],
+  "rosterExpansion": "C-033"
 }

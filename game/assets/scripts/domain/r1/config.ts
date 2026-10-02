@@ -27,7 +27,9 @@ export interface StageDefinition {
   traitMinionsPerWave: number; eachTraitQuota: number; miniBosses: Record<string, string[]>; finalBoss: string;
   waveStatScales?: number[]; spawnIntervalsByWave?: number[];
 }
-export interface BattleTuning { version: string; baseScale: number; waveScales: number[]; spawnIntervals: number[]; nextWaveDelay: number }
+export interface CrowdTuning { throughWave: number; batchSize: number; interval: number; period: number; clearDelay: number }
+export interface HeroFeelTuning { startingSkill2: number; deployCastDelay: number; cardCastDelay: number; normalCooldownFactor: number; thirdCooldownFactor: number; radiusScale: number; meleeSkillRange: number }
+export interface BattleTuning { version: string; baseScale: number; waveScales: number[]; spawnIntervals: number[]; nextWaveDelay: number; crowd?: CrowdTuning; feel?: HeroFeelTuning }
 export const RULES = data;
 export const HEROES = data.heroes as HeroDefinition[];
 export const SKILLS = data.skills as SkillDefinition[];
@@ -42,7 +44,15 @@ export function stageTuning(id: number): BattleTuning {
   const s = stageDef(id);
   return { version: data.version, baseScale: s.stageScale * s.hpAttackDifficultyMultiplier,
     waveScales: [...(s.waveStatScales || Array.from({ length: 15 }, (_, i) => 1 + .025 * i))],
-    spawnIntervals: [...(s.spawnIntervalsByWave || Array(15).fill(s.spawnIntervalSeconds))], nextWaveDelay: s.nextWaveMaxDelaySeconds };
+    spawnIntervals: [...(s.spawnIntervalsByWave || Array(15).fill(s.spawnIntervalSeconds))], nextWaveDelay: s.nextWaveMaxDelaySeconds,
+    crowd: { ...data.battle.crowd }, feel: { ...data.battle.feel } };
+}
+export function autoSkillCooldown(tuning: BattleTuning | undefined, hero: string, slot: number, level: number): number {
+  const seconds = skillDef(hero, slot).cooldownSeconds[level - 1], feel = tuning?.feel;
+  return seconds * (feel ? (slot === 2 ? feel.normalCooldownFactor : feel.thirdCooldownFactor) * (1 - (level - 1) * .035) : 1);
+}
+export function autoSkillRadius(tuning: BattleTuning | undefined, hero: string, slot: number, level: number): number {
+  return skillDef(hero, slot).radiusBattleWidthFraction[level - 1] * (tuning?.feel && hero !== 'RH03' ? tuning.feel.radiusScale : 1);
 }
 /** R1.0–R1.0.2 snapshots predate tuning snapshots; their original curve remains stable. */
 export function legacyStageTuning(id: number): BattleTuning {
@@ -62,7 +72,8 @@ export function validateR1Config(): void {
   assert(data.schemaVersion === 1 && data.rngVersion === 'xorshift32-v1', 'version');
   assert(Number.isFinite(data.battle.targeting.emergencyMeleeDistancePixels) && data.battle.targeting.emergencyMeleeDistancePixels > 40, 'emergency targeting distance');
   for (const rows of [HEROES, SKILLS, ENEMIES]) assert(new Set(rows.map(x => x.id)).size === rows.length, 'duplicate ID');
-  assert(HEROES.length === 6 && SKILLS.length === 18 && STAGES.length === 20, 'roster');
+  assert(HEROES.length === 10 && SKILLS.length === 30 && STAGES.length === 20, 'roster');
+  assert(HEROES.filter(h=>h.quality==='blue').length===3 && HEROES.filter(h=>h.quality==='purple').length===4 && HEROES.filter(h=>h.quality==='gold').length===3, 'quality roster');
   for (const h of HEROES) {
     assert(SKILLS.filter(s => s.hero === h.id).length === 3, h.id + ' skills');
     assert(h.level1.hp > 0 && h.level1.attack > 0 && h.level1.defense >= 0, h.id + ' stats');

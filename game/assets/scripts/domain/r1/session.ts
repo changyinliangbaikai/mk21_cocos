@@ -1,8 +1,10 @@
-import { ENEMIES, HEROES, heroDef, stageDef } from './config';
+import { ENEMIES, HEROES, Quality, heroDef, stageDef } from './config';
 import { Run, Save, copy } from './model';
 import { BattleClock, aimGlobal, cancelGlobal, castGlobal, createRun } from './battle';
 import { chooseCard, resolveRescue } from './cards';
-import { freshProfile, rollRewards, upgradeHero } from './rewards';
+import { freshProfile, settleProgression, upgradeHero } from './rewards';
+
+import { Expedition, GOALS, Specialization, freshIncentive, validateIncentives } from './incentives';
 
 export const R1_SAVE_KEY = 'chaoli-heroes-r1';
 export const LEGACY_SAVE_KEY = 'hero-defense-v0.5-atomic';
@@ -18,6 +20,7 @@ function finiteTree(value: unknown): boolean {
 export function validateSave(value: unknown): asserts value is Save {
   const s = value as Save;
   check(s && finiteTree(s) && s.schemaVersion === 1 && integer(s.revision), '存档版本或数据无效');
+  check(s.rosterSize === undefined || s.rosterSize === 10, '英雄名单版本无效');
   const p = s.profile;
   check(p && integer(p.clearedStage, 0, 20) && p.levels && p.fragments && Array.isArray(p.settlementLedger) && Array.isArray(p.upgradeLedger), '账户记录不完整');
   for (const h of HEROES) check(integer(p.levels[h.id], 1, 20), '英雄等级无效');
@@ -25,7 +28,16 @@ export function validateSave(value: unknown): asserts value is Save {
   check(typeof p.music === 'boolean' && typeof p.sound === 'boolean', '设置记录无效');
   check(p.settlementLedger.every(x => typeof x === 'string') && p.upgradeLedger.every(x => typeof x === 'string'), '事务账本无效');
   if (s.run) validateRun(s.run);
+  validateIncentives(p,s.run);
+  check(s.incentiveBackup===undefined||typeof s.incentiveBackup==='string','成长迁移备份无效');
   if (s.settlement) check(typeof s.settlement.runId === 'string' && integer(s.settlement.stage, 1, 20) && Array.isArray(s.settlement.rewards) && s.settlement.rewards.every(r => typeof r.key === 'string' && integer(r.count, 1, 10)), '结算记录无效');
+  if(s.settlement?.receipt){const t=s.settlement.receipt;
+    check(t.ruleVersion==='R1.2.0'&&['victory','defeat'].includes(t.outcome)&&typeof t.reason==='string'&&[5,10].includes(t.cap)&&[0,5,10].includes(t.checkpoint)
+      && HEROES.some(h=>h.id===t.focus)&&[t.before,t.after,t.directed].every(n=>integer(n))&&typeof t.firstClear==='boolean'&&['gold','purple'].includes(t.route)
+      &&Array.isArray(t.newHeroes)&&t.newHeroes.every(id=>HEROES.some(h=>h.id===id))&&Array.isArray(t.newGoals)&&t.newGoals.every(id=>GOALS.some(g=>g.id===id))
+      &&s.settlement.rewards.reduce((n,x)=>n+x.count,0)<=t.cap,'成长结算无效');
+    if(t.expedition)check(integer(t.expedition.tier,1,8)&&['shield','speed','crossfire'].includes(t.expedition.contract),'远征结算无效');
+  }
   check(s.legacyBackup === null || typeof s.legacyBackup === 'string', '旧档备份无效');
   check(['fresh', 'imported'].includes(s.migration), '迁移记录无效');
 }
@@ -34,6 +46,16 @@ function validateRun(r: Run): void {
   check(['active', 'victory', 'defeat'].includes(r.status) && [1, 1.5, 2].includes(r.rate), '对局状态无效');
   if (r.tuning !== undefined) check(r.tuning && typeof r.tuning.version === 'string' && Number.isFinite(r.tuning.baseScale) && r.tuning.baseScale > 0 && r.tuning.nextWaveDelay === 5
     && [r.tuning.waveScales, r.tuning.spawnIntervals].every(a => Array.isArray(a) && a.length === 15 && a.every(n => Number.isFinite(n) && n > 0)), '难度快照无效');
+  if (r.tuning?.crowd !== undefined) {
+    const c = r.tuning.crowd;
+    check(c && integer(c.throughWave, 1, 15) && integer(c.batchSize, 1, 30) && 30 % c.batchSize === 0
+      && numbers(c, ['interval', 'period', 'clearDelay']) && c.interval >= 1 / 60 && c.period > (c.batchSize - 1) * c.interval && c.clearDelay > 0, '怪群快照无效');
+  }
+  if (r.tuning?.feel !== undefined) {
+    const f = r.tuning.feel;
+    check(f && f.startingSkill2 === 1 && numbers(f, ['deployCastDelay', 'cardCastDelay', 'normalCooldownFactor', 'thirdCooldownFactor', 'radiusScale', 'meleeSkillRange'])
+      && f.deployCastDelay > 0 && f.cardCastDelay > 0 && f.normalCooldownFactor > 0 && f.thirdCooldownFactor > 0 && f.radiusScale >= 1 && f.radiusScale <= 2 && f.meleeSkillRange >= .5 && f.meleeSkillRange <= 1, '英雄节奏快照无效');
+  }
   check(['spawn', 'card', 'reward', 'replacement'].every(k => integer(r.rng?.[k as keyof Run['rng']], 1, 0xffffffff)), '随机流无效');
   check(Array.isArray(r.slots) && r.slots.length === 4 && Array.isArray(r.unlocked) && r.unlocked.every(id => HEROES.some(h => h.id === id)), '英雄槽位无效');
   check(r.levels && HEROES.every(h => integer(r.levels[h.id], 1, 20)) && numbers(r, ['seed', 'spawnTimer', 'nextWaveTimer', 'spawnedMinions', 'spawnedBosses', 'kills', 'cardSequence']) && typeof r.paused === 'boolean' && typeof r.aiming === 'boolean' && typeof r.grandpaUsed === 'boolean' && typeof r.freeReviveUsed === 'boolean', '对局快照不完整');
@@ -43,6 +65,9 @@ function validateRun(r: Run): void {
     check(h.slot === index && integer(h.level, 1, 20) && h.hp >= 0 && h.hp <= h.maxHp && h.maxHp > 0 && h.attack > 0 && h.defense >= 0, '英雄数值无效');
     check(h.skills.length === 3 && h.skills.every((n, i) => integer(n, i === 0 ? 1 : 0, 5)) && h.cooldowns.length === 3 && h.cooldowns.every(n => n >= 0), '技能状态无效');
     check(numbers(h, ['uid', 'x', 'y', 'basicCooldown', 'protectionUntil', 'weakUntil', 'shield', 'buffUntil', 'attackBonus', 'cooldownFactor']) && h.base && numbers(h.base, ['hp', 'attack', 'defense']) && (h.deathTick === null || integer(h.deathTick)), '英雄快照不完整');
+    if(h.buffs!==undefined)check(h.buffs&&Object.entries(h.buffs).every(([id,b])=>['RH03-S3','RH10-S3','RH10-perk-A'].includes(id)&&b&&numbers(b,['until','attack','cooldown','basic'])&&b.until>=0&&b.attack>=0&&b.attack<=1&&b.cooldown>0&&b.cooldown<=1&&b.basic>=0&&b.basic<=1),'技能增益来源无效');
+    if (h.skillWindup != null) check(numbers(h.skillWindup, ['remaining', 'slot']) && h.skillWindup.remaining >= 0 && [2, 3].includes(h.skillWindup.slot)
+      && h.skillWindup.center && numbers(h.skillWindup.center, ['x', 'y']) && h.skillWindup.center.x >= 0 && h.skillWindup.center.x <= 1 && h.skillWindup.center.y >= 0 && h.skillWindup.center.y <= 1, '技能前摇无效');
   }
   check(new Set(r.slots.filter(Boolean).map(h => h!.id)).size === r.slots.filter(Boolean).length, '同名英雄重复');
   check(r.plans?.length === 15 && r.plans.every(w => w.length === 30 && w.every(e => ['RM01', 'RM02', 'RM04', 'RM05'].includes(e.id) && e.x >= 0 && e.x <= 1 && (e.trait === null || /^T0[1-9]$/.test(e.trait)))), '波次计划无效');
@@ -57,13 +82,38 @@ function validateRun(r: Run): void {
   for (const e of r.enemies) check(ENEMIES.some(a => a.id === e.id) && numbers(e, ['hp', 'maxHp', 'attack', 'defense', 'shield', 'commandUntil', 'slowUntil', 'slowFraction', 'rootUntil', 'stunUntil', 'markUntil', 'markDamage', 'cooldown', 'skillCooldown', 'commandCooldown', 'born']) && e.maxHp > 0 && e.hp >= 0 && e.hp <= e.maxHp && typeof e.residual === 'boolean' && typeof e.shieldTriggered === 'boolean' && (e.trait === null || ENEMIES.find(a => a.id === e.id)!.allowedBirthTraits.includes(e.trait)), '怪物快照无效');
   for (const sum of r.summons) check(['SUM-BAG', 'SUM-WOOD', 'SUM-BURST', 'SUM-DURABLE'].includes(sum.id) && r.slots.some(h => h?.uid === sum.owner) && numbers(sum, ['hp', 'maxHp', 'baseHp', 'attack', 'defense', 'radius', 'slow', 'ends', 'cooldown', 'interval', 'shots', 'weakUntil', 'idleTime', 'fortressUntil', 'attackFactor']) && sum.hp >= 0 && sum.maxHp > 0 && sum.hp <= sum.maxHp, '召唤物快照无效');
   for (const projectile of r.projectiles) check(numbers(projectile, ['target', 'damage', 'speed', 'weakSeconds', 'radius']) && ['hero', 'enemy'].includes(projectile.side) && projectile.damage >= 0 && projectile.speed > 0 && (projectile.retargeted === undefined || typeof projectile.retargeted === 'boolean'), '弹道快照无效');
+  for (const p of r.projectiles) if (p.chain !== undefined) check(p.chain && integer(p.chain.remaining, 1, 8) && integer(p.chain.kills, 0, 8)
+    && Array.isArray(p.chain.visited) && p.chain.visited.length <= 8 && p.chain.visited.every(n => integer(n, 1, r.nextUid)) && new Set(p.chain.visited).size === p.chain.visited.length
+    && Number.isFinite(p.chain.bossBonus) && p.chain.bossBonus >= 0 && p.side === 'hero' && p.effect === 'RH04-S2', '弹射快照无效');
+  for (const p of r.projectiles) if (p.launch !== undefined) check(p.launch && numbers(p.launch, ['x', 'y']) && p.launch.x >= 0 && p.launch.x <= 1 && p.launch.y === 1 && p.side === 'hero', '出手位置无效');
+  for(const p of r.projectiles)if(p.chain?.last!==undefined)check(p.chain.last&&numbers(p.chain.last,['x','y'])&&p.chain.last.x>=0&&p.chain.last.x<=1&&p.chain.last.y>=0&&p.chain.last.y<=1,'弹射轨迹无效');
   for (const explosion of r.explosions) check(numbers(explosion, ['at', 'damage', 'radius']) && explosion.radius > 0 && explosion.damage >= 0, '爆炸快照无效');
+  if(r.skillBursts!==undefined){
+    check(Array.isArray(r.skillBursts)&&r.skillBursts.length<=64,'连续技能队列无效');
+    for(const b of r.skillBursts)check(numbers(b,['owner','at','damage','radius','level','index','x','y'])&&integer(b.owner,1,r.nextUid)&&r.slots.some(h=>h?.uid===b.owner&&b.source.startsWith(h.id+'-'))
+      && /^RH(?:02-S2|07-S3|08-S3|09-S[23]|10-S[23])$/.test(b.source)&&integer(b.level,1,5)&&integer(b.index,0,4)&&b.at>=0&&b.damage>=0&&b.radius>0&&b.radius<=2&&b.x>=0&&b.x<=1&&b.y>=0&&b.y<=1
+      &&(b.kind==='pulse'&&b.target===undefined||b.kind==='rocket'&&b.source==='RH09-S2'&&integer(b.target,1,r.nextUid)),'连续技能快照无效');
+  }
+  for(const unit of [...r.projectiles,...r.summons,...(r.skillBursts||[])])if(unit.cast!==undefined){const c=unit.cast;check(r.incentive&&integer(c.id,1,r.incentive.castSequence)&&integer(c.owner,1,r.nextUid)&&r.slots.some(h=>h?.uid===c.owner&&h.id===c.hero)&&[2,3].includes(c.slot)&&typeof c.aoe==='boolean','施法来源无效');}
+  for(const e of r.enemies){if(e.pulledBy!==undefined)check(e.pulledBy&&integer(e.pulledBy.owner,1,r.nextUid)&&Number.isFinite(e.pulledBy.until)&&e.pulledBy.until>=0,'拉拢来源无效');if(e.pushUntil!==undefined)check(Number.isFinite(e.pushUntil)&&e.pushUntil>=0,'击退间隔无效');}
   check(new Set(ids).size === ids.length, '单位编号重复');
   check(Array.isArray(r.events) && r.events.length <= 160 && integer(r.eventSequence), '表现事件无效');
 }
 
+/** Only the exact six-hero schema is extended; malformed current saves are never repaired. */
+function extendLegacyRoster(value: unknown): void {
+  const s=value as Save;if(!s||s.schemaVersion!==1||s.rosterSize!==undefined||!s.profile?.levels)return;
+  const added=['RH07','RH08','RH09','RH10'],old=['RH01','RH02','RH03','RH04','RH05','RH06'];
+  const oldLevels=(levels:Record<string,number>)=>levels&&old.every(id=>integer(levels[id],1,20))&&added.every(id=>!(id in levels));
+  if(!oldLevels(s.profile.levels)||s.run&&!oldLevels(s.run.levels))return;
+  // A new hero reference with missing levels is corruption, not a legacy account.
+  if(added.some(id=>id in (s.profile.fragments||{})||s.run?.unlocked?.includes(id)||s.run?.slots?.some(h=>h?.id===id)))return;
+  for(const id of added){s.profile.levels[id]=1;if(s.run)s.run.levels[id]=1;}
+  s.rosterSize=10;
+}
+
 export class R1Session {
-  data: Save = { schemaVersion: 1, revision: 0, profile: freshProfile(), run: null, settlement: null, legacyBackup: null, migration: 'fresh' };
+  data: Save = { schemaVersion: 1, rosterSize: 10, revision: 0, profile: freshProfile(), run: null, settlement: null, legacyBackup: null, migration: 'fresh' };
   error = ''; inBattle = false; background = false;
   private durable: string | null = null;
   private pending: Save | null = null;
@@ -73,7 +123,7 @@ export class R1Session {
   constructor(private storage: StoragePort) {
     try {
       const raw = storage.getItem(R1_SAVE_KEY); this.durable = raw;
-      if (raw !== null) { const parsed: unknown = JSON.parse(raw); validateSave(parsed); this.data = parsed; }
+      if (raw !== null) { const parsed: unknown = JSON.parse(raw); extendLegacyRoster(parsed); validateSave(parsed); this.data = parsed; if(!this.data.profile.incentive){this.data.incentiveBackup=raw;this.data.profile.incentive=freshIncentive(this.data.profile);} }
       else {
         const legacy = storage.getItem(LEGACY_SAVE_KEY);
         if (legacy !== null) {
@@ -96,6 +146,8 @@ export class R1Session {
     const serialized = JSON.stringify(next);
     this.storage.setItem(R1_SAVE_KEY, serialized);
     this.durable = serialized; this.data = next; this.error = ''; this.autosave = 0; this.pending = null;
+    // Also applies when a failed end-run transaction succeeds through retrySave.
+    if (!next.run) { this.inBattle = false; this.clock.reset(); }
   }
   private transaction(action: (draft: Save) => boolean): boolean {
     if (this.error || this.readBlocked) return false;
@@ -107,17 +159,24 @@ export class R1Session {
     if (this.readBlocked || !this.pending) return false;
     try { this.persist(this.pending); return true; } catch (e) { this.error = (e as Error).message; return false; }
   }
-  start(stage: number, seed: number, abandon = false): boolean {
+  start(stage: number, seed: number, abandon = false, expedition?: Expedition): boolean {
     const result = this.transaction(d => {
       if (d.run?.status === 'active' && !abandon) return false;
-      stageDef(stage); d.run = createRun(d.profile, stage, seed, `r1-${d.revision + 1}-${seed >>> 0}`); d.settlement = null; return true;
+      stageDef(stage); d.run = createRun(d.profile, stage, seed, `r1-${d.revision + 1}-${seed >>> 0}`, expedition); d.settlement = null; return true;
     });
     if (result) { this.inBattle = true; this.clock.reset(); }
     return result;
   }
   resume(): boolean { if (!this.data.run || this.error) return false; this.inBattle = true; this.clock.reset(); return true; }
   camp(): boolean { const ok = this.transaction(() => true); if (ok) { this.inBattle = false; this.clock.reset(); } return ok; }
-  private mutateRun(action: (r: Run) => boolean): boolean { return this.transaction(d => !!d.run && action(d.run)); }
+  /** Voluntary abandonment is not defeat settlement and grants no run rewards. */
+  endRun(): boolean {
+    return this.transaction(d => {
+      if (!d.run || d.run.status !== 'active' || !d.run.paused) return false;
+      d.run = null; d.settlement = null; return true;
+    });
+  }
+  private mutateRun(action: (r: Run) => boolean): boolean { return this.transaction(d => {if(!d.run||!action(d.run))return false;this.settle(d);return true;}); }
   choose(id: string, slot?: number): boolean { return this.mutateRun(r => chooseCard(r, id, slot)); }
   rescue(accept: boolean): boolean { return this.mutateRun(r => resolveRescue(r, accept)); }
   aim(): boolean { return this.mutateRun(aimGlobal); }
@@ -126,16 +185,20 @@ export class R1Session {
   pause(value: boolean): boolean { return this.mutateRun(r => { r.paused = value; return true; }); }
   speed(value: 1 | 1.5 | 2): boolean { return this.mutateRun(r => { if (![1, 1.5, 2].includes(value)) return false; r.rate = value; return true; }); }
   upgrade(id: string): boolean { return this.transaction(d => upgradeHero(d.profile, id, `${id}:${d.profile.levels[id]}`)); }
+  setFocus(id:string):boolean {return this.transaction(d=>{const h=heroDef(id),i=d.profile.incentive;if(!i)return false;i.focusByQuality[h.quality]=id;i.primary=h.quality;return true;});}
+  setCaptain(id:string):boolean {return this.transaction(d=>{const i=d.profile.incentive;if(!i||heroDef(id).unlockAfterStage>d.profile.clearedStage)return false;i.captain=id;return true;});}
+  setRoute(stage:number,route:'gold'|'purple'):boolean {return this.transaction(d=>{const i=d.profile.incentive;if(!i||![10,20].includes(stage)||!['gold','purple'].includes(route))return false;i.routes[String(stage)]=route;return true;});}
+  setSpecialization(id:string,value:Specialization):boolean {return this.transaction(d=>{const i=d.profile.incentive;if(!i||!['A','B'].includes(value)||d.profile.levels[id]<3||heroDef(id).unlockAfterStage>d.profile.clearedStage)return false;i.specializations[id]=value;return true;});}
+  setGoal(id:string):boolean {return this.transaction(d=>{if(!d.profile.incentive||!GOALS.some(g=>g.id===id))return false;d.profile.incentive.goal=id;return true;});}
   settings(key: 'music' | 'sound', enabled: boolean): boolean { return this.transaction(d => { d.profile[key] = enabled; return true; }); }
   hide(): void { this.background = true; this.clock.reset(); this.transaction(() => true); }
   show(): void { this.background = false; this.clock.reset(); }
   private settle(d: Save): void {
     const run = d.run;
-    if (!run || run.status !== 'victory' || d.profile.settlementLedger.includes(run.id)) return;
-    d.profile.clearedStage = Math.max(d.profile.clearedStage, run.stage);
-    const rewards = rollRewards(run.stage, d.profile.clearedStage, run.rng);
-    for (const r of rewards) d.profile.fragments[r.key] = (d.profile.fragments[r.key] || 0) + r.count;
-    d.profile.settlementLedger.push(run.id); d.settlement = { runId: run.id, stage: run.stage, rewards };
+    if (!run || run.status === 'active' || d.profile.settlementLedger.includes(run.id)) return;
+    const result = settleProgression(d.profile, run);
+    for (const r of result.rewards) d.profile.fragments[r.key] = (d.profile.fragments[r.key] || 0) + r.count;
+    d.profile.settlementLedger.push(run.id); d.settlement = { runId: run.id, stage: run.stage, ...result };
   }
   tick(seconds: number): void {
     if (!this.inBattle || this.background || this.error || !this.data.run) return;
@@ -144,7 +207,7 @@ export class R1Session {
     this.clock.advance(r, seconds);
     this.autosave += Math.max(0, Math.min(.25, seconds));
     const critical = stamp !== `${r.wave}:${r.cardSequence}:${r.rescue}:${r.status}`;
-    if (critical || this.autosave >= 5 || r.status === 'victory' && !this.data.profile.settlementLedger.includes(r.id)) {
+    if (critical || this.autosave >= 5 || r.status !== 'active' && !this.data.profile.settlementLedger.includes(r.id)) {
       this.settle(this.data);
       const next = this.data; this.data = before;
       try { this.persist(next); }

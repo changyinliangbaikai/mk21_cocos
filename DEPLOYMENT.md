@@ -2,9 +2,12 @@
 document_type: ai_deployment_runbook
 schema_version: 1
 release_channel: wechatgame
-scope_updated_at: "2026-09-25"
-runtime_version: "R1.0.4"
-runtime_verified_at: "2026-09-25"
+scope_updated_at: "2026-10-01"
+runtime_version: "R1.2.3"
+runtime_verified_at: "2026-10-01"
+wechat_uploaded_at: "2026-10-01"
+wechat_uploaded_version: "1.2.3"
+wechat_experience_backend_verification: pending
 verified_at: "2026-09-15"
 verified_source_commit: "2d1ba6a54a6d6d6296119e705e6e1e8eda9ea456"
 repository: "https://github.com/changyinliangbaikai/mk21_cocos"
@@ -17,7 +20,7 @@ creator_version: "3.8.8"
 
 本文面向接手本仓库的 AI 编程助手。当前唯一发布渠道为微信小游戏，Web 用于本地调试和截图；按用户指定范围推进预览、上传体验版、备案、提审或正式发布。所有相对路径和命令均以仓库根目录为起点；代码与脚本若发生变化，先核对实现，再更新本文件中的命令和判断条件。
 
-当前分支入口为 R1.0.4。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。R1最新版本通过222项测试和32文件Cocos声明检查；当前构建和未完成的平台验收见 [R1 实现与验收](docs/development/R1实现与验收.md)。0.7.2 的历史上传记录不能用来证明 R1 已上传或已通过真机测试。
+当前分支入口为 R1.2.3。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。R1.2最新验证见 [激励机制实现](docs/development/R1.2激励机制.md)。2026-10-01 微信1.2.3已实际上传成功并确认覆盖原体验版，详见 [发布进度](docs/release/小游戏发布推进.md)；后台最终体验版标记与手机验收仍待核对。
 
 ## 1. 执行约定与输入
 
@@ -154,16 +157,22 @@ artifacts/minigames/<本次时间戳>/
 
 `npm run build:wechat -- --prepare-only` 只准备副本，报告为 `prepared`，不会生成可上传构建；它仍需要 Creator 可执行文件、FFmpeg 和 AppID。准备模式没有后续“继续此副本”的命令，正式构建应重新运行完整命令。
 
+Creator冷导入若把Boot importer错误改成 `*`，必须弃用失败输出。Web与微信脚本都支持显式设置 `COCOS_IMPORT_CACHE=/绝对路径/已验证的独立工程`，只复制其 `library` 和 `temp/asset-db` 到新构建副本；先确认该工程Boot importer为scene且已运行验证。此选项不会复用旧脚本编译产物，也不跳过源哈希、场景和包体检查。恢复尝试仍可能失败，不能据此强行上传。
+
 ### 5.1 构建完成的判定
 
 Creator 子进程成功码为 `36`，npm 包装脚本成功码为 `0`。仅见到产物文件或 `stage: built` 还不够，必须同时满足：
 
 - `release-report.json.stage === "built"`。
 - `sourceUnchanged === true`，构建前后源哈希相同。
-- 目标 `builds[]` 的 `exitCode === 36`、`status === "built-awaiting-ide-and-device-tests"`、`withinConservativeBudget === true`。
+- CLI构建的目标 `builds[]` 必须 `exitCode === 36`；所有方式均须 `status === "built-awaiting-ide-and-device-tests"`、`withinConservativeBudget === true`。
 - 正式上传目标 `usesTestAppId === false`，报告、项目配置和当前目标 AppID 一致。
 - `game.js`、`game.json`、`project.config.json` 存在，方向为 `portrait`，副本 Boot importer 仍为 `scene`。
 - `builds[]` 仅包含微信目标，不把历史抖音候选列入本次验收。
+
+采用Creator GUI恢复构建时，保留原始脚本失败报告。只打开 `--prepare-only` 生成的独立微信工程，核对名称、正式AppID、竖屏、Boot场景、MD5缓存、关闭调试/Source Maps、启用插屏及本地resources分包；构建后记录GUI任务success、截图、实际profiles构建参数与日志。报告须标记 `method: "Creator GUI"`、`exitCode: null`，不得伪造36。继续逐项检查全部资源importer、运行源码、品牌Logo、AppID、分包预算及包哈希，通过后才导入平台工具。2026-10-01的GUI实例见c037验证记录。
+
+R1.2.3起运行 `tools/verify-startup-branding.mjs` 中的 `verifyStartupBranding(project, buildDirectory, platform)` 校验实际构建的自定义Logo。官方自定义插屏须先在Creator「项目设置 → 插屏设置」启用；未启用时Creator可能以退出码36回退默认图，脚本必须拦截，不能修改引擎或跳过激活。配置在 `game/settings/v2/packages/builder.json`，其project://Logo路径随独立副本正常解析。
 
 当前微信构建的本地预算：主包 4 MiB，总包 30 MiB，单个分包 20 MiB。它们是仓库中的检查值，平台当前规则与最终上传计算以实际后台为准。0.7.2 微信包约主包 2.03 MiB / 总包 19.02 MiB；新包大小必须重新测量。
 
@@ -243,7 +252,7 @@ NODE
 5. 到账号后台核对新版本是否已被选为体验版；尚未选中时，在已授权范围内设置该版本。需要本人扫码或后台无法访问时，告诉用户具体版本、AppID 和剩余动作，并将体验版状态记为 `pending`。
 6. 核对后台账号名称。修改代码和 Cocos 工程名不会自动修改账号基本资料；如名称仍旧，按改名任务范围同步处理。审核和公开发布只在用户要求的阶段推进，并分别保存平台结果。
 
-当前记录的微信 `0.7.2` 已于 2026-09-16 上传，修正了营地主界面顶部图片中的游戏名称。微信模拟器已确认显示“超力英雄”，工具提示覆盖已有体验版并已确认，最终显示“代码上传成功”；后台最终标记及该版手机验收未独立确认。候选目录为 `artifacts/minigames/2026-09-16T01-11-25-040Z/`。继续操作前读取实际平台状态。
+当前记录的微信 `1.2.3` 已于2026-10-01上传成功，上传前确认覆盖现有体验版。新版替换Cocos默认启动图，加入超力英雄品牌加载页、三英雄轻量动画和真实图集进度。392项测试、36文件Cocos声明检查通过；Web及微信模拟器均通过加载后进入营地/开局抽卡。有效包为 `artifacts/minigames/2026-10-01T11-32-46-908Z/`，验收及上传截图见该目录 `acceptance.json` 和 `artifacts/r1/c037/`。本次使用Creator GUI构建，报告标记method与真实GUI成功证据；没有CLI退出码。后台体验版最终标记未独立读取，手机验收待复验。旧上传与失败候选记录见发布进度。
 
 抖音历史材料见 [归档草稿](docs/release/抖音提审材料草稿.md)，不作为当前部署步骤。微信备案与提审资料以微信账号实际表单为准，不把抖音历史待办沿用为微信要求。
 
@@ -275,10 +284,10 @@ npm run serve
 | 验收项 | 成功依据 |
 | --- | --- |
 | 资源与界面 | 名称、中文字体、图片、动画和音频正常；无阻塞启动的资源错误；平台菜单不遮挡关键按钮 |
-| 基本玩法 | 营地进入新局，召唤、部署、移动/合成、首波战斗、强化选卡及后续波次正常 |
+| 基本玩法 | 营地进入新局，三选一、英雄部署、首波战斗、能量抽卡、暂停/继续及结束本局正常 |
 | 局外与生命周期 | 英雄养成和编队可打开；暂停、保存回营地、重新打开及切后台恢复符合预期 |
 | 微信适配 | 开场忠告、平台胶囊与安全区域正常；小游戏端不兑现 Web 模拟广告奖励 |
-| 手机验证 | 记录平台、版本、机型、系统、步骤、结果；没有测完整 20 波时明确覆盖范围 |
+| 手机验证 | 记录平台、版本、机型、系统、步骤、结果；没有测完整 15 波时明确覆盖范围 |
 | 上传 / 体验版 | 上传成功提示与账号后台选中体验版分别记录，不能合并成一个未经核实的状态 |
 
 只读命令和类型测试不能代替运行验收。Web 截图应标记为 Web，模拟器截图应标记为模拟器；不将它们记录为手机实机证据。已知 `UX-001` 引导遮挡和文字溢出按用户决定暂缓，不在部署任务中顺带改动。
@@ -317,6 +326,8 @@ npm run serve
 | Boot importer 被改变 / 源哈希变化 | 停止上传，检查 `.meta` 和源码差异，区分用户已有改动；用正确源码重新导入和构建，不修改 UUID 掩盖问题 |
 | 微信工具识别为普通小程序 | 核实 AppID 对应的账号类型；换用真实小游戏 AppID 并重新构建，不能靠改配置伪装账号类型 |
 | 图片缺失或启动空白 | 检查 `resources` 分包、PNG/MP3 文件和加载错误；历史 WebP 方案因平台未带入资源而弃用，当前沿用 PNG |
+| `Creator CSS FontFace absent` | 微信模拟器存在部分 DOM 接口，但字体由宿主加载；`Typography` 仅在 `sys.isBrowser` 时检查 CSS FontFaceSet，不能只判断 `document.fonts` |
+| 新账号出现 `Unexpected end of JSON input` | Cocos 微信适配器对不存在的存档键返回空字符串；通过 `HostStorage` 枚举键确认不存在后才转换为 `null`。真实存在的空值、损坏存档或读取异常必须保留并阻止写入，不能清缓存绕过 |
 | 模拟器无法完成操作 | 保留错误与当前画面，缩小到具体步骤；Web 可辅助检查玩法，但平台与手机验收继续标记待确认 |
 | Web 提示没有入口文件 | 先构建正确目标，再传入对应构建目录；服务不会生成替代页面 |
 | 扫码失效 / 缺少权限 / 后台不可访问 | 生成当前预览码、核对体验者或开发者权限，必要时交由账号本人完成明确步骤；不绕过安全拦截 |

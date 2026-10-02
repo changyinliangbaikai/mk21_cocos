@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { spawn, execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { verifyStartupBranding } from './verify-startup-branding.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'game');
@@ -56,9 +57,22 @@ for (const name of ['assets', 'settings', 'package.json', 'tsconfig.json']) {
   const from = path.join(source, name);
   if (fs.existsSync(from)) fs.cpSync(from, path.join(project, name), { recursive: true });
 }
+// Same opt-in recovery as cocos-build.mjs for Creator's intermittent '*' importer.
+// Reuse only imported resources/database, never compiled scripts or old builds.
+const importCacheSource = process.env.COCOS_IMPORT_CACHE ? path.resolve(process.env.COCOS_IMPORT_CACHE) : null;
+if (importCacheSource) {
+  const meta = path.join(importCacheSource, 'assets/scenes/Boot.scene.meta');
+  if (!fs.existsSync(meta) || json(meta).importer !== 'scene'
+    || !fs.existsSync(path.join(importCacheSource, 'library')) || !fs.existsSync(path.join(importCacheSource, 'temp/asset-db')))
+    throw Error('COCOS_IMPORT_CACHE must point to an isolated project with valid scene imports.');
+  for (const relative of ['library', 'temp/asset-db']) {
+    fs.mkdirSync(path.dirname(path.join(project, relative)), { recursive: true });
+    fs.cpSync(path.join(importCacheSource, relative), path.join(project, relative), { recursive: true });
+  }
+}
 const resources = path.join(project, 'assets/resources');
 const r1Build = fs.existsSync(path.join(resources, 'r1/manifest.json'));
-const record = { createdAt: new Date().toISOString(), source, sourceHash, project, stage: 'preparing',
+const record = { createdAt: new Date().toISOString(), source, sourceHash, project, importCacheSource, stage: 'preparing',
   creatorVersion: json(path.join(source, 'package.json')).creator.version,
   designVersion: r1Build ? json(path.join(source, 'assets/scripts/domain/r1/runtime-config.json')).version : json(path.join(resources, 'prototype-v0.5.json')).design_version,
   textureEncoding: { format: 'png', palette: true, quality: 90, resize: false, sharpVersion: sharp.versions.sharp },
@@ -179,6 +193,7 @@ try {
       throw Error('Creator changed the Boot scene importer; this output is not a valid game build');
     }
     build.directory = path.join(project, 'build', platform);
+    build.startupBranding = verifyStartupBranding(project, build.directory, platform);
     if (platform === 'bytedance-mini-game') {
       const entry = path.join(build.directory, 'game.js');
       const bootstrap = path.join(root, 'tools/templates/douyin-sidebar.js');

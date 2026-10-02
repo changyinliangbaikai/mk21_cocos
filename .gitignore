@@ -34,10 +34,16 @@ artifacts/recovery/
 !/tools/sync-config.mjs
 !/tools/typecheck-cocos.mjs
 !/tools/minigame-release.mjs
+!/tools/verify-startup-branding.mjs
 !/tools/export-r1-assets.mjs
 !/tools/build-r1-fonts.py
 !/tools/simulate-r1.ts
 !/tools/balance-r1.ts
+!/tools/feel-r1.ts
+!/tools/export-r1-roster.mjs
+!/tools/roster-r1.ts
+!/tools/incentives-r1.ts
+!/tools/incentive-efficiency.ts
 !/tools/templates/
 /tools/templates/*
 !/tools/templates/douyin-sidebar.js

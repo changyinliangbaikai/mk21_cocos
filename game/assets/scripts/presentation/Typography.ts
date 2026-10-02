@@ -1,4 +1,4 @@
-import { Font, JsonAsset, Label, TTFFont, Vec2, resources } from 'cc';
+import { Font, JsonAsset, Label, TTFFont, Vec2, resources, sys } from 'cc';
 import { color } from './ToyVisuals';
 
 export type TextRole = 'body' | 'caption' | 'section' | 'name' | 'number' | 'button' | 'buttonBody' | 'cta' | 'nav' | 'titleOutline' | 'titleDepth' | 'titleFace';
@@ -33,6 +33,7 @@ export class Typography {
   private info = new WeakMap<Label, { role: TextRole; fontId: FontId; requestedSize: number }>();
 
   async load(): Promise<void> {
+    this.errors = []; this.webReadiness.clear(); this.familyOwners.clear();
     try {
       const manifest = await this.asset(`${this.resourceRoot}/manifest`, JsonAsset) as JsonAsset;
       const data = manifest.json as any;
@@ -50,7 +51,9 @@ export class Typography {
     } catch (error) { this.errors.push(String(error)); }
   }
   private async waitForWebFont(id: FontId, font: Font): Promise<void> {
-    if (typeof document === 'undefined' || !document.fonts) return;
+    // Mini-game devtools expose a DOM, but fonts are registered by the host
+    // loader (wx.loadFont), not in the browser's CSS FontFaceSet.
+    if (!sys.isBrowser || typeof document === 'undefined' || !document.fonts) return;
     // Creator 3.8.8 font-loader.ts derives its CSS family from the native URL.
     // Its callback can report success after a timeout; inspect the real FontFaceSet too.
     const basename = font.nativeUrl.substring(font.nativeUrl.lastIndexOf('/') + 1);

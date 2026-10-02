@@ -1,6 +1,7 @@
 import { HEROES, Quality, RULES, SKILLS, heroDef, permanentStats, skillDef } from './config';
 import { Card, Hero, Run, aliveHeroes, event, now } from './model';
 import { Stream, pick, random, weighted } from './random';
+import { goalProgress } from './incentives';
 
 const qualities: Quality[] = ['blue', 'purple', 'gold'];
 export const emptySlots = (r: Run): number => r.slots.filter(h => !h).length;
@@ -29,7 +30,10 @@ function sample(r: Run, pool: Omit<Card, 'id'>[], weights: Record<Quality, numbe
 export function showDraft(r: Run): void {
   if (r.candidates.length || !r.drawQueue.length || r.rescue || r.status !== 'active') return;
   const cards: Omit<Card, 'id'>[] = [], heroes = heroPool(r);
-  for (let i = 0; i < Math.min(emptySlots(r), 3); i++) {
+  if(r.incentive&&r.cardSequence===0&&r.drawQueue[0]==='opening'){
+    const captain=heroes.find(c=>c.heroId===r.incentive!.captain);if(captain)cards.push(captain);
+  }
+  for (let i = cards.length; i < Math.min(emptySlots(r), 3); i++) {
     const selected = sample(r, heroes.filter(c => !cards.some(a => a.heroId === c.heroId)), RULES.cards.heroQualityWeights, 'card');
     cards.push(selected);
   }
@@ -74,9 +78,12 @@ export function deployHero(r: Run, id: string, slot: number): Hero {
   if (!Number.isInteger(slot) || slot < 0 || slot >= 4 || r.slots[slot] || r.slots.some(h => h?.id === id) || !r.unlocked.includes(id)) throw new Error('Invalid hero slot');
   const level = r.levels[id], base = permanentStats(id, level);
   const h: Hero = { uid: ++r.nextUid, id, slot, level, base, hp: base.hp, maxHp: base.hp, attack: base.attack, defense: base.defense,
-    x: RULES.screen.heroCentersX[slot], y: 1, skills: [1, 0, 0], cooldowns: [0, 0, 0], basicCooldown: 0,
+    x: RULES.screen.heroCentersX[slot], y: 1, skills: [1, r.tuning?.feel?.startingSkill2 || 0, 0],
+    cooldowns: [0, r.tuning?.feel ? r.tuning.feel.deployCastDelay + slot * .35 : 0, 0], basicCooldown: 0,
     deathTick: null, protectionUntil: 0, weakUntil: 0, shield: 0, buffUntil: 0, attackBonus: 0, cooldownFactor: 1, windup: null };
-  r.slots[slot] = h; event(r, 'deploy', id, h); return h;
+  r.slots[slot] = h;
+  if(r.incentive){r.incentive.stats.heroBaseHp+=base.hp;if(heroDef(id).unlockAfterStage>0)goalProgress(r,'first-trial');}
+  event(r, 'deploy', id, h); return h;
 }
 export function chooseCard(r: Run, id: string, slot?: number): boolean {
   if (r.status !== 'active' || r.rescue || r.paused) return false;
@@ -96,7 +103,11 @@ export function chooseCard(r: Run, id: string, slot?: number): boolean {
     } else {
       const index = c.skillSlot! - 1, unlocking = h.skills[index] === 0;
       h.skills[index]++;
-      if (unlocking) h.cooldowns[index] = skillDef(h.id, index + 1).cooldownSeconds[0];
+      if (r.tuning?.feel) {
+        if (index) h.cooldowns[index] = Math.min(h.cooldowns[index] || Infinity, r.tuning.feel.cardCastDelay);
+        else h.basicCooldown = Math.min(h.basicCooldown, r.tuning.feel.cardCastDelay);
+      } else if (unlocking) h.cooldowns[index] = skillDef(h.id, index + 1).cooldownSeconds[0];
+      event(r, 'skill-upgraded', `${h.id}-S${index + 1}`, h, h.uid, h.skills[index]);
     }
   }
   r.drawQueue.shift(); r.candidates = [];

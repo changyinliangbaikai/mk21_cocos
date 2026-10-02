@@ -1,8 +1,8 @@
 {
-  "version": "R1.0.4",
+  "version": "R1.2.3",
   "schemaVersion": 1,
   "rngVersion": "xorshift32-v1",
-  "approvedDecision": "C-030",
+  "approvedDecision": "C-037",
   "roles": {
     "melee": {
       "hp": 240,
@@ -51,7 +51,7 @@
       "verticalRangeFraction": 0.5,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
@@ -81,7 +81,7 @@
       "verticalRangeFraction": 1,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
@@ -111,7 +111,7 @@
       "verticalRangeFraction": 1,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
@@ -141,7 +141,7 @@
       "verticalRangeFraction": 1,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
@@ -171,7 +171,7 @@
       "verticalRangeFraction": 0.5,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
@@ -201,11 +201,131 @@
       "verticalRangeFraction": 0.5,
       "initialSkillLevels": [
         1,
-        0,
+        1,
         0
       ],
       "maxSkillLevel": 5,
       "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH07",
+      "name": "磁暴技师",
+      "quality": "purple",
+      "role": "ranged",
+      "unlockAfterStage": 3,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 176,
+        "attack": 27.5,
+        "defense": 2.2
+      },
+      "perPermanentLevel": {
+        "hp": 17.6,
+        "attack": 2.75,
+        "defense": 0.22
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH08",
+      "name": "冰饮企鹅",
+      "quality": "purple",
+      "role": "support",
+      "unlockAfterStage": 5,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 209,
+        "attack": 18.7,
+        "defense": 4.4
+      },
+      "perPermanentLevel": {
+        "hp": 20.9,
+        "attack": 1.87,
+        "defense": 0.44
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH09",
+      "name": "烟火龙仔",
+      "quality": "gold",
+      "role": "ranged",
+      "unlockAfterStage": 8,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 193.6,
+        "attack": 30.25,
+        "defense": 2.42
+      },
+      "perPermanentLevel": {
+        "hp": 19.36,
+        "attack": 3.025,
+        "defense": 0.242
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH10",
+      "name": "星灯水母",
+      "quality": "gold",
+      "role": "support",
+      "unlockAfterStage": 10,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 229.9,
+        "attack": 20.57,
+        "defense": 4.84
+      },
+      "perPermanentLevel": {
+        "hp": 22.99,
+        "attack": 2.057,
+        "defense": 0.484
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
     }
   ],
   "skills": [
@@ -1277,6 +1397,683 @@
       ],
       "autoCast": true,
       "waitForValidTarget": true
+    },
+    {
+      "id": "RH07-S1",
+      "hero": "RH07",
+      "slot": 1,
+      "name": "电磁飞钉",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "totalTargets": 1
+        },
+        {
+          "totalTargets": 2
+        },
+        {
+          "totalTargets": 3
+        },
+        {
+          "totalTargets": 4
+        },
+        {
+          "totalTargets": 5
+        }
+      ]
+    },
+    {
+      "id": "RH08-S1",
+      "hero": "RH08",
+      "slot": 1,
+      "name": "冰珠连射",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "totalTargets": 1
+        },
+        {
+          "totalTargets": 2
+        },
+        {
+          "totalTargets": 3
+        },
+        {
+          "totalTargets": 4
+        },
+        {
+          "totalTargets": 5
+        }
+      ]
+    },
+    {
+      "id": "RH09-S1",
+      "hero": "RH09",
+      "slot": 1,
+      "name": "火星连珠",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "totalTargets": 1
+        },
+        {
+          "totalTargets": 2
+        },
+        {
+          "totalTargets": 3
+        },
+        {
+          "totalTargets": 4
+        },
+        {
+          "totalTargets": 5
+        }
+      ]
+    },
+    {
+      "id": "RH10-S1",
+      "hero": "RH10",
+      "slot": 1,
+      "name": "星砂点射",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "damageAttackMultiplier": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "totalTargets": 1
+        },
+        {
+          "totalTargets": 2
+        },
+        {
+          "totalTargets": 3
+        },
+        {
+          "totalTargets": 4
+        },
+        {
+          "totalTargets": 5
+        }
+      ]
+    },
+    {
+      "id": "RH07-S2",
+      "hero": "RH07",
+      "slot": 2,
+      "name": "贯穿磁束",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "damageAttackMultiplier": [
+        2.8,
+        3.2,
+        3.6,
+        4,
+        4.4
+      ],
+      "radiusBattleWidthFraction": [
+        0.045,
+        0.052,
+        0.06,
+        0.068,
+        0.076
+      ],
+      "levelEffect": [
+        {
+          "shape": "beam",
+          "slowFraction": 0,
+          "slowSeconds": 0
+        },
+        {
+          "shape": "beam",
+          "slowFraction": 0,
+          "slowSeconds": 0
+        },
+        {
+          "shape": "beam",
+          "slowFraction": 0.25,
+          "slowSeconds": 1.2
+        },
+        {
+          "shape": "beam",
+          "slowFraction": 0.25,
+          "slowSeconds": 1.2
+        },
+        {
+          "shape": "beam",
+          "slowFraction": 0.25,
+          "slowSeconds": 1.2
+        }
+      ]
+    },
+    {
+      "id": "RH07-S3",
+      "hero": "RH07",
+      "slot": 3,
+      "name": "终极·磁暴涡旋",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "damageAttackMultiplier": [
+        1.5,
+        1.7,
+        1.9,
+        2.1,
+        2.3
+      ],
+      "radiusBattleWidthFraction": [
+        0.17,
+        0.19,
+        0.21,
+        0.23,
+        0.25
+      ],
+      "levelEffect": [
+        {
+          "pulses": 3,
+          "pulseInterval": 0.28,
+          "pullDistanceDepth": 0.06,
+          "rootSeconds": 0
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.28,
+          "pullDistanceDepth": 0.06,
+          "rootSeconds": 0
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.28,
+          "pullDistanceDepth": 0.06,
+          "rootSeconds": 0.35
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.28,
+          "pullDistanceDepth": 0.06,
+          "rootSeconds": 0.35
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.28,
+          "pullDistanceDepth": 0.06,
+          "rootSeconds": 0.35
+        }
+      ]
+    },
+    {
+      "id": "RH08-S2",
+      "hero": "RH08",
+      "slot": 2,
+      "name": "冰饮喷泉",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "damageAttackMultiplier": [
+        1.6,
+        1.9,
+        2.2,
+        2.5,
+        2.8
+      ],
+      "radiusBattleWidthFraction": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "levelEffect": [
+        {
+          "shape": "cone",
+          "halfAngle": 25,
+          "depth": 1,
+          "slowFraction": 0.3,
+          "slowSeconds": 2,
+          "rootSeconds": 0
+        },
+        {
+          "shape": "cone",
+          "halfAngle": 28,
+          "depth": 1,
+          "slowFraction": 0.35,
+          "slowSeconds": 2,
+          "rootSeconds": 0
+        },
+        {
+          "shape": "cone",
+          "halfAngle": 31,
+          "depth": 1,
+          "slowFraction": 0.4,
+          "slowSeconds": 2,
+          "rootSeconds": 0.45
+        },
+        {
+          "shape": "cone",
+          "halfAngle": 34,
+          "depth": 1,
+          "slowFraction": 0.45,
+          "slowSeconds": 2,
+          "rootSeconds": 0.45
+        },
+        {
+          "shape": "cone",
+          "halfAngle": 37,
+          "depth": 1,
+          "slowFraction": 0.5,
+          "slowSeconds": 2,
+          "rootSeconds": 0.45
+        }
+      ]
+    },
+    {
+      "id": "RH08-S3",
+      "hero": "RH08",
+      "slot": 3,
+      "name": "终极·暴雪派对",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "damageAttackMultiplier": [
+        1.1,
+        1.3,
+        1.5,
+        1.7,
+        1.9
+      ],
+      "radiusBattleWidthFraction": [
+        0.19,
+        0.21,
+        0.23,
+        0.25,
+        0.27
+      ],
+      "levelEffect": [
+        {
+          "pulses": 3,
+          "pulseInterval": 0.35,
+          "slowFraction": 0.45,
+          "slowSeconds": 2.2,
+          "firstRootSeconds": 0
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.35,
+          "slowFraction": 0.45,
+          "slowSeconds": 2.2,
+          "firstRootSeconds": 0
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.35,
+          "slowFraction": 0.45,
+          "slowSeconds": 2.2,
+          "firstRootSeconds": 0.8
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.35,
+          "slowFraction": 0.45,
+          "slowSeconds": 2.2,
+          "firstRootSeconds": 0.8
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.35,
+          "slowFraction": 0.45,
+          "slowSeconds": 2.2,
+          "firstRootSeconds": 0.8
+        }
+      ]
+    },
+    {
+      "id": "RH09-S2",
+      "hero": "RH09",
+      "slot": 2,
+      "name": "三响礼炮",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "damageAttackMultiplier": [
+        1.35,
+        1.55,
+        1.75,
+        1.95,
+        2.15
+      ],
+      "radiusBattleWidthFraction": [
+        0.1,
+        0.115,
+        0.13,
+        0.145,
+        0.16
+      ],
+      "levelEffect": [
+        {
+          "pulses": 3,
+          "pulseInterval": 0.16,
+          "rocket": true
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.16,
+          "rocket": true
+        },
+        {
+          "pulses": 4,
+          "pulseInterval": 0.16,
+          "rocket": true
+        },
+        {
+          "pulses": 4,
+          "pulseInterval": 0.16,
+          "rocket": true
+        },
+        {
+          "pulses": 5,
+          "pulseInterval": 0.16,
+          "rocket": true
+        }
+      ]
+    },
+    {
+      "id": "RH09-S3",
+      "hero": "RH09",
+      "slot": 3,
+      "name": "终极·满天花火",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "damageAttackMultiplier": [
+        1.6,
+        1.85,
+        2.1,
+        2.35,
+        2.6
+      ],
+      "radiusBattleWidthFraction": [
+        0.14,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "levelEffect": [
+        {
+          "pulses": 3,
+          "pulseInterval": 0.25,
+          "scatter": true
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.25,
+          "scatter": true
+        },
+        {
+          "pulses": 4,
+          "pulseInterval": 0.25,
+          "scatter": true
+        },
+        {
+          "pulses": 4,
+          "pulseInterval": 0.25,
+          "scatter": true
+        },
+        {
+          "pulses": 5,
+          "pulseInterval": 0.25,
+          "scatter": true
+        }
+      ]
+    },
+    {
+      "id": "RH10-S2",
+      "hero": "RH10",
+      "slot": 2,
+      "name": "星灯共鸣",
+      "cardQuality": "purple",
+      "kind": "normal",
+      "cooldownSeconds": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "damageAttackMultiplier": [
+        1.3,
+        1.5,
+        1.7,
+        1.9,
+        2.1
+      ],
+      "radiusBattleWidthFraction": [
+        0.16,
+        0.18,
+        0.2,
+        0.22,
+        0.24
+      ],
+      "levelEffect": [
+        {
+          "pulses": 2,
+          "pulseInterval": 0.3,
+          "teamShieldFraction": 0.05,
+          "cleanseWeakness": false
+        },
+        {
+          "pulses": 2,
+          "pulseInterval": 0.3,
+          "teamShieldFraction": 0.060000000000000005,
+          "cleanseWeakness": false
+        },
+        {
+          "pulses": 2,
+          "pulseInterval": 0.3,
+          "teamShieldFraction": 0.07,
+          "cleanseWeakness": true
+        },
+        {
+          "pulses": 2,
+          "pulseInterval": 0.3,
+          "teamShieldFraction": 0.08,
+          "cleanseWeakness": true
+        },
+        {
+          "pulses": 2,
+          "pulseInterval": 0.3,
+          "teamShieldFraction": 0.09,
+          "cleanseWeakness": true
+        }
+      ]
+    },
+    {
+      "id": "RH10-S3",
+      "hero": "RH10",
+      "slot": 3,
+      "name": "终极·星河合奏",
+      "cardQuality": "gold",
+      "kind": "ultimate",
+      "cooldownSeconds": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "damageAttackMultiplier": [
+        0.9,
+        1.1,
+        1.3,
+        1.5,
+        1.7
+      ],
+      "radiusBattleWidthFraction": [
+        0.17,
+        0.19,
+        0.21,
+        0.23,
+        0.25
+      ],
+      "levelEffect": [
+        {
+          "pulses": 3,
+          "pulseInterval": 0.3,
+          "attackBonus": 0.12,
+          "durationSeconds": 4,
+          "teamCooldownRefund": 1
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.3,
+          "attackBonus": 0.15,
+          "durationSeconds": 4.5,
+          "teamCooldownRefund": 1.3
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.3,
+          "attackBonus": 0.18,
+          "durationSeconds": 5,
+          "teamCooldownRefund": 1.6
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.3,
+          "attackBonus": 0.21,
+          "durationSeconds": 5.5,
+          "teamCooldownRefund": 1.9
+        },
+        {
+          "pulses": 3,
+          "pulseInterval": 0.3,
+          "attackBonus": 0.24,
+          "durationSeconds": 6,
+          "teamCooldownRefund": 2.2
+        }
+      ]
     }
   ],
   "skillCommon": {
@@ -3085,6 +3882,22 @@
       "emergencyMeleeDistancePixels": 120,
       "reserveWindupsAndProjectiles": true,
       "retargetOrphanedHeroProjectileOnce": true
+    },
+    "crowd": {
+      "throughWave": 15,
+      "batchSize": 10,
+      "interval": 0.16666666666666666,
+      "period": 9,
+      "clearDelay": 1
+    },
+    "feel": {
+      "startingSkill2": 1,
+      "deployCastDelay": 2.2,
+      "cardCastDelay": 0.45,
+      "normalCooldownFactor": 0.62,
+      "thirdCooldownFactor": 0.72,
+      "radiusScale": 1.35,
+      "meleeSkillRange": 0.9
     }
   },
   "cards": {

@@ -14,6 +14,7 @@ import { advanceWaves, enemyScale, runTuning, spawnEnemy } from '../assets/scrip
 function run(stage = 1, seed = 42): Run {
   const p = freshProfile(); p.clearedStage = 20;
   const r = createRun(p, stage, seed, `test-${seed}`);
+  delete r.tuning!.feel; // Historical rule fixtures; current onboarding is covered in r1-feel.test.ts.
   r.drawQueue = []; r.candidates = []; return r;
 }
 function combat(hero = 'RH02'): Run {
@@ -28,7 +29,7 @@ class MemoryStorage {
   setItem(k: string, v: string): void { if (this.fail) throw new Error('disk full'); this.map.set(k, v); }
 }
 test('R1 configuration references, caps, probabilities and identity mapping validate', () => {
-  validateR1Config(); assert.equal(HEROES.length, 6); assert.equal(SKILLS.length, 18);
+  validateR1Config(); assert.equal(HEROES.length, 10); assert.equal(SKILLS.length, 30);
   assert.equal(permanentStats('RH04', 2).attack, 30.25);
 });
 test('AC01 three choices contain exactly min(empty,3) distinct recruit cards; dead slots stay occupied', () => {
@@ -50,10 +51,9 @@ test('AC02/AC17 opening is frozen until three selections; two heroes can start',
 });
 test('AC03 early empty field never skips unreleased minions; clearing after all releases advances immediately', () => {
   const r = combat(); r.wave = 0; r.released = 0;
-  const releaseTicks = Math.round(runTuning(r).spawnIntervals[0] * 60) * 29;
-  for (let i = 0; i < releaseTicks; i++) { advanceWaves(r, 1 / 60); r.enemies = []; }
+  for (let i = 0; i < 3000 && r.spawnedMinions < 29; i++) { advanceWaves(r, 1 / 60); r.enemies = []; }
   assert.equal(r.wave, 1); assert.equal(r.spawnedMinions, 29);
-  advanceWaves(r, 1 / 60); assert.equal(r.spawnedMinions, 30); r.enemies = [];
+  while (r.spawnedMinions < 30) advanceWaves(r, 1 / 60); assert.equal(r.spawnedMinions, 30); r.enemies = [];
   advanceWaves(r, 1 / 60); assert.equal(r.wave, 2);
 });
 test('AC03/AC04 full 15-wave release retains old enemies and produces exactly 450 + 3/5 bosses', () => {
@@ -79,7 +79,7 @@ test('C029 second-stage opening is gentler and relaxes toward the full late-wave
   assert.deepEqual(stageTuning(11).spawnIntervals, stageTuning(1).spawnIntervals);
 });
 test('C029 release spacing changes by wave but the five-second maximum gap never waits for a clear', () => {
-  const r = run(2);
+  const r = run(2); delete r.tuning!.crowd; // An R1.0.4 saved battle retains its uniform release pacing.
   advanceWaves(r, 1 / 60); const first = r.enemies[0];
   for (let i = 0; i < 50; i++) advanceWaves(r, 1 / 60);
   assert.equal(r.released, 1); advanceWaves(r, 1 / 60); assert.equal(r.released, 2);
@@ -259,7 +259,8 @@ test('AC10 skills begin full cooldown; an unlocked skill waits for a legal targe
   r.drawQueue = ['energy']; r.candidates = [{ id: 's', kind: 'skill', heroId: h.id, quality: 'purple', skillSlot: 2, level: 1 }];
   chooseCard(r, 's'); assert.equal(h.skills[1], 1); assert.equal(h.cooldowns[1], 10);
   h.cooldowns[1] = 0; updateHeroes(r, 1); assert.equal(h.cooldowns[1], 0);
-  monster(r); updateHeroes(r, 1 / 60); assert.equal(h.cooldowns[1], 10);
+  monster(r); updateHeroes(r, 1 / 60); assert.equal(h.skillWindup?.slot, 2);
+  updateHeroes(r, .24); assert.equal(h.cooldowns[1], 10);
 });
 test('AC10 summon replacement, owner death, fixed extra shots, and fortress non-compounding', () => {
   const r = combat('RH06'), h = r.slots[0]!; h.skills = [1, 3, 5]; const e = monster(r, 'RL01'); e.hp = e.maxHp = 1e6;

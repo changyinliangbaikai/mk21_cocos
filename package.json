@@ -17,7 +17,11 @@
     "build:web-desktop": "node tools/cocos-build.mjs web-desktop",
     "build:wechat": "node tools/minigame-release.mjs wechatgame",
     "build:douyin": "node tools/minigame-release.mjs bytedance-mini-game",
-    "build:minigames": "node tools/minigame-release.mjs wechatgame"
+    "build:minigames": "node tools/minigame-release.mjs wechatgame",
+    "feel:r1": "tsx tools/feel-r1.ts",
+    "roster:r1": "tsx tools/roster-r1.ts",
+    "incentives:r1": "tsx tools/incentives-r1.ts",
+    "incentives:efficiency": "tsx tools/incentive-efficiency.ts"
   },
   "devDependencies": {
     "@types/node": "24.10.1",

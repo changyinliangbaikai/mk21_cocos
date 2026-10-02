@@ -19,15 +19,19 @@ export class R1Assets {
   private textures: Texture2D[] = [];
   private images: ImageAsset[] = [];
   private pending = new Map<string, Promise<void>>();
-  async init(): Promise<void> { this.manifest = (await loadR1('r1/manifest', JsonAsset)).json as unknown as R1Manifest; await this.loadGroup('ui'); }
-  async loadGroup(group: string): Promise<void> {
-    const rows = this.manifest.atlases.filter(a => (a.group === group || group === 'ui' && ['RS01', 'RM01'].includes(a.id)) && !this.frames.has(a.id));
+  async init(onProgress?: (loaded: number, total: number) => void): Promise<void> { this.manifest = (await loadR1('r1/manifest', JsonAsset)).json as unknown as R1Manifest; await this.loadGroup('ui', onProgress); }
+  async loadGroup(group: string, onProgress?: (loaded: number, total: number) => void): Promise<void> {
+    const all = this.manifest.atlases.filter(a => a.group === group || group === 'ui' && ['RS01', 'RM01'].includes(a.id));
+    const priority = ['LOGO', 'PORTRAIT-RH01', 'PORTRAIT-RH02', 'PORTRAIT-RH03'];
+    const rows = all.filter(a => !this.frames.has(a.id)).sort((a,b) => Number(priority.includes(b.id)) - Number(priority.includes(a.id)));
+    let loaded = all.length - rows.length; onProgress?.(loaded, all.length);
     let cursor = 0;
     await Promise.all(Array.from({ length: Math.min(4, rows.length) }, async () => {
       while (cursor < rows.length) {
         const a = rows[cursor++];
         if (!this.pending.has(a.id)) this.pending.set(a.id, this.loadAtlas(a).finally(() => this.pending.delete(a.id)));
         await this.pending.get(a.id);
+        onProgress?.(++loaded, all.length);
       }
     }));
   }

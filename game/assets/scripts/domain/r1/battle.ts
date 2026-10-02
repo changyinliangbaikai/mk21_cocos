@@ -3,18 +3,21 @@ import { Profile, Run, aliveHeroes, copy, deployed, event } from './model';
 import { streams } from './random';
 import { repairDraft, showDraft } from './cards';
 import { advanceWaves, enemyScale, wavePlans } from './waves';
-import { damageEnemy, updateEnemies, updateExplosions, updateHeroes, updateProjectiles, updateSummons } from './combat';
+import { damageEnemy, updateEnemies, updateExplosions, updateHeroes, updateProjectiles, updateSummons, updateSkillBursts } from './combat';
 import { inSkillArea, skillArea } from './geometry';
 import { unlockedHeroes } from './rewards';
+import { Expedition, createIncentiveRun } from './incentives';
 
-export function createRun(profile: Profile, stage: number, seed: number, id: string): Run {
+export function createRun(profile: Profile, stage: number, seed: number, id: string, expedition?: Expedition): Run {
   if (!id || !Number.isSafeInteger(seed) || stage > profile.clearedStage + 1) throw new Error('Run is not available');
   stageDef(stage);
   const run: Run = { version: 1, id, seed: seed >>> 0, rng: streams(seed), stage, tuning: stageTuning(stage), tick: 0, nextUid: 0,
     status: 'active', rate: 1, paused: false, aiming: false, slots: [null, null, null, null], levels: copy(profile.levels), unlocked: unlockedHeroes(profile),
-    enemies: [], summons: [], projectiles: [], explosions: [], wave: 0, plans: [], released: 0, spawnTimer: 0, nextWaveTimer: 0,
+    enemies: [], summons: [], projectiles: [], explosions: [], skillBursts: [], wave: 0, plans: [], released: 0, spawnTimer: 0, nextWaveTimer: 0,
     spawnedMinions: 0, spawnedBosses: 0, kills: 0, energy: 0, drawQueue: ['opening', 'opening', 'opening'], candidates: [], cardSequence: 0,
     globalSkill: null, grandpaUsed: false, freeReviveUsed: false, drawDebt: 0, rescue: null, events: [], eventSequence: 0 };
+  if(expedition&&stage!==20)throw new Error('远征使用第20关基础');
+  run.incentive=createIncentiveRun(profile,stage,expedition);
   run.plans = wavePlans(run); showDraft(run); return run;
 }
 export function reconcileBattle(r: Run): void {
@@ -24,7 +27,7 @@ export function reconcileBattle(r: Run): void {
   if (deployed(r).length && !aliveHeroes(r).length) { r.rescue = 'wipe'; r.aiming = false; return; }
   if (r.wave === 15 && r.released === 30 && !r.enemies.some(e => e.hp > 0) && !r.explosions.length && aliveHeroes(r).length) {
     r.status = 'victory'; r.rescue = null; r.candidates = []; r.drawQueue = []; r.aiming = false;
-    r.summons = []; r.projectiles = []; event(r, 'victory', String(r.stage), { x: .5, y: .5 }); return;
+    r.summons = []; r.projectiles = []; r.skillBursts = []; event(r, 'victory', String(r.stage), { x: .5, y: .5 }); return;
   }
   repairDraft(r); showDraft(r);
 }
@@ -38,7 +41,7 @@ export function stepBattle(r: Run): void {
   r.tick++;
   const dt = 1 / 60;
   advanceWaves(r, dt);
-  updateHeroes(r, dt); updateSummons(r, dt); updateEnemies(r, dt);
+  updateHeroes(r, dt); updateSkillBursts(r); updateSummons(r, dt); updateEnemies(r, dt);
   updateProjectiles(r, dt); updateExplosions(r);
   r.enemies = r.enemies.filter(e => e.hp > 0);
   reconcileBattle(r);
