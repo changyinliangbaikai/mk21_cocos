@@ -8,11 +8,11 @@ runtime_art_revision: "C-042"
 runtime_flight_revision: "C-043"
 runtime_melee_revision: "C-044"
 runtime_verified_at: "2026-10-06"
-wechat_uploaded_at: "2026-10-01"
-wechat_uploaded_version: "1.2.3"
+wechat_uploaded_at: "2026-10-06"
+wechat_uploaded_version: "1.3.0"
 wechat_experience_backend_verification: pending
-verified_at: "2026-09-15"
-verified_source_commit: "2d1ba6a54a6d6d6296119e705e6e1e8eda9ea456"
+verified_at: "2026-10-06"
+verified_source_commit: "247f24c75c1005866c8bd55a7c31a890a275882a"
 repository: "https://github.com/changyinliangbaikai/mk21_cocos"
 working_directory: repository_root
 supported_execution_baseline: macOS_arm64
@@ -23,7 +23,7 @@ creator_version: "3.8.8"
 
 本文面向接手本仓库的 AI 编程助手。当前唯一发布渠道为微信小游戏，Web 用于本地调试和截图；按用户指定范围推进预览、上传体验版、备案、提审或正式发布。所有相对路径和命令均以仓库根目录为起点；代码与脚本若发生变化，先核对实现，再更新本文件中的命令和判断条件。
 
-当前代码入口为 R1.3.0（8通道全宽出怪、十英雄普攻群攻与半径升级；120只/波、3批×40只、批次起点相隔3战斗秒、每只1能量保持），本地Web已构建；微信最近上传版本仍为1.2.3。新群攻规则仅在新开对局生效。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。最新验证见 [当前实现记录](docs/development/R1.2激励机制.md)。2026-10-01 微信1.2.3已实际上传成功并确认覆盖原体验版，详见 [发布进度](docs/release/小游戏发布推进.md)；后台最终体验版标记与手机验收仍待核对。
+当前代码入口为 R1.3.0，包含8通道全宽出怪、十英雄普攻群攻与半径升级、120只/波及3批×40只投放；资源修订为C-042命中、C-043飞行和C-044近战传递。2026-10-06微信1.3.0已实际上传成功，并按工具提示确认覆盖原体验版，见 [发布进度](docs/release/小游戏发布推进.md)。新规则仅在新开对局生效。`verified_source_commit`为本次构建对应源码提交，`runtime_verified_at`对应本地测试、Cocos声明和Web验证；微信模拟器已检查加载、营地及开局抽卡，完整手机战斗/性能仍待用户验证。公众平台页面被浏览器安全策略拦截，后台最终体验版标记未独立读取。
 
 ## 1. 执行约定与输入
 
@@ -255,7 +255,7 @@ NODE
 5. 到账号后台核对新版本是否已被选为体验版；尚未选中时，在已授权范围内设置该版本。需要本人扫码或后台无法访问时，告诉用户具体版本、AppID 和剩余动作，并将体验版状态记为 `pending`。
 6. 核对后台账号名称。修改代码和 Cocos 工程名不会自动修改账号基本资料；如名称仍旧，按改名任务范围同步处理。审核和公开发布只在用户要求的阶段推进，并分别保存平台结果。
 
-当前记录的微信 `1.2.3` 已于2026-10-01上传成功，上传前确认覆盖现有体验版。新版替换Cocos默认启动图，加入超力英雄品牌加载页、三英雄轻量动画和真实图集进度。392项测试、36文件Cocos声明检查通过；Web及微信模拟器均通过加载后进入营地/开局抽卡。有效包为 `artifacts/minigames/2026-10-01T11-32-46-908Z/`，验收及上传截图见该目录 `acceptance.json` 和 `artifacts/r1/c037/`。本次使用Creator GUI构建，报告标记method与真实GUI成功证据；没有CLI退出码。后台体验版最终标记未独立读取，手机验收待复验。旧上传与失败候选记录见发布进度。
+当前记录的微信 `1.3.0` 已于2026-10-06上传成功，上传前确认覆盖现有体验版；有效包为 `artifacts/minigames/2026-10-06T08-29-44-564Z/`，验收及上传截图见该目录 `acceptance.json` 和 `artifacts/r1/release-1.3.0/`。源码提交 `247f24c75c1005866c8bd55a7c31a890a275882a` 已推送开发分支。本次Creator CLI退出36、主包2.34 MiB/总包15.86 MiB、品牌和资源导入检查通过。微信模拟器检查营地、加载、开局抽卡及拳师部署；手机完整战斗与性能待复验。公众平台后台访问被站点安全策略拦截，不通过其他方式绕过；若手机仍为旧体验版，由账号本人核对版本管理中的1.3.0标记。
 
 抖音历史材料见 [归档草稿](docs/release/抖音提审材料草稿.md)，不作为当前部署步骤。微信备案与提审资料以微信账号实际表单为准，不把抖音历史待办沿用为微信要求。
 
