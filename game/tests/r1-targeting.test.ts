@@ -10,7 +10,7 @@ import { R1Session, R1_SAVE_KEY } from '../assets/scripts/domain/r1/session';
 import { attackFamily, friendlyImpactVisual, friendlyProjectileVisual } from '../assets/scripts/presentation/R1CombatVisuals';
 
 function field(...heroes: string[]): Run {
-  const r = createRun(freshProfile(), 1, 301, 'targeting'); r.candidates = []; r.drawQueue = []; r.wave = 1; r.released = 30;
+  const r = createRun(freshProfile(), 1, 301, 'targeting'); r.candidates = []; r.drawQueue = []; r.wave = 1; r.released = r.plans[Math.max(0, r.wave - 1)].length;
   heroes.forEach((id, i) => deployHero(r, id, i === 1 ? 3 : i)); return r;
 }
 function enemy(r: Run, x: number, y: number, hp = 1000, id = 'RM01') {
@@ -95,7 +95,7 @@ test('C030 shoe cabinet survives a small hit, fires shoes, and emits death only 
   const r = field('RH04'), h = r.slots[0]!; h.skills[2] = 1; enemy(r, .5, .6, 1000);
   castHeroSkill(r, h, 3); const s = r.summons[0], hp = s.hp;
   damageAlly(r, s, 12, 'RM01'); updateSummons(r, .9); assert.ok(s.hp > 0 && s.hp < hp); assert.equal(r.summons.length, 1);
-  assert.equal(r.projectiles[0].effect, 'SUM-DURABLE'); assert.equal(friendlyProjectileVisual(r.projectiles[0].effect)!.pack, 'FX-RH04');
+  assert.equal(r.projectiles[0].effect, 'SUM-DURABLE'); assert.equal(friendlyProjectileVisual(r.projectiles[0].effect)!.pack, 'FX-FLIGHT-RH04');
   damageAlly(r, s, 99999, 'RM01'); updateSummons(r, .1); assert.equal(r.summons.length, 0);
   assert.equal(r.events.filter(e => e.type === 'ally-death' && e.source === 'SUM-DURABLE').length, 1);
 });
@@ -103,8 +103,8 @@ test('C030 summon projectile and impact families never fall back to the chef by 
   for (const [source, owner] of [['SUM-BURST', 'RH02'], ['SUM-DURABLE', 'RH04'], ['SUM-BAG', 'RH06'], ['corn-mark', 'RH02']]) {
     assert.equal(attackFamily(source), owner); assert.equal(friendlyImpactVisual(source)!.pack, 'FX-' + owner);
   }
-  assert.equal(friendlyProjectileVisual('SUM-BURST')!.frame, 6);
-  assert.equal(friendlyProjectileVisual('SUM-DURABLE')!.size, 54);
+  assert.equal(friendlyProjectileVisual('SUM-BURST')!.pack, 'FX-FLIGHT-RH02');
+  assert.equal(friendlyProjectileVisual('SUM-DURABLE')!.pack, 'FX-FLIGHT-RH04');
   assert.equal(friendlyImpactVisual('SUM-DURABLE')!.frame, 2);
   assert.equal(friendlyProjectileVisual('unknown'), null); assert.equal(friendlyImpactVisual('GLOBAL-gold'), null);
 });

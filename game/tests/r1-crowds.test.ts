@@ -10,7 +10,9 @@ import { advanceWaves, spawnEnemy } from '../assets/scripts/domain/r1/waves';
 
 function field(hero = 'RH02') {
   const r = createRun(freshProfile(), 1, 1031, 'crowd'); r.drawQueue = []; r.candidates = [];
-  delete r.tuning!.feel; r.tuning!.crowd!.throughWave = 5; // C-031 saved-run compatibility fixtures.
+  delete r.tuning!.feel; delete r.tuning!.minionEnergy; delete r.tuning!.minionsPerWave;
+  r.tuning!.crowd = { throughWave: 5, batchSize: 10, interval: 1 / 6, period: 9, clearDelay: 1 };
+  r.plans = r.plans.map(w => w.slice(0, 30)); // C-031 saved-run compatibility fixtures.
   const h = deployHero(r, hero, 0); h.basicCooldown = 3600; return { r, h };
 }
 function enemy(r: Run, x: number, y: number, id = 'RM01', hp = 1000) {

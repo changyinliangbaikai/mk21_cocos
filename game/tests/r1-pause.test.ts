@@ -37,7 +37,7 @@ test('C035 end-run removes the active save without defeat reward, advancement or
   session.data.profile.fragments.RH02 = 8;
   session.start(1, 3502);
   const run = session.data.run!;
-  run.incentive!.minionDeaths.fill(30, 0, 10);
+  run.incentive!.minionDeaths.fill(run.plans[0].length, 0, 10);
   run.incentive!.bossDeaths = [...run.incentive!.bossQuota];
   run.incentive!.checkpoint = 10;
   const profile = copy(session.data.profile);

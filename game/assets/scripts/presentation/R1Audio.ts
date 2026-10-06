@@ -64,7 +64,8 @@ export class R1Audio {
   battleEvent(e: BattleEvent): void {
     const mapped: Record<string, string> = { deploy: 'hero_deploy', draft: 'card_reveal', 'card-picked': 'card_selected', wave: 'wave_first_spawn', 'enemy-death': 'enemy_final_death', 'ally-hit': 'hero_hit', revive: 'revive', summon: 'summon_spawn', 'boss-command': 'boss_command' };
     const expansion:Record<string,string[]>={RH07:['AUD_SFX_024'],RH08:['AUD_SFX_019'],RH09:['AUD_SFX_013'],RH10:['AUD_SFX_020']};
-    if(['beam-hit','frost-cone','skill-pulse'].includes(e.type)||e.type==='area-impact'&&e.source==='RH09-S2')this.emit(e.source,expansion[e.source.slice(0,4)],true);
+    if(e.type==='group-impact'){const sounds:Record<string,string>={RH01:'AUD_SFX_016',RH02:'AUD_SFX_013',RH03:'AUD_SFX_020',RH04:'AUD_SFX_022',RH05:'AUD_SFX_019',RH06:'AUD_SFX_017',RH07:'AUD_SFX_024',RH08:'AUD_SFX_019',RH09:'AUD_SFX_013',RH10:'AUD_SFX_020'};this.emit('group-'+e.source,[sounds[e.source.slice(0,4)]||'AUD_SFX_027']);}
+    else if(['beam-hit','frost-cone','skill-pulse'].includes(e.type)||e.type==='area-impact'&&e.source==='RH09-S2')this.emit(e.source,expansion[e.source.slice(0,4)],true);
     else if(e.type==='hero-attack'&&expansion[e.source.slice(0,4)])this.emit(e.source,[e.source.startsWith('RH09')?'AUD_SFX_012':'AUD_SFX_018']);
     else if (e.type === 'hero-skill-windup') this.emit('cast-whoosh', [e.source.startsWith('RH01') ? 'AUD_SFX_015' : 'AUD_SFX_012']);
     else if (e.type === 'area-impact') this.emit('corn-impact', ['AUD_SFX_013'], true);

@@ -12,7 +12,7 @@ import { feedbackRate } from '../assets/scripts/presentation/R1CombatVisuals';
 
 function field(id='RH02') {
   const p=freshProfile(); p.clearedStage=20;
-  const r=createRun(p,1,3200,'feel-test');r.drawQueue=[];r.candidates=[];r.wave=15;r.released=30;
+  const r=createRun(p,1,3200,'feel-test');r.drawQueue=[];r.candidates=[];r.wave=15;r.released=r.plans[Math.max(0,r.wave-1)].length;
   const h=deployHero(r,id,0);h.basicCooldown=999;return {r,h};
 }
 function target(r:ReturnType<typeof field>['r'],x=.5,y=.6,hp=1000){const e=spawnEnemy(r,{id:'RM01',trait:null,x},1);e.y=y;e.hp=e.maxHp=hp;e.rootUntil=999;return e;}

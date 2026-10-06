@@ -33,10 +33,11 @@ for (const stage of stages) for (const policy of policies) {
     const seed = (42 + Math.imul(i, 2654435761)) >>> 0, p = freshProfile(); p.clearedStage = stage - 1;
     HEROES.forEach(h => { p.levels[h.id] = heroLevel; });
     const r = createRun(p, stage, seed, `balance-${stage}-${policy}-${seed}`);
-    if (curve === 'legacy') r.tuning = legacyStageTuning(stage);
+    if (curve === 'legacy') r.tuning = { ...legacyStageTuning(stage), minionEnergy: r.tuning!.minionEnergy, minionsPerWave: r.tuning!.minionsPerWave };
     if (spawnBase) r.tuning!.spawnIntervals = Array.from({ length: 15 }, (_, wave) => Number((spawnBase + Math.max(0, 3 - wave) * .05).toFixed(2)));
     const wanted = formation(policy); let opening = 0, draws = 0, peak = 0, firstEnergy: number | null = null;
     let openingHeroes: (string | null)[] = [];
+    const drawTimeline: { source: string; wave: number; seconds: number; kills: number }[] = [];
     let eventCursor = 0, firstSkill: number | null = null, earlySkillCasts = 0, earlySkillTargets = 0, largestEarlySkill = 0;
     let firstDeath: EncounterMarker | null = null;
     let firstWipe: EncounterMarker | null = null, earlyCards: Card[] = [];
@@ -52,7 +53,9 @@ for (const stage of stages) for (const policy of policies) {
         } else card = [...r.candidates].sort((a,b) => rank(b,policy)-rank(a,policy))[0];
         if (r.drawQueue[0] === 'energy' && firstEnergy === null) firstEnergy = r.tick / 60;
         const slot = policy === 'ranged-three' ? opening : undefined;
-        if (chooseCard(r, card.id, card.kind === 'hero' && r.drawQueue[0] === 'opening' ? slot : undefined)) {
+        const source = r.drawQueue[0];
+        if (chooseCard(r, card.id, card.kind === 'hero' && source === 'opening' ? slot : undefined)) {
+          drawTimeline.push({ source, wave: r.wave, seconds: r.tick / 60, kills: r.kills });
           draws++; if (r.wave < 5) earlyCards.push(copy(card));
           if (opening === 3 && !openingHeroes.length) openingHeroes = r.slots.map(h => h?.id || null);
         }
@@ -70,7 +73,7 @@ for (const stage of stages) for (const policy of policies) {
       if (!firstDeath && r.slots.some(h => h && h.hp <= 0)) firstDeath = {wave:r.wave,seconds:r.tick/60,kills:r.kills,backlog:r.enemies.length};
     }
     if (r.status === 'active') throw new Error('Unsettled simulation ' + r.id);
-    const row = {stage,policy,seed,status:r.status,wave:r.wave,kills:r.kills,seconds:r.tick/60,draws,peak,firstEnergy,firstSkill,earlySkillCasts,earlySkillTargets,largestEarlySkill,firstDeath,firstWipe,openingHeroes,earlyCards,grandpa:r.grandpaUsed,freeRevive:r.freeReviveUsed,tuning:r.tuning};
+    const row = {stage,policy,seed,status:r.status,wave:r.wave,kills:r.kills,seconds:r.tick/60,draws,drawTimeline,peak,firstEnergy,firstSkill,earlySkillCasts,earlySkillTargets,largestEarlySkill,firstDeath,firstWipe,openingHeroes,earlyCards,grandpa:r.grandpaUsed,freeRevive:r.freeReviveUsed,tuning:r.tuning};
     rows.push(row); results.push(row);
   }
   const n = rows.length, avg=(f:(r:any)=>number)=>Number((rows.reduce((v,r)=>v+f(r),0)/n).toFixed(2));

@@ -1,6 +1,6 @@
-import { Role, RULES, SkillDefinition, autoSkillCooldown, autoSkillRadius, enemyDef, heroDef, skillDef } from './config';
-import { Enemy, Hero, Point, Projectile, Run, Summon, aliveHeroes, deployed, distance, event, now } from './model';
-import { gainEnergy } from './cards';
+import { Role, RULES, SkillDefinition, autoSkillCooldown, autoSkillRadius, basicAreaRadius, enemyDef, heroDef, skillDef } from './config';
+import { Enemy, Hero, Point, Projectile, Run, Summon, aliveHeroes, deployed, distance, event, now, waveMinionQuota } from './model';
+import { gainMinionEnergy } from './cards';
 import { beamEnd, inBeam, inCone } from './hero-shapes';
 import { CastRef, goalProgress, recordFinalKill, recordUsefulCast, specialization, startCast } from './incentives';
 
@@ -72,12 +72,13 @@ export function damageEnemy(r: Run, e: Enemy, raw: number, role: Role | 'global'
       event(r, 'trait-residual', 'T06', e, e.uid); return loss;
     }
     r.kills++; recordFinalKill(r,e,cast);
-    if (enemyDef(e.id).tier === 'minion') gainEnergy(r, enemyDef(e.id).energyOnFinalDeath); else r.drawQueue.push('boss');
+    const energy = enemyDef(e.id).tier === 'minion' ? gainMinionEnergy(r) : 0;
+    if (enemyDef(e.id).tier !== 'minion') r.drawQueue.push('boss');
     if (e.trait === 'T08') {
       r.explosions.push({ uid: ++r.nextUid, x: e.x, y: e.y, at: now(r) + .6, damage: e.attack * (buffed ? 1.8 : 1.5), radius: buffed ? .17 : .13 });
       event(r, 'explosion-warning', 'T08', e, e.uid, undefined, buffed ? .17 : .13);
     }
-    event(r, 'enemy-death', e.id, e, e.uid, enemyDef(e.id).tier === 'minion' ? enemyDef(e.id).energyOnFinalDeath : 0);
+    event(r, 'enemy-death', e.id, e, e.uid, energy);
   } else if (mark) damageEnemy(r, e, mark, e.markRole, 'corn-mark', false);
   return loss;
 }
@@ -95,7 +96,7 @@ function heroRange(r: Run, h: Hero, skill = false): number {
   return skill && r.tuning?.feel && heroDef(h.id).role === 'melee' ? r.tuning.feel.meleeSkillRange : heroDef(h.id).verticalRangeFraction;
 }
 function legalHeroTargets(r: Run, h: Hero, ignoreRange = false, skill = false): Enemy[] {
-  const residualCleanup = r.wave === 15 && r.released === 30 && !r.enemies.some(e => e.hp > 0 && !e.residual);
+  const residualCleanup = r.wave === 15 && r.released === waveMinionQuota(r) && !r.enemies.some(e => e.hp > 0 && !e.residual);
   return r.enemies.filter(e => e.hp > 0 && (ignoreRange || 1 - e.y <= heroRange(r,h,skill) + 1e-8 || residualCleanup && e.residual));
 }
 export function heroTargets(r: Run, h: Hero, ignoreRange = false, skill = false): Enemy[] { return legalHeroTargets(r, h, ignoreRange, skill).sort(targetOrder(r, h)); }
@@ -154,10 +155,16 @@ function basicDamage(r: Run, h: Hero): number { return heroAttack(r, h) * (1+buf
 function reservedDamage(r: Run, exceptHero?: number, projectiles: Projectile[] = r.projectiles): Map<number, number> {
   const damage = new Map<number, number>(), enemies = new Map(r.enemies.filter(e => e.hp > 0).map(e => [e.uid, e]));
   const add = (uid: number, raw: number, role: Role) => { const e = enemies.get(uid); if (e) damage.set(uid, (damage.get(uid) || 0) + hitDamage(r, e, raw, role)); };
-  for (const p of projectiles) if (p.side === 'hero') add(p.target, p.damage * (p.chain && enemies.get(p.target) && boss(enemies.get(p.target)!) ? 1 + p.chain.bossBonus : 1), p.role);
+  for (const p of projectiles) if (p.side === 'hero') {
+    const target = enemies.get(p.target);
+    if (p.group && target) for (const e of enemies.values()) { if (e.y >= p.group.minY && distance(e, target) <= p.radius) add(e.uid, p.damage, p.role); }
+    else add(p.target, p.damage * (p.chain && target && boss(target) ? 1 + p.chain.bossBonus : 1), p.role);
+  }
   for (const h of aliveHeroes(r)) if (h.uid !== exceptHero && h.windup) {
     const legal = new Set(legalHeroTargets(r, h).map(e => e.uid));
-    for (const uid of h.windup.targets) if (legal.has(uid)) add(uid, basicDamage(r, h), heroDef(h.id).role);
+    const radius = basicAreaRadius(r.tuning, h.id, h.skills[0]), target = enemies.get(h.windup.targets[0]);
+    if (radius && target && legal.has(target.uid)) for (const e of enemies.values()) { if (legal.has(e.uid) && distance(e, target) <= radius) add(e.uid, basicDamage(r,h), heroDef(h.id).role); }
+    else for (const uid of h.windup.targets) if (legal.has(uid)) add(uid, basicDamage(r, h), heroDef(h.id).role);
   }
   return damage;
 }
@@ -167,7 +174,7 @@ function needsAttack(r: Run, e: Enemy, incoming: Map<number, number>): boolean {
 }
 function basicTargets(r: Run, h: Hero): Enemy[] {
   const incoming = reservedDamage(r, h.uid);
-  return heroTargets(r, h).filter(e => needsAttack(r, e, incoming)).slice(0, h.skills[0]);
+  return heroTargets(r, h).filter(e => needsAttack(r, e, incoming)).slice(0, r.tuning?.areaAttacks ? 1 : h.skills[0]);
 }
 export function enemyTarget(r: Run, e: Enemy): Ally | undefined {
   const legal = activeSummons(r), taunts = legal.filter(s => s.taunt && distance(s, e) <= s.radius)
@@ -221,9 +228,9 @@ export function updateProjectiles(r: Run, dt: number): void {
           continue;
         }
         const before = r.kills;
-        if (p.radius > 0) nearby(r, target, p.radius).forEach(e => damageEnemy(r, e, p.damage, p.role, p.effect,true,p.cast));
+        if (p.radius > 0) nearby(r, target, p.radius).filter(e => !p.group || e.y >= p.group.minY).forEach(e => damageEnemy(r, e, p.damage, p.role, p.effect,true,p.cast));
         else damageEnemy(r, target as Enemy, p.damage, p.role, p.effect,true,p.cast);
-        if (p.radius > 0) { event(r, 'area-impact', p.effect, target, undefined, undefined, p.radius); event(r, 'skill-result', p.effect.startsWith('RH') ? p.effect : 'RH02-S3', target, undefined, r.kills - before); }
+        if (p.radius > 0) { event(r, p.group ? 'group-impact' : 'area-impact', p.effect, target, undefined, undefined, p.radius, p.launch); event(r, 'skill-result', p.effect.startsWith('RH') ? p.effect : 'RH02-S3', target, undefined, r.kills - before); }
       }
       else damageAlly(r, target as Ally, p.damage, p.effect, p.weakSeconds);
     } else { moveToward(p, target, p.speed * dt); kept.push(p); }
@@ -248,6 +255,7 @@ function makeSummon(r: Run, h: Hero, target: Point, s: SkillDefinition, index: n
     weakUntil: h.weakUntil, idleTime: 0, fortressUntil: 0,
     attackFactor: num(fx, 'shotMultiplier', num(fx, 'extraShotMultiplier', num(fx, 'attackOwnerMultiplier', 0))) };
   summon.cast=cast;
+  if (r.tuning?.areaAttacks && summon.attackFactor && summon.id !== 'SUM-BURST') summon.splashRadius = Math.max(.09, summon.radius * .65);
   const perk=specialization(r,h);
   if(h.id==='RH05'&&perk){const factor=perk==='A'?.85:.8;summon.hp*=factor;summon.maxHp*=factor;summon.baseHp*=factor;}
   if(h.id==='RH06'&&perk==='B'){summon.hp*=.85;summon.maxHp*=.85;summon.baseHp*=.85;}
@@ -329,9 +337,18 @@ export function updateHeroes(r: Run, dt: number): void {
       if (h.windup.remaining <= 1e-8) {
         const role = heroDef(h.id).role, targets = basicTargets(r, h);
         for (const target of targets) {
-          const damage = basicDamage(r, h);
-          if (role === 'melee') damageEnemy(r, target, damage, role, `${h.id}-S1`);
-          else projectile(r, h, target.uid, 'hero', damage, role, `${h.id}-S1`);
+          const damage = basicDamage(r, h), radius = basicAreaRadius(r.tuning,h.id,h.skills[0]), source = `${h.id}-S1`;
+          if (role === 'melee') {
+            if (radius) {
+              const center = { x: target.x, y: target.y }, victims = legalHeroTargets(r,h).filter(e => distance(e,center) <= radius), before = r.kills;
+              victims.forEach(e => damageEnemy(r,e,damage,role,source));
+              event(r,'group-impact',source,center,h.uid,victims.length,radius,h);
+              event(r,'skill-result',source,center,h.uid,r.kills-before,radius);
+            } else damageEnemy(r, target, damage, role, source);
+          } else {
+            projectile(r, h, target.uid, 'hero', damage, role, source,0,radius);
+            if(radius)r.projectiles[r.projectiles.length-1].group={minY:Math.max(0,1-heroRange(r,h))};
+          }
         }
         if (targets.length) event(r, 'hero-attack', `${h.id}-S1`, h);
         else h.basicCooldown = 0;
@@ -382,8 +399,12 @@ export function updateSummons(r: Run, dt: number): void {
     }
     const owner=r.slots.find(h=>h?.uid===s.owner),perk=owner?specialization(r,owner):undefined;
     s.idleTime = 0; const target = targets[0], damage = s.attack * s.attackFactor * (s.weakUntil > now(r) ? .8 : 1)*(s.id==='SUM-BAG'&&perk==='A'?.8:1);
-    if (s.id === 'SUM-BAG') {damageEnemy(r,target,damage,s.role,s.id,true,s.cast?{...s.cast,aoe:false}:undefined);if(target.hp>0&&perk==='B'&&!boss(target)&&enemyDef(target.id).attackType==='melee'&&(target.pushUntil||0)<=now(r)){displace(r,target,s,.02,true);target.pushUntil=now(r)+1.2;event(r,'perk-push','RH06-S2',target,target.uid);}}
-    else {projectile(r,s,target.uid,'hero',damage,s.role,s.id,0,s.id==='SUM-BURST'?s.radius:0);r.projectiles[r.projectiles.length-1].cast=s.cast?{...s.cast,aoe:s.id==='SUM-BURST'}:undefined;}
+    if (s.id === 'SUM-BAG') {
+      const victims=s.splashRadius?nearby(r,target,s.splashRadius):[target];
+      for(const victim of victims){damageEnemy(r,victim,damage,s.role,s.id,true,s.cast?{...s.cast,aoe:!!s.splashRadius}:undefined);if(victim.hp>0&&perk==='B'&&!boss(victim)&&enemyDef(victim.id).attackType==='melee'&&(victim.pushUntil||0)<=now(r)){displace(r,victim,s,.02,true);victim.pushUntil=now(r)+1.2;event(r,'perk-push','RH06-S2',victim,victim.uid);}}
+      if(s.splashRadius)event(r,'group-impact',s.id,target,s.uid,victims.length,s.splashRadius);
+    }
+    else {projectile(r,s,target.uid,'hero',damage,s.role,s.id,0,s.id==='SUM-BURST'?s.radius:s.splashRadius||0);const p=r.projectiles[r.projectiles.length-1];p.cast=s.cast?{...s.cast,aoe:!!p.radius}:undefined;if(s.splashRadius)p.group={minY:0};}
     event(r, 'summon-attack', s.id, s, s.uid); s.cooldown = s.interval;
     if (s.shots > 0 && --s.shots === 0) { s.hp = 0; event(r, 'summon-spent', s.id, s, s.uid); }
   }

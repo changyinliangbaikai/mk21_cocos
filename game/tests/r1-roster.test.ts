@@ -13,7 +13,7 @@ import {beamEnd,inBeam,inCone} from '../assets/scripts/domain/r1/hero-shapes';
 import {streams} from '../assets/scripts/domain/r1/random';
 import {attackFamily,friendlyProjectileVisual} from '../assets/scripts/presentation/R1CombatVisuals';
 const ids=['RH07','RH08','RH09','RH10'];
-function field(id='RH07',level=1){const p=freshProfile();p.clearedStage=20;const r=createRun(p,1,330,'roster-test');r.drawQueue=[];r.candidates=[];r.wave=15;r.released=30;const h=deployHero(r,id,0);h.skills=[level,level,level];h.basicCooldown=99;return{r,h,p};}
+function field(id='RH07',level=1){const p=freshProfile();p.clearedStage=20;const r=createRun(p,1,330,'roster-test');r.drawQueue=[];r.candidates=[];r.wave=15;r.released=r.plans[Math.max(0,r.wave-1)].length;const h=deployHero(r,id,0);h.skills=[level,level,level];h.basicCooldown=99;return{r,h,p};}
 function enemy(r:Run,x=.3,y=.6,hp=1000,id='RM01'){const e=spawnEnemy(r,{id,trait:null,x},1);e.y=y;e.hp=e.maxHp=hp;return e;}
 function finish(r:Run,n=180){for(let i=0;i<n;i++){r.tick++;updateSkillBursts(r);updateProjectiles(r,1/60);}}
 class Memory{map=new Map<string,string>();getItem(k:string){return this.map.get(k)??null;}setItem(k:string,v:string){this.map.set(k,v);}}
@@ -23,7 +23,7 @@ test('C033 exact roster, power budgets, unlock milestones and complete 30 skill 
  for(const[id,gate]of[['RH07',3],['RH08',5],['RH09',8],['RH10',10]] as const){const p=freshProfile();p.clearedStage=gate-1;assert.ok(!unlockedHeroes(p).includes(id));p.clearedStage=gate;assert.ok(unlockedHeroes(p).includes(id));assert.equal(heroDef(id).fragmentsPerLevel,10);}
 });
 for(const id of ids)for(const level of [1,3,5]){
- test(`C033 ${id} S1 Lv${level} has ${level} distinct basic targets`,()=>{const {r,h}=field(id,level);h.skills=[level,0,0];h.basicCooldown=0;for(let i=0;i<7;i++)enemy(r,.2+i*.08);updateHeroes(r,.01);updateHeroes(r,1);assert.equal(r.projectiles.length,level);assert.equal(new Set(r.projectiles.map(p=>p.target)).size,level);});
+ test(`C033 ${id} legacy S1 Lv${level} keeps ${level} distinct basic targets`,()=>{const {r,h}=field(id,level);delete r.tuning!.areaAttacks;h.skills=[level,0,0];h.basicCooldown=0;for(let i=0;i<7;i++)enemy(r,.2+i*.08);updateHeroes(r,.01);updateHeroes(r,1);assert.equal(r.projectiles.length,level);assert.equal(new Set(r.projectiles.map(p=>p.target)).size,level);});
  for(const slot of [2,3])test(`C033 ${id} S${slot} Lv${level} damages real targets with its own source`,()=>{
   const {r,h}=field(id,level);for(let i=0;i<8;i++)enemy(r,.19+i%4*.03,.55+Math.floor(i/4)*.05);assert.equal(castHeroSkill(r,h,slot),true);finish(r);assert.ok(r.enemies.some(e=>e.hp<e.maxHp));assert.ok(r.events.some(e=>e.type==='enemy-hit'&&e.source===`${id}-S${slot}`));assert.equal(r.skillBursts?.length,0);assert.ok(h.cooldowns[slot-1]>0);
  });
@@ -65,7 +65,7 @@ test('C033 production assets and card metadata cover ten heroes and every skill 
  const manifest=JSON.parse(readFileSync('game/assets/resources/r1/manifest.json','utf8')),cards=JSON.parse(readFileSync('game/assets/scripts/domain/r1/ui-cards.json','utf8'));
  assert.equal(new Set(manifest.atlases.map((a:any)=>a.id)).size,manifest.atlases.length);
  for(const h of HEROES){assert.ok(manifest.atlases.find((a:any)=>a.id===h.id));assert.ok(manifest.atlases.find((a:any)=>a.id==='PORTRAIT-'+h.id));assert.ok(cards.find((c:any)=>c.id==='HERO-'+h.id));for(const slot of[1,2,3])for(const level of slot===1?[2,3,5]:[1,3,5]){assert.equal(attackFamily(`${h.id}-S${slot}`),h.id);assert.ok(cards.find((c:any)=>c.id===`${h.id}-S${slot}-L${level}`));}}
- for(const id of ids){assert.equal(manifest.atlases.find((a:any)=>a.id===id).frames.length,12);assert.equal(manifest.atlases.find((a:any)=>a.id==='IC-'+id).frames.length,3);assert.equal(manifest.atlases.find((a:any)=>a.id==='FX-'+id).frames.length,9);assert.equal(friendlyProjectileVisual(id+'-S1')?.pack,'FX-'+id);}
+ for(const id of ids){assert.equal(manifest.atlases.find((a:any)=>a.id===id).frames.length,12);assert.equal(manifest.atlases.find((a:any)=>a.id==='IC-'+id).frames.length,3);assert.equal(manifest.atlases.find((a:any)=>a.id==='FX-'+id).frames.length,9);assert.equal(friendlyProjectileVisual(id+'-S1')?.pack,'FX-FLIGHT-'+id);}
 });
 test('C033 penguin never consumes a cast or plays a windup with no target inside its real fan reach',()=>{
  const{r,h}=field('RH08');enemy(r,1,0);h.cooldowns[1]=0;h.cooldowns[2]=999;

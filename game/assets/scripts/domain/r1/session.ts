@@ -1,4 +1,4 @@
-import { ENEMIES, HEROES, Quality, heroDef, stageDef } from './config';
+import { ENEMIES, HEROES, Quality, RULES, heroDef, stageDef } from './config';
 import { Run, Save, copy } from './model';
 import { BattleClock, aimGlobal, cancelGlobal, castGlobal, createRun } from './battle';
 import { chooseCard, resolveRescue } from './cards';
@@ -46,15 +46,30 @@ function validateRun(r: Run): void {
   check(['active', 'victory', 'defeat'].includes(r.status) && [1, 1.5, 2].includes(r.rate), '对局状态无效');
   if (r.tuning !== undefined) check(r.tuning && typeof r.tuning.version === 'string' && Number.isFinite(r.tuning.baseScale) && r.tuning.baseScale > 0 && r.tuning.nextWaveDelay === 5
     && [r.tuning.waveScales, r.tuning.spawnIntervals].every(a => Array.isArray(a) && a.length === 15 && a.every(n => Number.isFinite(n) && n > 0)), '难度快照无效');
+  const energy = r.tuning?.minionEnergy;
+  const explicitQuota = r.tuning?.minionsPerWave;
+  // C-038/C-039 inferred their quota from a 100-energy wave; current saves store it separately.
+  const quota = explicitQuota === undefined ? energy === undefined ? 30 : Math.round(RULES.cards.energyPerDraw / energy) : explicitQuota;
+  if (explicitQuota === undefined) check(energy === undefined || Number.isFinite(energy) && energy > 0 && integer(quota, 1, 100)
+    && Math.abs(energy * quota - RULES.cards.energyPerDraw) < 1e-8, '能量快照无效');
+  else check(integer(quota, 1, 1000) && energy !== undefined && Number.isFinite(energy) && energy > 0 && energy <= 100
+    && Math.abs(energy * quota - Math.round(energy * quota)) < 1e-8, '波次或能量快照无效');
+  check(r.energyRemainder === undefined || integer(r.energyRemainder, 0, quota - 1)
+    && (energy !== undefined && !Number.isInteger(energy) || r.energyRemainder === 0), '能量余量无效');
   if (r.tuning?.crowd !== undefined) {
     const c = r.tuning.crowd;
-    check(c && integer(c.throughWave, 1, 15) && integer(c.batchSize, 1, 30) && 30 % c.batchSize === 0
+    check(c && (c.formation === undefined || c.formation === 'wide-lanes-v1'), '出生阵型无效');
+    check(c && integer(c.throughWave, 1, 15) && integer(c.batchSize, 1, quota) && quota % c.batchSize === 0
       && numbers(c, ['interval', 'period', 'clearDelay']) && c.interval >= 1 / 60 && c.period > (c.batchSize - 1) * c.interval && c.clearDelay > 0, '怪群快照无效');
   }
   if (r.tuning?.feel !== undefined) {
     const f = r.tuning.feel;
     check(f && f.startingSkill2 === 1 && numbers(f, ['deployCastDelay', 'cardCastDelay', 'normalCooldownFactor', 'thirdCooldownFactor', 'radiusScale', 'meleeSkillRange'])
       && f.deployCastDelay > 0 && f.cardCastDelay > 0 && f.normalCooldownFactor > 0 && f.thirdCooldownFactor > 0 && f.radiusScale >= 1 && f.radiusScale <= 2 && f.meleeSkillRange >= .5 && f.meleeSkillRange <= 1, '英雄节奏快照无效');
+  }
+  if (r.tuning?.areaAttacks !== undefined) {
+    const a=r.tuning.areaAttacks;
+    check(a && a.version===1 && a.radii && HEROES.every(h=>Array.isArray(a.radii[h.id])&&a.radii[h.id].length===5&&a.radii[h.id].every((n,i,values)=>Number.isFinite(n)&&n>0&&n<=.5&&(!i||n>values[i-1]))),'群攻快照无效');
   }
   check(['spawn', 'card', 'reward', 'replacement'].every(k => integer(r.rng?.[k as keyof Run['rng']], 1, 0xffffffff)), '随机流无效');
   check(Array.isArray(r.slots) && r.slots.length === 4 && Array.isArray(r.unlocked) && r.unlocked.every(id => HEROES.some(h => h.id === id)), '英雄槽位无效');
@@ -70,8 +85,8 @@ function validateRun(r: Run): void {
       && h.skillWindup.center && numbers(h.skillWindup.center, ['x', 'y']) && h.skillWindup.center.x >= 0 && h.skillWindup.center.x <= 1 && h.skillWindup.center.y >= 0 && h.skillWindup.center.y <= 1, '技能前摇无效');
   }
   check(new Set(r.slots.filter(Boolean).map(h => h!.id)).size === r.slots.filter(Boolean).length, '同名英雄重复');
-  check(r.plans?.length === 15 && r.plans.every(w => w.length === 30 && w.every(e => ['RM01', 'RM02', 'RM04', 'RM05'].includes(e.id) && e.x >= 0 && e.x <= 1 && (e.trait === null || /^T0[1-9]$/.test(e.trait)))), '波次计划无效');
-  check(integer(r.wave, 0, 15) && integer(r.released, 0, 30) && integer(r.energy, 0, 99) && integer(r.drawDebt, 0, 3), '投放或能量数据无效');
+  check(r.plans?.length === 15 && r.plans.every(w => w.length === quota && w.every(e => ['RM01', 'RM02', 'RM04', 'RM05'].includes(e.id) && e.x >= 0 && e.x <= 1 && (e.trait === null || /^T0[1-9]$/.test(e.trait)))), '波次计划无效');
+  check(integer(r.wave, 0, 15) && integer(r.released, 0, quota) && integer(r.energy, 0, 99) && integer(r.drawDebt, 0, 3), '投放或能量数据无效');
   check(Array.isArray(r.drawQueue) && r.drawQueue.every(q => ['opening', 'energy', 'boss', 'grandpa'].includes(q)) && Array.isArray(r.candidates) && [0, 3].includes(r.candidates.length), '抽卡队列无效');
   check(r.candidates.every(c => typeof c.id === 'string' && ['hero', 'attribute', 'skill', 'global'].includes(c.kind) && ['blue', 'purple', 'gold'].includes(c.quality)), '卡牌数据无效');
   check([null, 'blue', 'purple', 'gold'].includes(r.globalSkill) && [null, 'grandpa', 'wipe'].includes(r.rescue), '技能或救场状态无效');
@@ -82,6 +97,8 @@ function validateRun(r: Run): void {
   for (const e of r.enemies) check(ENEMIES.some(a => a.id === e.id) && numbers(e, ['hp', 'maxHp', 'attack', 'defense', 'shield', 'commandUntil', 'slowUntil', 'slowFraction', 'rootUntil', 'stunUntil', 'markUntil', 'markDamage', 'cooldown', 'skillCooldown', 'commandCooldown', 'born']) && e.maxHp > 0 && e.hp >= 0 && e.hp <= e.maxHp && typeof e.residual === 'boolean' && typeof e.shieldTriggered === 'boolean' && (e.trait === null || ENEMIES.find(a => a.id === e.id)!.allowedBirthTraits.includes(e.trait)), '怪物快照无效');
   for (const sum of r.summons) check(['SUM-BAG', 'SUM-WOOD', 'SUM-BURST', 'SUM-DURABLE'].includes(sum.id) && r.slots.some(h => h?.uid === sum.owner) && numbers(sum, ['hp', 'maxHp', 'baseHp', 'attack', 'defense', 'radius', 'slow', 'ends', 'cooldown', 'interval', 'shots', 'weakUntil', 'idleTime', 'fortressUntil', 'attackFactor']) && sum.hp >= 0 && sum.maxHp > 0 && sum.hp <= sum.maxHp, '召唤物快照无效');
   for (const projectile of r.projectiles) check(numbers(projectile, ['target', 'damage', 'speed', 'weakSeconds', 'radius']) && ['hero', 'enemy'].includes(projectile.side) && projectile.damage >= 0 && projectile.speed > 0 && (projectile.retargeted === undefined || typeof projectile.retargeted === 'boolean'), '弹道快照无效');
+  for(const p of r.projectiles)if(p.group!==undefined)check(r.tuning?.areaAttacks&&p.group&&Number.isFinite(p.group.minY)&&p.group.minY>=0&&p.group.minY<=1&&p.side==='hero'&&p.radius>0&&p.radius<=.6&&!p.chain,'群攻弹道无效');
+  for(const s of r.summons)if(s.splashRadius!==undefined)check(r.tuning?.areaAttacks&&Number.isFinite(s.splashRadius)&&s.splashRadius>0&&s.splashRadius<=.6,'召唤群攻无效');
   for (const p of r.projectiles) if (p.chain !== undefined) check(p.chain && integer(p.chain.remaining, 1, 8) && integer(p.chain.kills, 0, 8)
     && Array.isArray(p.chain.visited) && p.chain.visited.length <= 8 && p.chain.visited.every(n => integer(n, 1, r.nextUid)) && new Set(p.chain.visited).size === p.chain.visited.length
     && Number.isFinite(p.chain.bossBonus) && p.chain.bossBonus >= 0 && p.side === 'hero' && p.effect === 'RH04-S2', '弹射快照无效');

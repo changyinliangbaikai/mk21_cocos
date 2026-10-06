@@ -1,0 +1,861 @@
+{
+  "heroes": [
+    {
+      "id": "RH01",
+      "name": "弹簧拳师",
+      "quality": "blue",
+      "role": "melee",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H002",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 240,
+        "attack": 18,
+        "defense": 6
+      },
+      "perPermanentLevel": {
+        "hp": 24,
+        "attack": 1.8,
+        "defense": 0.6
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH02",
+      "name": "爆米花厨师",
+      "quality": "blue",
+      "role": "ranged",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H001",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 160,
+        "attack": 25,
+        "defense": 2
+      },
+      "perPermanentLevel": {
+        "hp": 16,
+        "attack": 2.5,
+        "defense": 0.2
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH03",
+      "name": "电音青蛙",
+      "quality": "blue",
+      "role": "support",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H003",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1,
+      "level1": {
+        "hp": 190,
+        "attack": 17,
+        "defense": 4
+      },
+      "perPermanentLevel": {
+        "hp": 19,
+        "attack": 1.7,
+        "defense": 0.4
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH04",
+      "name": "拖鞋阿姨",
+      "quality": "purple",
+      "role": "ranged",
+      "unlockAfterStage": 0,
+      "legacyIdentity": "H004",
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 176,
+        "attack": 27.5,
+        "defense": 2.2
+      },
+      "perPermanentLevel": {
+        "hp": 17.6,
+        "attack": 2.75,
+        "defense": 0.22
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH05",
+      "name": "木桩师傅",
+      "quality": "purple",
+      "role": "melee",
+      "unlockAfterStage": 5,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 264,
+        "attack": 19.8,
+        "defense": 6.6
+      },
+      "perPermanentLevel": {
+        "hp": 26.4,
+        "attack": 1.98,
+        "defense": 0.66
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH06",
+      "name": "沙包队长",
+      "quality": "gold",
+      "role": "melee",
+      "unlockAfterStage": 10,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 290.4,
+        "attack": 21.78,
+        "defense": 7.26
+      },
+      "perPermanentLevel": {
+        "hp": 29.04,
+        "attack": 2.178,
+        "defense": 0.726
+      },
+      "attackIntervalSeconds": 0.9,
+      "verticalRangeFraction": 0.5,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 1
+    },
+    {
+      "id": "RH07",
+      "name": "磁暴技师",
+      "quality": "purple",
+      "role": "ranged",
+      "unlockAfterStage": 3,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 176,
+        "attack": 27.5,
+        "defense": 2.2
+      },
+      "perPermanentLevel": {
+        "hp": 17.6,
+        "attack": 2.75,
+        "defense": 0.22
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH08",
+      "name": "冰饮企鹅",
+      "quality": "purple",
+      "role": "support",
+      "unlockAfterStage": 5,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.1,
+      "level1": {
+        "hp": 209,
+        "attack": 18.7,
+        "defense": 4.4
+      },
+      "perPermanentLevel": {
+        "hp": 20.9,
+        "attack": 1.87,
+        "defense": 0.44
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH09",
+      "name": "烟火龙仔",
+      "quality": "gold",
+      "role": "ranged",
+      "unlockAfterStage": 8,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 193.6,
+        "attack": 30.25,
+        "defense": 2.42
+      },
+      "perPermanentLevel": {
+        "hp": 19.36,
+        "attack": 3.025,
+        "defense": 0.242
+      },
+      "attackIntervalSeconds": 1.1,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    },
+    {
+      "id": "RH10",
+      "name": "星灯水母",
+      "quality": "gold",
+      "role": "support",
+      "unlockAfterStage": 10,
+      "legacyIdentity": null,
+      "maxPermanentLevel": 20,
+      "fragmentsPerLevel": 10,
+      "qualityBudgetFactor": 1.21,
+      "level1": {
+        "hp": 229.9,
+        "attack": 20.57,
+        "defense": 4.84
+      },
+      "perPermanentLevel": {
+        "hp": 22.99,
+        "attack": 2.057,
+        "defense": 0.484
+      },
+      "attackIntervalSeconds": 1.2,
+      "verticalRangeFraction": 1,
+      "initialSkillLevels": [
+        1,
+        1,
+        0
+      ],
+      "maxSkillLevel": 5,
+      "maxSimultaneousSummons": 0
+    }
+  ],
+  "skills": [
+    {
+      "id": "RH01-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH02-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH03-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH04-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH05-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH06-S1",
+      "damage": [
+        1,
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH01-S2",
+      "damage": [
+        1.3,
+        1.6,
+        1.9,
+        2.2,
+        2.5
+      ],
+      "cooldowns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "RH01-S3",
+      "damage": [
+        2,
+        2.5,
+        3,
+        3.5,
+        4
+      ],
+      "cooldowns": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ]
+    },
+    {
+      "id": "RH02-S2",
+      "damage": [
+        1.5,
+        1.85,
+        2.2,
+        2.55,
+        2.9
+      ],
+      "cooldowns": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "id": "RH02-S3",
+      "damage": [
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5
+      ],
+      "cooldowns": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "id": "RH03-S2",
+      "damage": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cooldowns": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "id": "RH03-S3",
+      "damage": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cooldowns": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "RH04-S2",
+      "damage": [
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4
+      ],
+      "cooldowns": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "id": "RH04-S3",
+      "damage": [
+        3,
+        3.6,
+        4.2,
+        4.8,
+        5.4
+      ],
+      "cooldowns": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "RH05-S2",
+      "damage": [
+        0.8,
+        1,
+        1.2,
+        1.4,
+        1.6
+      ],
+      "cooldowns": [
+        14,
+        14,
+        14,
+        14,
+        14
+      ]
+    },
+    {
+      "id": "RH05-S3",
+      "damage": [
+        3,
+        3.7,
+        4.4,
+        5.1,
+        5.8
+      ],
+      "cooldowns": [
+        26,
+        26,
+        26,
+        26,
+        26
+      ]
+    },
+    {
+      "id": "RH06-S2",
+      "damage": [
+        1,
+        1.3,
+        1.6,
+        1.9,
+        2.2
+      ],
+      "cooldowns": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ]
+    },
+    {
+      "id": "RH06-S3",
+      "damage": [
+        2.5,
+        3.2,
+        3.9,
+        4.6,
+        5.3
+      ],
+      "cooldowns": [
+        30,
+        30,
+        30,
+        30,
+        30
+      ]
+    },
+    {
+      "id": "RH07-S1",
+      "damage": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH08-S1",
+      "damage": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH09-S1",
+      "damage": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH10-S1",
+      "damage": [
+        1,
+        1.15,
+        1.3,
+        1.45,
+        1.6
+      ],
+      "cooldowns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "RH07-S2",
+      "damage": [
+        2.8,
+        3.2,
+        3.6,
+        4,
+        4.4
+      ],
+      "cooldowns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "RH07-S3",
+      "damage": [
+        1.5,
+        1.7,
+        1.9,
+        2.1,
+        2.3
+      ],
+      "cooldowns": [
+        21,
+        21,
+        21,
+        21,
+        21
+      ]
+    },
+    {
+      "id": "RH08-S2",
+      "damage": [
+        1.6,
+        1.9,
+        2.2,
+        2.5,
+        2.8
+      ],
+      "cooldowns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "RH08-S3",
+      "damage": [
+        1.1,
+        1.3,
+        1.5,
+        1.7,
+        1.9
+      ],
+      "cooldowns": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "RH09-S2",
+      "damage": [
+        1.35,
+        1.55,
+        1.75,
+        1.95,
+        2.15
+      ],
+      "cooldowns": [
+        11,
+        11,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "id": "RH09-S3",
+      "damage": [
+        1.6,
+        1.85,
+        2.1,
+        2.35,
+        2.6
+      ],
+      "cooldowns": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "RH10-S2",
+      "damage": [
+        1.3,
+        1.5,
+        1.7,
+        1.9,
+        2.1
+      ],
+      "cooldowns": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "RH10-S3",
+      "damage": [
+        0.9,
+        1.1,
+        1.3,
+        1.5,
+        1.7
+      ],
+      "cooldowns": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ]
+    }
+  ],
+  "globalSkills": {
+    "theme": "能量轰击",
+    "blue": {
+      "displayName": "能量轰击",
+      "coverageAreaFraction": 0.2,
+      "shape": "circle",
+      "baseDamage": 70
+    },
+    "purple": {
+      "displayName": "范围轰击",
+      "coverageAreaFraction": 0.5,
+      "shape": "fan_90deg",
+      "aimDegrees": [
+        -25,
+        25
+      ],
+      "baseDamage": 115
+    },
+    "gold": {
+      "displayName": "全屏轰击",
+      "coverageAreaFraction": 1,
+      "shape": "radial_wave_full_battle",
+      "baseDamage": 180
+    },
+    "damageScale": "stageScale*difficultyMultiplier*currentWaveScale",
+    "bossDamageFactor": 0.35,
+    "targetArea": "shape_intersection_with_effective_battle_bounds",
+    "aiming": "tap_slot_aim_shape_confirm_or_cancel",
+    "coverageMeasure": "area_not_bounding_box_or_height",
+    "aimingTimeFactor": 0.1,
+    "consumeOnlyOnConfirmedCast": true,
+    "oneUse": true,
+    "goldNeedsConfirm": true,
+    "goldKillsEveryBoss": false,
+    "goldEffectFlashMaximumSeconds": 0.18
+  },
+  "feel": {
+    "startingSkill2": 1,
+    "deployCastDelay": 2.2,
+    "cardCastDelay": 0.45,
+    "normalCooldownFactor": 0.62,
+    "thirdCooldownFactor": 0.72,
+    "radiusScale": 1.35,
+    "meleeSkillRange": 0.9
+  }
+}

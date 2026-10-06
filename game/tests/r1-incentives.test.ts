@@ -11,10 +11,10 @@ import { spawnEnemy } from '../assets/scripts/domain/r1/waves';
 import { CONTRACTS, GOALS, Specialization, applyRunAchievements, recordFinalKill, startCast } from '../assets/scripts/domain/r1/incentives';
 import { streams } from '../assets/scripts/domain/r1/random';
 class Memory {map=new Map<string,string>();fail=false;getItem(k:string){return this.map.get(k)??null;}setItem(k:string,v:string){if(this.fail)throw new Error('disk failure');this.map.set(k,v);}}
-function field(id='RH02',perk?:Specialization,level=3){const p=freshProfile();p.clearedStage=20;p.levels[id]=3;if(perk)p.incentive!.specializations[id]=perk;const r=createRun(p,1,341,'i-test');r.drawQueue=[];r.candidates=[];r.wave=1;r.released=30;const h=deployHero(r,id,0);h.skills=[1,level,level];return {p,r,h};}
+function field(id='RH02',perk?:Specialization,level=3){const p=freshProfile();p.clearedStage=20;p.levels[id]=3;if(perk)p.incentive!.specializations[id]=perk;const r=createRun(p,1,341,'i-test');r.drawQueue=[];r.candidates=[];r.wave=1;r.released=r.plans[Math.max(0,r.wave-1)].length;const h=deployHero(r,id,0);h.skills=[1,level,level];return {p,r,h};}
 function enemy(r:Run,x=.4,y=.6,hp=10000,id='RM01',wave=1){const e=spawnEnemy(r,{id,trait:null,x},wave);e.y=y;e.hp=e.maxHp=hp;return e;}
 function finish(r:Run,ticks=240){for(let n=0;n<ticks;n++){r.tick++;updateSkillBursts(r);updateProjectiles(r,1/60);}}
-function certify(r:Run,to=10){for(let w=1;w<=to;w++){for(let n=0;n<30;n++){const e=enemy(r,.5,.5,1,'RM01',w);damageEnemy(r,e,9999,'ranged','test');}for(let n=0;n<r.incentive!.bossQuota[w-1];n++){const e=enemy(r,.5,.5,1,'RS01',w);damageEnemy(r,e,9999,'ranged','test');}}}
+function certify(r:Run,to=10){for(let w=1;w<=to;w++){for(let n=0;n<r.plans[w-1].length;n++){const e=enemy(r,.5,.5,1,'RM01',w);damageEnemy(r,e,9999,'ranged','test');}for(let n=0;n<r.incentive!.bossQuota[w-1];n++){const e=enemy(r,.5,.5,1,'RS01',w);damageEnemy(r,e,9999,'ranged','test');}}}
 function settle(s:R1Session,status:'victory'|'defeat'){s.data.run!.status=status;s.inBattle=true;s.tick(0);}
 
 test('D034 captain is one of exactly three unique opening choices, only the first offer is forced',()=>{
@@ -38,7 +38,7 @@ test('D034 first-clear reward cannot be claimed twice, nor re-rolled after a fai
  const m=new Memory(),s=new R1Session(m);s.data.profile.clearedStage=9;s.start(10,25);m.fail=true;settle(s,'victory');assert.ok(s.error);assert.equal(s.data.profile.fragments.RH09,undefined);m.fail=false;assert.equal(s.retrySave(),true);const rewards=copy(s.data.settlement);const p=copy(s.data.profile);s.tick(1);assert.deepEqual(s.data.settlement,rewards);assert.deepEqual(s.data.profile,p);assert.equal(s.data.profile.fragments.RH09,6);s.start(10,26);assert.equal(s.data.run!.incentive!.firstClear,false);
 });
 test('D034 checkpoint requires every actual prior minion and boss, including residual final death',()=>{
- const {r}=field();r.wave=10;r.incentive!.minionDeaths.fill(30,0,5);const boss=enemy(r,.5,.5,1,'RS01',5);assert.equal(r.incentive!.checkpoint,0);damageEnemy(r,boss,999,'ranged','x');assert.equal(r.incentive!.checkpoint,5);
+ const {r}=field();r.wave=10;r.incentive!.minionDeaths.fill(r.plans[0].length,0,5);const boss=enemy(r,.5,.5,1,'RS01',5);assert.equal(r.incentive!.checkpoint,0);damageEnemy(r,boss,999,'ranged','x');assert.equal(r.incentive!.checkpoint,5);
  const {r:q}=field();const e=enemy(q,.5,.5,1);e.trait='T06';e.maxHp=100;damageEnemy(q,e,999,'ranged','x');assert.equal(q.incentive!.minionDeaths[0],0);damageEnemy(q,e,999,'ranged','x');assert.equal(q.incentive!.minionDeaths[0],1);
 });
 test('D034 defeat pays only certified reserve, revival pays nothing, subsequent victory does not add reserve',()=>{
@@ -76,7 +76,7 @@ test('D034 achievements derive from actual hits, independent casts, pulls and re
 });
 test('D034 24 expedition options have exact quotas, proper scaling and independent first-win rewards',()=>{
  const p=freshProfile();p.clearedStage=20;p.incentive!.expedition.unlockedTier=8;
- for(let tier=1;tier<=8;tier++)for(const c of CONTRACTS){const r=createRun(p,20,44,`exp-${tier}-${c.id}`,{tier,contract:c.id});for(const wave of r.plans){assert.equal(wave.length,30);for(const [id,n] of Object.entries(c.composition))assert.equal(wave.filter(e=>e.id===id).length,n);for(const [t,n] of Object.entries(c.traits))assert.equal(wave.filter(e=>e.trait===t).length,n);}assert.equal(r.incentive!.bossQuota.reduce((a,b)=>a+b,0),5);r.status='victory';const result=settleProgression(p,r);assert.equal(result.rewards.reduce((a,b)=>a+b.count,0),10);assert.notEqual(result.receipt!.reason,'首通里程碑');assert.equal(p.clearedStage,20);}
+ for(let tier=1;tier<=8;tier++)for(const c of CONTRACTS){const r=createRun(p,20,44,`exp-${tier}-${c.id}`,{tier,contract:c.id});for(const wave of r.plans){assert.equal(wave.length,120);for(const [id,n] of Object.entries(c.composition))assert.equal(wave.filter(e=>e.id===id).length,n);for(const [t,n] of Object.entries(c.traits))assert.equal(wave.filter(e=>e.trait===t).length,n);}assert.equal(r.incentive!.bossQuota.reduce((a,b)=>a+b,0),5);r.status='victory';const result=settleProgression(p,r);assert.equal(result.rewards.reduce((a,b)=>a+b.count,0),10);assert.notEqual(result.receipt!.reason,'首通里程碑');assert.equal(p.clearedStage,20);}
  assert.equal(p.incentive!.expedition.wins.length,24);assert.equal(p.incentive!.expedition.firstWins.length,8);assert.equal(p.incentive!.expedition.unlockedTier,8);
 });
 test('D034 settlement highlights actual eligible growth when primary earns nothing, without switching the saved plan',()=>{

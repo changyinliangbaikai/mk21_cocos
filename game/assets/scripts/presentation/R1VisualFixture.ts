@@ -6,6 +6,33 @@ import { castHeroSkill } from '../domain/r1/combat';
 
 /** Explicit browser QA routes only. This session never reads or writes player storage. */
 export function visualFixture(scene: string): R1Session | null {
+  if (/^melee-(?:windup|hit)-RH(?:01|05|06)$/.test(scene) || scene === 'melee-loop') {
+    const memory = new Map<string, string>(), s = new R1Session({ getItem: k => memory.get(k) ?? null, setItem: (k, v) => { memory.set(k, v); } });
+    s.data.profile.clearedStage = 20; s.data.profile.sound = s.data.profile.music = false; s.start(1, 4401);
+    const r = s.data.run!; r.drawQueue = []; r.candidates = []; r.wave = 15; r.released = r.plans[14].length;
+    const roster = scene === 'melee-loop' ? ['RH01', 'RH05', 'RH06'] : [scene.slice(-4)];
+    roster.forEach((id, i) => { const h = deployHero(r, id, roster.length === 1 ? 1 : [0, 1, 3][i]); h.skills = [3, 0, 0]; h.basicCooldown = .35 + i * .1; h.protectionUntil = 3600; });
+    for (let i = 0; i < 18; i++) { const e = spawnEnemy(r, { id: 'RM01', x: .12 + (i % 6) * .145, trait: null }, 15); e.y = .52 + Math.floor(i / 6) * .05; e.hp = e.maxHp = 100000; e.rootUntil = e.cooldown = 3600; }
+    return s;
+  }
+  if (/^flight-hero-RH(?:0[234789]|10)$/.test(scene)) {
+    const memory = new Map<string, string>(), s = new R1Session({ getItem: k => memory.get(k) ?? null, setItem: (k, v) => { memory.set(k, v); } });
+    s.data.profile.clearedStage = 20; s.data.profile.sound = false; s.data.profile.music = false; s.start(1, 4301);
+    const r = s.data.run!; r.drawQueue = []; r.candidates = []; r.wave = 15; r.released = r.plans[14].length;
+    const h = deployHero(r, scene.slice('flight-hero-'.length), 1); h.skills = [3, 0, 0]; h.protectionUntil = 3600;
+    for (let i = 0; i < 6; i++) { const e = spawnEnemy(r, { id: 'RM01', x: .65 + (i % 3) * .035, trait: null }, 15); e.y = .16 + Math.floor(i / 3) * .04; e.hp = e.maxHp = 100000; e.rootUntil = e.cooldown = 3600; }
+    return s;
+  }
+  if (/^area-hero-RH(?:0[1-9]|10)$/.test(scene) || scene === 'area-cards') {
+    const memory=new Map<string,string>(),s=new R1Session({getItem:k=>memory.get(k)??null,setItem:(k,v)=>{memory.set(k,v);}});
+    s.data.profile.clearedStage=20;s.data.profile.sound=false;s.data.profile.music=false;s.start(1,4102);
+    const r=s.data.run!;r.drawQueue=[];r.candidates=[];r.wave=15;r.released=r.plans[14].length;
+    const heroes=scene==='area-cards'?['RH01','RH02','RH03']:[scene.slice('area-hero-'.length)];
+    heroes.forEach((id,i)=>{const h=deployHero(r,id,scene==='area-cards'?i:1);h.skills=[scene==='area-cards'?1:3,0,0];h.basicCooldown=scene==='area-cards'?3600:.3;h.protectionUntil=3600;});
+    for(let i=0;i<12;i++){const e=spawnEnemy(r,{id:i%3?'RM01':'RM02',x:.33+(i%4-1.5)*.045,trait:null},15);e.y=.68+Math.floor(i/4)*.04;e.hp=e.maxHp=100000;e.rootUntil=3600;e.cooldown=3600;}
+    if(scene==='area-cards'){r.drawQueue=['energy'];r.candidates=heroes.map((id,i)=>({id:'area-card-'+i,kind:'skill',quality:'purple',heroId:id,skillSlot:1,level:2}));}
+    return s;
+  }
   if(scene==='loading-preview') { const memory=new Map<string,string>(); return new R1Session({getItem:k=>memory.get(k)??null,setItem:(k,v)=>{memory.set(k,v);}}); }
   if (!['entry-minions','entry-bosses','entry-aim-blue','entry-aim-purple','entry-aim-gold','impact-entry','incentive-new','incentive-menus','incentive-settlement','incentive-soak','effects', 'bosses', 'draft', 'menus', 'summons', 'targeting', 'crowds', 'impact-boxer', 'impact-chef', 'playtest', 'soak', 'support-control','roster','roster-soak','roster-victory','roster-effects','hero-RH07','hero-RH08','hero-RH09','hero-RH10'].includes(scene)) return null;
   const memory = new Map<string, string>();
@@ -18,11 +45,11 @@ export function visualFixture(scene: string): R1Session | null {
   if(scene==='roster'||scene==='roster-soak'||scene==='roster-victory'){
     session.start(6,33001);const r=session.data.run!;r.drawQueue=[];r.candidates=[];
     ['RH07','RH08','RH09','RH10'].forEach((id,i)=>deployHero(r,id,i));
-    if(scene==='roster-victory'){r.status='victory';r.wave=15;r.released=30;r.spawnedMinions=450;r.spawnedBosses=3;r.kills=453;session.data.settlement={runId:r.id,stage:6,rewards:[{key:'RH07',count:3},{key:'RH10',count:2}]};}
+    if(scene==='roster-victory'){r.status='victory';r.wave=15;r.released=r.plans[14].length;r.spawnedMinions=r.plans.flat().length;r.spawnedBosses=3;r.kills=r.spawnedMinions+r.spawnedBosses;session.data.settlement={runId:r.id,stage:6,rewards:[{key:'RH07',count:3},{key:'RH10',count:2}]};}
     return session;
   }
   session.start(1, 2801);
-  const r = session.data.run!; r.drawQueue = []; r.candidates = []; r.wave = 15; r.released = 30;
+  const r = session.data.run!; r.drawQueue = []; r.candidates = []; r.wave = 15; r.released = r.plans[14].length;
   if(scene==='roster-effects'||scene.startsWith('hero-')){
     const roster=scene==='roster-effects'?['RH07','RH08','RH09','RH10']:[scene.slice(5)];
     roster.forEach((id,i)=>{const h=deployHero(r,id,i);h.skills=[3,3,3];h.cooldowns=[0,2+i*1.2,7+i*1.2];h.protectionUntil=3600;});

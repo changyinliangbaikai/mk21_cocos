@@ -1,5 +1,5 @@
 import { _decorator, BlockInputEvents, Color, Component, EventTouch, Game, Graphics, Label, Layers, Mask, Node, Sprite, UIOpacity, UITransform, Vec3, game, profiler, screen, sys, view } from 'cc';
-import { BattleTuning, HEROES, Quality, RULES, SKILLS, autoSkillCooldown, autoSkillRadius, heroDef, permanentStats, skillDef, stageDef, stageTuning } from '../domain/r1/config';
+import { BattleTuning, HEROES, Quality, RULES, SKILLS, autoSkillCooldown, autoSkillRadius, basicAreaRadius, heroDef, permanentStats, skillDef, stageDef, stageTuning } from '../domain/r1/config';
 import { BattleEvent, Card, Hero, Run, now } from '../domain/r1/model';
 import { CONTRACTS, EXPEDITION_HP, EXPEDITION_ATTACK, GOALS, SPECIALIZATIONS, Expedition, Specialization, milestoneName, progressPieces, rewardPreview } from '../domain/r1/incentives';
 import { R1Session } from '../domain/r1/session';
@@ -12,6 +12,9 @@ import cardViews from '../domain/r1/ui-cards.json';
 import { R1Assets } from './R1Assets';
 import { R1Audio } from './R1Audio';
 import { HERO_COLORS, attackFamily, feedbackRate, friendlyImpactVisual, friendlyProjectileVisual } from './R1CombatVisuals';
+import { FLIGHT_STYLES, FLIGHT_TRAIL_LIMIT, FLIGHT_TRAIL_SECONDS, FlightSample, flightPose, sampleFlight } from './ProjectileMotion';
+import { MELEE_STYLES, meleeParts, meleeWindupProgress } from './MeleeStrikeMotion';
+import { heroTargets } from '../domain/r1/combat';
 import { driveSoak, visualFixture } from './R1VisualFixture';
 import { Typography } from './Typography';
 import { gameStorage } from './HostStorage';
@@ -28,6 +31,8 @@ type Page = 'camp' | 'stages' | 'heroes' | 'detail' | 'growth' | 'specialization
 type Modal = '' | 'settings' | 'upgrade' | 'abandon' | 'end-run' | 'ability' | 'help';
 type CardView = (typeof cardViews)[number];
 interface ActorView { node: Node; sprite: Sprite; bar: Graphics; trait: Sprite; shield: Graphics; aura?: Graphics; ammo?: Label; action?: string; actionFrom?: number; lastX?: number; lastY?: number; lastTick?: number; moving?: boolean; atlas?: string; frame?: number }
+interface FlightView { family: string; born: number; body: Node; trails: Node[]; samples: FlightSample[]; age: number; frame: number }
+interface MeleeView { family: string; node: Node; parts: Node[]; from: { x: number; y: number }; to: { x: number; y: number }; progress: number; lastWindupTick: number; hitAt?: number }
 interface FxView { node: Node; age: number; duration: number; size: number; tick: number; floating?: boolean; poolKey?: string; kind?: string; source?: string;
   readable?: boolean; realTime?:boolean; verticalScale?: number;
   animate?: (t: number) => void; numberKey?: string; total?: number; label?: Label;
@@ -49,6 +54,8 @@ export class R1GameApp extends Component {
   private loadingHeroes: Node[] = []; private loadingBar?: Graphics; private loadingLabel?: Label;
   private signature = ''; private eventCursor = 0; private runId = ''; private labels: Label[] = [];
   private actors = new Map<number, ActorView>(); private missiles = new Map<number, Node>(); private fx: FxView[] = [];
+  private flights = new Map<number, FlightView>();
+  private melee = new Map<number, MeleeView>();
   private hud = new Map<string, Label>(); private hotzones: { label: string; x: number; y: number; width: number; height: number; enabled: boolean }[] = [];
   private actionUntil = new Map<number, { action: string; until: number; from: number }>();
   private reactions = new Map<number, { at: number; heavy: boolean }>();
@@ -313,7 +320,7 @@ export class R1GameApp extends Component {
     for (let i = 1; i <= 3; i++) {
       const s = skillDef(h.id, i), v = this.cardView({ id: '', kind: 'skill', quality: s.cardQuality, heroId: h.id, skillSlot: i, level: i === 1 ? 2 : 1 });
       const y = 825 + (i - 1) * 145; this.image(Number(h.id.slice(2))>=7?'IC-'+h.id:'IC-SKILLS', Number(h.id.slice(2))>=7?i-1:(i - 1) * 6 + HEROES.findIndex(a => a.id === h.id), 87, y, 102, 102, true);
-      const lines=i>1?this.skillLines(v,h.id,i,1,stageTuning(1)):[`初始伤害×${s.damageAttackMultiplier[0]}`,'攻击1个目标'];
+      const lines=i>1?this.skillLines(v,h.id,i,1,stageTuning(1)):[`初始伤害×${s.damageAttackMultiplier[0]}`,`群攻半径${cleanNumber(basicAreaRadius(stageTuning(1),h.id,1)*100)}%`];
       this.text(s.name, 514, y + 22, 33, 602, 55, 'name'); this.text(lines.join(' · '), 518, y + 87, 25, 593, 86);
     }
     this.text(`专属碎片 ${p.fragments[h.id] || 0}${h.quality === 'blue' ? '' : ` + 通用 ${p.fragments['universal-' + h.quality] || 0}`}\n每10张升一级，优先消耗专属碎片`, 470, 1325, 29, 745, 102);
@@ -439,6 +446,9 @@ export class R1GameApp extends Component {
     return cardViews.find(c => c.id === id)!;
   }
   private skillLines(c:CardView,id:string,slot:number,level:number,tuning:BattleTuning|undefined):string[]{
+    if(slot===1){const s=skillDef(id,1);return tuning?.areaAttacks
+      ? [`群攻半径 ${cleanNumber(basicAreaRadius(tuning,id,Math.max(1,level-1))*100)}% → ${cleanNumber(basicAreaRadius(tuning,id,level)*100)}%`,`伤害倍率 ${s.damageAttackMultiplier[Math.max(0,level-2)]} → ${s.damageAttackMultiplier[level-1]}`,'范围内各命中一次']
+      : [`攻击目标 ${Math.max(1,level-1)} → ${level}`,`伤害倍率 ${s.damageAttackMultiplier[level-1]}`];}
     const lines=c.lines.slice(0,2).map(line=>line.includes('战场宽')?`${id==='RH04'&&slot===2?'弹射范围':'范围半径'} ${cleanNumber(autoSkillRadius(tuning,id,slot,level)*100)}%`:line);
     return [...lines,`冷却 ${cleanNumber(autoSkillCooldown(tuning,id,slot,level))}秒`];
   }
@@ -473,7 +483,7 @@ export class R1GameApp extends Component {
       this.text(c.title, x + 141, y + 306, 29, 230, 48, 'name'); this.round(x + 25, y + 331, 232, 43, ['#e0f5ff', '#f3e4ff', '#fff1ba'][q]); this.text(c.badge, x + 141, y + 352, 25, 219, 40, 'name');
       let lines = c.lines;
       if (card.kind === 'hero' && r.tuning?.feel) lines = [c.lines[0], `${skillDef(card.heroId!, 2).name} Lv.1`, '上阵自动释放'];
-      if (card.kind === 'skill' && card.skillSlot! > 1) lines = this.skillLines(c,card.heroId!,card.skillSlot!,card.level!,r.tuning);
+      if (card.kind === 'skill') lines = this.skillLines(c,card.heroId!,card.skillSlot!,card.level!,r.tuning);
       if (card.kind === 'attribute') {
         const h = r.slots.find(h => h?.id === card.heroId)!, delta = attributeBonuses(h);
         lines = [`攻击 ${cleanNumber(h.attack)} → ${cleanNumber(h.attack + delta.attack)}`, `生命 ${cleanNumber(h.maxHp)} → ${cleanNumber(h.maxHp + delta.hp)}`, `防御 ${cleanNumber(h.defense)} → ${cleanNumber(h.defense + delta.defense)}`];
@@ -630,8 +640,9 @@ export class R1GameApp extends Component {
     const living = new Set<number>(), time = now(r);
     r.slots.forEach(h => {
       if (!h) return; living.add(h.uid); const action = this.actionUntil.get(h.uid);
+      const meleeWindup = h.windup && r.tuning?.areaAttacks && MELEE_STYLES[h.id];
       this.placeActor(h.uid, h.id, h.x * W, 1427, (this.assets.info(h.id)?.displayHeight || 105) * W / 720,
-        h.hp <= 0 ? 'defeated' : h.skillWindup ? 'cast' : action && action.until > time ? action.action : 'idle', h.hp <= 0 ? time - (h.deathTick || 0) / 60 : action && action.until > time ? time - action.from : time, h.hp / h.maxHp, h.shield / h.maxHp, h.weakUntil > time ? 'T07' : null, h.protectionUntil > time, h.buffUntil > time);
+        h.hp <= 0 ? 'defeated' : h.skillWindup ? 'cast' : meleeWindup ? 'attack' : action && action.until > time ? action.action : 'idle', h.hp <= 0 ? time - (h.deathTick || 0) / 60 : meleeWindup ? Math.max(0, Math.min(.25, heroDef(h.id).attackIntervalSeconds * .2) - h.windup!.remaining) : action && action.until > time ? time - action.from : time, h.hp / h.maxHp, h.shield / h.maxHp, h.weakUntil > time ? 'T07' : null, h.protectionUntil > time, h.buffUntil > time);
       if (h.skillWindup) this.actor(h.uid).node.setScale(1.06, .94, 1);
     });
     for (const e of r.enemies) {
@@ -673,12 +684,23 @@ export class R1GameApp extends Component {
     const missiles = new Set<number>();
     for (const p of r.projectiles) {
       missiles.add(p.uid); let node = this.missiles.get(p.uid);
-      if (!node) { const friendly = p.side === 'hero' ? friendlyProjectileVisual(p.effect) : null;
+      if (!node) { const friendly = p.side === 'hero' ? friendlyProjectileVisual(p.effect,!!p.group) : null;
         if (p.side === 'hero' && !friendly) continue;
         const pack = friendly ? friendly.pack : p.effect.startsWith('RM') ? 'FX-ENEMY-MINION-ATTACK' : 'FX-ENEMY-BOSS-ATTACK';
         const frame = friendly ? friendly.frame : Math.max(0, ['RM01', 'RM02', 'RM04', 'RM05'].indexOf(p.effect)) * 3;
         const size = friendly ? friendly.size : 34;
-        node = this.image(pack, frame, 0, 0, size, size, true, this.effects); this.missiles.set(p.uid, node); }
+        if (pack.startsWith('FX-FLIGHT-')) {
+          const family = attackFamily(p.effect)!;
+          node = this.nodeAt(pack, this.effects, W / 2, H / 2, size, size); node.addComponent(UIOpacity);
+          const trails = Array.from({ length: FLIGHT_TRAIL_LIMIT }, () => {
+            const tail = this.image(pack, 6, W / 2, H / 2, 60, 90, false, node!);
+            tail.addComponent(UIOpacity); tail.active = false; return tail;
+          });
+          const body = this.image(pack, 0, W / 2, H / 2, size, size, true, node);
+          body.setPosition(0, 0);
+          this.flights.set(p.uid, { family, born: time, body, trails, samples: [], age: 0, frame: 0 });
+        } else node = this.image(pack, frame, 0, 0, size, size, true, this.effects);
+        this.missiles.set(p.uid, node); }
       let x = battleX(p.x), y = battleY(p.y);
       const target = p.side === 'hero' ? r.enemies.find(e => e.uid === p.target) : r.slots.find(h => h?.uid === p.target);
       if (p.launch && target) {
@@ -687,20 +709,109 @@ export class R1GameApp extends Component {
         x += (p.launch.x * W - battleX(p.launch.x)) * fraction;
         y += (1360 - battleY(p.launch.y)) * fraction;
       }
+      const flight = this.flights.get(p.uid);
+      if (flight && target) {
+        const tx = battleX(target.x), ty = battleY(target.y), dx = tx - x, dy = ty - y, remaining = Math.hypot(dx, dy);
+        const heading = Math.atan2(-dy, dx) * 180 / Math.PI - 90;
+        flight.age = Math.max(0, time - flight.born);
+        const pose = flightPose(flight.family, flight.age, remaining, p.uid);
+        x += remaining ? -dy / remaining * pose.offset : 0; y += remaining ? dx / remaining * pose.offset : 0;
+        node.setPosition(x - W / 2, H / 2 - y);
+        flight.frame = pose.frame;
+        const pack = 'FX-FLIGHT-' + flight.family, style = FLIGHT_STYLES[flight.family];
+        flight.body.angle = heading + pose.roll; flight.body.setScale(pose.scaleX, pose.scaleY, 1);
+        flight.body.getComponent(Sprite)!.spriteFrame = this.assets.frame(pack, pose.frame);
+        sampleFlight(flight.samples, { x, y, at: time, angle: heading });
+        flight.trails.forEach((tail, index) => {
+          const sample = flight.samples[index], age = sample ? time - sample.at : FLIGHT_TRAIL_SECONDS;
+          const behind = sample ? Math.hypot(x - sample.x, y - sample.y) : 0;
+          tail.active = !!sample && behind >= 8 && age < FLIGHT_TRAIL_SECONDS;
+          if (!tail.active) return;
+          const fade = Math.max(0, 1 - age / FLIGHT_TRAIL_SECONDS);
+          tail.setPosition(sample.x - x, y - sample.y); tail.angle = sample.angle;
+          tail.getComponent(UITransform)!.setContentSize(style.trailWidth * 1.6 * (.55 + .45 * fade), style.size * (.85 + age));
+          tail.getComponent(Sprite)!.spriteFrame = this.assets.frame(pack, 6 + Math.min(2, Math.floor(age / .065)));
+          tail.getComponent(UIOpacity)!.opacity = 165 * fade;
+        });
+        continue;
+      }
       node.setPosition(x - W / 2, H / 2 - y);
       if (p.side === 'hero' && target) {
         const family = attackFamily(p.effect)!, angle = Math.atan2(-(battleY(target.y) - y), battleX(target.x) - x) * 180 / Math.PI - 90;
-        node.angle = family === 'RH03' ? Math.sin(time * 12) * 12 : angle;
-        if (!node.children.length) {
+        node.angle = p.group ? angle : family === 'RH03' ? Math.sin(time * 12) * 12 : angle;
+        if (p.group) {
+          const pack = 'FX-AREA-' + family;
+          node.getComponent(Sprite)!.spriteFrame = this.assets.frame(pack, this.assets.pose(pack, 'projectile', time));
+        }
+        if (!p.group && !node.children.length) {
           const tail = this.image('FX-' + family, 1, W / 2 - 20, H / 2 - 12, 40, p.chain ? 130 : 70, false, node);
           tail.addComponent(UIOpacity).opacity = p.chain ? 155 : 95; tail.setSiblingIndex(0);
         }
       }
     }
-    for (const [uid, node] of this.missiles) if (!missiles.has(uid)) { node.destroy(); this.missiles.delete(uid); }
+    for (const [uid, node] of this.missiles) if (!missiles.has(uid)) {
+      const flight = this.flights.get(uid);
+      if (flight && this.fx.length < 80) {
+        flight.body.active = false; const opacity = node.getComponent(UIOpacity)!;
+        this.fx.push({ node, age: 0, duration: .14, size: 100, tick: r.tick, kind: 'flight-tail', source: flight.family,
+          animate: t => { opacity.opacity = 255 * (1 - t); } });
+      } else node.destroy();
+      this.flights.delete(uid); this.missiles.delete(uid);
+    }
     const wave = this.hud.get('wave'), energy = this.hud.get('energy');
+    this.updateMelee(r);
     if (wave) wave.string = r.wave ? `第 ${r.wave} / 15 波` : '准备 / 15 波'; if (energy) energy.string = `能量 ${r.energy} / 100`;
     if (energy) { const pulse = Math.max(0, this.energyPulse - time) / .22; energy.node.setScale(1 + pulse * .09, 1 + pulse * .09, 1); energy.color = toColor(pulse ? '#ffe175' : '#fff8df'); }
+  }
+  private meleeView(h: Hero): MeleeView {
+    let view = this.melee.get(h.uid); if (view) return view;
+    const pack = 'FX-MELEE-' + h.id;
+    const node = this.nodeAt(pack, this.effects, W / 2, H / 2, W, H); node.addComponent(UIOpacity);
+    const parts = Array.from({ length: 6 }, () => {
+      const part = this.image(pack, 0, W / 2, H / 2, 100, 100, false, node); part.addComponent(UIOpacity); part.active = false; return part;
+    });
+    view = { family: h.id, node, parts, from: { x: h.x * W, y: 1360 }, to: { x: h.x * W, y: 1360 }, progress: 0, lastWindupTick: 0 };
+    this.melee.set(h.uid, view); return view;
+  }
+  private drawMelee(view: MeleeView, tailAge = 0): void {
+    const dx = view.to.x - view.from.x, dy = view.to.y - view.from.y, length = Math.hypot(dx, dy);
+    const pack = 'FX-MELEE-' + view.family, correction = this.assets.info(pack)?.effectScale || 1;
+    const parts = meleeParts(view.family, view.progress, length, tailAge), angle = Math.atan2(-dy, dx) * 180 / Math.PI - 90;
+    view.node.active = parts.length > 0;
+    view.parts.forEach((node, i) => {
+      const part = parts[i]; node.active = !!part; if (!part) return;
+      node.setPosition(view.from.x + dx * part.at - W / 2, H / 2 - view.from.y - dy * part.at);
+      node.angle = part.upright ? 0 : angle;
+      node.getComponent(Sprite)!.spriteFrame = this.assets.frame(pack, part.frame);
+      const scale = part.frame < 6 ? correction : 1, transform = node.getComponent(UITransform)!;
+      transform.setContentSize(part.width * scale, part.height * scale); transform.setAnchorPoint(.5, part.anchorY);
+      node.getComponent(UIOpacity)!.opacity = 235 * part.opacity;
+    });
+  }
+  private updateMelee(r: Run): void {
+    const time = now(r);
+    for (const h of r.slots) {
+      if (!h || !MELEE_STYLES[h.id]) continue;
+      let view = this.melee.get(h.uid);
+      if (h.hp <= 0 || r.status !== 'active' || !r.tuning?.areaAttacks) { if (view) view.node.active = false; continue; }
+      if (h.windup) {
+        const target = r.enemies.find(e => e.uid === h.windup!.targets[0] && e.hp > 0) || heroTargets(r, h)[0];
+        if (!target) { if (view) view.node.active = false; continue; }
+        view = this.meleeView(h); view.hitAt = undefined; view.lastWindupTick = r.tick;
+        view.from = { x: h.x * W, y: 1360 }; view.to = { x: battleX(target.x), y: battleY(target.y) };
+        view.progress = meleeWindupProgress(h.windup.remaining, Math.min(.25, heroDef(h.id).attackIntervalSeconds * .2));
+        this.drawMelee(view);
+      } else if (view?.hitAt !== undefined) this.drawMelee(view, Math.max(0, time - view.hitAt));
+      else if (view && r.tick - view.lastWindupTick > 2) view.node.active = false;
+    }
+  }
+  private finishMelee(e: BattleEvent): void {
+    const family = e.source.slice(0, 4);
+    if (!MELEE_STYLES[family] || e.source !== family + '-S1' || !e.from) return;
+    const r = this.session.data.run!, h = r.slots.find(h => h?.uid === e.target); if (!h) return;
+    const view = this.meleeView(h); view.from = { x: e.from.x * W, y: 1360 };
+    view.to = { x: battleX(e.x), y: battleY(e.y) }; view.progress = 1; view.hitAt = now(r);
+    this.drawMelee(view);
   }
   private pooledFx(key: string, create: () => Node): Node {
     const node = this.fxPool.get(key)?.pop() || create(); node.active = true; node.angle = 0; node.setScale(1, 1, 1);
@@ -899,8 +1010,34 @@ export class R1GameApp extends Component {
     };
     f.animate(0);this.fx.push(f);
   }
+  /** One authored sprite sequence per actual area hit, with no per-victim burst duplication. */
+  private groupImpact(e: BattleEvent): void {
+    const family = attackFamily(e.source); if (!family || !e.radius) return;
+    if (this.fx.filter(f => f.kind === 'group-impact').length >= 12) {
+      const index = this.fx.findIndex(f => f.kind === 'group-impact'); this.releaseFx(this.fx.splice(index, 1)[0]);
+    }
+    if (this.fx.length >= 80) {
+      const index = this.fx.findIndex(f => f.kind === 'minor' || f.floating); if (index < 0) return;
+      this.releaseFx(this.fx.splice(index, 1)[0]);
+    }
+    const pack = 'FX-AREA-' + family, atlas = this.assets.info(pack)!;
+    const size = e.radius * BATTLE_VIEW.width * 2 * (atlas.effectScale || 1), key = 'area-art:' + family;
+    const node = this.pooledFx(key, () => this.image(pack, 2, 0, 0, size, size, true, this.arenaEffects));
+    node.setPosition(battleX(e.x) - W / 2, H / 2 - battleY(e.y) - this.arenaEffects.position.y);
+    node.setScale(1, BATTLE_EFFECT_SCALE_Y, 1);
+    node.getComponent(UITransform)!.setContentSize(size, size);
+    const sprite = node.getComponent(Sprite)!, opacity = node.getComponent(UIOpacity)!;
+    const f: FxView = { node, age: 0, duration: .62, size, tick: e.tick, poolKey: key, kind: 'group-impact', source: e.source, readable: true };
+    f.animate = t => {
+      sprite.spriteFrame = this.assets.frame(pack, this.assets.pose(pack, 'impact', t * f.duration));
+      // The painted frames provide the expansion and breakup; preserve their registered pivot.
+      opacity.opacity = 235 * Math.min(1, (1 - t) / .48);
+    };
+    f.animate(0); this.fx.push(f);
+  }
   private effect(e: BattleEvent): void {
     const r = this.session.data.run!;
+    if(e.type==='group-impact'){this.finishMelee(e);this.groupImpact(e);return;}
     if(e.type==='checkpoint'){this.pendingReserve=Math.max(this.pendingReserve,Number(e.source));return;}
     if(e.type==='perk-root'){this.skillChoreography({...e,type:'hero-skill'});return;}
     if(e.type==='skill-pulse'&&e.source==='RH02-S2'){this.skillChoreography({...e,type:'hero-skill'});return;}
@@ -934,14 +1071,14 @@ export class R1GameApp extends Component {
     if (e.type === 'summon-end' || e.type === 'summon-spent' || e.type === 'ally-death' && e.source.startsWith('SUM-')) {
       this.summonExit(e); return;
     }
-    if (e.type === 'enemy-hit' && e.source === 'RH01-S1' && this.fx.length < 64) this.punch(e);
+    if (e.type === 'enemy-hit' && e.source === 'RH01-S1' && !r.tuning?.areaAttacks && this.fx.length < 64) this.punch(e);
     if (['enemy-hit', 'ally-hit', 'heal'].includes(e.type)) this.damageNumber(e);
     if (e.type === 'hero-skill' || e.type === 'hero-attack' || e.type === 'revive') {
       const h = r.slots.find(h => h?.id === e.source.slice(0, 4)); if (h) this.actionUntil.set(h.uid, { action: e.type === 'revive' ? 'revive' : e.type === 'hero-skill' ? 'cast' : 'attack', until: now(r) + .5, from: now(r) });
     }
     let pack = '', frame = 0, size = 110, duration = .45;
     if (e.type === 'hero-skill') { pack = 'FX-' + e.source.slice(0, 4); frame = e.source.endsWith('S2') ? 3 : 6; size = Math.max(120, (e.radius || .16) * BATTLE_VIEW.width * 2); duration = .7; }
-    if (e.type === 'enemy-hit') { const visual = friendlyImpactVisual(e.source); if (visual) { pack = visual.pack; frame = visual.frame; size = visual.size; duration = visual.duration; } }
+    if (e.type === 'enemy-hit') { const visual = friendlyImpactVisual(e.source,!!r.tuning?.areaAttacks); if (visual) { pack = visual.pack; frame = visual.frame; size = visual.size; duration = visual.duration; } }
     if (e.type === 'enemy-attack') { pack = e.source.startsWith('RM') ? 'FX-ENEMY-MINION-ATTACK' : 'FX-ENEMY-BOSS-ATTACK'; frame = Math.max(0, (e.source.startsWith('RM') ? ['RM01', 'RM02', 'RM04', 'RM05'] : ['RS01', 'RS02', 'RL01', 'RL02']).indexOf(e.source)) * 3 + 2; }
     if (e.type === 'enemy-death') { pack = e.source; frame = 7; size = (this.assets.info(e.source)?.displayHeight || 60) * W / 720; duration = .4; }
     if (e.type === 'global-cast') { pack = 'FX-GLOBAL-' + e.source; frame = 2; size = e.source === 'gold' ? 1050 : (e.radius || .3) * BATTLE_VIEW.width * 2; duration = .8; }
@@ -984,7 +1121,7 @@ export class R1GameApp extends Component {
     this.fx.push({ node, age: 0, duration: .38, size: 112, tick: e.tick,
       punch: { fromX: h.x * W, fromY: 1360, toX: battleX(e.x), toY: battleY(e.y) - 20, glove, spring } });
   }
-  private clearEffects(): void { this.fx.forEach(f => this.releaseFx(f)); this.fx = []; this.reactions.clear(); this.energyPulse = 0; for (const n of this.missiles.values()) n.destroy(); this.missiles.clear(); }
+  private clearEffects(): void { this.fx.forEach(f => this.releaseFx(f)); this.fx = []; this.reactions.clear(); this.energyPulse = 0; for (const n of this.missiles.values()) n.destroy(); this.missiles.clear(); this.flights.clear(); for (const m of this.melee.values()) m.node.destroy(); this.melee.clear(); }
   update(dt: number): void {
     this.resize(); if (this.loading) { this.animateLoading(dt); return; } if (!this.ready) return;
     if(this.qaScene==='soak'||this.qaScene==='roster-soak'||this.qaScene==='incentive-soak'){
@@ -1038,6 +1175,10 @@ export class R1GameApp extends Component {
       const offset = this.kick > 0 ? Math.sin(this.kick/.13*Math.PI*2)*5 : 0; this.world.setPosition(0,offset); this.effects.setPosition(0,offset);
       // These memory-only QA scenes hold the first impact for repeatable native-render screenshots.
       if (this.qaScene.startsWith('impact-') && this.fx.some(f => f.kind === 'impact' && f.source?.endsWith('S2') && f.age >= .2)) this.qaHeld = true;
+      if (this.qaScene.startsWith('area-hero-') && this.fx.some(f => f.kind === 'group-impact' && f.age >= .2)) this.qaHeld = true;
+      if (this.qaScene.startsWith('flight-hero-') && Array.from(this.flights.values()).some(f => f.age >= .35 && f.samples.length >= 5)) this.qaHeld = true;
+      if (this.qaScene.startsWith('melee-windup-') && Array.from(this.melee.values()).some(m => m.node.active && m.hitAt === undefined && m.progress >= .5)) this.qaHeld = true;
+      if (this.qaScene.startsWith('melee-hit-') && Array.from(this.melee.values()).some(m => m.node.active && m.hitAt !== undefined && now(r) - m.hitAt >= .04)) this.qaHeld = true;
       this.labels = this.labels.filter(l => l.isValid);
     }
     if (sys.isBrowser && typeof document !== 'undefined' && /(?:\?|&)qa(?:=1|&|$)/.test(window.location.search)) {
@@ -1058,12 +1199,13 @@ export class R1GameApp extends Component {
       labels: this.labels.filter(l => l.isValid).map(l => this.typography.describe(l)), buttons: this.hotzones, cardHeight: 560, cardTop: 556, cardBackdrop: false,
       actorNodes: this.actors.size, effects: this.fx.length, audioErrors: this.audio?.errors || [],
       feedback: { pooledRoots: Array.from(this.fxPool.values()).reduce((n, list) => n + list.length, 0), numbers: this.fx.filter(f => f.floating).length,
-        energyOrbs: this.fx.filter(f => f.kind === 'energy').map(f => f.total), skills: this.fx.filter(f => ['windup','impact','heal-pulse','buff-pulse','chain-link'].includes(f.kind||'')).map(f => ({ source: f.source, phase: f.kind, progress: f.age / f.duration })),
+        energyOrbs: this.fx.filter(f => f.kind === 'energy').map(f => f.total), skills: this.fx.filter(f => ['windup','impact','group-impact','heal-pulse','buff-pulse','chain-link'].includes(f.kind||'')).map(f => ({ source: f.source, phase: f.kind, progress: f.age / f.duration })),
         battleViewport:BATTLE_VIEW,impactClip:{left:BATTLE_VIEW.x,top:BATTLE_EFFECT_TOP,width:BATTLE_VIEW.width,height:BATTLE_EFFECT_BOTTOM-BATTLE_EFFECT_TOP}, readableRate:feedbackRate(this.session.data.run?effectiveRate(this.session.data.run):0,this.session.data.run?.rate||1,true) },
       summonExits: this.fx.filter(f => f.summonExit).map(f => ({ ...f.summonExit!, age: f.age })),
       actorVisuals: Array.from(this.actors.entries()).map(([uid, a]) => { const t = a.node.getComponent(UITransform)!; return { uid, atlas: a.atlas, frame: a.frame, action: a.action, healthBar: a.bar.node.active, ammo: a.ammo?.string,
         feet: H / 2 - a.node.position.y, top: H / 2 - a.node.position.y - t.height * (1-t.anchorY) * a.node.scale.y, healthTop: H / 2 - a.bar.node.position.y - 12 }; }),
-      attackVisuals: { punches: this.fx.filter(f => f.punch).length, projectiles: Array.from(this.missiles.values()).map(n => ({ pack: n.name, width: n.getComponent(UITransform)!.width, height: n.getComponent(UITransform)!.height })) } };
+      attackVisuals: { punches: this.fx.filter(f => f.punch).length, melee: Array.from(this.melee.entries()).filter(([,m]) => m.node.active).map(([uid,m]) => ({ uid, family: m.family, progress: m.progress, phase: m.hitAt === undefined ? 'windup' : 'hit', parts: m.parts.filter(n => n.active).length, from: m.from, to: m.to })), flights: Array.from(this.flights.entries()).map(([uid, f]) => ({ uid, family: f.family, age: f.age, frame: f.frame, samples: f.samples.length, visibleTrails: f.trails.filter(n => n.active).length, angle: f.body.angle })),
+        projectiles: Array.from(this.missiles.values()).map(n => ({ pack: n.name, width: n.getComponent(UITransform)!.width, height: n.getComponent(UITransform)!.height })) } };
   }
   onDestroy(): void {
     game.off(Game.EVENT_HIDE, this.onHide, this); game.off(Game.EVENT_SHOW, this.onShow, this);

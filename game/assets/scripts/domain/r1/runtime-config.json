@@ -1,8 +1,8 @@
 {
-  "version": "R1.2.3",
+  "version": "R1.3.0",
   "schemaVersion": 1,
   "rngVersion": "xorshift32-v1",
-  "approvedDecision": "C-037",
+  "approvedDecision": "C-041",
   "roles": {
     "melee": {
       "hp": 240,
@@ -2103,7 +2103,7 @@
       "meleeStopDepth": 0.95,
       "projectileSpeedDesignPixelsPerSecond": 0,
       "telegraphSeconds": 0.35,
-      "energyOnFinalDeath": 9,
+      "energyOnFinalDeath": 1,
       "cardOnFinalDeath": 0,
       "allowedBirthTraits": [
         "T01",
@@ -2132,7 +2132,7 @@
       "meleeStopDepth": 0.95,
       "projectileSpeedDesignPixelsPerSecond": 0,
       "telegraphSeconds": 0.35,
-      "energyOnFinalDeath": 9,
+      "energyOnFinalDeath": 1,
       "cardOnFinalDeath": 0,
       "allowedBirthTraits": [
         "T01",
@@ -2161,7 +2161,7 @@
       "meleeStopDepth": null,
       "projectileSpeedDesignPixelsPerSecond": 380,
       "telegraphSeconds": 0.35,
-      "energyOnFinalDeath": 9,
+      "energyOnFinalDeath": 1,
       "cardOnFinalDeath": 0,
       "allowedBirthTraits": [
         "T01",
@@ -2190,7 +2190,7 @@
       "meleeStopDepth": null,
       "projectileSpeedDesignPixelsPerSecond": 380,
       "telegraphSeconds": 0.35,
-      "energyOnFinalDeath": 9,
+      "energyOnFinalDeath": 1,
       "cardOnFinalDeath": 0,
       "allowedBirthTraits": [
         "T01",
@@ -2424,10 +2424,10 @@
       "stageScale": 1,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 22,
-        "RM02": 8,
+        "RM01": 88,
+        "RM02": 32,
         "RM04": 0,
         "RM05": 0
       },
@@ -2435,7 +2435,7 @@
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2490,10 +2490,10 @@
       "stageScale": 1.025,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 22,
-        "RM02": 8,
+        "RM01": 88,
+        "RM02": 32,
         "RM04": 0,
         "RM05": 0
       },
@@ -2501,7 +2501,7 @@
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2556,10 +2556,10 @@
       "stageScale": 1.05,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 22,
-        "RM02": 8,
+        "RM01": 88,
+        "RM02": 32,
         "RM04": 0,
         "RM05": 0
       },
@@ -2567,7 +2567,7 @@
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2622,10 +2622,10 @@
       "stageScale": 1.075,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 22,
-        "RM02": 8,
+        "RM01": 88,
+        "RM02": 32,
         "RM04": 0,
         "RM05": 0
       },
@@ -2633,7 +2633,7 @@
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2688,10 +2688,10 @@
       "stageScale": 1.1,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 22,
-        "RM02": 8,
+        "RM01": 88,
+        "RM02": 32,
         "RM04": 0,
         "RM05": 0
       },
@@ -2701,8 +2701,8 @@
         "T01",
         "T04"
       ],
-      "traitMinionsPerWave": 6,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 24,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2757,18 +2757,18 @@
       "stageScale": 1.125,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 14,
-        "RM02": 8,
-        "RM04": 5,
-        "RM05": 3
+        "RM01": 56,
+        "RM02": 32,
+        "RM04": 20,
+        "RM05": 12
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2823,18 +2823,18 @@
       "stageScale": 1.15,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 14,
-        "RM02": 8,
-        "RM04": 5,
-        "RM05": 3
+        "RM01": 56,
+        "RM02": 32,
+        "RM04": 20,
+        "RM05": 12
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2889,18 +2889,18 @@
       "stageScale": 1.175,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 14,
-        "RM02": 8,
-        "RM04": 5,
-        "RM05": 3
+        "RM01": 56,
+        "RM02": 32,
+        "RM04": 20,
+        "RM05": 12
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -2955,18 +2955,18 @@
       "stageScale": 1.2,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 14,
-        "RM02": 8,
-        "RM04": 5,
-        "RM05": 3
+        "RM01": 56,
+        "RM02": 32,
+        "RM04": 20,
+        "RM05": 12
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [],
       "traitMinionsPerWave": 0,
-      "eachTraitQuota": 3,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3021,12 +3021,12 @@
       "stageScale": 1.225,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 14,
-        "RM02": 8,
-        "RM04": 5,
-        "RM05": 3
+        "RM01": 56,
+        "RM02": 32,
+        "RM04": 20,
+        "RM05": 12
       },
       "spawnIntervalSeconds": 0.9,
       "nextWaveMaxDelaySeconds": 5,
@@ -3035,8 +3035,8 @@
         "T02",
         "T04"
       ],
-      "traitMinionsPerWave": 9,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 36,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01",
@@ -3093,20 +3093,20 @@
       "stageScale": 1.25,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T01"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3161,20 +3161,20 @@
       "stageScale": 1.275,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T02"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3229,20 +3229,20 @@
       "stageScale": 1.3,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T03"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3297,20 +3297,20 @@
       "stageScale": 1.325,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T04"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3365,12 +3365,12 @@
       "stageScale": 1.35,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.75,
       "nextWaveMaxDelaySeconds": 5,
@@ -3378,8 +3378,8 @@
         "T01",
         "T04"
       ],
-      "traitMinionsPerWave": 6,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 24,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3434,20 +3434,20 @@
       "stageScale": 1.375,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T02"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3502,20 +3502,20 @@
       "stageScale": 1.4,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T03"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3570,20 +3570,20 @@
       "stageScale": 1.425,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T04"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3638,20 +3638,20 @@
       "stageScale": 1.45,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.7,
       "nextWaveMaxDelaySeconds": 5,
       "traitPool": [
         "T01"
       ],
-      "traitMinionsPerWave": 3,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 12,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01"
@@ -3706,12 +3706,12 @@
       "stageScale": 1.475,
       "waveScaleFormula": "waveStatScales[wave-1]",
       "waves": 15,
-      "minionsPerWave": 30,
+      "minionsPerWave": 120,
       "minionCompositionEachWave": {
-        "RM01": 12,
-        "RM02": 8,
-        "RM04": 6,
-        "RM05": 4
+        "RM01": 48,
+        "RM02": 32,
+        "RM04": 24,
+        "RM05": 16
       },
       "spawnIntervalSeconds": 0.9,
       "nextWaveMaxDelaySeconds": 5,
@@ -3720,8 +3720,8 @@
         "T02",
         "T04"
       ],
-      "traitMinionsPerWave": 9,
-      "eachTraitQuota": 3,
+      "traitMinionsPerWave": 36,
+      "eachTraitQuota": 12,
       "miniBosses": {
         "5": [
           "RS01",
@@ -3885,10 +3885,11 @@
     },
     "crowd": {
       "throughWave": 15,
-      "batchSize": 10,
-      "interval": 0.16666666666666666,
-      "period": 9,
-      "clearDelay": 1
+      "batchSize": 40,
+      "interval": 0.05,
+      "period": 3,
+      "clearDelay": 2,
+      "formation": "wide-lanes-v1"
     },
     "feel": {
       "startingSkill2": 1,
@@ -3898,6 +3899,81 @@
       "thirdCooldownFactor": 0.72,
       "radiusScale": 1.35,
       "meleeSkillRange": 0.9
+    },
+    "areaAttacks": {
+      "version": 1,
+      "radii": {
+        "RH01": [
+          0.13,
+          0.155,
+          0.18,
+          0.205,
+          0.23
+        ],
+        "RH02": [
+          0.12,
+          0.145,
+          0.17,
+          0.195,
+          0.22
+        ],
+        "RH03": [
+          0.15,
+          0.175,
+          0.2,
+          0.225,
+          0.25
+        ],
+        "RH04": [
+          0.13,
+          0.155,
+          0.18,
+          0.205,
+          0.23
+        ],
+        "RH05": [
+          0.14,
+          0.165,
+          0.19,
+          0.215,
+          0.24
+        ],
+        "RH06": [
+          0.13,
+          0.155,
+          0.18,
+          0.205,
+          0.23
+        ],
+        "RH07": [
+          0.11,
+          0.135,
+          0.16,
+          0.185,
+          0.21
+        ],
+        "RH08": [
+          0.14,
+          0.165,
+          0.19,
+          0.215,
+          0.24
+        ],
+        "RH09": [
+          0.14,
+          0.165,
+          0.19,
+          0.215,
+          0.24
+        ],
+        "RH10": [
+          0.15,
+          0.175,
+          0.2,
+          0.225,
+          0.25
+        ]
+      }
     }
   },
   "cards": {

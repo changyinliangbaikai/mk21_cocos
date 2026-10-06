@@ -2,9 +2,12 @@
 document_type: ai_deployment_runbook
 schema_version: 1
 release_channel: wechatgame
-scope_updated_at: "2026-10-01"
-runtime_version: "R1.2.3"
-runtime_verified_at: "2026-10-01"
+scope_updated_at: "2026-10-06"
+runtime_version: "R1.3.0"
+runtime_art_revision: "C-042"
+runtime_flight_revision: "C-043"
+runtime_melee_revision: "C-044"
+runtime_verified_at: "2026-10-06"
 wechat_uploaded_at: "2026-10-01"
 wechat_uploaded_version: "1.2.3"
 wechat_experience_backend_verification: pending
@@ -20,7 +23,7 @@ creator_version: "3.8.8"
 
 本文面向接手本仓库的 AI 编程助手。当前唯一发布渠道为微信小游戏，Web 用于本地调试和截图；按用户指定范围推进预览、上传体验版、备案、提审或正式发布。所有相对路径和命令均以仓库根目录为起点；代码与脚本若发生变化，先核对实现，再更新本文件中的命令和判断条件。
 
-当前分支入口为 R1.2.3。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。R1.2最新验证见 [激励机制实现](docs/development/R1.2激励机制.md)。2026-10-01 微信1.2.3已实际上传成功并确认覆盖原体验版，详见 [发布进度](docs/release/小游戏发布推进.md)；后台最终体验版标记与手机验收仍待核对。
+当前代码入口为 R1.3.0（8通道全宽出怪、十英雄普攻群攻与半径升级；120只/波、3批×40只、批次起点相隔3战斗秒、每只1能量保持），本地Web已构建；微信最近上传版本仍为1.2.3。新群攻规则仅在新开对局生效。上方 `verified_source_commit` 与 `verified_at` 是历史部署基线，不代表当前R1代码；`runtime_verified_at` 对应本地逻辑、声明及Web验证。最新验证见 [当前实现记录](docs/development/R1.2激励机制.md)。2026-10-01 微信1.2.3已实际上传成功并确认覆盖原体验版，详见 [发布进度](docs/release/小游戏发布推进.md)；后台最终体验版标记与手机验收仍待核对。
 
 ## 1. 执行约定与输入
 

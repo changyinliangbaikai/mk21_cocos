@@ -1,8 +1,8 @@
 import { Asset, ImageAsset, JsonAsset, Rect, Size, SpriteFrame, Texture2D, resources } from 'cc';
 
 export interface R1Frame { rect: number[]; ratio: number; widthRatio?: number; heightRatio?: number; anchor: number[] }
-export interface R1Atlas { id: string; resource: string; group: string; kind: string; frames: R1Frame[]; displayHeight?: number; clips: Record<string, { frames: number[]; secondsPerFrame: number; loop?: boolean; holdLast?: boolean }> }
-export interface R1Manifest { atlases: R1Atlas[]; audioEvents: { event: string; audioIds: string[] }[] }
+export interface R1Atlas { id: string; resource: string; group: string; kind: string; frames: R1Frame[]; displayHeight?: number; effectScale?: number; clips: Record<string, { frames: number[]; secondsPerFrame: number; loop?: boolean; holdLast?: boolean }> }
+export interface R1Manifest { atlases: R1Atlas[]; areaFxRevision?: string; flightFxRevision?: string; meleeFxRevision?: string; audioEvents: { event: string; audioIds: string[] }[] }
 export function loadR1<T extends Asset>(url: string, type: new (...args: any[]) => T): Promise<T> {
   return new Promise((resolve, reject) => {
     let complete = false;
@@ -55,6 +55,6 @@ export class R1Assets {
     const frame = Math.floor(Math.max(0, time) / clip.secondsPerFrame);
     return clip.frames[clip.loop ? frame % clip.frames.length : Math.min(clip.frames.length - 1, frame)];
   }
-  report(): object { return { loadedAtlases: this.frames.size, expectedAtlases: this.manifest.atlases.length, textureBytes: this.textures.reduce((n, t) => n + t.width * t.height * 4, 0) }; }
+  report(): object { return { loadedAtlases: this.frames.size, expectedAtlases: this.manifest.atlases.length, areaFxRevision: this.manifest.areaFxRevision, flightFxRevision: this.manifest.flightFxRevision, meleeFxRevision: this.manifest.meleeFxRevision, textureBytes: this.textures.reduce((n, t) => n + t.width * t.height * 4, 0) }; }
   destroy(): void { for (const frames of this.frames.values()) frames.forEach(f => f.destroy()); this.frames.clear(); this.textures.forEach(t => t.destroy()); this.images.forEach(i => i.decRef()); }
 }

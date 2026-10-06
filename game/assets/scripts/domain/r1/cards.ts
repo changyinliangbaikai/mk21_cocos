@@ -1,5 +1,5 @@
 import { HEROES, Quality, RULES, SKILLS, heroDef, permanentStats, skillDef } from './config';
-import { Card, Hero, Run, aliveHeroes, event, now } from './model';
+import { Card, Hero, Run, aliveHeroes, event, minionEnergy, now, waveMinionQuota } from './model';
 import { Stream, pick, random, weighted } from './random';
 import { goalProgress } from './incentives';
 
@@ -119,6 +119,17 @@ export function gainEnergy(r: Run, energy: number): void {
   r.energy += energy;
   while (r.energy >= 100) { r.energy -= 100; if (r.drawDebt) r.drawDebt--; else r.drawQueue.push('energy'); }
 }
+/** Integer carry avoids floating-point drift when 60 final deaths share 100 energy. */
+export function gainMinionEnergy(r: Run): number {
+  let energy = minionEnergy(r);
+  if (!Number.isInteger(energy)) {
+    const quota = waveMinionQuota(r, 1);
+    const units = (r.energyRemainder ?? 0) + Math.round(energy * quota);
+    energy = Math.floor(units / quota);
+    r.energyRemainder = units % quota;
+  }
+  gainEnergy(r, energy); return energy;
+}
 export function resolveRescue(r: Run, accept: boolean): boolean {
   if (!r.rescue || r.status !== 'active') return false;
   const kind = r.rescue, dead = r.slots.filter((h): h is Hero => !!h && h.hp <= 0)
@@ -146,5 +157,5 @@ export function cardText(c: Card): { title: string; subtitle: string; body: stri
   if (c.kind === 'attribute') return { title: '全面强化', subtitle: heroDef(c.heroId!).name,
     body: '攻击增加基础值的20%\n生命与防御增加基础值的15%\n同时补充新增生命，可叠加' };
   const s = skillDef(c.heroId!, c.skillSlot!);
-  return { title: s.name, subtitle: `${heroDef(c.heroId!).name} · ${s.kind === 'ultimate' ? '终极' : '普通'}技能`, body: `${c.level === 1 ? '解锁' : '升级至'} Lv.${c.level}\n${s.slot === 1 ? `普攻攻击${c.level}个不同目标` : `伤害与范围提升\n冷却后自动释放`}` };
+  return { title: s.name, subtitle: `${heroDef(c.heroId!).name} · ${s.kind === 'ultimate' ? '终极' : '普通'}技能`, body: `${c.level === 1 ? '解锁' : '升级至'} Lv.${c.level}\n${s.slot === 1 ? '群攻范围扩大\n范围内目标各命中一次' : `伤害与范围提升\n冷却后自动释放`}` };
 }

@@ -36,6 +36,7 @@ artifacts/recovery/
 !/tools/minigame-release.mjs
 !/tools/verify-startup-branding.mjs
 !/tools/export-r1-assets.mjs
+!/tools/export-r1-area-fx.mjs
 !/tools/build-r1-fonts.py
 !/tools/simulate-r1.ts
 !/tools/balance-r1.ts

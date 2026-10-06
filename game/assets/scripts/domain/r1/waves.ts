@@ -1,5 +1,5 @@
 import { enemyDef, legacyStageTuning, stageDef } from './config';
-import { Enemy, Run, Spawn, event, now } from './model';
+import { Enemy, Run, Spawn, event, now, waveMinionQuota } from './model';
 import { random, shuffle } from './random';
 import { CONTRACTS, EXPEDITION_HP, EXPEDITION_ATTACK } from './incentives';
 
@@ -22,12 +22,21 @@ export function wavePlans(run: Run): Spawn[][] {
       if(at<0)throw new Error('特性配额无法匹配');result[indices.splice(at,1)[0]].trait=trait;n++;
     }
     const crowd = runTuning(run).crowd;
+    if (crowd?.formation === 'wide-lanes-v1') {
+      // Every eight releases visit all eight lanes; each 40-unit batch covers the whole entry.
+      let lanes: number[] = [];
+      result.forEach((entry, i) => {
+        if (i % 8 === 0) lanes = shuffle([0, 1, 2, 3, 4, 5, 6, 7], run.rng, 'spawn');
+        entry.x = .06 + (lanes[i % 8] + .5) * .11 + (entry.x - .5) * .07;
+      });
+      return result;
+    }
     if (crowd && wave < crowd.throughWave) result.forEach((entry, i) => {
       // Use the already-generated spawn jitter, leaving the independent card/reward RNG untouched.
       const batch = Math.floor(i / crowd.batchSize), j = i % crowd.batchSize;
       const pattern = (wave + batch) % 3, jitter = (entry.x - .5) * .018;
       entry.x = pattern === 0 ? .29 + (j % 5) * .105 + Math.floor(j / 5) * .022 + jitter
-        : pattern === 1 ? (j < 5 ? .25 : .64) + (j % 5) * .027 + jitter
+        : pattern === 1 ? (j % 10 < 5 ? .25 : .64) + (j % 5) * .027 + Math.floor(j / 10) * .012 + jitter
         : .30 + (j % 5) * .09 + Math.floor(j / 5) * .025 + jitter;
     });
     return result;
@@ -54,7 +63,7 @@ function startWave(r: Run): void {
 }
 export function advanceWaves(r: Run, dt: number): void {
   if (!r.wave) startWave(r);
-  if (r.released < 30) {
+  if (r.released < waveMinionQuota(r)) {
     const tuning = runTuning(r), crowd = tuning.crowd && r.wave <= tuning.crowd.throughWave ? tuning.crowd : undefined;
     if (crowd && r.released > 0 && r.released % crowd.batchSize === 0
       && !r.enemies.some(e => e.hp > 0 && enemyDef(e.id).tier === 'minion') && !r.explosions.length)
@@ -64,7 +73,7 @@ export function advanceWaves(r: Run, dt: number): void {
       spawnEnemy(r, r.plans[r.wave - 1][r.released++]);
       r.spawnTimer = crowd ? r.released % crowd.batchSize === 0 ? crowd.period - (crowd.batchSize - 1) * crowd.interval : crowd.interval : tuning.spawnIntervals[r.wave - 1];
     }
-    return; // No transition on the release tick; each plan always releases all 30 minions.
+    return; // Never transition before every minion in the saved plan has been released.
   }
   r.nextWaveTimer += dt;
   if (r.wave < 15 && ((!r.enemies.some(e => e.hp > 0) && !r.explosions.length) || r.nextWaveTimer >= runTuning(r).nextWaveDelay - 1e-8)) startWave(r);

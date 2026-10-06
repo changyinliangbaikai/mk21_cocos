@@ -1,5 +1,5 @@
 import { RULES, Quality, stageDef, stageTuning } from './config';
-import { Profile, Run, aliveHeroes, copy, deployed, event } from './model';
+import { Profile, Run, aliveHeroes, copy, deployed, event, waveMinionQuota } from './model';
 import { streams } from './random';
 import { repairDraft, showDraft } from './cards';
 import { advanceWaves, enemyScale, wavePlans } from './waves';
@@ -25,7 +25,7 @@ export function reconcileBattle(r: Run): void {
   const dead = deployed(r).filter(h => h.hp <= 0);
   if (dead.length >= 3 && !r.grandpaUsed) { r.rescue = 'grandpa'; r.aiming = false; return; }
   if (deployed(r).length && !aliveHeroes(r).length) { r.rescue = 'wipe'; r.aiming = false; return; }
-  if (r.wave === 15 && r.released === 30 && !r.enemies.some(e => e.hp > 0) && !r.explosions.length && aliveHeroes(r).length) {
+  if (r.wave === 15 && r.released === waveMinionQuota(r) && !r.enemies.some(e => e.hp > 0) && !r.explosions.length && aliveHeroes(r).length) {
     r.status = 'victory'; r.rescue = null; r.candidates = []; r.drawQueue = []; r.aiming = false;
     r.summons = []; r.projectiles = []; r.skillBursts = []; event(r, 'victory', String(r.stage), { x: .5, y: .5 }); return;
   }

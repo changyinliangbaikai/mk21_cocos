@@ -5,15 +5,15 @@
       "id": "FONT_DISPLAY",
       "resource": "r1/fonts/R1_DISPLAY",
       "family": "Chaoli R1 Display",
-      "sha256": "0a3076acbd86b933311d4a1f4edfbae26b1f1590c0f499627e60df45b59d3196",
-      "glyphs": 731
+      "sha256": "5c246a246a2e06e3d55317498271e744dc22ef9e7917de4c0a833f040ffc76ce",
+      "glyphs": 732
     },
     {
       "id": "FONT_BODY",
       "resource": "r1/fonts/R1_BODY",
       "family": "Chaoli R1 Body",
-      "sha256": "7147ccb145d5cfae166fdd5820edd387242044d3f8b6ed06218b03f74674a0df",
-      "glyphs": 731
+      "sha256": "eb7fbbc49177cdc93a0641f68a111fd95f203a961653be4c7cbecaaafaa22248",
+      "glyphs": 732
     }
   ],
   "missing": []

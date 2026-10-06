@@ -10577,6 +10577,3003 @@
       "clips": {},
       "displayHeight": 105.59,
       "sourceSha256": "b75dcb0205d83047b8893d80dde98d73d69dc829e7bd68f28d389d8385a05247"
+    },
+    {
+      "id": "FX-AREA-RH01",
+      "resource": "r1/art/FX-AREA-RH01",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "c1d185fc243e76dbe9b49bc08fe4eb757270cb777118d17b5870b09b06ce87f3",
+      "bytes": 350847
+    },
+    {
+      "id": "FX-AREA-RH02",
+      "resource": "r1/art/FX-AREA-RH02",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "148fd42ae4d6830ec78639c731a58e4aef5d1421d2f3b543321492122a5f585a",
+      "bytes": 273333
+    },
+    {
+      "id": "FX-AREA-RH03",
+      "resource": "r1/art/FX-AREA-RH03",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "c8f5db51cf2906090e863b8f840a5ef0cf72a9ded4834d4107870157ed1a5117",
+      "bytes": 303107
+    },
+    {
+      "id": "FX-AREA-RH04",
+      "resource": "r1/art/FX-AREA-RH04",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "0d673957942899f33736bf69001dc287585ffa6261bb7e957318bd298d4659fa",
+      "bytes": 328315
+    },
+    {
+      "id": "FX-AREA-RH05",
+      "resource": "r1/art/FX-AREA-RH05",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "e96ef08aa413194d5c46cc7eb11b6e6394e0cee4548b6a12eba886c147edebb3",
+      "bytes": 323666
+    },
+    {
+      "id": "FX-AREA-RH06",
+      "resource": "r1/art/FX-AREA-RH06",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "26b47ec811a0c7546d1d42014c85e3bd591aaf78b622bfb30c30b8583d6d2a93",
+      "bytes": 365960
+    },
+    {
+      "id": "FX-AREA-RH07",
+      "resource": "r1/art/FX-AREA-RH07",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "25678e85a14a749388c39f99c2ade81ce21a94cada32ae8f9a265d4220a484c3",
+      "bytes": 282738
+    },
+    {
+      "id": "FX-AREA-RH08",
+      "resource": "r1/art/FX-AREA-RH08",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "4aa036b81a348a8022bb4ebc56e7bee47d19de8316e73f2af6ab49b5cd0d873d",
+      "bytes": 280196
+    },
+    {
+      "id": "FX-AREA-RH09",
+      "resource": "r1/art/FX-AREA-RH09",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "4e64b75b42b57da1d417410ded73489f4efdd7e704f13918538d57dc0a83b966",
+      "bytes": 305768
+    },
+    {
+      "id": "FX-AREA-RH10",
+      "resource": "r1/art/FX-AREA-RH10",
+      "group": "battle",
+      "kind": "area-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1
+          ],
+          "secondsPerFrame": 0.09,
+          "loop": true
+        },
+        "impact": {
+          "frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.08
+        }
+      },
+      "effectScale": 1.2107343457457873,
+      "sourceSha256": "de7d57dcee475fadd2523a8a17252791f782b614399051db113122493caa6d3c",
+      "bytes": 335605
+    },
+    {
+      "id": "FX-FLIGHT-RH02",
+      "resource": "r1/art/FX-FLIGHT-RH02",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "c5bb0da5c583e1453aacdc71849f9bc7273d8fa2d504ce9daff6e2d0969c7bf2",
+      "bytes": 174894
+    },
+    {
+      "id": "FX-FLIGHT-RH03",
+      "resource": "r1/art/FX-FLIGHT-RH03",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "7b7f43b76bbca1cb68ff84ca97d6f747f3fa4208d21e0be66d63df998a8b6512",
+      "bytes": 157882
+    },
+    {
+      "id": "FX-FLIGHT-RH04",
+      "resource": "r1/art/FX-FLIGHT-RH04",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "f089f55636d67f5900a6d25c2b7a34a0e70be92d0b240922d4779913ba28bfc8",
+      "bytes": 166431
+    },
+    {
+      "id": "FX-FLIGHT-RH07",
+      "resource": "r1/art/FX-FLIGHT-RH07",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "eb6c967605edca30bb9f94db7fa34ba47b4cb3ddff2226c49378f47983a4f394",
+      "bytes": 138070
+    },
+    {
+      "id": "FX-FLIGHT-RH08",
+      "resource": "r1/art/FX-FLIGHT-RH08",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "db0ffb9cd4aa06ec60c3ceb1fc53624c2e77a9acfd1b65437508275ce665fa6f",
+      "bytes": 157310
+    },
+    {
+      "id": "FX-FLIGHT-RH09",
+      "resource": "r1/art/FX-FLIGHT-RH09",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "7a4b7a84f841d4659c4054181ad0881ce280a9c9d214bc15ecfba1ff268961c1",
+      "bytes": 125455
+    },
+    {
+      "id": "FX-FLIGHT-RH10",
+      "resource": "r1/art/FX-FLIGHT-RH10",
+      "group": "battle",
+      "kind": "flight-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            0,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            160,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            160,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            320,
+            320,
+            160,
+            160
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "projectile": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.065,
+          "loop": true
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.06
+        }
+      },
+      "effectScale": 1.2213548224628556,
+      "sourceSha256": "f5e60f24c8839c0abb7f9f5a1800943827657a558d724888f4aeb04a17bba77e",
+      "bytes": 161722
+    },
+    {
+      "id": "FX-MELEE-RH01",
+      "resource": "r1/art/FX-MELEE-RH01",
+      "group": "battle",
+      "kind": "melee-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            90,
+            184
+          ],
+          "ratio": 0.4891304347826087,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            67,
+            184
+          ],
+          "ratio": 0.3641304347826087,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            58,
+            184
+          ],
+          "ratio": 0.31521739130434784,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "approach": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.04
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.05
+        }
+      },
+      "effectScale": 1.565217391304348,
+      "sourceSha256": "a6a251ab818940152d7baa8a4f00dfe4c87e453a9390a856e1239a1770dff2f1",
+      "bytes": 143957
+    },
+    {
+      "id": "FX-MELEE-RH05",
+      "resource": "r1/art/FX-MELEE-RH05",
+      "group": "battle",
+      "kind": "melee-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            76,
+            184
+          ],
+          "ratio": 0.41304347826086957,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            107,
+            184
+          ],
+          "ratio": 0.5815217391304348,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            75,
+            184
+          ],
+          "ratio": 0.4076086956521739,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "approach": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.04
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.05
+        }
+      },
+      "effectScale": 1.565217391304348,
+      "sourceSha256": "b50a0c6da34b50620b23419822c32e57796f9b5b8404269f7a68e17eaa1131f7",
+      "bytes": 190829
+    },
+    {
+      "id": "FX-MELEE-RH06",
+      "resource": "r1/art/FX-MELEE-RH06",
+      "group": "battle",
+      "kind": "melee-vfx",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "ratio": 1,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            4,
+            388,
+            94,
+            184
+          ],
+          "ratio": 0.5108695652173914,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            196,
+            388,
+            72,
+            184
+          ],
+          "ratio": 0.391304347826087,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "rect": [
+            388,
+            388,
+            59,
+            184
+          ],
+          "ratio": 0.32065217391304346,
+          "anchor": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "clips": {
+        "approach": {
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "secondsPerFrame": 0.04
+        },
+        "trail": {
+          "frames": [
+            6,
+            7,
+            8
+          ],
+          "secondsPerFrame": 0.05
+        }
+      },
+      "effectScale": 1.565217391304348,
+      "sourceSha256": "88d1ef0c64410ddf5f6de03dd512cdbdccacb69811abcb13ac605d3ea575e372",
+      "bytes": 206867
     }
   ],
   "audioEvents": [
@@ -11195,5 +14192,8 @@
       ]
     }
   ],
-  "rosterExpansion": "C-033"
+  "rosterExpansion": "C-033",
+  "areaFxRevision": "C-042",
+  "flightFxRevision": "C-043",
+  "meleeFxRevision": "C-044"
 }

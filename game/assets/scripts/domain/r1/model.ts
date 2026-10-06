@@ -34,6 +34,7 @@ export interface Summon extends Point {
   attack: number; defense: number; radius: number; taunt: boolean; slow: number; ends: number;
   cooldown: number; interval: number; shots: number; weakUntil: number; idleTime: number;
   fortressUntil: number; attackFactor: number;
+  splashRadius?: number;
   cast?: CastRef;
 }
 export interface Projectile extends Point {
@@ -45,6 +46,8 @@ export interface Projectile extends Point {
   launch?: Point;
   cast?: CastRef;
   chainLaterFactor?: number;
+  /** A basic/summon area shot preserves its legal damage band after the owner dies. */
+  group?: { minY: number };
 }
 export interface Explosion extends Point { uid: number; at: number; damage: number; radius: number }
 export interface SkillBurst extends Point { owner: number; source: string; at: number; damage: number; radius: number; level: number; index: number; kind: 'pulse' | 'rocket'; target?: number; cast?: CastRef; echo?: boolean }
@@ -59,6 +62,8 @@ export interface Run {
   skillBursts?: SkillBurst[];
   wave: number; plans: Spawn[][]; released: number; spawnTimer: number; nextWaveTimer: number;
   spawnedMinions: number; spawnedBosses: number; kills: number; energy: number;
+  /** Fractional minion energy, in 1 / wave quota units; kept through save/restore. */
+  energyRemainder?: number;
   drawQueue: DrawSource[]; candidates: Card[]; cardSequence: number; globalSkill: Quality | null;
   grandpaUsed: boolean; freeReviveUsed: boolean; drawDebt: number; rescue: 'grandpa' | 'wipe' | null;
   events: BattleEvent[]; eventSequence: number;
@@ -81,6 +86,10 @@ export const copy = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 export const aliveHeroes = (run: Run): Hero[] => run.slots.filter((h): h is Hero => !!h && h.hp > 0);
 export const deployed = (run: Run): Hero[] => run.slots.filter((h): h is Hero => !!h);
 export const now = (run: Run): number => run.tick / 60;
+/** Saved plans retain their original quota when an older battle is resumed. */
+export const waveMinionQuota = (run: Run, wave = run.wave): number => run.plans[Math.max(0, wave - 1)].length;
+/** R1.0–R1.2.3 saves predate the energy snapshot and paid nine per final kill. */
+export const minionEnergy = (run: Run): number => run.tuning?.minionEnergy ?? 9;
 /** Distances use battle width as the unit; positions are normalized on each axis. */
 export const distance = (a: Point, b: Point): number => Math.hypot(a.x - b.x, (a.y - b.y) * 800 / 656);
 export function event(run: Run, type: string, source: string, at: Point, target?: number, amount?: number, radius?: number, from?: Point): void {

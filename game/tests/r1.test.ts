@@ -18,7 +18,7 @@ function run(stage = 1, seed = 42): Run {
   r.drawQueue = []; r.candidates = []; return r;
 }
 function combat(hero = 'RH02'): Run {
-  const r = run(); deployHero(r, hero, 0); r.wave = 1; r.released = 30; return r;
+  const r = run(); deployHero(r, hero, 0); r.wave = 1; r.released = r.plans[Math.max(0, r.wave - 1)].length; return r;
 }
 function monster(r: Run, id = 'RM01', trait: string | null = null, x = .5, y = .75) {
   const e = spawnEnemy(r, { id, trait, x }, Math.max(1, r.wave)); e.y = y; return e;
@@ -51,17 +51,17 @@ test('AC02/AC17 opening is frozen until three selections; two heroes can start',
 });
 test('AC03 early empty field never skips unreleased minions; clearing after all releases advances immediately', () => {
   const r = combat(); r.wave = 0; r.released = 0;
-  for (let i = 0; i < 3000 && r.spawnedMinions < 29; i++) { advanceWaves(r, 1 / 60); r.enemies = []; }
-  assert.equal(r.wave, 1); assert.equal(r.spawnedMinions, 29);
-  while (r.spawnedMinions < 30) advanceWaves(r, 1 / 60); assert.equal(r.spawnedMinions, 30); r.enemies = [];
+  for (let i = 0; i < 3000 && r.spawnedMinions < 119; i++) { advanceWaves(r, 1 / 60); r.enemies = []; }
+  assert.equal(r.wave, 1); assert.equal(r.spawnedMinions, 119);
+  while (r.spawnedMinions < 120) advanceWaves(r, 1 / 60); assert.equal(r.spawnedMinions, 120); r.enemies = [];
   advanceWaves(r, 1 / 60); assert.equal(r.wave, 2);
 });
-test('AC03/AC04 full 15-wave release retains old enemies and produces exactly 450 + 3/5 bosses', () => {
+test('AC03/AC04 full 15-wave release retains old enemies and produces exactly 1800 + 3/5 bosses', () => {
   for (const stage of [1, 5, 10, 20]) {
     const r = run(stage);
-    const maxTicks = Math.ceil((runTuning(r).spawnIntervals.reduce((a, b) => a + b * 29, 0) + 15 * 5 + 1) * 60);
-    for (let i = 0; i < maxTicks && (r.wave < 15 || r.released < 30); i++) advanceWaves(r, 1 / 60);
-    assert.equal(r.spawnedMinions, 450); assert.equal(r.spawnedBosses, stage % 10 === 0 ? 5 : 3);
+    const maxTicks = 15 * 31 * 60;
+    for (let i = 0; i < maxTicks && (r.wave < 15 || r.released < 120); i++) advanceWaves(r, 1 / 60);
+    assert.equal(r.spawnedMinions, 1800); assert.equal(r.spawnedBosses, stage % 10 === 0 ? 5 : 3);
     assert.equal(r.enemies.length, r.spawnedMinions + r.spawnedBosses);
   }
 });
@@ -83,14 +83,14 @@ test('C029 release spacing changes by wave but the five-second maximum gap never
   advanceWaves(r, 1 / 60); const first = r.enemies[0];
   for (let i = 0; i < 50; i++) advanceWaves(r, 1 / 60);
   assert.equal(r.released, 1); advanceWaves(r, 1 / 60); assert.equal(r.released, 2);
-  while (r.released < 30) advanceWaves(r, 1 / 60);
+  while (r.released < r.plans[0].length) advanceWaves(r, 1 / 60);
   for (let i = 0; i < 299; i++) advanceWaves(r, 1 / 60);
   assert.equal(r.wave, 1); advanceWaves(r, 1 / 60); assert.equal(r.wave, 2);
   assert.ok(r.enemies.includes(first)); advanceWaves(r, 1 / 60);
   assert.equal(r.spawnTimer, .8);
 });
 test('C029 old snapshots without tuning keep the original enemy stats, release interval and global damage', () => {
-  const r = run(2); delete r.tuning;
+  const r = run(2); delete r.tuning; r.plans = r.plans.map(w => w.slice(0, 30));
   const e = spawnEnemy(r, { id: 'RM01', trait: null, x: .5 }, 1);
   assert.equal(e.maxHp, 32 * 1.06); assert.equal(e.attack, 12 * 1.06);
   r.enemies = []; advanceWaves(r, 1 / 60); assert.equal(r.spawnTimer, .5);
@@ -112,7 +112,7 @@ test('C029 new runs own their tuning snapshot across save restore and later conf
     const restored = new R1Session(storage).data.run!;
     assert.deepEqual(restored, before);
     const e = spawnEnemy(restored, { id: 'RM01', trait: null, x: .5 }, 1); e.y = .5; e.hp = e.maxHp = 10000;
-    restored.wave = 1; restored.released = 30; restored.globalSkill = 'blue'; aimGlobal(restored); castGlobal(restored, .5, .5);
+    restored.wave = 1; restored.released = restored.plans[0].length; restored.globalSkill = 'blue'; aimGlobal(restored); castGlobal(restored, .5, .5);
     assert.equal(10000 - e.hp, Math.ceil(RULES.globalSkills.blue.baseDamage * 1.025 * .72));
     assert.notDeepEqual(runTuning(run(2)), before.tuning);
   } finally { Object.assign(stage, original); }
@@ -127,7 +127,7 @@ test('C029 invalid difficulty snapshots are rejected without overwriting the sav
     assert.ok(restored.error); assert.equal(restored.resume(), false); assert.equal(storage.getItem(R1_SAVE_KEY), raw);
   }
 });
-test('C029 level-one stage-two attribute-first regression reaches the first boss before any rescue', () => {
+test('C040 level-one stage-two attribute-first policy reaches the first boss without a rescue', () => {
   function openingToBoss() {
     const p = freshProfile(); p.clearedStage = 1;
     const r = createRun(p, 2, 42, 'early-curve');
@@ -146,37 +146,39 @@ test('C029 level-one stage-two attribute-first regression reaches the first boss
     }
     return { r, energyDraws, firstEnergy };
   }
-  // The historical failure is kept in C029 evidence; later combat fixes also improve the old curve.
+  // The requested 120-minion density allows casualties; balance matrices retain the lost zero-death gate.
   const after = openingToBoss();
   assert.equal(after.r.wave, 5); assert.equal(after.r.rescue, null);
-  assert.ok(after.r.slots.every(h => !h || h.hp > 0)); assert.ok(after.energyDraws >= 5);
-  assert.ok(after.firstEnergy > 0 && after.firstEnergy < 25);
+  assert.ok(after.energyDraws >= 3 && after.energyDraws <= 4);
+  assert.equal(after.energyDraws + after.r.drawQueue.filter(q => q === 'energy').length, Math.floor(after.r.kills / 100));
+  assert.ok(after.firstEnergy > 0 && after.firstEnergy < 40);
 });
 test('all stage plans assign exact quotas of enabled traits', () => {
   for (const s of STAGES) for (const wave of run(s.id).plans) {
     assert.equal(wave.filter(e => e.trait).length, s.traitMinionsPerWave);
-    for (const trait of s.traitPool) assert.equal(wave.filter(e => e.trait === trait).length, 3);
+    for (const trait of s.traitPool) assert.equal(wave.filter(e => e.trait === trait).length, s.eachTraitQuota);
   }
 });
-test('C027 stages 1 through 5 keep 30 melee minions per wave; stage 6 restores ranged minions', () => {
+test('C040 stages 1 through 5 keep 120 melee minions per wave; stage 6 restores ranged minions', () => {
   for (const stage of [1, 2, 3, 4, 5]) for (const wave of run(stage).plans) {
-    assert.equal(wave.length, 30);
+    assert.equal(wave.length, 120);
     assert.ok(wave.every(e => enemyDef(e.id).attackType === 'melee'));
-    assert.equal(wave.filter(e => e.id === 'RM01').length, 22);
-    assert.equal(wave.filter(e => e.id === 'RM02').length, 8);
+    assert.equal(wave.filter(e => e.id === 'RM01').length, 88);
+    assert.equal(wave.filter(e => e.id === 'RM02').length, 32);
   }
-  for (const wave of run(6).plans) assert.equal(wave.filter(e => enemyDef(e.id).attackType === 'ranged').length, 8);
+  for (const wave of run(6).plans) assert.equal(wave.filter(e => enemyDef(e.id).attackType === 'ranged').length, 32);
 });
-test('C027 every minion pays 9 energy once, and the twelfth kill opens a regular draft', () => {
+test('C040 each of 120 minions pays exactly one energy once, retaining the 20-point overflow', () => {
   for (const d of ENEMIES.filter(e => e.tier === 'minion')) {
     const r = combat();
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 120; i++) {
       const e = monster(r, d.id); damageEnemy(r, e, 9999, 'global', 'test');
       damageEnemy(r, e, 9999, 'global', 'duplicate hit'); reconcileBattle(r);
-      if (i < 12) { assert.equal(r.energy, i * 9); assert.equal(r.candidates.length, 0); }
+      assert.equal(r.energy, i % 100);
+      assert.equal(r.candidates.length, i < 100 ? 0 : 3);
     }
-    assert.equal(r.energy, 8); assert.deepEqual(r.drawQueue, ['energy']);
-    assert.equal(r.candidates.length, 3); assert.equal(r.kills, 12);
+    assert.equal(r.energy, 20); assert.deepEqual(r.drawQueue, ['energy']);
+    assert.equal(r.candidates.length, 3); assert.equal(r.kills, 120);
   }
 });
 test('C027 boss rewards stay a direct card without minion energy', () => {
@@ -290,7 +292,7 @@ test('AC12 shield triggers before damage once, command never refills spent shiel
 test('AC12 residual only rewards final death and can be reached by all-melee after final release', () => {
   const r = combat('RH01'); r.wave = 15; const e = monster(r, 'RM01', 'T06', .5, .1);
   damageEnemy(r, e, 999, 'melee', 'test'); assert.equal(e.residual, true); assert.equal(r.energy, 0); assert.equal(r.kills, 0);
-  assert.equal(heroTargets(r, r.slots[0]!)[0], e); damageEnemy(r, e, 999, 'melee', 'test'); assert.equal(r.energy, 9); assert.equal(r.kills, 1);
+  assert.equal(heroTargets(r, r.slots[0]!)[0], e); damageEnemy(r, e, 999, 'melee', 'test'); assert.equal(r.energy, 1); assert.equal(r.energyRemainder, undefined); assert.equal(r.kills, 1);
 });
 test('AC12 pending explosion prevents premature victory', () => {
   const r = combat(); r.wave = 15; const e = monster(r, 'RM01', 'T08', .8, .8);
@@ -356,7 +358,7 @@ test('AC15 stale writers and unknown/corrupt saves stop writing', () => {
 });
 test('AC15 victory settlement is atomic, idempotent, and failure grants nothing', () => {
   const storage = new MemoryStorage(), session = new R1Session(storage); session.start(1, 90);
-  const r = session.data.run!; r.drawQueue = []; r.candidates = []; deployHero(r, 'RH01', 0); r.wave = 15; r.released = 30;
+  const r = session.data.run!; r.drawQueue = []; r.candidates = []; deployHero(r, 'RH01', 0); r.wave = 15; r.released = r.plans[Math.max(0, r.wave - 1)].length;
   session.tick(1 / 60); assert.equal(session.data.run!.status, 'victory'); const fragments = copy(session.data.profile.fragments);
   assert.equal(Object.values(fragments).reduce((a, b) => a + b, 0), 5);
   session.tick(1); const restored = new R1Session(storage); restored.resume(); restored.tick(1); assert.deepEqual(restored.data.profile.fragments, fragments);

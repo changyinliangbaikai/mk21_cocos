@@ -27,9 +27,10 @@ export interface StageDefinition {
   traitMinionsPerWave: number; eachTraitQuota: number; miniBosses: Record<string, string[]>; finalBoss: string;
   waveStatScales?: number[]; spawnIntervalsByWave?: number[];
 }
-export interface CrowdTuning { throughWave: number; batchSize: number; interval: number; period: number; clearDelay: number }
+export interface CrowdTuning { throughWave: number; batchSize: number; interval: number; period: number; clearDelay: number; formation?: 'wide-lanes-v1' }
 export interface HeroFeelTuning { startingSkill2: number; deployCastDelay: number; cardCastDelay: number; normalCooldownFactor: number; thirdCooldownFactor: number; radiusScale: number; meleeSkillRange: number }
-export interface BattleTuning { version: string; baseScale: number; waveScales: number[]; spawnIntervals: number[]; nextWaveDelay: number; crowd?: CrowdTuning; feel?: HeroFeelTuning }
+export interface AreaAttackTuning { version: 1; radii: Record<string, number[]> }
+export interface BattleTuning { version: string; baseScale: number; waveScales: number[]; spawnIntervals: number[]; nextWaveDelay: number; minionEnergy?: number; minionsPerWave?: number; crowd?: CrowdTuning; feel?: HeroFeelTuning; areaAttacks?: AreaAttackTuning }
 export const RULES = data;
 export const HEROES = data.heroes as HeroDefinition[];
 export const SKILLS = data.skills as SkillDefinition[];
@@ -45,8 +46,11 @@ export function stageTuning(id: number): BattleTuning {
   return { version: data.version, baseScale: s.stageScale * s.hpAttackDifficultyMultiplier,
     waveScales: [...(s.waveStatScales || Array.from({ length: 15 }, (_, i) => 1 + .025 * i))],
     spawnIntervals: [...(s.spawnIntervalsByWave || Array(15).fill(s.spawnIntervalSeconds))], nextWaveDelay: s.nextWaveMaxDelaySeconds,
-    crowd: { ...data.battle.crowd }, feel: { ...data.battle.feel } };
+    minionEnergy: enemyDef('RM01').energyOnFinalDeath, minionsPerWave: s.minionsPerWave,
+    crowd: { ...data.battle.crowd, formation: 'wide-lanes-v1' }, feel: { ...data.battle.feel },
+    areaAttacks: { version: 1, radii: Object.fromEntries(Object.entries(data.battle.areaAttacks.radii).map(([id, radii]) => [id, [...radii]])) } };
 }
+export const basicAreaRadius = (tuning: BattleTuning | undefined, id: string, level: number): number => tuning?.areaAttacks?.radii[id]?.[level - 1] || 0;
 export function autoSkillCooldown(tuning: BattleTuning | undefined, hero: string, slot: number, level: number): number {
   const seconds = skillDef(hero, slot).cooldownSeconds[level - 1], feel = tuning?.feel;
   return seconds * (feel ? (slot === 2 ? feel.normalCooldownFactor : feel.thirdCooldownFactor) * (1 - (level - 1) * .035) : 1);
@@ -74,6 +78,11 @@ export function validateR1Config(): void {
   for (const rows of [HEROES, SKILLS, ENEMIES]) assert(new Set(rows.map(x => x.id)).size === rows.length, 'duplicate ID');
   assert(HEROES.length === 10 && SKILLS.length === 30 && STAGES.length === 20, 'roster');
   assert(HEROES.filter(h=>h.quality==='blue').length===3 && HEROES.filter(h=>h.quality==='purple').length===4 && HEROES.filter(h=>h.quality==='gold').length===3, 'quality roster');
+  assert(data.battle.crowd.formation === 'wide-lanes-v1', 'entry formation');
+  assert(data.battle.areaAttacks.version === 1 && HEROES.every(h => {
+    const radii = (data.battle.areaAttacks.radii as Record<string,number[]>)[h.id];
+    return radii?.length === 5 && radii.every((n,i)=>Number.isFinite(n)&&n>0&&n<=.5&&(!i||n>radii[i-1]));
+  }), 'area attack growth');
   for (const h of HEROES) {
     assert(SKILLS.filter(s => s.hero === h.id).length === 3, h.id + ' skills');
     assert(h.level1.hp > 0 && h.level1.attack > 0 && h.level1.defense >= 0, h.id + ' stats');
@@ -86,7 +95,10 @@ export function validateR1Config(): void {
     assert(s.cardQuality === (s.slot === 3 && heroDef(s.hero).quality !== 'blue' ? 'gold' : 'purple'), s.id + ' card quality');
   }
   for (const s of STAGES) {
-    assert(s.waves === 15 && s.minionsPerWave === 30 && Object.values(s.minionCompositionEachWave).reduce((a, b) => a + b, 0) === 30, 'wave quota');
+    assert(s.waves === 15 && s.minionsPerWave === 120 && Object.values(s.minionCompositionEachWave).reduce((a, b) => a + b, 0) === s.minionsPerWave, 'wave quota');
+    assert(ENEMIES.filter(e => e.tier === 'minion').every(e => e.energyOnFinalDeath === 1), 'one energy per minion');
+    const crowd = data.battle.crowd;
+    assert(s.minionsPerWave % crowd.batchSize === 0 && crowd.period > (crowd.batchSize - 1) * crowd.interval && crowd.clearDelay > 0, 'crowd pacing');
     Object.keys(s.minionCompositionEachWave).forEach(enemyDef);
     Object.values(s.miniBosses).flat().concat(s.finalBoss).forEach(enemyDef);
     assert(s.traitPool.length * s.eachTraitQuota === s.traitMinionsPerWave, 'trait quota');

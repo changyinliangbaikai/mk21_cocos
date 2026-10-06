@@ -11,7 +11,10 @@ const dest = resolve(root, 'game/assets/resources/r1');
 const expansionId = id => /^(?:FX-|PORTRAIT-|IC-)?RH(?:0[7-9]|10)$/.test(id);
 const previous = existsSync(resolve(dest, 'manifest.json')) ? JSON.parse(readFileSync(resolve(dest, 'manifest.json'), 'utf8')) : { atlases: [] };
 const cardsPath = resolve(root, 'game/assets/scripts/domain/r1/ui-cards.json');
-const expansionCards = existsSync(cardsPath) ? JSON.parse(readFileSync(cardsPath, 'utf8')).filter(c => /^RH(?:0[7-9]|10)$/.test(c.hero || '')) : [];
+const currentCards = existsSync(cardsPath) ? JSON.parse(readFileSync(cardsPath, 'utf8')) : [];
+const expansionCards = currentCards.filter(c => /^RH(?:0[7-9]|10)$/.test(c.hero || ''));
+// C-041 radius upgrades are runtime-owned copy; the original art catalog still describes target counts.
+const areaCards = new Map(currentCards.filter(c => /-S1-L[2-5]$/.test(c.id) && c.lines?.some(line => line.includes('群攻半径'))).map(c => [c.id, c]));
 const read = p => JSON.parse(readFileSync(resolve(source, p), 'utf8'));
 mkdirSync(resolve(dest, 'art'), { recursive: true }); mkdirSync(resolve(dest, 'fonts'), { recursive: true });
 const manifest = { schemaVersion: 1, approval: 'C-026', atlases: [], audioEvents: read('04-素材资产/audio/event-map.json').events };
@@ -75,14 +78,17 @@ if (existsSync(resolve(source, walkCatalog))) for (const a of read(walkCatalog).
 }
 copyFileSync(resolve(root, 'assets/art/production/mvp-v1/typography-v003/LICENSE-ResourceHanRounded.txt'), resolve(dest, 'fonts/LICENSE.txt'));
 // Reuse existing, already packaged audio by ID, including its codec fallbacks. No duplicate audio payload.
-manifest.atlases.push(...previous.atlases.filter(a => expansionId(a.id)));
+manifest.atlases.push(...previous.atlases.filter(a => expansionId(a.id) || /^FX-(AREA|FLIGHT|MELEE)-RH/.test(a.id)));
+if (previous.areaFxRevision) manifest.areaFxRevision = previous.areaFxRevision;
+if (previous.flightFxRevision) manifest.flightFxRevision = previous.flightFxRevision;
+if (previous.meleeFxRevision) manifest.meleeFxRevision = previous.meleeFxRevision;
 writeFileSync(resolve(dest, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 const cardKeys = ['id', 'family', 'kind', 'hero', 'quality', 'title', 'typeLabel', 'badge', 'lines', 'art', 'action', 'details'];
 const cards = read('04-素材资产/composed-v01/catalog.json').cards.filter(c => c.kind !== 'attribute' || c.id.endsWith('-attack')).map(c => {
   if (c.kind === 'attribute') return { ...c, id: `${c.hero}-ATTR-all`, family: `${c.hero}-ATTR-all`, title: '全面强化',
     lines: ['攻击基础值+20%', '生命与防御基础值+15%', '同时补充新增生命'],
     art: { kind: 'attribute', hero: c.hero }, details: ['本局同时强化该英雄的攻击、生命上限、防御。', '加算永久等级基础值，可多次叠加；同时补充本次新增生命，不改变永久等级。'] };
-  return c;
+  return areaCards.get(c.id) || c;
 });
 writeFileSync(cardsPath, JSON.stringify([...cards.map(c => Object.fromEntries(cardKeys.filter(k => k in c).map(k => [k, c[k]]))), ...expansionCards], null, 2) + '\n');
 console.log(JSON.stringify({ atlases: manifest.atlases.length, regions: manifest.atlases.reduce((n, a) => n + a.frames.length, 0), imageMiB: manifest.atlases.reduce((n, a) => n + a.bytes, 0) / 1048576 }));

@@ -1,5 +1,5 @@
 import { HEROES, Quality, enemyDef, heroDef, stageDef } from './config';
-import { Enemy, Hero, Profile, Reward, Run, copy, deployed, event, now } from './model';
+import { Enemy, Hero, Profile, Reward, Run, copy, deployed, event, now, waveMinionQuota } from './model';
 
 export type Specialization = 'A' | 'B';
 export type Contract = 'shield' | 'speed' | 'crossfire';
@@ -7,9 +7,9 @@ export type Expedition = { tier: number; contract: Contract };
 export const INCENTIVE_VERSION = 'R1.2.0';
 export const QUALITIES: Quality[] = ['blue', 'purple', 'gold'];
 export const CONTRACTS: {id:Contract;name:string;hint:string;composition:Record<string,number>;traits:Record<string,number>}[] = [
-  {id:'shield',name:'破盾阵',hint:'护盾怪群 · 多段破盾与范围爆破',composition:{RM01:12,RM02:12,RM04:4,RM05:2},traits:{T04:5,T03:2,T01:2}},
-  {id:'speed',name:'疾行阵',hint:'疾行突进 · 控场与近战守线',composition:{RM01:12,RM02:12,RM04:4,RM05:2},traits:{T01:5,T02:2,T03:2}},
-  {id:'crossfire',name:'交叉火力',hint:'半数远程 · 射程、护盾与治疗',composition:{RM01:10,RM02:5,RM04:9,RM05:6},traits:{T02:3,T03:3,T04:3}},
+  {id:'shield',name:'破盾阵',hint:'护盾怪群 · 多段破盾与范围爆破',composition:{RM01:48,RM02:48,RM04:16,RM05:8},traits:{T04:20,T03:8,T01:8}},
+  {id:'speed',name:'疾行阵',hint:'疾行突进 · 控场与近战守线',composition:{RM01:48,RM02:48,RM04:16,RM05:8},traits:{T01:20,T02:8,T03:8}},
+  {id:'crossfire',name:'交叉火力',hint:'半数远程 · 射程、护盾与治疗',composition:{RM01:40,RM02:20,RM04:36,RM05:24},traits:{T02:12,T03:12,T04:12}},
 ];
 export const EXPEDITION_HP = [1,1.1,1.2,1.32,1.45,1.6,1.76,1.94];
 export const EXPEDITION_ATTACK = [1,1.05,1.1,1.15,1.2,1.25,1.3,1.35];
@@ -80,7 +80,7 @@ export function recordFinalKill(r:Run,e:Enemy,cast?:CastRef):void {
   const i=r.incentive;if(!i)return;
   const minion=enemyDef(e.id).tier==='minion',index=e.wave-1;
   if(index>=0&&index<15)(minion?i.minionDeaths:i.bossDeaths)[index]++;
-  for(const checkpoint of [5,10] as const)if(i.checkpoint<checkpoint&&i.minionDeaths.slice(0,checkpoint).every(n=>n===30)&&i.bossDeaths.slice(0,checkpoint).every((n,j)=>n===i.bossQuota[j])){
+  for(const checkpoint of [5,10] as const)if(i.checkpoint<checkpoint&&i.minionDeaths.slice(0,checkpoint).every((n,j)=>n===waveMinionQuota(r,j+1))&&i.bossDeaths.slice(0,checkpoint).every((n,j)=>n===i.bossQuota[j])){
     i.checkpoint=checkpoint;goalProgress(r,'first-reserve');event(r,'checkpoint',String(checkpoint),{x:.5,y:.03},undefined,checkpoint===5?1:2);
   }
   if(!cast||!minion)return;
@@ -144,9 +144,9 @@ export function validateIncentives(p:Profile,r?:Run|null):void {
     check(i&&s&&s.version===1&&s.ruleVersion===INCENTIVE_VERSION&&focus(s.focusByQuality)&&QUALITIES.includes(s.primary)&&hero(s.captain)&&r!.unlocked.includes(s.captain)&&typeof s.beginner==='boolean'&&typeof s.firstClear==='boolean'&&['gold','purple'].includes(s.route)&&specials(s.specializations));
     check(Object.keys(s.specializations).every(id=>r!.levels[id]>=3&&r!.unlocked.includes(id)));
     check(s.expedition===undefined||expedition(s.expedition)&&r!.stage===20&&p.clearedStage===20);
-    check([s.minionDeaths,s.bossDeaths,s.bossQuota].every(a=>Array.isArray(a)&&a.length===15&&a.every(n=>int(n,0,30)))&&[0,5,10].includes(s.checkpoint));
+    check(Array.isArray(s.minionDeaths)&&s.minionDeaths.length===15&&s.minionDeaths.every((n,j)=>int(n,0,waveMinionQuota(r!,j+1)))&&[s.bossDeaths,s.bossQuota].every(a=>Array.isArray(a)&&a.length===15&&a.every(n=>int(n,0,30)))&&[0,5,10].includes(s.checkpoint));
     check(s.bossQuota.every((n,j)=>n===(j===14?1:(stageDef(r!.stage).miniBosses[String(j+1)]||[]).length))&&s.bossDeaths.every((n,j)=>n<=s.bossQuota[j]));
-    check(s.checkpoint===0||s.minionDeaths.slice(0,s.checkpoint).every(n=>n===30)&&s.bossDeaths.slice(0,s.checkpoint).every((n,j)=>n===s.bossQuota[j]));
+    check(s.checkpoint===0||s.minionDeaths.slice(0,s.checkpoint).every((n,j)=>n===waveMinionQuota(r!,j+1))&&s.bossDeaths.slice(0,s.checkpoint).every((n,j)=>n===s.bossQuota[j]));
     check(int(s.castSequence)&&s.casts&&Object.keys(s.casts).length<=120&&Object.entries(s.casts).every(([key,c])=>c&&String(c.ref.id)===key&&int(c.ref.id,1,s.castSequence)&&int(c.ref.owner,1,r!.nextUid)&&hero(c.ref.hero)&&[2,3].includes(c.ref.slot)&&typeof c.ref.aoe==='boolean'&&int(c.kills)&&Number.isFinite(c.at)&&c.at>=0));
     check(s.stats&&goals(s.stats.goals)&&s.stats.summonDamage>=0&&s.stats.heroBaseHp>=0&&s.stats.bestBurst&&Object.entries(s.stats.bestBurst).every(([id,v])=>hero(id)&&int(v)));
     check(Array.isArray(s.relays)&&s.relays.length<=8&&s.relays.every(v=>v&&int(v.owner,1,r!.nextUid)&&v.until>=0&&unique(v.casters,4)&&v.casters.every(n=>int(n,1,r!.nextUid))));
